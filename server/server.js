@@ -24,7 +24,7 @@ app.prepare()
           });
         }
 
-        return app.render(req, res, route.page, queryParams);
+        return app.render(rseq, res, route.page, queryParams);
       });
     });
 

@@ -6,16 +6,21 @@ export default () => (
     <h1>Products promotions</h1>
     <ul>
       <li>
-        <Link to="/product" query={ 1 }>
+        <Link to="/product" query={1}>
           Product 1
         </Link>
-        <Link to="/product" query={ 2 }>
+      </li>
+      <li>
+        <Link to="/product" query={2}>
           Product 2
         </Link>
-        <Link to="/product" query={ 3 }>
+      </li>
+      <li>
+        <Link to="/product" query={3}>
           Product 3
         </Link>
       </li>
+
     </ul>
   </div>
 )
