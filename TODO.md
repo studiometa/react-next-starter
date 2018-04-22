@@ -1,6 +1,5 @@
 - routing
 - layout
--babel
 - server
 - cache
 - redux
