@@ -1,5 +1,6 @@
 import App, { Container } from 'next/app';
 import React              from 'react';
+import Router             from 'next/router';
 
 
 /**
@@ -7,6 +8,12 @@ import React              from 'react';
  */
 
 export default class MyApp extends App {
+  constructor() {
+    super();
+    this.state = { isLoading: false };
+  }
+
+
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -18,11 +25,22 @@ export default class MyApp extends App {
   }
 
 
+  componentDidMount() {
+    Router.onRouteChangeStart    = url => {
+      this.setState({ isLoading: true });
+    };
+    Router.onRouteChangeComplete = url => {
+      this.setState({ isLoading: false });
+    };
+  }
+
+
   render() {
     const { Component, pageProps } = this.props;
     return (
       <Container>
         <h1>APP</h1>
+        {this.state.isLoading === true && <p>Loading...</p>}
         <Component {...pageProps} />
       </Container>
     );

@@ -16,10 +16,11 @@
     "babel-env": "^2.4.1",
     "babel-preset-env": "^1.6.1",
     "express": "^4.16.3",
-    "next": "^5.1.0",
+    "next": "^6.0.0-canary.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1"

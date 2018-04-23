@@ -1,6 +1,3 @@
-- routing
-- layout
-- server
 - cache
 - redux
 - loading
