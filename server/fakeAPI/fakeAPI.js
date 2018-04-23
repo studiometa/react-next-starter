@@ -1,7 +1,7 @@
 const fileStore = require('./fakeAPI.store');
 module.exports  = function (store = fileStore, {
   minDelay = 300,
-  maxDelay = 3000
+  maxDelay = 1200
 }) {
   this.resolveDataFromPath = (string = '') => {
     const path = string.split('/');

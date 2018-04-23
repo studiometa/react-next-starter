@@ -1,30 +1,50 @@
+import React from 'react';
+
 import Link   from '../../components/Link/index';
 import Layout from '../../components/PageLayout';
+import axios from 'axios';
 
 
-export default () => (
-  <Layout>
-    <div>
-      <h2>Products</h2>
-      <ul>
-        <li>
-          <Link to="/product/:id" query={1}>
-            Product 1
-          </Link>
-        </li>
-        <li>
-          <Link to="/product/:id" query={2}>
-            Product 2
-          </Link>
-        </li>
-        <li>
-          <Link to="/product/:id" query={3}>
-            Product 3
-          </Link>
-        </li>
+class Products extends React.Component {
+  static getInitialProps = async function (context) {
+    try {
+      const response  = await axios.get('http://localhost:3000/fake-api/pages/products');
 
-      </ul>
-      <Link to="/products/promotions">Promotions</Link>
-    </div>
-  </Layout>
-)
+      return { data: response.data };
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    const data = this.props.data || {};
+
+    return (
+      <Layout>
+        <div>
+          <h2>{ data.name }</h2>
+          <ul>
+            {
+              data.products !== undefined &&
+                data.products.map((product, key) => (
+                  <li key={ key }>
+                    <Link to="/product/:id" query={product}>
+                      Product {product }
+                    </Link>
+                  </li>
+                ))
+            }
+
+          </ul>
+          <Link to="/products/promotions">Promotions</Link>
+        </div>
+      </Layout>
+    );
+  }
+}
+
+export default Products;

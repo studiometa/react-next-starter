@@ -1,20 +1,17 @@
-const express   = require('express');
-const next      = require('next');
-const config    = require('../config');
-const getRoutes = require('./routes');
-const FakeAPI   = require('./fakeAPI');
-const dev    = process.env.NODE_ENV !== 'production';
-const app    = next({ dev, dir: config.server.clientDir });
-const routes = getRoutes();
+const express      = require('express');
+const next         = require('next');
+const config       = require('../config');
+const getRoutes    = require('./routes');
+const FakeAPI      = require('./fakeAPI');
+const dev          = process.env.NODE_ENV !== 'production';
+const app          = next({ dev, dir: config.server.clientDir });
+const routes       = getRoutes();
 const fakeAPIStore = require('./fakeAPI/fakeAPI.store');
 app.prepare()
   .then(() => {
     const server = express();
 
-    const fakeAPI = new FakeAPI(fakeAPIStore, {
-      minDelay: 300,
-      maxDelay: 3000
-    });
+    const fakeAPI = new FakeAPI();
 
     //  Map over all the defined routes
     // and add a get handler to the server for
@@ -36,7 +33,7 @@ app.prepare()
 
     // Set fake API
     if (process.env.NODE_ENV !== 'production') {
-      server.get('/fake-api/*',fakeAPI.get);
+      server.get('/fake-api/*', fakeAPI.get);
     }
 
     // Default server entry

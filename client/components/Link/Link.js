@@ -57,8 +57,6 @@ const Link = (props) => {
     urlAs = urljoin(`${ urlAs.split(':')[0] }`, `/${ query }`);
   }
 
-  console.log(href, urlAs);
-
   return (
     <NextLink href={href} as={urlAs}>
       <a className={className}>{children}</a>
