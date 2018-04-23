@@ -1,4 +1,4 @@
-import Link   from 'next/link';
+import Link   from '../components/Link';
 import Layout from '../components/PageLayout';
 
 
@@ -6,12 +6,16 @@ const Product = (props) => (
   <Layout>
     <div>
       <h2>product: {props.id}</h2>
-      <Link href={`/`}>
-        <a>Back home</a>
-      </Link>
-      <Link href={`/products`}>
-        <a>Back to products list</a>
-      </Link>
+      <div>
+        <Link to={`/`}>
+          Back home
+        </Link>
+      </div>
+      <div>
+        <Link to={`/products`}>
+          Back to products list
+        </Link>
+      </div>
     </div>
   </Layout>
 );

@@ -1,6 +1,5 @@
 - cache
 - redux
-- loading
 - sass
 - async module & component
 - webpack config

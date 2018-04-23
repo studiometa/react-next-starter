@@ -39,8 +39,13 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <h1>APP</h1>
-        {this.state.isLoading === true && <p>Loading...</p>}
+        <div>
+          <h1>APP</h1>
+          {
+            this.state.isLoading === true &&
+            <span style={ { position: 'absolute', top: 0 } }>Loading...</span>
+          }
+        </div>
         <Component {...pageProps} />
       </Container>
     );

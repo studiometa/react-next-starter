@@ -1,4 +1,4 @@
-import Link   from 'next/link';
+import Link   from '../components/Link';
 import Layout from '../components/PageLayout';
 
 
@@ -6,7 +6,7 @@ export default () => (
   <Layout>
     <div>
       <h2>Home</h2>
-      <Link href={`/products`}><a>Products</a></Link>
+      <Link to={`/products`}>Products</Link>
     </div>
   </Layout>
 )
