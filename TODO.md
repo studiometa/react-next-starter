@@ -10,3 +10,8 @@
 - fake api
 - i18n
 - tests & CI/CD
+
+
+TODO:
+
+- Changes routes.js routes format to something like { '/products' : {//...}, '/product/:id': {//...} }

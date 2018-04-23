@@ -1,7 +1,11 @@
 import React     from 'react';
 import NextLink  from 'next/link';
-import routes    from '../../../server/routes';
+import getRoutes from '../../../server/routes';
 import propTypes from 'prop-types';
+import urljoin   from 'url-join';
+
+
+const routes = getRoutes();
 
 
 /**
@@ -9,7 +13,7 @@ import propTypes from 'prop-types';
  * links that works with NextJs.
  *
  * Here we can simply build a link like this:
- * <Link to="/products" query="my-product">My product</Link>
+ * <Link to="/products/:id" query="my-product">My product</Link>
  *
  * The to parameter defines the href of the route
  *
@@ -35,7 +39,7 @@ const Link = (props) => {
         } = props;
 
   // Find a matching route in the route.js config file
-  const matchingRoute = routes.find(route => route.page === to);
+  const matchingRoute = routes[to];
   let href            = to;
   let urlAs           = to;
 
@@ -43,16 +47,17 @@ const Link = (props) => {
   // if not, only show an error log on dev env
   if (typeof matchingRoute !== 'object') {
     if (process.env.NODE_ENV !== 'production') {
-      console.error(`There is no matching route for '${ to }'`);
+      console.error(`Link.js: Nno matching route has been find for '${ to }'`);
     }
 
     // If a query is defined and the matching route has a queryParams parameter
     // add the query to the final link path (href and as parameters)
   } else if (query !== undefined && Array.isArray(matchingRoute.queryParams)) {
-    href  = `${ href }?${ matchingRoute.queryParams[0] }=${ query }`;
-    urlAs = `${ urlAs }/${ query }`;
+    href  = urljoin(`${ href.split(':')[0] }`, `?${ matchingRoute.queryParams[0] }=${ query }`);
+    urlAs = urljoin(`${ urlAs.split(':')[0] }`, `/${ query }`);
   }
 
+  console.log(href, urlAs);
 
   return (
     <NextLink href={href} as={urlAs}>

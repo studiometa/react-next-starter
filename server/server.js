@@ -1,11 +1,11 @@
-const express = require('express');
-const next    = require('next');
-const config  = require('../config');
-const routes  = require('./routes');
+const express   = require('express');
+const next      = require('next');
+const config    = require('../config');
+const getRoutes = require('./routes');
 
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev, dir: config.server.clientDir });
-
+const dev    = process.env.NODE_ENV !== 'production';
+const app    = next({ dev, dir: config.server.clientDir });
+const routes = getRoutes();
 app.prepare()
   .then(() => {
     const server = express();
@@ -13,8 +13,8 @@ app.prepare()
     //  Map over all the defined routes
     // and add a get handler to the server for
     // each of them
-    routes.forEach(route => {
-      server.get(route.path, (req, res) => {
+    Object.entries(routes).forEach(([path, route]) => {
+      server.get(path, (req, res) => {
         const queryParams = {};
 
         // Add needed parameters to the response
@@ -24,7 +24,7 @@ app.prepare()
           });
         }
 
-        return app.render(rseq, res, route.page, queryParams);
+        return app.render(req, res, route.page, queryParams);
       });
     });
 
