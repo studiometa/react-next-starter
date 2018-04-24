@@ -1,14 +1,17 @@
 const fileStore = require('./fakeAPI.store');
 module.exports  = function (store = fileStore, {
   minDelay = 300,
-  maxDelay = 1200
-}) {
+  maxDelay = 1200,
+}                                 = {}) {
   this.resolveDataFromPath = (string = '') => {
     const path = string.split('/');
     let res    = Object.assign({}, store);
 
     path.map(s => {
-      res = (res && res[s] ? res[s] : undefined);
+      res = (res && res[s]
+          ? res[s]
+          : undefined
+      );
     });
     return res;
   };

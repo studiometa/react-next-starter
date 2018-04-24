@@ -28,6 +28,14 @@ class Home extends React.Component {
   }
 
 
+  componentDidMount() {
+    setTimeout(() => {
+      console.log('Running async dispatch on client only');
+      this.props.dispatch({ type: 'TICK', payload: 'async' });
+    }, 2000);
+  }
+
+
   render() {
     return (
       <Layout>
