@@ -21,6 +21,7 @@ module.exports  = function (store = fileStore, {
     url = url.substring(url.indexOf('/') + 1);
 
     const result = this.resolveDataFromPath(url);
+
     if (result) {
       setTimeout(() => {
         res.json(result);
