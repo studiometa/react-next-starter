@@ -1,3 +1,6 @@
+import { combineReducers } from 'redux';
+import products from './products.reducers';
+
 const reducer = (state = {tick: 'init', tack: 'init'}, action) => {
   switch (action.type) {
     case 'TICKK':
@@ -10,4 +13,8 @@ const reducer = (state = {tick: 'init', tack: 'init'}, action) => {
   }
 };
 
-export default reducer;
+
+export default combineReducers({
+  reducer,
+  products
+});

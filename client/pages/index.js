@@ -52,6 +52,4 @@ class Home extends React.Component {
 
 
 
-withRedux.setDebug(true);
-
 export default withRedux(createStore, state => state)(Home);

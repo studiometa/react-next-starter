@@ -12,7 +12,7 @@ class Product extends React.Component {
 
     try {
       const response  = await axios.get('http://localhost:3000/fake-api/products/' + id);
-      console.log(response)
+     // console.log(response)
       return { id, data: response.data };
     } catch (err) {
       console.error(err.message);

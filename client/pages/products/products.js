@@ -1,42 +1,65 @@
 import React from 'react';
 
-import Link   from '../../components/Link/index';
-import Layout from '../../components/PageLayout';
-import axios from 'axios';
+import Link              from '../../components/Link/index';
+import Layout            from '../../components/PageLayout';
+import axios             from 'axios';
+import withRedux         from 'next-redux-wrapper';
+import createStore       from '../../../store/createStore';
+import { fetchProducts } from '../../../store/actions/products.actions';
+
 
 
 class Products extends React.Component {
-  static getInitialProps = async function (context) {
-    try {
-      const response  = await axios.get('http://localhost:3000/fake-api/pages/products');
+  static async getInitialProps({ store, isServer, pathname, query }) {
+    console.log('Products:getInitialProps');
+    const currentState = store.getState().products;
 
-      return { data: response.data };
-    } catch (err) {
-      console.error(err.message);
+  /*  if (Array.isArray(currentState) && currentState.length > 0 && !isServer) {
+      return { data: { products: currentState } };
+    } else {
+
+    }*/
+
+
+    // If it's a server, then all async actions must be done before return or return a promise
+    if (isServer) {
+      const products = await store.dispatch(fetchProducts(true));
+      return { products }
+    } else {
+
+      // If it's a client, then it does not matter because client can be progressively rendered
+      store.dispatch(fetchProducts(false));
     }
+
+
+    return { };
+
   };
 
-  componentDidMount() {
 
+  componentDidMount() {
+    this.props.dispatch(fetchProducts(false));
   }
 
+
   render() {
-    const data = this.props.data || {};
+    console.log('--', this.props);
+    const { products } = this.props;
 
     return (
       <Layout>
         <div>
-          <h2>{ data.name }</h2>
+          <h2>PAGE NAME </h2>
           <ul>
             {
-              data.products !== undefined &&
-                data.products.map((product, key) => (
-                  <li key={ key }>
-                    <Link to="/product/:id" query={product}>
-                      Product {product }
-                    </Link>
-                  </li>
-                ))
+              products !== undefined &&
+              products.map((product, key) => (
+                <li key={key}>
+                  <Link to="/product/:id" query={product}>
+                    Product {product}
+                  </Link>
+                </li>
+              ))
             }
 
           </ul>
@@ -47,4 +70,6 @@ class Products extends React.Component {
   }
 }
 
-export default Products;
+
+
+export default withRedux(createStore, state => state)(Products);

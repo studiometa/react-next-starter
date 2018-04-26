@@ -59,13 +59,34 @@
 //   };
 // }
 
-export function fetchProducts() {
+export const SET_PRODUCTS = 'SET_PRODUCTS';
+
+export function setProducts(products) {
   return {
-    type: 'FETCH_PRODUCTS',
-    payload: new Promise((res) => {
-      setTimeout(() => {
-        res('foo');
-      }, 1000)
-    })
-  }
+    type: SET_PRODUCTS,
+    products,
+  };
 }
+
+
+export function fetchProducts(updateIfExist = true) {
+  return function (dispatch, getState) {
+    const currentItems = getState().products;
+    console.log('-----');
+    console.log(currentItems);
+    return new Promise(resolve => {
+
+      if (updateIfExist === false && Array.isArray(currentItems) && currentItems.length > 0) {
+        console.log('IN');
+        resolve(currentItems);
+      } else {
+        setTimeout(() => {
+          console.log('OUT')
+          dispatch(setProducts(['foo', 'bar']));
+          resolve(['foo', 'bar']);
+        }, 2000);
+      }
+    });
+  };
+}
+

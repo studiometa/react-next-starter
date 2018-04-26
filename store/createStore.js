@@ -1,18 +1,29 @@
-import { createStore } from 'redux';
-import reducer         from './reducers/index';
+import {
+  createStore,
+  applyMiddleware,
+}                       from 'redux';
+import reducers         from './reducers/index';
+import thunk            from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
-const REDUCERS_PATH = './reducers/index';
-export default (initialState) => {
 
-  const store = createStore(reducer, initialState);
+const isServer = !process.browser;
+const logger   = createLogger({
+  collapsed: true,
+  duration: true,
+});
 
-  // if (module.hot) {
-  //   module.hot.accept(REDUCERS_PATH, () => {
-  //     console.log('Replacing reducer');
-  //     store.replaceReducer(require(REDUCERS_PATH).default);
-  //   });
-  // }
 
-  return store;
+export default () => {
+
+  // !important: do not modify initialState, it may cause some
+  // confusions about what source of truth must be used to define update
+  // the store when new data will be fetched from the server
+
+  if (isServer) {
+    return createStore(reducers, {}, applyMiddleware(thunk));
+  } else {
+    return createStore(reducers, {}, applyMiddleware(logger, thunk));
+  }
 
 };
