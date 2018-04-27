@@ -59,6 +59,7 @@ Maintenant que le serveur ronronne, rendez vous sur votre navigateur avec l'ongl
 network du devTool ouvert et rendez-vous à l'adresse suivante: `http://localhost:3000`.
 
 On est sur l'env development, donc:
+
 - Ne faites pas attention à la taille des fichiers téléchargés, webpack a tendance à injecter
 beaucoup de données en développement.
 - Ne faites également pas gaffe aux requêtes `on-demand-entries-ping`, 
@@ -94,6 +95,7 @@ respectivement au wrapper de l'application et à la page d'erreur.
 Si vous jetez un oeil aux nouvelles requêtes effectuées, vous remarquerez que la page n'a pas entièrement été rechargée. La base.
 
 Certains nouveaux fichiers ont été téléchargés:
+
 - **products.js** : Le script de la page
 - **products** : une requête faite au module fake-api pour récupérer le contenu de la page
 - **0, 1, 2, ...** : d'autres requêtes faites au module fake-api pour récupérer le contenu des produits affichés sur la page  
