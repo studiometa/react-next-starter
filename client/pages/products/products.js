@@ -12,7 +12,7 @@ import ProductCard   from '../../components/ProductCard';
 class Products extends React.Component {
   static async getInitialProps({ store }) {
     await store.dispatch(fetchPage('products', false));
-    return null;
+    return { page: {} };
   }
 
 

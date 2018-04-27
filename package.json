@@ -5,8 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "node server/server.js",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build ./client",
+    "start": "next start ./build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

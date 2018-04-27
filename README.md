@@ -35,7 +35,7 @@ J'ai mis en place un petit exemple de listing produit pour illustrer les fonctio
 
 Suivez les étapes suivantes pour les découvrir:
 
-### Lancer l'application
+### 1) Lancer l'application
 
 Si vous avez installé les packages (`npm i`), il ne reste normalement plus qu'à lancer le serveur de développement
 en faisant en `npm run dev`
@@ -53,16 +53,73 @@ Si tout c'est bien passé vous devriez voir un message comme celui-ci:
 Il est possible de configurer le port utilisé dans le fichier `config/<env>.config.js` 
 (pensez à le modifier également dans la partie `api.url`).
 
-### Un monstre se réveille...
+### 2) Un monstre se réveille...
 
  Maintenant que le serveur ronronne, rendez vous sur votre navigateur avec l'onglet 
  network du devTool ouvert et rendez-vous à l'adresse suivante: `http://localhost:3000`.
  
+On est sur l'env development, donc:
+ - Ne faites pas attention à la taille des fichiers téléchargés, webpack a tendance à injecter
+ beaucoup de données en développement.
+ - Ne faites également pas gaffe aux requêtes `on-demand-entries-ping`, 
+ c'est simplement le serveur qui fait des pings pour permettre au HMR (Hot Module Reload) de fonctionner.
  
  
- 
+#### main.js
 
+C'est le coeur de l'application. On y retrouve les méthodes de nextJs, babel, webpack... mais aussi
+certains modules. 
 
+Par défaut, nextJs importe dans ce fichier tout module qui est utilisé sur plus de
+50% des composants du projet. Les autres modules, moins fréquents, ne seront donc téléchargé qu'au moment
+où ils seront requis. Pratique!
+
+#### index.js
+
+Ce fichier contient le script de la page affichée. À chaque changement de page, une requête similaire
+sera effectuée.
+ 
+ 
+#### localhost
+
+Toute la beauté du SSR réside ici. Le serveur a renvoyé le markup de la page au lieu d'envoyer un document vide. 
+
+#### _app.js, _error.js, etc...
+
+Contiennt les scripts des composants `client/pages/_app.js` et `client/pages/_error.js`. Ils correspondent
+respectivement au wrapper de l'application et à la page d'erreur. 
+
+### 3) Rendez-vous sur la page Products
+
+ Si vous jetez un oeil aux nouvelles requêtes effectuées, vous remarquerez que la page n'a pas entièrement été rechargée. La base.
+ 
+ Certains nouveaux fichiers ont été téléchargés:
+ - **products.js** : Le script de la page
+ - **products** : une requête faite au module fake-api pour récupérer le contenu de la page
+ - **0, 1, 2, ...** : d'autres requêtes faites au module fake-api pour récupérer le contenu des produits affichés sur la page  
+ 
+ Ici le serveur a d'abord requêté la page à afficher, celle-ci a ensuite fait une nouvelle requête pour
+ obtenir le contenu de la page (les ids des produits à afficher). Une nouvelle requête ensuite été réalisée
+ pour chaque produit.
+ 
+ Cela fait beaucoup de requêtes, mais c'est ce qui permet à la page de charger progressivement et à l'utilisateur
+ de ne jamais se retrouver face à une page blanche.
+ 
+ ### 4) Rechargez la page
+ 
+ Le serveur renvoie correctement la page et les produits sont ensuite téléchargés. Vous remarquerez
+ cependant l'absence de la requête `http://localhost:3000/products` qui a cette fois-ci été éxécutée
+ côté serveur.
+ 
+ ### 4) Rendez vous sur une fiche produit
+ 
+ Comme le produit a déjà été téléchargé, une seule requête devra être effectuée pour récupérer
+ le contenu de la page.
+ 
+ ### 5) Retournez sur la page d'accueil, puis sur la page produits
+ 
+ Aucune requête! Normal, la page a déjà été visitée, et tous les produits téléchargés en local.
+    
 ## Router
 
 Avec NextJs, la gestion des routes se base directement sur le contenu du dossier `/client/pages`.

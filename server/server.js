@@ -11,7 +11,7 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 1, maxDelay: 2 });
+    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 50, maxDelay: 100 });
 
     //  Map over all the defined routes
     // and add a get handler to the server for
