@@ -48,7 +48,11 @@ Une route peut avoir les arguments suivantes:
 **Il est nécessaire d'ajouter toutes les routes disponibles dans ce fichier pour assurer le bon fonctionnement de l'application**
 
 
-#### Exemple
+#### Exemple avec le composant Link
+
+Ce composant est disponible dans le dossier /client/components/Link. Il sert principalement de wrapper au
+composant Link de NextJs (next/link) pour le rendre plus simple à utiliser et permettre à l'avenir une meilleure
+maintenabilité des liens de l'application.
 
 Prenons la route suivante:
 
@@ -61,8 +65,6 @@ Prenons la route suivante:
 }
 //...
 ```
-
-Pour cet exemple nous allons utiliser le composant **Link** (/composants/Link, lire les commentaires pour plus d'infos).
 
 Cette route est supposée retourner vers une page produit défini par le queryParam `id`
 

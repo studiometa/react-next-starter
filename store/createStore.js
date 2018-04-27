@@ -14,16 +14,12 @@ const logger   = createLogger({
 });
 
 
-export default () => {
-
-  // !important: do not modify initialState, it may cause some
-  // confusions about what source of truth must be used to define update
-  // the store when new data will be fetched from the server
+export default (initialState) => {
 
   if (isServer) {
-    return createStore(reducers, {}, applyMiddleware(thunk));
+    return createStore(reducers, initialState, applyMiddleware(thunk));
   } else {
-    return createStore(reducers, {}, applyMiddleware(logger, thunk));
+    return createStore(reducers, initialState, applyMiddleware(logger, thunk));
   }
 
 };

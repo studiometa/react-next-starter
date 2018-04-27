@@ -10,4 +10,4 @@
 
 TODO:
 
-- Changes routes.js routes format to something like { '/products' : {//...}, '/product/:id': {//...} }
+
