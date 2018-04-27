@@ -1,25 +1,29 @@
-export const SET_PRODUCTS = 'SET_PRODUCTS';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
 
-export function setProducts(products) {
+export function addProduct(productId, product) {
   return {
-    type: SET_PRODUCTS,
-    products,
+    type: ADD_PRODUCT,
+    productId,
+    product,
   };
 }
 
 
 // TODO Wrap this in a HOC function (or similar) to make it more easy to declare such recurrent actions
-export const fetchProducts = (updateIfExist = true) => (dispatch, getState) => (
-  new Promise(resolve => {
+export const fetchProduct = (productId, updateIfExist = true) => async (dispatch, getState, socket) => {
     const currentItems = getState().products;
-    if (updateIfExist === false && Array.isArray(currentItems) && currentItems.length > 0) {
-      resolve(currentItems);
+    if (updateIfExist === false && currentItems[productId] !== undefined) {
+      return currentItems[productId];
     } else {
-      setTimeout(() => {
-        dispatch(setProducts(['foo', 'bar']));
-        resolve(['foo', 'bar']);
-      }, 1000);
+      try {
+        const result = await socket.getProduct(productId);
+
+
+        dispatch(addProduct(productId, result));
+        return result;
+      } catch (err) {
+        console.log('-_->',err);
+      }
     }
-  })
-);
+};
 

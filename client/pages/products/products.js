@@ -1,22 +1,24 @@
 import React from 'react';
 
-import Link              from '../../components/Link/index';
-import Layout            from '../../components/PageLayout';
-import withRedux         from 'next-redux-wrapper';
-import createStore       from '../../../store/createStore';
-import { fetchProducts } from '../../../store/actions/products.actions';
+import Link          from '../../components/Link/index';
+import Layout        from '../../components/PageLayout';
+import withRedux     from 'next-redux-wrapper';
+import createStore   from '../../../store/createStore';
+import { fetchPage } from '../../../store/actions/pages.actions';
+import ProductCard   from '../../components/ProductCard';
 
 
 
 class Products extends React.Component {
   static async getInitialProps({ store }) {
-    await store.dispatch(fetchProducts(false));
+    await store.dispatch(fetchPage('products', false));
     return null;
   }
 
 
   render() {
-    const { products } = this.props;
+    console.log(this.props);
+    const { products } = this.props.page;
 
     return (
       <Layout>
@@ -28,7 +30,7 @@ class Products extends React.Component {
               products.map((product, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={product}>
-                    Product {product}
+                    <ProductCard productId={ product }/>
                   </Link>
                 </li>
               ))
@@ -44,4 +46,4 @@ class Products extends React.Component {
 
 
 
-export default withRedux(createStore, (state) => ({ products: state.products }))(Products);
+export default withRedux(createStore, ({ pages }) => ({ page: pages.products }))(Products);

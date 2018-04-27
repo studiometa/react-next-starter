@@ -1,20 +1,9 @@
 import { combineReducers } from 'redux';
-import products from './products.reducers';
-
-const reducer = (state = {tick: 'init', tack: 'init'}, action) => {
-  switch (action.type) {
-    case 'TICKK':
-    case 'TICK':
-      return Object.assign({}, state, {tick: action.payload});
-    case 'TACK':
-      return Object.assign({}, { tack: action.payload});
-    default:
-      return state
-  }
-};
+import products            from './products.reducers';
+import pages               from './pages.reducers';
 
 
 export default combineReducers({
-  reducer,
-  products
+  products,
+  pages,
 });

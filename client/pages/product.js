@@ -10,6 +10,7 @@ class Product extends React.Component {
   static getInitialProps = async function (context) {
     const { id } = context.query;
 
+    // TODO Get data from the store instead
     try {
       const response  = await axios.get('http://localhost:3000/fake-api/products/' + id);
      // console.log(response)

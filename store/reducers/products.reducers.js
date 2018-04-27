@@ -1,14 +1,23 @@
 import * as actionTypes from '../actions/products.actions';
 
-function setProducts(state, action) {
-  console.log('setProducts:reducer', action.products);
-  return [...action.products];
+
+/**
+ * Add a product to the store
+ * @param {object} state
+ * @param {object} action
+ * @param {string} action.productId the key of the new product
+ * @param {object} action.product the product that must be added
+ */
+function addProduct(state, action) {
+  return Object.assign({}, state, {
+    [action.productId]: action.product
+  });
 }
 
 export default (state = [] , action) => {
   switch(action.type) {
-    case actionTypes.SET_PRODUCTS:
-      return setProducts(state, action);
+    case actionTypes.ADD_PRODUCT:
+      return addProduct(state, action);
     default:
       return state;
   }

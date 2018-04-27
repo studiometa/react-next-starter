@@ -1,5 +1,6 @@
 module.exports = {
   products: [
+    { name: 'Product 0' },
     { name: 'Product 1' },
     { name: 'Product 2' },
     { name: 'Product 3' },
