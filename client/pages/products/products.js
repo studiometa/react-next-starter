@@ -22,7 +22,7 @@ class Products extends React.Component {
 
     return (
       <Layout>
-        <div>
+        <div className="products-page">
           <h2>PAGE NAME </h2>
           <ul>
             {
@@ -30,7 +30,7 @@ class Products extends React.Component {
               products.map((product, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={product}>
-                    <ProductCard productId={ product }/>
+                    <ProductCard productId={product}/>
                   </Link>
                 </li>
               ))

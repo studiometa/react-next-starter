@@ -4,7 +4,6 @@
 
 - routing SSR
 - server node (expressJs)
-- gestion du cache
 - redux
 - custom loading
 - sass

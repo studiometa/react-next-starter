@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app';
 import React              from 'react';
 import Router             from 'next/router';
+import style from  '../styles/app.scss';
 
 
 /**
@@ -39,11 +40,11 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <div>
+        <div className="app">
           <h1>APP</h1>
           {
             this.state.isLoading === true &&
-            <span style={ { position: 'absolute', top: 0 } }>Loading...</span>
+            <span style={{ position: 'absolute', top: 0 }}>Loading...</span>
           }
         </div>
         <Component {...pageProps} />

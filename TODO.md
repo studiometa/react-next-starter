@@ -1,8 +1,7 @@
-- cache
 - sass
 - async module & component
 - webpack config
 - i18n
 - tests & CI/CD
 - page prefetch
-
+-better console.log
