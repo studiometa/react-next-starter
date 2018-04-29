@@ -10,7 +10,6 @@ module.exports = withSass({
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-   console.log(config.module.rules[2].use[3])
     config.module.rules.push({
       test: /\.css$/,
       use: ["style-loader", "css-loader", "postcss-loader"]

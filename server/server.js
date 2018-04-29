@@ -3,10 +3,15 @@ const next         = require('next');
 const config       = require('../config');
 const getRoutes    = require('./routes');
 const FakeAPI      = require('./fakeAPI');
-const dev          = process.env.NODE_ENV !== 'production';
-const app          = next({ dev, dir: config.server.clientDir });
-const routes       = getRoutes();
 const fakeAPIStore = require('./fakeAPI/fakeAPI.store');
+const compression  = require('compression');
+const cors         = require('cors');
+const logger       = require('winston');
+
+
+const dev    = process.env.NODE_ENV !== 'production';
+const app    = next({ dev, dir: config.server.clientDir });
+const routes = getRoutes();
 
 
 app.prepare()
@@ -14,6 +19,13 @@ app.prepare()
     const server = express();
 
     const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 50, maxDelay: 100 });
+
+    if (dev === false) {
+      server.use(cors());
+      server.use(compression());
+    } else {
+      app.use(express.errorHandler({ logger }));
+    }
 
     //  Map over all the defined routes
     // and add a get handler to the server for
@@ -34,9 +46,9 @@ app.prepare()
     });
 
     // Set fake API
-    if (process.env.NODE_ENV !== 'production') {
-      server.get('/fake-api/*', fakeAPI.get);
-    }
+    //if (dev === true) {
+    server.get('/fake-api/*', fakeAPI.get);
+    //}
 
     // Default server entry
     server.get('*', (req, res) => {
@@ -49,13 +61,13 @@ app.prepare()
       console.log('> Ready on http://localhost:' + config.server.port);
     });
 
-    // Allow origin from every where while this server will only ran on
-    // a development env
-    server.use(function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-      next();
-    });
+    // if (dev === true) {
+    //   server.use(function(req, res, next) {
+    //     res.header("Access-Control-Allow-Origin", "*");
+    //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    //     next();
+    //   });
+    // }
   })
   .catch((ex) => {
     console.error(ex.stack);

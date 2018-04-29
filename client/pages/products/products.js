@@ -17,12 +17,12 @@ class Products extends React.Component {
 
 
   render() {
-    const { page } = this.props;
+    const page =  this.props.page || {};
 
     return (
       <Layout>
         <div className="products-page">
-          <h2>PAGE NAME </h2>
+          <h2>{ page.name || 'Title' }</h2>
           <ul>
             {
               page.products !== undefined &&

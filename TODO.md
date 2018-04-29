@@ -1,3 +1,2 @@
-- i18n
 - tests & CI/CD
 - global error handling
