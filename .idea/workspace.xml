@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/postcss.config.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" afterPath="$PROJECT_DIR$/next.config.js" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
+      <change beforePath="$PROJECT_DIR$/client/components/Link/Link.js" afterPath="$PROJECT_DIR$/client/components/Link/Link.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,12 +29,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TODO.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TODO.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TODO.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="105">
-                <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -62,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/styles/app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -126,16 +126,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/next-redux-wrapper/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -158,8 +148,8 @@
       <find>babel-preset-react-app</find>
       <find>build-mani</find>
       <find>manifest</find>
-      <find>console.l</find>
       <find>arguments</find>
+      <find>console.l</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -186,7 +176,6 @@
         <option value="$PROJECT_DIR$/server/fakeAPI.js" />
         <option value="$PROJECT_DIR$/server/fakeAPI/index.js" />
         <option value="$PROJECT_DIR$/server/fakeAPI/fakeAPI.config.js" />
-        <option value="$PROJECT_DIR$/client/components/Link/Link.js" />
         <option value="$PROJECT_DIR$/server/fakeAPI/fakeAPI.js" />
         <option value="$PROJECT_DIR$/store/actions/index.js" />
         <option value="$PROJECT_DIR$/store/withRedux.js" />
@@ -210,7 +199,6 @@
         <option value="$PROJECT_DIR$/client/styles/products.page.scss" />
         <option value="$PROJECT_DIR$/config/development.config.js" />
         <option value="$PROJECT_DIR$/config/production.config.js" />
-        <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/client/pages/product.js" />
         <option value="$PROJECT_DIR$/store/actions/pages.actions.js" />
         <option value="$PROJECT_DIR$/client/pages/products/products.js" />
@@ -219,6 +207,8 @@
         <option value="$PROJECT_DIR$/postcss.config.js" />
         <option value="$PROJECT_DIR$/next.config.js" />
         <option value="$PROJECT_DIR$/client/styles/app.scss" />
+        <option value="$PROJECT_DIR$/client/components/Link/Link.js" />
+        <option value="$PROJECT_DIR$/TODO.md" />
       </list>
     </option>
   </component>
@@ -283,7 +273,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;productsac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/products.actions.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;productca&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/ProductCard.js&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;nex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;dev&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;confi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;pro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;res.txt&#9;null&#9;null&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;serv&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;Read&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;store&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;Lin&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;Todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md" />
+    <property name="SearchEverywhereHistoryKey" value="link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;productsac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/products.actions.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;productca&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/ProductCard.js&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;nex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;dev&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;confi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;pro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;res.txt&#9;null&#9;null&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;serv&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;Read&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;store&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;Lin&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;Todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -328,7 +318,7 @@
       <updated>1524423221931</updated>
       <workItem from="1524423223720" duration="764000" />
       <workItem from="1524424080070" duration="23538000" />
-      <workItem from="1524683707022" duration="42028000" />
+      <workItem from="1524683707022" duration="42349000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1524426342351</created>
@@ -498,11 +488,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525012148888</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add autoprefixer module to the postcss module">
+      <created>1525016929039</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1525016929039</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72106000" />
+    <option name="totallyTimeSpent" value="72427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -586,7 +583,8 @@
     <MESSAGE value="Add sass support" />
     <MESSAGE value="Improve config for prod" />
     <MESSAGE value="Update the way pages get their initial props" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the way pages get their initial props" />
+    <MESSAGE value="Add autoprefixer module to the postcss module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add autoprefixer module to the postcss module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -694,14 +692,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/Link/Link.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,17 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="105">
-            <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -994,6 +973,25 @@
         <state relative-caret-position="75">
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/Link/Link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

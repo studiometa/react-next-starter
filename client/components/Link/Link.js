@@ -36,6 +36,7 @@ const Link = (props) => {
           children,
           query,
           className,
+          ...rest
         } = props;
 
   // Find a matching route in the route.js config file
@@ -58,7 +59,7 @@ const Link = (props) => {
   }
 
   return (
-    <NextLink href={href} as={urlAs}>
+    <NextLink href={href} as={urlAs} {...rest}>
       <a className={className}>{children}</a>
     </NextLink>
   );
