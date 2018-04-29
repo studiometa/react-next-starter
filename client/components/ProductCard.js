@@ -35,7 +35,7 @@ class ProductCard extends React.Component {
     // Display a loader if the component has no data
     if (!this.state.data || !this.state.data.name) {
       return (
-        <pre>Loading...</pre>
+        <div>Loading...</div>
       );
     }
 
