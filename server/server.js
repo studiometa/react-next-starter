@@ -6,7 +6,6 @@ const FakeAPI      = require('./fakeAPI');
 const fakeAPIStore = require('./fakeAPI/fakeAPI.store');
 const compression  = require('compression');
 const cors         = require('cors');
-const logger       = require('winston');
 
 
 const dev    = process.env.NODE_ENV !== 'production';
@@ -24,7 +23,6 @@ app.prepare()
       server.use(cors());
       server.use(compression());
     } else {
-      app.use(express.errorHandler({ logger }));
     }
 
     //  Map over all the defined routes
