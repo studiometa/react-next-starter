@@ -48,6 +48,14 @@ app.prepare()
       if (err) throw err;
       console.log('> Ready on http://localhost:' + config.server.port);
     });
+
+    // Allow origin from every where while this server will only ran on
+    // a development env
+    server.use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    });
   })
   .catch((ex) => {
     console.error(ex.stack);
