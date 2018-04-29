@@ -17,6 +17,7 @@ export const fetchPage = (pageId, updateIfExist = true) => async (dispatch, getS
     try {
       const result = await socket.getPage(pageId);
       dispatch(pushPage(pageId, result));
+      return result;
     } catch (err) {
       console.log('error in pages.action.js:fetchPage', err);
     }

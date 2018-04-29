@@ -1,34 +1,30 @@
-import React  from 'react';
-import Link   from '../components/Link';
-import Layout from '../components/PageLayout';
-import axios  from 'axios';
+import React            from 'react';
+import { fetchProduct } from '../../store/actions/products.actions';
+import Link             from '../components/Link';
+import Layout           from '../components/PageLayout';
+import withRedux        from 'next-redux-wrapper';
+import createStore      from '../../store/createStore';
 
 
 
 class Product extends React.Component {
+  static async getInitialProps({ store, req, query }) {
 
-  static getInitialProps = async function (context) {
-    const { id } = context.query;
+    if (query && query.id !== undefined) {
+      const product = await store.dispatch(fetchProduct(query.id, false));
 
-    // TODO Get data from the store instead
-    try {
-      const response  = await axios.get('http://localhost:3000/fake-api/products/' + id);
-     // console.log(response)
-      return { id, data: response.data };
-    } catch (err) {
-      console.error(err.message);
+      return { product };
     }
-  };
+  }
 
 
   render() {
-    const { props } = this;
-    const data = props.data  || {};
+    const product = this.props.product || {};
 
     return (
       <Layout>
         <div>
-          <h2>product: {data.name}</h2>
+          <h2>product: {product.name}</h2>
           <div>
             <Link to={`/`}>
               Back home
@@ -48,4 +44,4 @@ class Product extends React.Component {
 
 
 
-export default Product;
+export default withRedux(createStore)(Product);

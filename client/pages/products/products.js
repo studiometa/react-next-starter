@@ -11,13 +11,13 @@ import ProductCard   from '../../components/ProductCard';
 
 class Products extends React.Component {
   static async getInitialProps({ store }) {
-    await store.dispatch(fetchPage('products', false));
-    return { page: {} };
+    const page = await store.dispatch(fetchPage('products', false));
+    return { page } ;
   }
 
 
   render() {
-    const { products } = this.props.page;
+    const { page } = this.props;
 
     return (
       <Layout>
@@ -25,8 +25,8 @@ class Products extends React.Component {
           <h2>PAGE NAME </h2>
           <ul>
             {
-              products !== undefined &&
-              products.map((product, key) => (
+              page.products !== undefined &&
+              page.products.map((product, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={product}>
                     <ProductCard productId={product}/>
@@ -45,4 +45,4 @@ class Products extends React.Component {
 
 
 
-export default withRedux(createStore, ({ pages }) => ({ page: pages.products }))(Products);
+export default withRedux(createStore)(Products);

@@ -5,3 +5,4 @@
 - tests & CI/CD
 - page prefetch
 -better console.log
+- global error handling
