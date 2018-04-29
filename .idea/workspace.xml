@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Add error page support">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tests/app.test.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tests/fake-API.test.js" />
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Init test. It is actually not possible to ran the server during tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" afterPath="$PROJECT_DIR$/server/server.js" />
+      <change beforePath="$PROJECT_DIR$/client/pages/product.js" afterPath="$PROJECT_DIR$/client/pages/product.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -86,16 +81,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_error.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/pages/_error.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/pages/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="77">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -209,7 +194,6 @@
         <option value="$PROJECT_DIR$/webpack/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/client/styles/products.page.scss" />
         <option value="$PROJECT_DIR$/config/development.config.js" />
-        <option value="$PROJECT_DIR$/client/pages/product.js" />
         <option value="$PROJECT_DIR$/store/actions/pages.actions.js" />
         <option value="$PROJECT_DIR$/res.txt" />
         <option value="$PROJECT_DIR$/postcss.config.js" />
@@ -226,6 +210,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tests/fake-API.test.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/pages/product.js" />
       </list>
     </option>
   </component>
@@ -295,7 +280,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;productsac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/products.actions.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;productca&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/ProductCard.js&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;nex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;dev&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;confi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;pro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;res.txt&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;serv&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;Read&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;store&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;Lin&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;Todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md" />
+    <property name="SearchEverywhereHistoryKey" value="_err&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_error.js&#10;_er&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_error.js&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;productsac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/products.actions.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;productca&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/ProductCard.js&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;nex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;dev&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;confi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;pro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/products.page.scss&#10;res.txt&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;serv&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;Read&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;store&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;Lin&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;Todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -340,7 +325,7 @@
       <updated>1524423221931</updated>
       <workItem from="1524423223720" duration="764000" />
       <workItem from="1524424080070" duration="23538000" />
-      <workItem from="1524683707022" duration="47319000" />
+      <workItem from="1524683707022" duration="47709000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1524426342351</created>
@@ -538,11 +523,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525026907696</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Init test. It is actually not possible to ran the server during tests">
+      <created>1525030975153</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1525030975153</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77397000" />
+    <option name="totallyTimeSpent" value="77787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -605,7 +597,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="First commit" />
     <MESSAGE value="Handle very basic routing" />
     <MESSAGE value="Building a more complex router" />
     <MESSAGE value="Cleanup" />
@@ -630,7 +621,8 @@
     <MESSAGE value="Add prefetch page feature support to the Link component" />
     <MESSAGE value="Improve the server and add some tools like cors and compression" />
     <MESSAGE value="Add error page support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add error page support" />
+    <MESSAGE value="Init test. It is actually not possible to ran the server during tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init test. It is actually not possible to ran the server during tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -964,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/products/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1003,14 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1023,14 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/fake-API.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1048,6 +1014,32 @@
         <state relative-caret-position="510">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_error.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/fake-API.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
