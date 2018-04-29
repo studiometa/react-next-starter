@@ -1,1 +1,4 @@
-module.exports = require('./server');
+
+const runServer = require('./server');
+
+runServer();
