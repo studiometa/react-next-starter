@@ -7,6 +7,8 @@ const dev          = process.env.NODE_ENV !== 'production';
 const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
 const fakeAPIStore = require('./fakeAPI/fakeAPI.store');
+
+
 app.prepare()
   .then(() => {
     const server = express();
