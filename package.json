@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development node server/",
     "build": "next build ./client",
     "start": "NODE_ENV=production node server/",
-    "test": "NODE_ENV=test jest --listTests"
+    "test": "NODE_ENV=test jest --silent"
   },
   "keywords": [],
   "author": "",
@@ -32,7 +32,6 @@
     "postcss-sass": "^0.3.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

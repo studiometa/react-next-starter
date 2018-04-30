@@ -71,12 +71,20 @@ app.launchServer = (port) => {
   // Listen on the port defined in the config file
   server.listen(port, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:' + config.server.port);
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('> Ready on http://localhost:' + config.server.port);
+    }
   });
 
   return server;
 };
 
+
+/**
+ * Launch the app
+ * @param port
+ * @returns {Promise<any>}
+ */
 app.launch = (port = config.server.port) => (
   new Promise((resolve, reject) => {
     app.prepare()

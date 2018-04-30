@@ -1,8 +1,9 @@
-const withSass = require('@zeit/next-sass');
+const withSass      = require('@zeit/next-sass');
+const webpackConfig = require('./config/webpack.config');
 
 
 module.exports = withSass({
- cssModules: true,
+  cssModules: true,
   distDir: '../build',
   cssLoaderOptions: {
     importLoaders: 1,
@@ -10,11 +11,7 @@ module.exports = withSass({
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    config.module.rules.push({
-      test: /\.css$/,
-      use: ["style-loader", "css-loader", "postcss-loader"]
-    });
-    return config
+    return webpackConfig(config);
   },
 
   // webpackDevMiddleware: config => {
