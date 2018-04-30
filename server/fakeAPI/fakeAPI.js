@@ -1,8 +1,11 @@
 const fileStore = require('./fakeAPI.store');
-module.exports  = function (store = fileStore, {
-  minDelay = 300,
-  maxDelay = 1200,
-}                                 = {}) {
+module.exports  = function (store = fileStore, { minDelay = 300, maxDelay = 1200, } = {}) {
+
+
+  /**
+   * Get a store segment from an url string query
+   * @param string
+   */
   this.resolveDataFromPath = (string = '') => {
     const path = string.split('/');
     let res    = Object.assign({}, store);
@@ -16,8 +19,20 @@ module.exports  = function (store = fileStore, {
     return res;
   };
 
+  /**
+   * Returns a random string from a defined range
+   * @param min
+   * @param max
+   * @returns {*}
+   */
   this.getRandom = (min, max) => (Math.random() * (max - min) + min);
 
+
+  /**
+   * FIND method of the API
+   * @param url
+   * @param res
+   */
   this.get = ({ url }, res) => {
 
     url = url.replace(/\/$/, '').replace(/^\/+/g, '');
@@ -32,6 +47,17 @@ module.exports  = function (store = fileStore, {
     } else {
       res.status(404).json({ error: { message: '\'Sorry, we cannot find that!\'' } });
     }
+  };
+
+  /**
+   * FIND method of the API
+   * @param req
+   * @param res
+   */
+  this.find = (req, res) => {
+    setTimeout(() => {
+      res.json(store);
+    }, this.getRandom(minDelay, maxDelay));
   };
 };
 

@@ -3,7 +3,10 @@ module.exports = {
   // Used by ExpressJs and NextJs to serve the app
   server : {
     port: 3000,
-    clientDir: './client'
+    clientDir: './client',
+    host: 'localhost',
+    protocol: 'http',
+    enableFakeAPI: true
   },
 
   // Mainly used by the Socket class (utils/socket). This is all

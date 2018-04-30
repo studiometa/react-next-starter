@@ -1,9 +1,14 @@
-const devConfig = require('./development.config');
-const prodConfig = require('./production.config');
-const masterConfig = require('./master.config');
-
 const env = process.env.NODE_ENV;
 
-module.exports = env === 'production'
-  ? Object.assign({}, masterConfig, prodConfig)
-  : Object.assign({}, masterConfig, devConfig);
+const configs = {
+  test: require('./test.config'),
+  development: require('./development.config'),
+  production: require('./production.config'),
+  master: require('./master.config')
+};
+
+exports.production = configs.production;
+exports.developement = configs.developement;
+exports.test = configs.test;
+
+module.exports = Object.assign({}, configs.master, configs[env]);
