@@ -1,16 +1,27 @@
-const express = require('express');
-const next = require('next');
-const config = require('../config');
-const getRoutes = require('./routes');
-const FakeAPI = require('./fakeAPI');
-const fakeAPIStore = require('./fakeAPI/fakeAPI.store');
-const compression = require('compression');
-const cors = require('cors');
+const express            = require('express');
+const next               = require('next');
+const config             = require('../config');
+const getRoutes          = require('./routes');
+const FakeAPI            = require('./fakeAPI');
+const fakeAPIStore       = require('./fakeAPI/fakeAPI.store.js');
+const compression        = require('compression');
+const cors               = require('cors');
+const clearConsole       = require('react-dev-utils/clearConsole');
+const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
+const {
+        choosePort,
+        createCompiler,
+        prepareProxy,
+        prepareUrls,
+      }                  = require('react-dev-utils/WebpackDevServerUtils');
+const openBrowser        = require('react-dev-utils/openBrowser');
+const getUrl             = require('../helpers/getUrl');
 
-
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev, dir: config.server.clientDir });
-const routes = getRoutes();
+const DEFAULT_PORT = config.server.port || '3000';
+const HOST         = config.server.host || 'localhost';
+const dev          = process.env.NODE_ENV !== 'production';
+const app          = next({ dev, dir: config.server.clientDir });
+const routes       = getRoutes();
 
 /**
  * Run the server
@@ -30,9 +41,9 @@ app.launchServer = (port) => {
 
   // Enabling cors
   server.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin",
-      dev ? '*' : `${config.server.protocol}://${config.server.host}:${config.server.port}`);
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin',
+      dev ? '*' : getUrl(null, port));
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
 
@@ -72,7 +83,7 @@ app.launchServer = (port) => {
   server.listen(port, (err) => {
     if (err) throw err;
     if (process.env.NODE_ENV !== 'test') {
-      console.log('> Ready on http://localhost:' + config.server.port);
+      console.log('> Ready on ' + getUrl());
     }
   });
 
@@ -82,20 +93,41 @@ app.launchServer = (port) => {
 
 /**
  * Launch the app
+ *
+ * Also check if the requested port is free and
+ * ask the user for an other one if not.
  * @param port
  * @returns {Promise<any>}
  */
-app.launch = (port = config.server.port) => (
+app.launch = (port = DEFAULT_PORT) => (
   new Promise((resolve, reject) => {
-    app.prepare()
-      .then(() => app.launchServer(port))
-      .then(res => {
-        app.server = res;
-        resolve(app)
-      })
-      .catch((err) => {
-        reject(err)
-      });
+    const start = (port) => {
+      if (port == null) {
+        reject('No available port has been founded.');
+      }
+
+      return app.prepare()
+        .then(() => app.launchServer(port))
+        .then(res => {
+          app.server = res;
+          resolve(app);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    };
+
+    // If we are not on a development environment, we do not want
+    // to use a different port than the one defined in the configuration
+    if (process.env.NODE_ENV === 'production') {
+      start(port);
+    } else {
+      choosePort(HOST, port)
+        .then(start(port))
+        .catch((err) => {
+          reject(err);
+        });
+    }
   })
 );
 

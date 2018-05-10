@@ -29,12 +29,11 @@ module.exports  = function (store = fileStore, { minDelay = 300, maxDelay = 1200
 
 
   /**
-   * FIND method of the API
+   * GET method of the API
    * @param url
    * @param res
    */
   this.get = ({ url }, res) => {
-
     url = url.replace(/\/$/, '').replace(/^\/+/g, '');
     url = url.substring(url.indexOf('/') + 1);
 

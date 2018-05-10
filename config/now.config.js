@@ -1,14 +1,13 @@
 const url = require('url');
 
-
 module.exports = {
 
   // Used by ExpressJs and NextJs to serve the app
   server : {
     port: 3000,
     clientDir: './client',
-    host: 'localhost',
-    protocol: 'http',
+    host: '0.0.0.0',
+    protocol: 'https',
     enableFakeAPI: true,
     get url () {
       return url.format({
@@ -23,7 +22,7 @@ module.exports = {
   // the settings about the API that stores the app data
   get api() {
     return {
-      url: `${this.server.url}/fake-api`
+      url: `${process.env.NOW_URL}/fake-api`
     };
   },
 };

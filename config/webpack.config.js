@@ -1,26 +1,31 @@
-const env     = process.env.NODE_ENV;
-const webpack = require('webpack');
+const getClientEnvironment = require('./env');
+const webpack              = require('webpack');
+const config               = require('./index');
+const env                  = getClientEnvironment(config.server.url);
 
-module.exports = (config) => {
+module.exports = (nextWebpackConfig) => {
   return ({
-    devtool: config.devtool,
-    name: config.name,
+    devtool: nextWebpackConfig.devtool,
+    name: nextWebpackConfig.name,
     devServer: { quiet: true, noInfo: true, stats: 'errors-only' },
-    cache: config.cache,
-    target: config.target,
-    externals: config.externals,
-    context: config.context,
-    entry: config.entry,
-    output: config.output,
-    performance: config.performance,
-    resolve: config.resolve,
-    resolveLoader: config.resolveLoader,
+    cache: nextWebpackConfig.cache,
+    target: nextWebpackConfig.target,
+    externals: nextWebpackConfig.externals,
+    context: nextWebpackConfig.context,
+    entry: nextWebpackConfig.entry,
+    output: nextWebpackConfig.output,
+    performance: nextWebpackConfig.performance,
+    resolve: nextWebpackConfig.resolve,
+    resolveLoader: nextWebpackConfig.resolveLoader,
     module: {
-      rules: [...config.module.rules, {
+      rules: [...nextWebpackConfig.module.rules, {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       }],
     },
-    plugins: [...config.plugins],
+    plugins: [
+      ...nextWebpackConfig.plugins,
+      new webpack.DefinePlugin(env.stringified),
+    ],
   });
 };

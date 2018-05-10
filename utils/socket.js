@@ -6,7 +6,6 @@ export default class Socket {
   constructor({ config, isServer }) {
     this.config   = config;
     this.isServer = isServer;
-
     this.getPage = this.getPage.bind(this);
   }
 

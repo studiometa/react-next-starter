@@ -8,7 +8,6 @@ import { createLogger } from 'redux-logger';
 import Socket           from '../utils/socket';
 import config           from '../config';
 
-
 const isServer = !process.browser;
 const logger   = createLogger({
   collapsed: true,
