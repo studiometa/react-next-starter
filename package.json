@@ -8,7 +8,8 @@
     "build": "next build ./client",
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent",
-    "preprod": "now --public"
+    "preprod": "now --public",
+    "start:pm2": "NODE_ENV=production pm2 start ./config/ecosystem.config.js"
   },
   "engines": {
     "node": "8.9.0"
