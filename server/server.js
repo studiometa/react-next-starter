@@ -24,6 +24,14 @@ const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
 
 
+/**
+ * Listen to several routes. The routes can be
+ * formatted differently depending on if a lang
+ * is defined or not
+ * @param routes
+ * @param server
+ * @param lang
+ */
 const listenToMulti = (routes, server, lang) => {
   Object.entries(routes).forEach(([path, route]) => {
 
@@ -76,17 +84,9 @@ const launchServer = (port) => {
     server.get('/fake-api/*', fakeAPI.get);
   }
 
-  //  Map over all the defined routes
-  // and add a get handler to the server for
-  // each of them
 
-  /**
-   * TODO
-   * If 'enableRouteTranslation' is not activated, it is possible that some routes will be duplicated. For example, in
-   * english we may have a route like '/en/promotions' which would be '/fr/promotions' in french. But without the language
-   * segment, we've got two identical routes.
-   */
-
+  // Here we are adding new server listeners for the custom routes of the application. We are making this
+  // differently depending on if the route translation has been enable or not
   if (config.lang.enableRouteTranslation === true) {
     Object.entries(routes).forEach(([lang, children]) => {
       if (typeof children === 'object') {
@@ -94,19 +94,24 @@ const launchServer = (port) => {
       }
     });
   } else {
-    listenToMulti(routes.all, server)
+    listenToMulti(routes.all, server);
   }
 
 
-  // Default server entry
+  // Fallback server entry for requests that do not match
+  // any defined route
   server.get('*', (req, res) => {
     console.log('TWO', req.url);
 
     const LANG_PROVIDED_BY_CLIENT = false;
 
-    // Try to find a route that matches the request. If a route has been founded, we must make a redirection in order
-    // to add the language segment to the url. For example, /products must probably be resolved with /en/products.
-    // If the matching route has not defined language, the request will fallback to the default language.
+    // First we must check if a lang is defined in the client request. If yes and that route translation
+    // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
+    // has been found, the action will fallback to the next condition.
+    //
+    // If no language has been defined in the request, we must try to find a route that matches the request.
+    // If a route has been founded, we must make a redirection to add the language segment to the url.
+    // For example, /products must probably be resolved with /en/products.
     // This feature can be disabled from the configuration file
 
     if (LANG_PROVIDED_BY_CLIENT) {
@@ -127,8 +132,7 @@ const launchServer = (port) => {
     } else if (config.lang.enableRouteTranslation === true && routes.all[req.url] !== undefined) {
       const matchingRoute = routes.all[req.url];
 
-      // TODO, if there is not defined lang in the route, we cannot just use the default language as fallback, we must also translate the url
-      res.redirect(301, matchingRoute.lang ? `/${matchingRoute.lang}${req.url}` : `/${config.lang.default}${req.url}`);
+      res.redirect(301, `/${matchingRoute.lang}${req.url}`);
     } else {
       return app.getRequestHandler()(req, res);
     }
