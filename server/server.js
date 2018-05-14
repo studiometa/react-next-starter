@@ -23,6 +23,28 @@ const dev          = process.env.NODE_ENV !== 'production';
 const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
 
+
+const listenToMulti = (routes, server, lang) => {
+  Object.entries(routes).forEach(([path, route]) => {
+
+    // Add the language segment to the url if defined
+    const url = lang !== undefined ? `/${ lang }${ path }` : path;
+    server.get(url, (req, res) => {
+      console.log('ONE', req.url);
+      const queryParams = {};
+
+      // Add needed parameters to the response
+      if (route.queryParams && route.queryParams.length > 0) {
+        route.queryParams.forEach(param => {
+          queryParams[param] = req.params[param];
+        });
+      }
+
+      return app.render(req, res, route.page, queryParams);
+    });
+  });
+};
+
 /**
  * Run the server
  * This method can only be called after the app has been
@@ -30,7 +52,7 @@ const routes       = getRoutes();
  * @param port
  * @returns {*|Function}
  */
-app.launchServer = (port) => {
+const launchServer = (port) => {
   const server = express();
 
   if (dev === false) {
@@ -60,52 +82,50 @@ app.launchServer = (port) => {
 
   /**
    * TODO
-   * If 'enableRouteLangSegment' is not activated, it is possible that some routes will be duplicated. For example, in
+   * If 'enableRouteTranslation' is not activated, it is possible that some routes will be duplicated. For example, in
    * english we may have a route like '/en/promotions' which would be '/fr/promotions' in french. But without the language
    * segment, we've got two identical routes.
    */
-  console.log(routes);
-  Object.entries(routes).forEach(([path, route]) => {
-    // Add the language segment to the url if enabled in the config
-    server.get(config.lang.enableRouteLangSegment === true && route.lang ? `/${route.lang}${path}` : path, (req, res) => {
-      console.log('ONE', req.url);
-      const queryParams = {};
-      // Add needed parameters to the response
-      if (route.queryParams && route.queryParams.length > 0) {
-        route.queryParams.forEach(param => {
-          queryParams[param] = req.params[param];
-        });
-      }
 
-      return app.render(req, res, route.page, queryParams);
+  if (config.lang.enableRouteTranslation === true) {
+    Object.entries(routes).forEach(([lang, children]) => {
+      if (typeof children === 'object') {
+        listenToMulti(children, server, lang);
+      }
     });
-  });
+  } else {
+    listenToMulti(routes.all, server)
+  }
 
 
   // Default server entry
   server.get('*', (req, res) => {
     console.log('TWO', req.url);
-    /**
-     * TODO
-     * We must handle the case where a language has been sent by the client (ex: cookies, etc)
-     * In this case, it is probably better to resolve the url with the requested language instead of the
-     * language of the route.
-     *
-     * Example:
-     *
-     * If the route '/produits' is requested along with a language cookie that required the 'en' language,
-     * we can try to get a matching route for '/produits', then looking for the related page name and after all
-     * trying to get a route that links to this page and with a lang attribute matching the requested language.
-     * For example: ..., '/produits': { page: 'products', lang: 'fr' }, ...
-     * Can be resolved with : ..., '/products': { page: 'products', lang: 'en' }, ...
-     */
+
+    const LANG_PROVIDED_BY_CLIENT = false;
 
     // Try to find a route that matches the request. If a route has been founded, we must make a redirection in order
     // to add the language segment to the url. For example, /products must probably be resolved with /en/products.
     // If the matching route has not defined language, the request will fallback to the default language.
     // This feature can be disabled from the configuration file
-    if (config.lang.enableRouteLangSegment === true && routes[req.url] !== undefined) {
-      const matchingRoute = routes[req.url];
+
+    if (LANG_PROVIDED_BY_CLIENT) {
+      /**
+       * TODO
+       * We must handle the case where a language has been sent by the client (ex: cookies, etc)
+       * In this case, it is probably better to resolve the url with the requested language instead of the
+       * language of the route.
+       *
+       * Example:
+       *
+       * If the route '/produits' is requested along with a language cookie that required the 'en' language,
+       * we can try to get a matching route for '/produits', then looking for the related page name and after all
+       * trying to get a route that links to this page and with a lang attribute matching the requested language.
+       * For example: ..., '/produits': { page: 'products', lang: 'fr' }, ...
+       * Can be resolved with : ..., '/products': { page: 'products', lang: 'en' }, ...
+       */
+    } else if (config.lang.enableRouteTranslation === true && routes.all[req.url] !== undefined) {
+      const matchingRoute = routes.all[req.url];
 
       // TODO, if there is not defined lang in the route, we cannot just use the default language as fallback, we must also translate the url
       res.redirect(301, matchingRoute.lang ? `/${matchingRoute.lang}${req.url}` : `/${config.lang.default}${req.url}`);
@@ -144,7 +164,7 @@ app.launch = (port = DEFAULT_PORT) => (
       }
 
       return app.prepare()
-        .then(() => app.launchServer(port))
+        .then(() => launchServer(port))
         .then(res => {
           app.server = res;
           resolve(app);
