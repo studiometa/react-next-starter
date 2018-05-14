@@ -2,7 +2,10 @@
 const server = require('./server');
 
 server.launch()
-  .then(res => res)
+  .then(async res =>  {
+    await server.close();
+    return res;
+  })
   .catch(err => {
     console.error('Server error', err.stack);
     process.exit(1);

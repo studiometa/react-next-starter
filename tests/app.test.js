@@ -18,15 +18,6 @@ const getUrl = pathname => url.format({
   pathname
 });
 
-
-beforeAll(async () => {
-  return await server.launch()
-});
-
-afterAll(async () => {
-  return await server.close()
-});
-
 describe('Testing routes', () => {
 
   test('Get a 200 response for all static routes', () => {
@@ -36,7 +27,7 @@ describe('Testing routes', () => {
       }
     });
 
-    const res = promise.all(promises)
+    const res = Promise.all(promises)
 
     console.log(res);
   });

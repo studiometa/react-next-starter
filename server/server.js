@@ -101,6 +101,7 @@ app.launchServer = (port) => {
  */
 app.launch = (port = DEFAULT_PORT) => (
   new Promise((resolve, reject) => {
+
     const start = (port) => {
       if (port == null) {
         reject('No available port has been founded.');

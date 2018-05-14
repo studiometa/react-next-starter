@@ -8,12 +8,12 @@ const config = require('../config');
 const urlJoin = require('url-join');
 
 
-beforeAll(async () => {
-  return await server.launch()
+beforeAll(() => {
+  return server.launch()
 });
 
-afterAll(async () => {
-  return await server.close()
+afterAll(() => {
+  return server.close()
 });
 
 describe('Testing the fake-API middleware', () => {

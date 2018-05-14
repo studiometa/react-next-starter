@@ -13,8 +13,6 @@ exports.developement = configs.developement;
 exports.test = configs.test;
 exports.now = configs.now;
 
-console.log('PROCESS.ENV:', process.env)
-
 // Tricky way of casting the now config when running the app
 // on a Now (Zeit) deployment server
 if (process.env.NOW_URL) {

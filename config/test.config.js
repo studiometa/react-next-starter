@@ -1,17 +1,29 @@
+const url = require('url');
+
+
 module.exports = {
 
   // Used by ExpressJs and NextJs to serve the app
   server : {
-    port: 3002,
+    port: 3008,
     clientDir: './client',
     host: 'localhost',
     protocol: 'http',
-    enableFakeAPI: true
+    enableFakeAPI: true,
+    get url () {
+      return url.format({
+        hostname: this.host,
+        protocol: this.protocol,
+        port: this.port,
+      })
+    }
   },
 
   // Mainly used by the Socket class (utils/socket). This is all
   // the settings about the API that stores the app data
-  api: {
-    url: 'http://localhost:3002/fake-api'
-  }
+  get api() {
+    return {
+      url: `${this.server.url}/fake-api`
+    };
+  },
 };
