@@ -250,12 +250,12 @@ Une route peut avoir les arguments suivants:
 
 ### Traduire les routes
 
-Comme ce projet a pour vocation d'être multilingue, la traduction des routes est indispensable. Pour cela il est nativement possible
-de définir des routes différentes pour différentes langues. Ces langues doivent au préalable avoir été définies dans le fichier de configuration.
+Comme ce projet a pour vocation d'être **multilingue**, la traduction des routes est indispensable. Pour cela il est nativement possible
+de **définir des routes différentes pour différentes langues**. Ces langues doivent au préalable avoir été **définies dans le fichier de configuration**.
 À noter que cette fonctionnalité est desactivable depuis ce même fichier.
 
-Lorsque ce service est activé, le slug de la langue utilisée sera automatiquement ajouté à toutes les routes (ex: /en/products, /fr/produits, etc).
-Par défaut si la langue n'est pas précisée dans l'url lors d'une requête, le serveur essayera de la résoudre lui même. Cette option est
+Lorsque ce service est activé, le **slug de la langue** utilisée sera **automatiquement ajouté à toutes les routes** (ex: /en/products, /fr/produits, etc).
+Par défaut si la langue n'est pas précisée dans l'url lors d'une requête, le serveur essayera de la **résoudre lui même**. Cette option est
 désactivable dans la configuration. 
 
 
@@ -269,11 +269,7 @@ Prenons la route suivante:
 
 ```
 //...
-{
-    path: '/product/:id',
-    page: '/product',
-    queryParams: ['id']
-}
+'/product/:id': { page: '/product', queryParams: ['id'] }
 //...
 ```
 
@@ -283,7 +279,7 @@ Pour créer un lien vers cette page, il faut procéder ainsi:
 
 ```
 //...
-<Link to="/product" query={ product.id }>
+<Link to="/product/:id" query={ product.id }>
     { product.name }
 </Link>
 //...
