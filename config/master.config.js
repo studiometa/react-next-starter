@@ -37,6 +37,8 @@ module.exports = {
       },
     ],
 
+    /** All the following config is used by i18next **/
+
     // Defines where and how the locales files are stored
     localesPath : path.join(__dirname, '../locales'),
     localesFormat: '/{{lng}}/{{ns}}.json',
@@ -44,8 +46,20 @@ module.exports = {
     // Enabling debug for i18next
     debug: false,
 
+    // Lang namespaces
     namespaces: ['common', 'products'],
-    defaultNamespace: 'common'
+
+    // Default language namespace
+    defaultNamespace: 'common',
+
+    // Detectors used to resolve the user language
+    detectorsOrder: ['path', 'cookie'],
+
+    // The name of the cookie used to store the user language
+    lookupCookie: 'lang',
+
+    // The life of the cookie in minutes
+    cookieMinutes: 120
   }
 
 };

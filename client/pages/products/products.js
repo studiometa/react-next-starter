@@ -17,7 +17,6 @@ class Products extends React.Component {
 
   render() {
     const page =  this.props.page || {};
-
     return (
       <Layout>
         <div className="products-page">
