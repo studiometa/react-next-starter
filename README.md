@@ -191,10 +191,10 @@ la méthode `getProduct(<PRODUCT_ID>)`.
 
 Le **serveur de développement**. Il permet de **gérer les routes**, certaines **erreurs** et d'instancier **fake-API**. 
 
-### /server/routes.js
+### /server/routes
 
-Contient toutes les **routes de l'app**. Ce fichier permet au routeur de **faire correspondre une route à la vue correspondante**. Il est également utilisé côté client pour la génération des
-liens de l'app.
+Contient toutes les **routes de l'app**. Ce dossier permet au routeur de **faire correspondre une route à la vue correspondante**. Il est également utilisé côté client pour la génération des
+liens de l'app. Chaque fichier du dossier doit respecter la nommenclature suivante: `<LANG>.route.js`;
 
 ### /server/fakeAPI
 
@@ -235,22 +235,31 @@ Contient les **fichiers de configurations** de l'app, utilisés à la fois par l
 Avec NextJs, la gestion des routes se base directement sur le contenu du dossier `/client/pages`.
 Cela signifie que par défaut, la route `https://site.com/exemple` pointe vers le fichier `/client/pages.exemple.js`
 
-Il est cependant possible de **gérer les routes manuellement**. C'est ce que nous faisons dans le fichier `/server/routes/routes.js`.
+Il est cependant possible de **gérer les routes manuellement**. C'est ce que nous faisons dans le fichier `/server/routes/<LANG>.routes.js`.
 
 
-Dans ce fichier, toutes les routes sont **définies dans un tableau**. Ce tableau permettra à la fois au serveur de savoir
+Dans ce fichier, toutes les routes sont **définies dans un objet**. Cet objet permettra à la fois au serveur de savoir
 ou rediriger les requêtes, mais aussi au client de savoir comment constuire les liens des pages.
 
 Une route peut avoir les arguments suivants: 
 
-- **path {string}** : Le chemin d'accès de la route
 - **page {string}** : Le chemin d'accès vers le fichier de la page à retourner
 - **queryParams {array}** : Une liste d'arguments passés à la requête qui peuvent être renvoyés au client
 
 **Il est nécessaire d'ajouter toutes les routes disponibles dans ce fichier pour assurer le bon fonctionnement de l'application**
 
+### Traduire les routes
 
-#### Exemple avec le composant Link
+Comme ce projet a pour vocation d'être multilingue, la traduction des routes est indispensable. Pour cela il est nativement possible
+de définir des routes différentes pour différentes langues. Ces langues doivent au préalable avoir été définies dans le fichier de configuration.
+À noter que cette fonctionnalité est desactivable depuis ce même fichier.
+
+Lorsque ce service est activé, le slug de la langue utilisée sera automatiquement ajouté à toutes les routes (ex: /en/products, /fr/produits, etc).
+Par défaut si la langue n'est pas précisée dans l'url lors d'une requête, le serveur essayera de la résoudre lui même. Cette option est
+désactivable dans la configuration. 
+
+
+### Exemple avec le composant Link
 
 Ce composant est disponible dans le dossier `/client/components/Link`. Il sert principalement de **wrapper au
 composant Link de NextJs** (next/link) pour le rendre plus simple à utiliser et permettre à l'avenir une meilleure
