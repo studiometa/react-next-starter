@@ -14,16 +14,20 @@ module.exports = () => {
     try {
 
       // Get a matching route file
-      const matchingRoute = require(`./${lang.lang}.routes.js`)();
+      const matchingRoutes = require(`./${lang.lang}.routes.js`)();
 
       // Store the lang on the route
-      matchingRoute.lang = lang;
+      Object.values(matchingRoutes).forEach(e => {
+        if (typeof e === 'object') {
+          e.lang = lang.lang;
+        }
+      });
 
-      routes[lang.lang] = matchingRoute;
+      routes[lang.lang] = matchingRoutes;
 
       // Store a reduced object containing all the routes. Routes with similar keys will be overwritten
       // but this is fine while this will only be used as a fallback for url resolution
-      routes.all = Object.assign(routes.all, matchingRoute);
+      routes.all = Object.assign(routes.all, matchingRoutes);
     } catch (err) {
       console.error(`No route file found for lang ${ lang.lang }`, err.trace);
     }

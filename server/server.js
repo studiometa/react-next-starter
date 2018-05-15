@@ -53,6 +53,7 @@ const listenToMulti = (routes, server, lang) => {
   });
 };
 
+
 /**
  * Run the server
  * This method can only be called after the app has been
@@ -110,11 +111,10 @@ const launchServer = (port) => {
     // has been found, the action will fallback to the next condition.
     //
     // If no language has been defined in the request, we must try to find a route that matches the request.
-    // If a route has been founded, we must make a redirection to add the language segment to the url.
+    // If a route has been founded, we must trigger a redirection to add the language segment to the url.
     // For example, /products must probably be resolved with /en/products.
-    // This feature can be disabled from the configuration file
 
-    if (LANG_PROVIDED_BY_CLIENT) {
+    if (LANG_PROVIDED_BY_CLIENT && config.lang.enableRouteTranslation === true) {
       /**
        * TODO
        * We must handle the case where a language has been sent by the client (ex: cookies, etc)
@@ -132,7 +132,11 @@ const launchServer = (port) => {
     } else if (config.lang.enableRouteTranslation === true && routes.all[req.url] !== undefined) {
       const matchingRoute = routes.all[req.url];
 
-      res.redirect(301, `/${matchingRoute.lang}${req.url}`);
+      if (typeof matchingRoute.lang === 'string') {
+        res.redirect(301, `/${matchingRoute.lang}${req.url}`);
+      } else {
+        res.status(404).send('Sorry but we cannot resolve this url.');
+      }
     } else {
       return app.getRequestHandler()(req, res);
     }
