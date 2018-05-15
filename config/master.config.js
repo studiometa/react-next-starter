@@ -13,8 +13,17 @@ module.exports = {
     // app routes and have a lot of undesired effects on your SEO
     enableRouteTranslation: true,
 
+
+    // This feature can only be used if routes translation has been enabled. This grant the server
+    // to perform a 301 redirection when any language has been specified in the url. Note that this redirection
+    // will only append if a resolving route is found, else it will end with a 404 error.
+    enableFallbackRedirection: true,
+
     // All the languages that are available are defined here
+    //
     // !! Please keep the default language at the end of this array. At least one item is required
+    // Note that for urls, when no language is specified the app will try to make a fallback to another language
+    // or to the default language instead. Fallbacks goes from the end of this array to the beginning.
     available: [
       {
         lang: 'fr',

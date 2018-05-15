@@ -132,7 +132,8 @@ const launchServer = (port) => {
     } else if (config.lang.enableRouteTranslation === true && routes.all[req.url] !== undefined) {
       const matchingRoute = routes.all[req.url];
 
-      if (typeof matchingRoute.lang === 'string') {
+      // Check if matching route is defined and the redirection feature enabled
+      if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
         res.redirect(301, `/${matchingRoute.lang}${req.url}`);
       } else {
         res.status(404).send('Sorry but we cannot resolve this url.');
