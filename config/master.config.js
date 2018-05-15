@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   lang: {
 
@@ -33,7 +35,17 @@ module.exports = {
         lang: 'en',
         locale: 'en_EN',
       },
-    ]
+    ],
+
+    // Defines where and how the locales files are stored
+    localesPath : path.join(__dirname, '../locales'),
+    localesFormat: '/{{lng}}/{{ns}}.json',
+
+    // Enabling debug for i18next
+    debug: false,
+
+    namespaces: ['common', 'products'],
+    defaultNamespace: 'common'
   }
 
 };

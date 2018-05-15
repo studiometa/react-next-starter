@@ -5,7 +5,7 @@ import {
 import reducers         from './reducers/index';
 import thunk            from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import Socket           from '../utils/socket';
+import Socket           from '../lib/socket';
 import config           from '../config';
 
 const isServer = !process.browser;

@@ -6,8 +6,7 @@ import withRedux     from 'next-redux-wrapper';
 import createStore   from '../../../store/createStore';
 import { fetchPage } from '../../../store/actions/pages.actions';
 import ProductCard   from '../../components/ProductCard';
-
-
+import withI18next from '../../lib/withI18next';
 
 class Products extends React.Component {
   static async getInitialProps({ store }) {
@@ -22,7 +21,7 @@ class Products extends React.Component {
     return (
       <Layout>
         <div className="products-page">
-          <h2>{ page.name || 'Title' }</h2>
+          <h2>{ this.props.t('products:page_title')}</h2>
           <ul>
             {
               page.products !== undefined &&
@@ -45,4 +44,4 @@ class Products extends React.Component {
 
 
 
-export default withRedux(createStore)(Products);
+export default withI18next(['products'])(withRedux(createStore)(Products));
