@@ -56,7 +56,7 @@ module.exports = {
     detectorsOrder: ['path', 'cookie'],
 
     // The name of the cookie used to store the user language
-    lookupCookie: 'lang',
+    lookupCookie: 'i18next',
 
     // The life of the cookie in minutes
     cookieMinutes: 120

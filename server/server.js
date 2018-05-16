@@ -136,7 +136,10 @@ const launchServer = (port) => {
           //console.log('TWO', req.url);
 
           const LANG_PROVIDED_BY_CLIENT = false;
+          console.log('*'.repeat(10));
+          console.log('--------------', req.url)
           if (req.url.indexOf('/_next/') === -1) {
+
 
             console.log(req);
           }
