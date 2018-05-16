@@ -5,6 +5,7 @@ const cors               = require('cors');
 const urlJoin            = require('url-join');
 const clearConsole       = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
+const customLangDetector = require('./lib/customI18nextLangDetector');
 const {
         choosePort,
         createCompiler,
@@ -26,6 +27,10 @@ const HOST         = config.server.host || 'localhost';
 const dev          = process.env.NODE_ENV !== 'production';
 const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
+
+const lngDetector = new i18nextMiddleware.LanguageDetector();
+lngDetector.addDetector(customLangDetector.path);
+lngDetector.addDetector(customLangDetector.fallback);
 
 /**
  * Listen to several routes. The routes can be
@@ -67,7 +72,7 @@ const listenToMulti = (routes, server, lang) => {
 const launchServer = (port) => {
   return i18nInstance
     .use(Backend)
-    .use(i18nextMiddleware.LanguageDetector)
+    .use(lngDetector)
     .init({
       fallbackLng: config.lang.default,
       preload: config.lang.available.map(e => e.lang),
@@ -77,9 +82,15 @@ const launchServer = (port) => {
         loadPath: urlJoin(config.lang.localesPath, config.lang.localesFormat),
       },
       detection: {
-        order: ['cookie', 'path'],
+        order: ['customPathDetector','cookie', 'customFallback'],
         lookupCookie: config.lang.lookupCookie,
-        lookupFromPathIndex: 0,
+        lookupFromPathIndex: 1,
+        caches: ['cookie'],
+        excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)
+
+        // optional expire and domain for set cookie
+        cookieMinutes: config.lang.cookieMinutes,
+        cookieDomain: config.server.host,
       },
     }, () => {
       app.prepare().then(() => {
@@ -139,8 +150,7 @@ const launchServer = (port) => {
           //console.log('TWO', req.url);
 
           const LANG_PROVIDED_BY_CLIENT = false;
-          console.log('*'.repeat(10), req.url);
-          console.log('--------------', req.language);
+
           // First we must check if a lang is defined in the client request. If yes and that route translation
           // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
           // has been found, the action will fallback to the next condition.
@@ -152,27 +162,35 @@ const launchServer = (port) => {
           // all assets and other resource files that may be asked to the server but do never need to get resolved with a
           // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
 
-          if (!req.url.includes('/_next/') && LANG_PROVIDED_BY_CLIENT && config.lang.enableRouteTranslation === true) {
-            /**
-             * TODO
-             * We must handle the case where a language has been sent by the client (ex: cookies, etc)
-             * In this case, it is probably better to resolve the url with the requested language instead of the
-             * language of the route.
-             *
-             * Example:
-             *
-             * If the route '/produits' is requested along with a language cookie that required the 'en' language,
-             * we can try to get a matching route for '/produits', then looking for the related page name and after all
-             * trying to get a route that links to this page and with a lang attribute matching the requested language.
-             * For example: ..., '/produits': { page: 'products', lang: 'fr' }, ...
-             * Can be resolved with : ..., '/products': { page: 'products', lang: 'en' }, ...
-             */
-          } else if (!req.url.includes('/_next/')
+          // if (!req.url.includes('/_next/') && config.lang.enableRouteTranslation === true) {
+          //
+          //   const lang = config.lang.available.find(e => e.lang === req.language;
+          //
+          //   /**
+          //    * TODO
+          //    * We must handle the case where a language has been sent by the client (ex: cookies, etc)
+          //    * In this case, it is probably better to resolve the url with the requested language instead of the
+          //    * language of the route.
+          //    *
+          //    * Example:
+          //    *
+          //    * If the route '/produits' is requested along with a language cookie that required the 'en' language,
+          //    * we can try to get a matching route for '/produits', then looking for the related page name and after all
+          //    * trying to get a route that links to this page and with a lang attribute matching the requested language.
+          //    * For example: ..., '/produits': { page: 'products', lang: 'fr' }, ...
+          //    * Can be resolved with : ..., '/products': { page: 'products', lang: 'en' }, ...
+          //    */
+          /* } else */
+          if (!req.url.includes('/_next/')
             && config.lang.enableRouteTranslation === true
             && routes.all[req.url] !== undefined) {
+console.log('REQ',  req.language);
+            const language      = config.lang.available.find(e => e.lang === req.language);
+            const matchingRoute = typeof language === 'object' && typeof routes[language.lang] === 'object' && routes[language.lang][req.url] !== undefined
+              ? routes[language.lang][req.url]
+              : routes.all[req.url];
 
-            const matchingRoute = routes.all[req.url];
-
+            console.log('LANGUAGE', language, matchingRoute);
             // Check if a matching route is defined and the redirection feature enabled
             if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
               res.redirect(301, `/${matchingRoute.lang}${req.url}`);

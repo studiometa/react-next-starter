@@ -48,7 +48,7 @@ const Link = (props) => {
   // if not, only show an error log on dev env
   if (typeof matchingRoute !== 'object') {
     if (process.env.NODE_ENV !== 'production') {
-      console.error(`Link.js: No matching route has been find for '${ to }'`);
+      console.error(`Link.js: No matching route has been found for '${ to }'`);
     }
 
     // If a query is defined and the matching route has a queryParams parameter
