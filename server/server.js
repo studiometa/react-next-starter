@@ -19,8 +19,7 @@ const config             = require('../config');
 const getRoutes          = require('./routes');
 const FakeAPI            = require('./fakeAPI');
 const fakeAPIStore       = require('./fakeAPI/fakeAPI.store.js');
-
-const { i18nInstance, detectorConfig } = require('../lib/i18n');
+const { i18nInstance }   = require('../lib/i18n');
 
 const DEFAULT_PORT = config.server.port || '3000';
 const HOST         = config.server.host || 'localhost';
@@ -77,7 +76,11 @@ const launchServer = (port) => {
       backend: {
         loadPath: urlJoin(config.lang.localesPath, config.lang.localesFormat),
       },
-      detection: detectorConfig
+      detection: {
+        order: ['cookie', 'path'],
+        lookupCookie: config.lang.lookupCookie,
+        lookupFromPathIndex: 0,
+      },
     }, () => {
       app.prepare().then(() => {
         const server = express();
@@ -136,13 +139,8 @@ const launchServer = (port) => {
           //console.log('TWO', req.url);
 
           const LANG_PROVIDED_BY_CLIENT = false;
-          console.log('*'.repeat(10));
-          console.log('--------------', req.url)
-          if (req.url.indexOf('/_next/') === -1) {
-
-
-            console.log(req);
-          }
+          console.log('*'.repeat(10), req.url);
+          console.log('--------------', req.language);
           // First we must check if a lang is defined in the client request. If yes and that route translation
           // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
           // has been found, the action will fallback to the next condition.

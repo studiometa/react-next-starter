@@ -52,11 +52,8 @@ module.exports = {
     // Default language namespace
     defaultNamespace: 'common',
 
-    // Detectors used to resolve the user language
-    detectorsOrder: ['path', 'cookie'],
-
     // The name of the cookie used to store the user language
-    lookupCookie: 'i18next',
+    lookupCookie: 'lang',
 
     // The life of the cookie in minutes
     cookieMinutes: 120
