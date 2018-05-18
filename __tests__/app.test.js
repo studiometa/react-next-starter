@@ -7,7 +7,7 @@ const fetch     = require('isomorphic-fetch');
 const config    = require('../config');
 const urlJoin   = require('url-join');
 const getRoutes = require('../server/routes');
-const url = require('url');
+const url       = require('url');
 
 const routes = getRoutes();
 
@@ -15,20 +15,27 @@ const getUrl = pathname => url.format({
   hostname: config.server.host,
   protocol: config.server.protocol,
   port: config.server.port,
-  pathname
+  pathname,
+});
+
+beforeAll(async () => {
+  return await server.launch();
+});
+
+afterAll(async () => {
+  return await server.stop();
 });
 
 describe('Testing routes', () => {
 
-  test('Get a 200 response for all static routes', () => {
-    let promises = Object.keys(routes).map(route => {
+  test('Get a 200 response for all static routes', async () => {
+    let promises = Object.keys(routes.all).map(route => {
       if (!route.includes(':')) {
         return fetch(getUrl(route));
       }
     });
+    const res    = await Promise.all(promises);
 
-    const res = Promise.all(promises)
-
-    console.log(res);
-  });
+    expect(res).not.toBe(undefined);
+  }, 10000);
 });

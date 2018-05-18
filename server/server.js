@@ -69,8 +69,11 @@ const listenToMulti = (routes, server, lang) => {
  * @param port
  * @returns {*|Function}
  */
-const launchServer = (port) => {
-  return i18nInstance
+const launchServer = async (port) => {
+
+  // Init i18next first
+
+  await i18nInstance
     .use(Backend)
     .use(lngDetector)
     .init({
@@ -82,7 +85,7 @@ const launchServer = (port) => {
         loadPath: urlJoin(config.lang.localesPath, config.lang.localesFormat),
       },
       detection: {
-        order: ['customPathDetector','cookie', 'customFallback'],
+        order: ['customPathDetector', 'cookie', 'customFallback'],
         lookupCookie: config.lang.lookupCookie,
         lookupFromPathIndex: 1,
         caches: ['cookie'],
@@ -92,134 +95,121 @@ const launchServer = (port) => {
         cookieMinutes: config.lang.cookieMinutes,
         cookieDomain: config.server.host,
       },
-    }, () => {
-      app.prepare().then(() => {
-        const server = express();
-
-        if (dev === false) {
-          server.use(cors());
-          server.use(compression());
-        } else {
-        }
-
-        // Enabling cors
-
-        server.use((req, res, next) => {
-          res.header('Access-Control-Allow-Origin',
-            dev ? '*' : getUrl(null, port));
-          res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-          next();
-        });
-
-        // Initialize fake-API
-
-        if (config.server.enableFakeAPI !== false) {
-          const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 50, maxDelay: 100 });
-          server.get('/fake-api', fakeAPI.find);
-          server.get('/fake-api/*', fakeAPI.get);
-        }
-
-
-        // enable middleware for i18next
-
-        server.use(i18nextMiddleware.handle(i18nInstance));
-
-        // serve locales for client
-
-        server.use('/locales', express.static(config.lang.localesPath));
-
-
-        // Here we are adding new server listeners for the custom routes of the application. We are making this
-        // differently depending on if the route translation has been enable or not
-
-        if (config.lang.enableRouteTranslation === true) {
-          Object.entries(routes).forEach(([lang, children]) => {
-            if (typeof children === 'object') {
-              listenToMulti(children, server, lang);
-            }
-          });
-        } else {
-          listenToMulti(routes.all, server);
-        }
-
-
-        // Fallback server entry for requests that do not match
-        // any defined route
-
-        server.get('*', (req, res) => {
-          //console.log('TWO', req.url);
-
-          const LANG_PROVIDED_BY_CLIENT = false;
-
-          // First we must check if a lang is defined in the client request. If yes and that route translation
-          // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
-          // has been found, the action will fallback to the next condition.
-          //
-          // If no language has been defined in the request, we must try to find a route that matches the request.
-          // If a route has been founded, we must trigger a redirection to add the language segment to the url.
-          // For example, /products must probably be resolved with /en/products.
-          // Note that the we are always testing if the url contains '/_next/', this is an easy way to directly exclude
-          // all assets and other resource files that may be asked to the server but do never need to get resolved with a
-          // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
-
-          // if (!req.url.includes('/_next/') && config.lang.enableRouteTranslation === true) {
-          //
-          //   const lang = config.lang.available.find(e => e.lang === req.language;
-          //
-          //   /**
-          //    * TODO
-          //    * We must handle the case where a language has been sent by the client (ex: cookies, etc)
-          //    * In this case, it is probably better to resolve the url with the requested language instead of the
-          //    * language of the route.
-          //    *
-          //    * Example:
-          //    *
-          //    * If the route '/produits' is requested along with a language cookie that required the 'en' language,
-          //    * we can try to get a matching route for '/produits', then looking for the related page name and after all
-          //    * trying to get a route that links to this page and with a lang attribute matching the requested language.
-          //    * For example: ..., '/produits': { page: 'products', lang: 'fr' }, ...
-          //    * Can be resolved with : ..., '/products': { page: 'products', lang: 'en' }, ...
-          //    */
-          /* } else */
-          if (!req.url.includes('/_next/')
-            && config.lang.enableRouteTranslation === true
-            && routes.all[req.url] !== undefined) {
-console.log('REQ',  req.language);
-            const language      = config.lang.available.find(e => e.lang === req.language);
-            const matchingRoute = typeof language === 'object' && typeof routes[language.lang] === 'object' && routes[language.lang][req.url] !== undefined
-              ? routes[language.lang][req.url]
-              : routes.all[req.url];
-
-            console.log('LANGUAGE', language, matchingRoute);
-            // Check if a matching route is defined and the redirection feature enabled
-            if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
-              res.redirect(301, `/${matchingRoute.lang}${req.url}`);
-            } else {
-
-              // TODO Here we must fallback to the app 404 instead of an express 404 error
-              res.status(404).send('Sorry but we cannot resolve this url.');
-            }
-          } else {
-            return app.getRequestHandler()(req, res);
-          }
-        });
-
-
-        // Listen on the port defined in the config file
-
-        server.listen(port, (err) => {
-          if (err) throw err;
-          if (process.env.NODE_ENV !== 'test') {
-            console.log('> Ready on ' + getUrl());
-          }
-        });
-
-        return server;
-      });
     });
+
+  // Prepare the app
+
+  try {
+    await app.prepare();
+  } catch (err) {
+    console.error(err);
+  }
+
+  const server = express();
+
+  if (dev === false) {
+    server.use(cors());
+    server.use(compression());
+  } else {
+  }
+
+  // Enabling cors
+
+  server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin',
+      dev ? '*' : getUrl(null, port));
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
+
+  // Initialize fake-API
+
+  if (config.server.enableFakeAPI !== false) {
+    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 50, maxDelay: 100 });
+    server.get('/fake-api', fakeAPI.find);
+    server.get('/fake-api/*', fakeAPI.get);
+  }
+
+
+  // enable middleware for i18next
+
+  server.use(i18nextMiddleware.handle(i18nInstance));
+
+  // serve locales for client
+
+  server.use('/locales', express.static(config.lang.localesPath));
+
+
+  // Here we are adding new server listeners for the custom routes of the application. We are making this
+  // differently depending on if the route translation has been enable or not
+
+  if (config.lang.enableRouteTranslation === true) {
+    Object.entries(routes).forEach(([lang, children]) => {
+      if (typeof children === 'object') {
+        listenToMulti(children, server, lang);
+      }
+    });
+  } else {
+    listenToMulti(routes.all, server);
+  }
+
+
+  // Fallback server entry for requests that do not match
+  // any defined route
+
+  server.get('*', (req, res) => {
+
+    // First we must check if a lang is defined in the client request. If yes and that route translation
+    // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
+    // has been found, the action will fallback to the next condition.
+    //
+    // If no language has been defined in the request, we must try to find a route that matches the request.
+    // If a route has been founded, we must trigger a redirection to add the language segment to the url.
+    // For example, /products must probably be resolved with /en/products.
+    // Note that the we are always testing if the url contains '/_next/', this is an easy way to directly exclude
+    // all assets and other resource files that may be asked to the server but do never need to get resolved with a
+    // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
+
+    if (!req.url.includes('/_next/')
+      && config.lang.enableRouteTranslation === true
+      && routes.all[req.url] !== undefined) {
+
+      const language = config.lang.available.find(e => e.lang === req.language);
+
+      const matchingRoute = typeof language === 'object'
+      && typeof routes[language.lang] === 'object'
+      && routes[language.lang][req.url] !== undefined
+        ? routes[language.lang][req.url]
+        : routes.all[req.url];
+
+      // Check if a matching route is defined and the redirection feature enabled
+      if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
+        res.redirect(301, `/${matchingRoute.lang}${req.url}`);
+      } else {
+
+        // TODO Here we must fallback to the app 404 instead of an express 404 error
+        res.status(404).send('Sorry but we cannot resolve this url.');
+      }
+    } else {
+      return app.getRequestHandler()(req, res);
+    }
+  });
+
+  // Listen on the port defined in the config file
+
+  try {
+    app.server = await server.listen(port);
+
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('> Ready on ' + getUrl());
+    }
+
+  } catch (err) {
+    throw err;
+  }
+  return app;
+
 };
-
-
 /**
  * Launch the app
  *
@@ -233,19 +223,33 @@ app.launch = (port = DEFAULT_PORT) => (
 
     // If we are not on a development environment, we do not want
     // to use a different port than the one defined in the configuration
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
       launchServer(port)
+        .then(res => resolve(res))
         .catch((err) => {
           reject(err);
         });
     } else {
       choosePort(HOST, port)
         .then(launchServer)
+        .then(res => resolve(res))
         .catch((err) => {
           reject(err);
         });
     }
   })
 );
+
+
+/**
+ * Stop the server properly
+ * @returns {Promise<*|_.default>}
+ */
+app.stop = async () => {
+  await app.server.close();
+  await app.close();
+  return app;
+};
+
 
 module.exports = app;

@@ -6,8 +6,8 @@ module.exports = {
   server: {
     port: 3000,
     clientDir: './client',
-    host: '127.0.0.1',
-    protocol: 'https',
+    host: 'localhost',
+    protocol: 'http',
     enableFakeAPI: true,
     get url () {
       return url.format({

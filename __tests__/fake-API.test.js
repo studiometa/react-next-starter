@@ -7,14 +7,14 @@ const fetch  = require('isomorphic-fetch');
 const config = require('../config');
 const urlJoin = require('url-join');
 
-
-beforeAll(() => {
-  return server.launch()
+beforeAll(async () => {
+  return await server.launch();
 });
 
-afterAll(() => {
-  return server.close()
+afterAll(async () => {
+  return await server.stop();
 });
+
 
 describe('Testing the fake-API middleware', () => {
 
