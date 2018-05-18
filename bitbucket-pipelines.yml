@@ -12,3 +12,14 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - npm install
           - npm run test
+    - step:
+        trigger: manual
+        deployment: staging
+        caches:
+          - node
+        script:
+          - npm install
+          - npm install -g now
+          - now rm react-next-starter --yes
+          - npm run preprod
+
