@@ -19,6 +19,7 @@ pipelines:
         script:
           - npm install
           - npm install -g now --unsafe-perm
+          - now switch studiometa  --token $NOW_TOKEN
           - now rm react-next-starter --yes --token $NOW_TOKEN
           - now --token $NOW_TOKEN --npm --public
 
