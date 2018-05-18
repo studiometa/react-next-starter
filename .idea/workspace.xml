@@ -111,8 +111,8 @@
       <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="330">
+              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -401,7 +401,7 @@
       <workItem from="1525859867701" duration="14673000" />
       <workItem from="1526026753637" duration="3227000" />
       <workItem from="1526044754161" duration="6834000" />
-      <workItem from="1526633254521" duration="6394000" />
+      <workItem from="1526633254521" duration="6775000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1524426342351</created>
@@ -732,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526644215668</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Build a deployment script">
+      <created>1526644995981</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1526644995981</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178341000" />
+    <option name="totallyTimeSpent" value="178722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,7 +817,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add sass support" />
     <MESSAGE value="Improve config for prod" />
     <MESSAGE value="Update the way pages get their initial props" />
     <MESSAGE value="Add autoprefixer module to the postcss module" />
@@ -835,7 +841,8 @@
     <MESSAGE value="Improve url language detection fallback and resolution" />
     <MESSAGE value="Add bitbucket pipeline file" />
     <MESSAGE value="Improve server structure + add some working tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve server structure + add some working tests" />
+    <MESSAGE value="Build a deployment script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build a deployment script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1171,14 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/app.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -1195,10 +1194,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="330">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding />
         </state>
       </provider>
