@@ -13,13 +13,12 @@ pipelines:
           - npm install
           - npm run test
     - step:
-        trigger: manual
         deployment: staging
         caches:
           - node
         script:
           - npm install
-          - npm install -g now
+          - npm install -g now --unsafe-perm
           - now rm react-next-starter --yes
           - now --token $NOW_TOKEN --npm
 
