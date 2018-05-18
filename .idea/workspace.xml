@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/__tests__/app.test.js" afterPath="$PROJECT_DIR$/__tests__/app.test.js" />
-      <change beforePath="$PROJECT_DIR$/__tests__/fake-API.test.js" afterPath="$PROJECT_DIR$/__tests__/fake-API.test.js" />
+      <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" afterPath="$PROJECT_DIR$/bitbucket-pipelines.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__tests__/app.test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
@@ -99,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -219,10 +218,10 @@
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
         <option value="$PROJECT_DIR$/config/test.config.js" />
         <option value="$PROJECT_DIR$/__tests__/fake-API.test.js" />
         <option value="$PROJECT_DIR$/__tests__/app.test.js" />
+        <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
       </list>
     </option>
   </component>
@@ -392,14 +391,7 @@
       <workItem from="1525859867701" duration="14673000" />
       <workItem from="1526026753637" duration="3227000" />
       <workItem from="1526044754161" duration="6834000" />
-      <workItem from="1526633254521" duration="7509000" />
-    </task>
-    <task id="LOCAL-00003" summary="Building a more complex router">
-      <created>1524432810776</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1524432810776</updated>
+      <workItem from="1526633254521" duration="7617000" />
     </task>
     <task id="LOCAL-00004" summary="Cleanup">
       <created>1524435494649</created>
@@ -737,11 +729,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526647922759</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Update tests timeout">
+      <created>1526648152162</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1526648152162</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179456000" />
+    <option name="totallyTimeSpent" value="179564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -815,7 +814,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add autoprefixer module to the postcss module" />
     <MESSAGE value="Add prefetch page feature support to the Link component" />
     <MESSAGE value="Improve the server and add some tools like cors and compression" />
     <MESSAGE value="Add error page support" />
@@ -840,7 +838,8 @@
     <MESSAGE value="Build a deployment script" />
     <MESSAGE value="Update pipeline config" />
     <MESSAGE value="Update tests port" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update tests port" />
+    <MESSAGE value="Update tests timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update tests timeout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1169,14 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/now.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1205,6 +1196,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding />
         </state>
       </provider>

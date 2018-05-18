@@ -19,6 +19,6 @@ pipelines:
         script:
           - npm install
           - npm install -g now --unsafe-perm
-          - now rm react-next-starter --yes
-          - now --token $NOW_TOKEN --npm
+          - now rm react-next-starter --yes --token $NOW_TOKEN
+          - now --token $NOW_TOKEN --npm --public
 
