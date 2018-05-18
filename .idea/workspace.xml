@@ -102,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -391,14 +391,7 @@
       <workItem from="1525859867701" duration="14673000" />
       <workItem from="1526026753637" duration="3227000" />
       <workItem from="1526044754161" duration="6834000" />
-      <workItem from="1526633254521" duration="8071000" />
-    </task>
-    <task id="LOCAL-00005" summary="Improving the way to router works">
-      <created>1524506335012</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1524506335012</updated>
+      <workItem from="1526633254521" duration="8198000" />
     </task>
     <task id="LOCAL-00006" summary="Add a loading indicator on the page for test">
       <created>1524508612595</created>
@@ -736,11 +729,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526648317108</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Update pipelines">
+      <created>1526649024949</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1526649024949</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180018000" />
+    <option name="totallyTimeSpent" value="180145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1203,7 +1203,7 @@
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
           <folding />
         </state>
       </provider>
