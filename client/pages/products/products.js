@@ -2,25 +2,26 @@ import React from 'react';
 
 import Link          from '../../components/Link/index';
 import Layout        from '../../components/PageLayout';
-import withRedux     from 'next-redux-wrapper';
-import createStore   from '../../../store/createStore';
+import { connect }   from 'react-redux';
 import { fetchPage } from '../../../store/actions/pages.actions';
 import ProductCard   from '../../components/ProductCard';
-import withI18next from '../../lib/withI18next';
+import withI18next   from '../../lib/withI18next';
+
+
 
 class Products extends React.Component {
   static async getInitialProps({ store }) {
     const page = await store.dispatch(fetchPage('products', false));
-    return { page } ;
+    return { page };
   }
 
 
   render() {
-    const page =  this.props.page || {};
+    const page = this.props.page || {};
     return (
       <Layout>
         <div className="products-page">
-          <h2>{ this.props.t('products:page_title')}</h2>
+          <h2>{this.props.t('products:page_title')}</h2>
           <ul>
             {
               page.products !== undefined &&
@@ -43,4 +44,4 @@ class Products extends React.Component {
 
 
 
-export default withI18next(['products'])(withRedux(createStore)(Products));
+export default withI18next(['products'])(connect()(Products));

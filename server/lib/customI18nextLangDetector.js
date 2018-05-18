@@ -7,7 +7,6 @@ module.exports = {
 
     lookup(options) {
       const possibleUrlLang = options.url.slice(1, 3);
-      console.log(options.url, possibleUrlLang);
       return availableLangs.includes(possibleUrlLang)
         ? possibleUrlLang
         : undefined;

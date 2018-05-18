@@ -42,7 +42,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jest": "^22.4.3",
     "next": "^6.0.3",
-    "next-redux-wrapper": "^1.3.5",
+    "next-redux-wrapper": "^2.0.0-beta.6",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.4",
     "postcss-sass": "^0.3.0",

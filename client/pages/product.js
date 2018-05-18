@@ -1,9 +1,8 @@
 import React            from 'react';
+import { connect }      from 'react-redux';
 import { fetchProduct } from '../../store/actions/products.actions';
 import Link             from '../components/Link';
 import Layout           from '../components/PageLayout';
-import withRedux        from 'next-redux-wrapper';
-import createStore      from '../../store/createStore';
 import Error            from './_error';
 
 
@@ -54,4 +53,4 @@ class Product extends React.Component {
 
 
 
-export default withRedux(createStore)(Product);
+export default connect()(Product);
