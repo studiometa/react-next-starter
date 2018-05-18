@@ -5,7 +5,7 @@ module.exports = {
 
   // Used by ExpressJs and NextJs to serve the app
   server : {
-    port: 3008,
+    port: 8000,
     clientDir: './client',
     host: 'localhost',
     protocol: 'http',
