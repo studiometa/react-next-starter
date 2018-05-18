@@ -9,7 +9,7 @@ const urlJoin = require('url-join');
 
 beforeAll(async () => {
   return await server.launch();
-});
+}, 10000);
 
 afterAll(async () => {
   return await server.stop();
@@ -23,7 +23,7 @@ describe('Testing the fake-API middleware', () => {
       .then(res => {
         expect(res.status).toBe(200);
       })
-  });
+  }, 10000);
 
   test('Get content from the API ', () => {
     return fetch(config.api.url)
@@ -32,12 +32,12 @@ describe('Testing the fake-API middleware', () => {
         expect(typeof res).toBe('object');
       });
 
-  });
+  }, 10000);
 
   test('Get a 404 when content do not exists', () => {
     return fetch(urlJoin(config.api.url, 'content-that-do-not-exists'))
       .catch(res => {
         expect(res.status).toBe(404);
       })
-  });
+  }, 10000);
 });

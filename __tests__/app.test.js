@@ -20,7 +20,7 @@ const getUrl = pathname => url.format({
 
 beforeAll(async () => {
   return await server.launch();
-});
+}, 10000);
 
 afterAll(async () => {
   return await server.stop();
