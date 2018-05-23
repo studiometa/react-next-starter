@@ -246,9 +246,9 @@ app.launch = (port = DEFAULT_PORT) => (
  * @returns {Promise<*|_.default>}
  */
 app.stop = async () => {
-  await app.server.close();
-  await app.close();
-  return app;
+   await app.server.close();
+   await app.close();
+   return app;
 };
 
 
