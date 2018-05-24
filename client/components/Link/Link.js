@@ -1,12 +1,31 @@
-import React     from 'react';
-import NextLink  from 'next/link';
-import getRoutes from '../../../server/routes';
-import propTypes from 'prop-types';
-import urljoin   from 'url-join';
+import React       from 'react';
+import NextLink    from 'next/link';
+import getRoutes   from '../../../server/routes';
+import propTypes   from 'prop-types';
+import urljoin     from 'url-join';
+import { connect } from 'react-redux';
+import config      from '../../../config';
 
 
 const routes = getRoutes();
+const { enableRouteTranslation } = config.lang;
 
+const getMatchingRoute = (path, lang) => {
+  if (enableRouteTranslation === true && lang) {
+    if (typeof routes[lang] === 'object') {
+      const defaultMatchingRoute = routes[config.lang.default][path]
+
+      if (defaultMatchingRoute !== undefined) {
+        if (defaultMatchingRoute.lang === lang) {
+          return defaultMatchingRoute
+        } else {
+          const realMatchingRoute = routes[lang]
+        }
+      }
+    }
+    return routes.all[path];
+  }
+};
 
 /**
  * This component is a handler to make it more easy to build
@@ -31,16 +50,25 @@ const routes = getRoutes();
  * @constructor
  */
 const Link = (props) => {
-  const {
-          to,
-          children,
-          query,
-          className,
-          ...rest
-        } = props;
+  let {
+        to,
+        children,
+        query,
+        className,
+        lang,
+        dispatch,
+        ...rest
+      } = props;
+
+  // If lang is not defined (it must never be, but who knows?), fallback to default language.
+  // This is important because we must NEVER have urls without language prefix if the
+  // url translation is enabled. This may cause duplicated content pages and have bad effects
+  // on your SEO...
+
+  lang = typeof lang === 'string' ? lang : config.lang.default;
 
   // Find a matching route in the route.js config file
-  const matchingRoute = routes[to];
+  const matchingRoute = getMatchingRoute(to, lang);
   let href            = to;
   let urlAs           = to;
 
@@ -58,6 +86,11 @@ const Link = (props) => {
     urlAs = urljoin(`${ urlAs.split(':')[0] }`, `/${ query }`);
   }
 
+  if (lang && enableRouteTranslation === true) {
+    href = urljoin('/' + lang + '/', href);
+    urlAs = urljoin('/' + lang + '/', urlAs);
+  }
+
   return (
     <NextLink href={href} as={urlAs} {...rest}>
       <a className={className}>{children}</a>
@@ -72,4 +105,10 @@ Link.propTypes = {
   className: propTypes.string,
 };
 
-export default Link;
+const mapStateToProps = (state) => {
+  return {
+    lang: state.app ? state.app.lang : undefined,
+  };
+};
+
+export default connect(mapStateToProps)(Link);

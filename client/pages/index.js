@@ -1,6 +1,10 @@
 import React       from 'react';
+import { connect } from 'react-redux';
 import Link        from '../components/Link';
 import Layout      from '../components/PageLayout';
+import withI18next from '../lib/withI18next';
+
+
 
 class Home extends React.Component {
   render() {
@@ -15,4 +19,7 @@ class Home extends React.Component {
   }
 }
 
+
+
+// export default withI18next()(connect()(Home));
 export default Home;

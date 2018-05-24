@@ -33,7 +33,7 @@ lngDetector.addDetector(customLangDetector.path);
 lngDetector.addDetector(customLangDetector.fallback);
 
 /**
- * Listen to several routes. The routes can be
+ * Listen to several routes. The routes urls can be
  * formatted differently depending on if a lang
  * is defined or not
  * @param routes
@@ -64,7 +64,7 @@ const listenToMulti = (routes, server, lang) => {
 
 /**
  * Run the server
- * This method can only be called after the app has been
+ * This function can only be called after the app has been
  * prepared
  * @param port
  * @returns {*|Function}
@@ -210,6 +210,8 @@ const launchServer = async (port) => {
   return app;
 
 };
+
+
 /**
  * Launch the app
  *
