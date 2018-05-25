@@ -8,24 +8,15 @@ import config      from '../../../config';
 
 
 const routes = getRoutes();
-const { enableRouteTranslation } = config.lang;
+
 
 const getMatchingRoute = (path, lang) => {
-  if (enableRouteTranslation === true && lang) {
-    if (typeof routes[lang] === 'object') {
-      const defaultMatchingRoute = routes[config.lang.default][path]
-
-      if (defaultMatchingRoute !== undefined) {
-        if (defaultMatchingRoute.lang === lang) {
-          return defaultMatchingRoute
-        } else {
-          const realMatchingRoute = routes[lang]
-        }
-      }
-    }
-    return routes.all[path];
+  if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
+    return routes.client[path][lang];
   }
+  return undefined;
 };
+
 
 /**
  * This component is a handler to make it more easy to build
@@ -68,31 +59,28 @@ const Link = (props) => {
   lang = typeof lang === 'string' ? lang : config.lang.default;
 
   // Find a matching route in the route.js config file
-  const matchingRoute = getMatchingRoute(to, lang);
-  let href            = to;
-  let urlAs           = to;
+  const pathname = getMatchingRoute(to, lang);
+  let urlAs      = pathname;
 
   // Check if a matching route has been found
   // if not, only show an error log on dev env
-  if (typeof matchingRoute !== 'object') {
+  if (typeof pathname !== 'string') {
     if (process.env.NODE_ENV !== 'production') {
       console.error(`Link.js: No matching route has been found for '${ to }'`);
     }
 
     // If a query is defined and the matching route has a queryParams parameter
     // add the query to the final link path (href and as parameters)
-  } else if (query !== undefined && Array.isArray(matchingRoute.queryParams)) {
-    href  = urljoin(`${ href.split(':')[0] }`, `?${ matchingRoute.queryParams[0] }=${ query }`);
-    urlAs = urljoin(`${ urlAs.split(':')[0] }`, `/${ query }`);
+  } else if (typeof query === 'object') {
+    Object.entries(query).forEach(([queryName, queryValue]) => {
+      urlAs = urlAs.replace(`:${queryName}`, queryValue);
+    });
   }
 
-  if (lang && enableRouteTranslation === true) {
-    href = urljoin('/' + lang + '/', href);
-    urlAs = urljoin('/' + lang + '/', urlAs);
-  }
+  console.log(pathname, urlAs, query);
 
   return (
-    <NextLink href={href} as={urlAs} {...rest}>
+    <NextLink href={{ pathname, query }} as={urlAs} {...rest}>
       <a className={className}>{children}</a>
     </NextLink>
   );

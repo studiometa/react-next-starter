@@ -265,6 +265,8 @@ Ce composant est disponible dans le dossier `/client/components/Link`. Il sert p
 composant Link de NextJs** (next/link) pour le rendre plus simple à utiliser et permettre à l'avenir une meilleure
 maintenabilité des liens de l'application.
 
+**Important :** Toutes les routes doivent toujours êtres écrites en anglais par défaut au sein de l'app (sauf si la traduction des routes a été désactivée)
+
 Prenons la route suivante:
 
 ```
@@ -279,7 +281,7 @@ Pour créer un lien vers cette page, il faut procéder ainsi:
 
 ```
 //...
-<Link to="/product/:id" query={ product.id }>
+<Link to="/product/:id" query={ { id: product.id } }>
     { product.name }
 </Link>
 //...

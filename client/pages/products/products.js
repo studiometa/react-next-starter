@@ -32,7 +32,7 @@ class Products extends React.Component {
               page.products !== undefined &&
               page.products.map((product, key) => (
                 <li key={key}>
-                  <Link to="/product/:id" query={product}>
+                  <Link to="/product/:id" query={{ id: product }}>
                     <ProductCard productId={product}/>
                   </Link>
                 </li>
@@ -40,7 +40,7 @@ class Products extends React.Component {
             }
 
           </ul>
-          <Link to="/products/promotions">Promotions</Link>
+          <Link to="/promotions">Promotions</Link>
         </div>
       </Layout>
     );

@@ -4,7 +4,7 @@ module.exports = {
   lang: {
 
     // The default language also used as a fallback
-    default: 'en',
+    default: 'fr',
 
     // If set on true, a route will look like '/en/products' instead of '/products'
     // if the lang segment is not defined, a 301 redirection will be done in order
@@ -21,6 +21,17 @@ module.exports = {
     // will only append if a resolving route is found, else it will end with a 404 error.
     enableFallbackRedirection: true,
 
+    // When writing routes in this starter, you must always use the custom Link component. When using this component,
+    // you must specify the route on which the link must be pointing, normal. But when route translation is enabled,
+    // you must specify in which lang those routes will be written. For example, you may have a route named /products
+    // and an other one called /produits, but you will only use one of those two names in your markup and links must be
+    // automatically converted to the user language.
+    //
+    // TL;DR : This parameter is only necessary when routes translation is enabled and define in which lang you want to write
+    // routes when using the Link component to build links inside you app.
+    internalRoutesLang: 'en',
+
+
     // All the languages that are available are defined here
     //
     // !! Please keep the default language at the end of this array. At least one item is required
@@ -28,12 +39,12 @@ module.exports = {
     // or to the default language instead. Fallbacks goes from the end of this array to the beginning.
     available: [
       {
-        lang: 'fr',
-        locale: 'fr_FR',
-      },
-      {
         lang: 'en',
         locale: 'en_EN',
+      },
+      {
+        lang: 'fr',
+        locale: 'fr_FR',
       },
     ],
 
