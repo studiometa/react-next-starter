@@ -47,7 +47,6 @@ const listenToMulti = (routes, server, lang) => {
     const url = lang !== undefined ? `/${ lang }${ path }` : path;
     console.log('-->', url);
     server.get(url, (req, res) => {
-      //console.log('ONE', req.url);
       const queryParams = {};
 
       // Add needed parameters to the response

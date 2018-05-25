@@ -9,12 +9,22 @@ import config      from '../../../config';
 
 const routes = getRoutes();
 
-
 const getMatchingRoute = (path, lang) => {
-  if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
-    return routes.client[path][lang];
+  if (config.lang.enableRouteTranslation === true) {
+    if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
+      return {
+        pathname: routes.client[path][lang],
+        page: routes.client[path].page,
+      };
+    }
+  } else if (typeof routes.all[path] === 'object'){
+    return {
+      pathname: path,
+      page: routes.all[path].page
+    }
   }
-  return undefined;
+  return {};
+
 };
 
 
@@ -59,8 +69,7 @@ const Link = (props) => {
   lang = typeof lang === 'string' ? lang : config.lang.default;
 
   // Find a matching route in the route.js config file
-  const pathname = getMatchingRoute(to, lang);
-  let urlAs      = pathname;
+  let { pathname, page } = getMatchingRoute(to, lang);
 
   // Check if a matching route has been found
   // if not, only show an error log on dev env
@@ -73,14 +82,13 @@ const Link = (props) => {
     // add the query to the final link path (href and as parameters)
   } else if (typeof query === 'object') {
     Object.entries(query).forEach(([queryName, queryValue]) => {
-      urlAs = urlAs.replace(`:${queryName}`, queryValue);
+      pathname = pathname.replace(`:${queryName}`, queryValue);
     });
   }
 
-  console.log(pathname, urlAs, query);
 
   return (
-    <NextLink href={{ pathname, query }} as={urlAs} {...rest}>
+    <NextLink href={{ pathname: page, query }} as={pathname} {...rest}>
       <a className={className}>{children}</a>
     </NextLink>
   );
