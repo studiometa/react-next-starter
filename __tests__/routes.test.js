@@ -67,17 +67,19 @@ describe('Testing routes', () => {
   });
 
   test('Get a 200 response for all static routes', async () => {
-    let promises = Object.keys(ROUTES.all).map(route => {
+    let res = [];
+
+    await Object.keys(ROUTES.all).forEach(async route => {
       if (!route.includes(':')) {
-        return fetch(getUrl(route));
+        res.push(await fetch(getUrl(route)));
       }
     });
-    for (const promise of promises) {
-      let res = await promise;
-      expect(res.status).toBe(200);
-    }
-    // const res = await Promise.all(promises);
-    //
-    // expect(res).not.toBe(undefined);
-  }, 90000);
+
+     expect(Array.isArray(res)).toBe(true);
+
+    res.forEach(e => {
+      expect(e.status).toBe(200);
+    })
+
+  }, 60000);
 });
