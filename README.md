@@ -50,7 +50,6 @@ Si tout s'est bien passé vous devriez voir un message comme celui-ci:
 ```
 
 Il est possible de **configurer le port** utilisé dans le fichier `config/<env>.config.js` 
-(pensez à le modifier également dans la partie `api.url`).
 
 ### 2) Un monstre se réveille...
 

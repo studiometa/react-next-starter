@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development node server/",
     "build": "next build ./client",
     "start": "NODE_ENV=production node server/",
-    "test": "NODE_ENV=test jest --silent --runInBand ./__tests__",
+    "test": "NODE_ENV=test jest --silent ./__tests__",
     "preprod": "now --public",
     "start:pm2": "NODE_ENV=production pm2 start ./config/ecosystem.config.js",
     "stop:pm2": "pm2 kill"

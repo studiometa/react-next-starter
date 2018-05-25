@@ -1,7 +1,7 @@
 const getClientEnvironment = require('../lib/env');
 const webpack              = require('webpack');
 const config               = require('./index');
-const env                  = getClientEnvironment(config.server.url);
+const env                  = getClientEnvironment(config.server.getUrl());
 
 module.exports = (nextWebpackConfig) => {
   return ({

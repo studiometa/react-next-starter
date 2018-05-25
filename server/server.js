@@ -45,7 +45,6 @@ const listenToMulti = (routes, server, lang) => {
 
     // Add the language segment to the url if defined
     const url = lang !== undefined ? `/${ lang }${ path }` : path;
-    console.log('-->', url);
     server.get(url, (req, res) => {
       const queryParams = {};
 
@@ -220,10 +219,10 @@ const launchServer = async (port) => {
  */
 app.launch = (port = DEFAULT_PORT) => (
   new Promise((resolve, reject) => {
-
     // If we are not on a development environment, we do not want
     // to use a different port than the one defined in the configuration
     if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
+      process.env.PORT = port;
       launchServer(port)
         .then(res => resolve(res))
         .catch((err) => {
@@ -231,7 +230,10 @@ app.launch = (port = DEFAULT_PORT) => (
         });
     } else {
       choosePort(HOST, port)
-        .then(launchServer)
+        .then(port => {
+          process.env.PORT = port;
+          launchServer(port);
+        })
         .then(res => resolve(res))
         .catch((err) => {
           reject(err);

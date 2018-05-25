@@ -15,7 +15,7 @@ module.exports = (pathname = '', port = DEFAULT_PORT) => {
   return url.format({
     hostname: HOST,
     protocol: PROTOCOL,
-    port: port,
+    port: process.env.PORT || port,
     pathname,
   });
 };
