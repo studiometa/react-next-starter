@@ -248,16 +248,33 @@ Une route peut avoir les arguments suivants:
 
 **Il est nécessaire d'ajouter toutes les routes disponibles dans ce fichier pour assurer le bon fonctionnement de l'application**
 
+À noter que lorsque l'app est instancié, un attribut 'lang' contenant la langue de la route sera ajouté à toutes les routes.
+
 ### Traduire les routes
 
-Comme ce projet a pour vocation d'être **multilingue**, la traduction des routes est indispensable. Pour cela il est nativement possible
+Comme ce projet a pour vocation d'être **multilingue**, la traduction des routes est indispensable. Pour cela il est possible
 de **définir des routes différentes pour différentes langues**. Ces langues doivent au préalable avoir été **définies dans le fichier de configuration**.
 À noter que cette fonctionnalité est desactivable depuis ce même fichier.
 
 Lorsque ce service est activé, le **slug de la langue** utilisée sera **automatiquement ajouté à toutes les routes** (ex: /en/products, /fr/produits, etc).
 Par défaut si la langue n'est pas précisée dans l'url lors d'une requête, le serveur essayera de la **résoudre lui même**. Cette option est
-désactivable dans la configuration. 
+désactivable dans la configuration.
 
+#### Ajouter une langue (ex: 'de')
+
+1) Ajoutez la langue dans le `fichier master.config.js` (les langues doivent toujours être triées de la moins importante à la plus importante: la langue par défaut sera donc la dernière) 
+2) Créer un fichier de config pour les routes de la langue: `/server/routes/de.routes.js`
+3) Traduire toutes les routes au sein de ce fichier (se calquer sur ce qui est en place actuellement)
+4) C'est tout! Pensez également à ajouter vos traductions dans le dossier `/locales`
+
+
+#### Créer un lien dans l'app
+
+Pour créer un lien, il est nécessaire d'utiliser le composant Link défini plus bas. Lorsque vous créez un lien, tout ce que vous avez
+à faire est de lui passer la route correspondante. La langue utilisée pour définir les liens peut être modifiée dans les fichiers de config.
+
+Attention, ne mettez jamais le segment de la langue dans les pathname de Link, c'est à lui de générer le lien qui correspond à la route
+que vous lui définissez. 
 
 ### Exemple avec le composant Link
 
@@ -265,7 +282,6 @@ Ce composant est disponible dans le dossier `/client/components/Link`. Il sert p
 composant Link de NextJs** (next/link) pour le rendre plus simple à utiliser et permettre à l'avenir une meilleure
 maintenabilité des liens de l'application.
 
-**Important :** Toutes les routes doivent toujours êtres écrites en anglais par défaut au sein de l'app (sauf si la traduction des routes a été désactivée)
 
 Prenons la route suivante:
 
@@ -289,3 +305,7 @@ Pour créer un lien vers cette page, il faut procéder ainsi:
 ```
 
 Ce lien redirigera l'utilisateur vers la page `/product/<PRODUCT_ID>`. 
+
+Tout ce qui sera passé dans la prop `query` sera automatiquement ajouté à la query de l'url (ne sera pas visible directement dans l'url mais uniquement dans la requête)
+Il est donc tout à fait possible d'ajouter des paramètres à l'url. Lorsque l'url est générée, tous les segments de type `:<param>` seront remplacés par la query
+correspondante. **Il est donc indispensable de s'assurer que celle-ci soit toujours définie!!**
