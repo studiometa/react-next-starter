@@ -31,6 +31,8 @@ export default withRedux(createStore)(class _App extends App {
       props.lang = ctx.req.language;
     }
 
+    props.query = ctx.query || ctx.req.params;
+
     return props;
   }
 
@@ -45,6 +47,7 @@ export default withRedux(createStore)(class _App extends App {
     } else {
       this.props.store.dispatch(updateAppLanguage(config.lang.default));
     }
+
   }
 
 
@@ -69,6 +72,7 @@ export default withRedux(createStore)(class _App extends App {
             <LangSwitch
               asPath={ this.props.router.asPath }
               push={ Router.push }
+              query={ this.props.query }
             />
             {
               this.state.isLoading === true &&
