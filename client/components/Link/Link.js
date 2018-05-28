@@ -1,31 +1,11 @@
 import React       from 'react';
 import NextLink    from 'next/link';
-import getRoutes   from '../../../server/routes';
 import propTypes   from 'prop-types';
-import urljoin     from 'url-join';
 import { connect } from 'react-redux';
 import config      from '../../../config';
 
-
-const routes = getRoutes();
-
-const getMatchingRoute = (path, lang) => {
-  if (config.lang.enableRouteTranslation === true) {
-    if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
-      return {
-        pathname: routes.client[path][lang],
-        page: routes.client[path].page,
-      };
-    }
-  } else if (typeof routes.all[path] === 'object'){
-    return {
-      pathname: path,
-      page: routes.all[path].page
-    }
-  }
-  return {};
-
-};
+import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
+import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
 
 
 /**
@@ -69,7 +49,7 @@ const Link = (props) => {
   lang = typeof lang === 'string' ? lang : config.lang.default;
 
   // Find a matching route in the route.js config file
-  let { pathname, page } = getMatchingRoute(to, lang);
+  let { pathname, page } = getMatchingLangRoute(to, lang);
 
   // Check if a matching route has been found
   // if not, only show an error log on dev env
@@ -85,6 +65,10 @@ const Link = (props) => {
       pathname = pathname.replace(`:${queryName}`, queryValue);
     });
   }
+
+  to       = removeUrlLastSlash(to);
+  page     = removeUrlLastSlash(page);
+  pathname = removeUrlLastSlash(pathname);
 
 
   return (

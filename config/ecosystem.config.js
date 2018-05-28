@@ -1,3 +1,6 @@
+/**
+ * This config file is used by pm2
+ */
 module.exports = {
   apps: [{
     name: 'react-next-starter',

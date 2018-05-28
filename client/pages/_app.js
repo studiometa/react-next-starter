@@ -1,16 +1,17 @@
-import App, { Container }    from 'next/app';
-import React                 from 'react';
-import Router                from 'next/router';
-import { Provider }          from 'react-redux';
-import withRedux             from 'next-redux-wrapper';
-import createStore           from '../../store/createStore';
-import { updateAppLanguage } from '../../store/actions/app.actions';
-import config                from '../../config';
+import App, { Container }        from 'next/app';
+import React                     from 'react';
+import Router                    from 'next/router';
+import { Provider }              from 'react-redux';
+import withRedux                 from 'next-redux-wrapper';
+import createStore               from '../../store/createStore';
+import { updateAppLanguage }     from '../../store/actions/app.actions';
+import config                    from '../../config';
+import LangSwitch                from '../components/LangSwitch';
 
 import '../styles/app.scss';
 
 
-export default withRedux(createStore)(class MyApp extends App {
+export default withRedux(createStore)(class _App extends App {
   constructor() {
     super();
     this.state = { isLoading: false };
@@ -24,9 +25,9 @@ export default withRedux(createStore)(class MyApp extends App {
       }
     };
 
-    // If a language is define, store it as a prop so that we can use it
-    // in componentWillMount to save a current language in the redux store
     if (ctx.isServer === true) {
+      // If a language is defined, store it as a prop so that we can use it
+      // in componentWillMount to save a current language in the redux store
       props.lang = ctx.req.language;
     }
 
@@ -36,7 +37,7 @@ export default withRedux(createStore)(class MyApp extends App {
 
   componentWillMount() {
 
-    // Save the current language to the storex
+    // Save the current language to the store
     if (this.props.lang !== undefined) {
       this.props.store.dispatch(updateAppLanguage(this.props.lang));
     } else if (this.props.pageProps.initialLanguage !== undefined) {
@@ -59,18 +60,24 @@ export default withRedux(createStore)(class MyApp extends App {
 
   render() {
     const { Component, pageProps, store } = this.props;
+
     return (
       <Container>
-        <div className="app">
-          <h1>APP</h1>
-          {
-            this.state.isLoading === true &&
-            <span style={{ position: 'absolute', top: 0 }}>Loading...</span>
-          }
-          <Provider store={store}>
+        <Provider store={store}>
+          <div className="app">
+            <h1>APP</h1>
+            <LangSwitch
+              asPath={ this.props.router.asPath }
+              push={ Router.push }
+            />
+            {
+              this.state.isLoading === true &&
+              <span style={{ position: 'absolute', top: 0 }}>Loading...</span>
+            }
+
             <Component {...pageProps}  />
-          </Provider>
-        </div>
+          </div>
+        </Provider>
       </Container>
     );
   }

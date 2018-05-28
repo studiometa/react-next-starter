@@ -10,14 +10,10 @@ import withI18next   from '../../lib/withI18next';
 
 
 class Products extends React.Component {
-  static async getInitialProps(props)  {
+  static async getInitialProps(props) {
     const store = props.store;
-    const page = await store.dispatch(fetchPage('products', false));
+    const page  = await store.dispatch(fetchPage('products', false));
     return { page };
-  }
-
-  componentWillMount() {
-  //  console.log('WILL MOUNT', this.props.i18n.language);
   }
 
 
@@ -26,7 +22,7 @@ class Products extends React.Component {
     return (
       <Layout>
         <div className="products-page">
-          <h2>{this.props.t('products:page_title')}</h2>
+          <h2>{this.props.t('products:nb_products', { count: page.products ? page.products.length : 0 })}</h2>
           <ul>
             {
               page.products !== undefined &&
@@ -46,6 +42,7 @@ class Products extends React.Component {
     );
   }
 }
+
 
 
 export default withI18next(['products'])(connect()(Products));

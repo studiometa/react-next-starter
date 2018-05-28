@@ -1,3 +1,6 @@
+/**
+ * This is an env config for Now deployments
+ */
 const url = require('url');
 
 module.exports = {
@@ -9,13 +12,15 @@ module.exports = {
     host: '0.0.0.0',
     protocol: 'https',
     enableFakeAPI: true,
-    get url () {
-      return url.format({
-        hostname: this.host,
-        protocol: this.protocol,
-        port: this.port,
-      })
-    }
+    get getUrl() {
+      return () => (
+        url.format({
+          hostname: this.host,
+          protocol: this.protocol,
+          port: process.env.PORT || this.port,
+        })
+      );
+    },
   },
 
   // Mainly used by the Socket class (utils/socket). This is all

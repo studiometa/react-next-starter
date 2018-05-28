@@ -9,8 +9,10 @@ function updateAppLanguage(state, action) {
 
 export default (state = {}, action) => {
   switch(action.type) {
+
     case actionTypes.UPDATE_APP_LANGUAGE:
       return updateAppLanguage(state, action);
+
     default:
       return state;
   }

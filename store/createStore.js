@@ -7,6 +7,10 @@ import thunk            from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import Socket           from '../lib/socket';
 import config           from '../config';
+import getRoutes        from '../server/routes';
+
+
+const routes = getRoutes();
 
 const isServer = !process.browser;
 const logger   = createLogger({
@@ -20,7 +24,20 @@ const logger   = createLogger({
 
 const socket = new Socket({ isServer, config: config.api });
 
-export default (initialState) => {
+// This is used by the server has a default state structure. This is very helpful while
+// it allow us to be sure that some default attributes while always be defined. It is also a
+// go place to inject other data, settings, etc
+
+const DEFAULT_STATE = {
+  app: {
+    lang: config.lang.default,
+    routes: Object.assign({}, routes, { current: {} }),
+  },
+  products: {},
+  pages: {},
+};
+
+export default (initialState = DEFAULT_STATE) => {
 
   // We do not want middlewares like redux-logger to get
   // fired on the server side
