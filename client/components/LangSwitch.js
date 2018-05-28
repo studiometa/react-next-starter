@@ -1,7 +1,6 @@
 import React       from 'react';
 import config      from '../../config';
 import { connect } from 'react-redux';
-import Link        from './Link';
 
 export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
@@ -27,7 +26,7 @@ export default connect(state => ({
     }
   });
 
-  return links.length > 0 ? (
+  return links.length > 0 && config.lang.enableRouteTranslation === true ? (
     <div className="lang-switch">
       {
         links.map((link) => (

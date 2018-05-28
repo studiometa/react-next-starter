@@ -66,7 +66,6 @@ const Link = (props) => {
     });
   }
 
-  to       = removeUrlLastSlash(to);
   page     = removeUrlLastSlash(page);
   pathname = removeUrlLastSlash(pathname);
 

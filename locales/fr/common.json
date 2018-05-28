@@ -1,4 +1,6 @@
 {
+  "home": "Page d'accueil",
+  "products": "Produits",
   "test": "Ceci est un test",
   "back_to_home": "Retourner à l'accueil"
 }

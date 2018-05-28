@@ -11,8 +11,8 @@ class Home extends React.Component {
     return (
       <Layout>
         <div>
-          <h2>Home</h2>
-          <Link to={`/products`}>Products</Link>
+          <h2>{this.props.t('home')}</h2>
+          <Link to={`/products`}>{this.props.t('products')}</Link>
         </div>
       </Layout>
     );
@@ -21,5 +21,4 @@ class Home extends React.Component {
 
 
 
-// export default withI18next()(connect()(Home));
-export default Home;
+export default withI18next()(Home);
