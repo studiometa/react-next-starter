@@ -5,6 +5,7 @@ const webpackConfig = require('./config/webpack.config');
 module.exports = withSass({
   cssModules: true,
   distDir: '../build',
+  useFileSystemPublicRoutes: false,
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: "[local]",

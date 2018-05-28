@@ -28,7 +28,7 @@ module.exports = {
   get api() {
     return {
       getUrl: () => {
-        return `${this.server.getUrl()}/fake-api`;
+        return `/fake-api`;
       },
     };
   },
