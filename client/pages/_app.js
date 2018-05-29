@@ -10,7 +10,6 @@ import LangSwitch            from '../components/LangSwitch';
 import Link                  from '../components/Link';
 import '../styles/app.scss';
 
-
 export default withRedux(createStore)(class _App extends App {
   constructor() {
     super();
