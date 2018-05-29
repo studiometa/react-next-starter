@@ -5,21 +5,11 @@
 const server    = require('../server/server');
 const fetch     = require('isomorphic-fetch');
 const config    = require('../config');
-const urlJoin   = require('url-join');
 const getRoutes = require('../server/routes');
-const url       = require('url');
-
 
 const TEST_PORT_INDEX = 2;
 const PORT            = config.server.port + TEST_PORT_INDEX;
 const ROUTES          = getRoutes();
-
-const getUrl = pathname => url.format({
-  hostname: config.server.host,
-  protocol: config.server.protocol,
-  port: config.server.port,
-  pathname,
-});
 
 beforeAll(async () => {
   return await server.launch(PORT);
@@ -53,6 +43,17 @@ describe('Testing routes', () => {
     }
   });
 
+  test('Check that all the routes are well defined', async () => {
+    if (config.lang.enableRouteTranslation === true) {
+      Object.values(ROUTES[config.lang.default]).forEach(route => {
+        config.lang.available.forEach(({ lang }) => {
+          expect(ROUTES[lang]).not.toBe(undefined);
+          expect(Object.values(ROUTES[lang]).filter(e => e.page === route.page).length).toBe(1);
+        });
+      });
+    }
+  });
+
   test('Check that there is no duplicated pages', async () => {
     for (const [path, routesAttribute] of Object.entries(ROUTES)) {
       if ((config.lang.enableRouteTranslation === false && path === config.lang.default)
@@ -67,19 +68,21 @@ describe('Testing routes', () => {
   });
 
   test('Get a 200 response for all static routes', async () => {
-    let res = [];
+    let promises = [];
 
-    await Object.keys(ROUTES.all).forEach(async route => {
-      if (!route.includes(':')) {
-        res.push(await fetch(config.server.getUrl(route)));
+    Object.keys(ROUTES.all).forEach(route => {
+      if (route && !route.includes(':')) {
+        promises.push(fetch(config.server.getUrl(route)));
       }
     });
 
-     expect(Array.isArray(res)).toBe(true);
+    const res = await Promise.all(promises);
+
+    expect(Array.isArray(res)).toBe(true);
 
     res.forEach(e => {
       expect(e.status).toBe(200);
-    })
+    });
 
   }, 60000);
 });

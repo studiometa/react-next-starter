@@ -5,17 +5,10 @@
 const server = require('../server/server');
 const fetch  = require('isomorphic-fetch');
 const config = require('../config');
-const url    = require('url');
 
 const TEST_PORT_INDEX = 0;
 const PORT            = config.server.port + TEST_PORT_INDEX;
 
-const getUrl = pathname => url.format({
-  hostname: config.server.host,
-  protocol: config.server.protocol,
-  port: PORT,
-  pathname,
-});
 
 beforeAll(async () => {
   return await server.launch(PORT);

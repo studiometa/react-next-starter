@@ -3,13 +3,13 @@
  */
 
 
-const server = require('../server/server');
-const fetch  = require('isomorphic-fetch');
-const config = require('../config');
+const server  = require('../server/server');
+const fetch   = require('isomorphic-fetch');
+const config  = require('../config');
 const urlJoin = require('url-join');
 
 const TEST_PORT_INDEX = 1;
-const PORT = config.server.port + TEST_PORT_INDEX;
+const PORT            = config.server.port + TEST_PORT_INDEX;
 
 
 beforeAll(async () => {
@@ -27,7 +27,7 @@ describe('Testing the fake-API middleware', () => {
     return fetch(config.api.getUrl())
       .then(res => {
         expect(res.status).toBe(200);
-      })
+      });
   }, 10000);
 
   test('Get content from the API ', () => {
@@ -43,6 +43,6 @@ describe('Testing the fake-API middleware', () => {
     return fetch(urlJoin(config.api.getUrl(), 'content-that-do-not-exists'))
       .catch(res => {
         expect(res.status).toBe(404);
-      })
+      });
   }, 10000);
 });
