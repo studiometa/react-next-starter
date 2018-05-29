@@ -21,4 +21,5 @@ pipelines:
           - npm install -g now --unsafe-perm
           - now rm react-next-starter --yes --token $NOW_TOKEN
           - now --token $NOW_TOKEN --npm --public
+          - now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com
 

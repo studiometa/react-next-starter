@@ -15,6 +15,7 @@ exports.now = configs.now;
 
 // Tricky way of casting the now config when running the app
 // on a Now (Zeit) deployment server
+// Note that process.env.NODE_ENV will still be 'production'
 if (process.env.NOW_URL) {
   env = 'now';
 }
