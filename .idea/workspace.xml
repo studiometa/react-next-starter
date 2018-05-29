@@ -4,6 +4,9 @@
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" afterPath="$PROJECT_DIR$/bitbucket-pipelines.yml" />
+      <change beforePath="$PROJECT_DIR$/config/now.config.js" afterPath="$PROJECT_DIR$/config/now.config.js" />
+      <change beforePath="$PROJECT_DIR$/helpers/getUrl.js" afterPath="$PROJECT_DIR$/helpers/getUrl.js" />
+      <change beforePath="$PROJECT_DIR$/lib/env.js" afterPath="$PROJECT_DIR$/lib/env.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,6 +45,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="env.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/env.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getUrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helpers/getUrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,8 +78,8 @@
       <file leaf-file-name="now.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/now.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="133">
+              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -65,8 +88,8 @@
       <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="375">
+              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -104,28 +127,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Link.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/Link/Link.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="next.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/next.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>server</find>
       <find>console.</find>
       <find>next-redux-wrapp</find>
       <find>getState</find>
@@ -159,7 +159,6 @@
       <find>config</find>
       <find>ROUTES</find>
       <find>.url</find>
-      <find>getUrl</find>
       <find>getCurrentLang</find>
       <find>window</find>
       <find>pathname</find>
@@ -170,6 +169,8 @@
       <find>console.log</find>
       <find>console</find>
       <find>process.env.NODE_ENV</find>
+      <find>NOW_URL</find>
+      <find>getUrl</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -208,9 +209,7 @@
         <option value="$PROJECT_DIR$/config/master.config.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/server/routes/en.routes.js" />
-        <option value="$PROJECT_DIR$/lib/env.js" />
         <option value="$PROJECT_DIR$/__tests__/app.test.js" />
-        <option value="$PROJECT_DIR$/helpers/getUrl.js" />
         <option value="$PROJECT_DIR$/config/test.config.js" />
         <option value="$PROJECT_DIR$/config/development.config.js" />
         <option value="$PROJECT_DIR$/config/production.config.js" />
@@ -239,7 +238,9 @@
         <option value="$PROJECT_DIR$/client/components/LangSwitch.js" />
         <option value="$PROJECT_DIR$/lib/socket.js" />
         <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/lib/env.js" />
         <option value="$PROJECT_DIR$/config/now.config.js" />
+        <option value="$PROJECT_DIR$/helpers/getUrl.js" />
         <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
       </list>
     </option>
@@ -320,7 +321,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="pip&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;now&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;NOWCON&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;PRODCON&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;devconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_app&#9;null&#9;null&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;nextcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;deve&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;nowcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;pipe&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;routes/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;pages/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;lan&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;remove&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/removeUrlLastSlash.js&#10;replace&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/node_modules/eslint/conf/replacements.json&#10;crea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;routes/i&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;create&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;appred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/app.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;producon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;getcurrentl&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/getCurrentLanguage.js&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;mast&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;scss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;test&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;testconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;prodcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;prodconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;cr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;devcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;config&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;enr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;Readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;promoti&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/promotions.js&#10;enroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;rea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes" />
+    <property name="SearchEverywhereHistoryKey" value="pip&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;now&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;NOWCON&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;PRODCON&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;devconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_app&#9;null&#9;null&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;nextcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;deve&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;nowcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;pipe&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;routes/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;pages/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;lan&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;apps&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;remove&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/removeUrlLastSlash.js&#10;replace&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/node_modules/eslint/conf/replacements.json&#10;crea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;routes/i&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;create&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;appred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/app.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;producon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;getcurrentl&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/getCurrentLanguage.js&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;mast&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;scss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;test&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;testconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;prodcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;prodconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;cr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;devcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;config&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;enr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;Readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;product&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;promoti&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/promotions.js&#10;enroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;rea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -390,14 +391,7 @@
       <workItem from="1526044754161" duration="6834000" />
       <workItem from="1526633254521" duration="14643000" />
       <workItem from="1527084255385" duration="28803000" />
-      <workItem from="1527493694350" duration="29143000" />
-    </task>
-    <task id="LOCAL-00024" summary="Update the way pages get their initial props">
-      <created>1525012148888</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1525012148888</updated>
+      <workItem from="1527493694350" duration="29741000" />
     </task>
     <task id="LOCAL-00025" summary="Add autoprefixer module to the postcss module">
       <created>1525016929039</created>
@@ -735,11 +729,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527582423319</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Fix pipeline yml config file structure">
+      <created>1527582644269</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1527582644269</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244536000" />
+    <option name="totallyTimeSpent" value="245134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -813,7 +814,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Resolve cookies bug" />
     <MESSAGE value="Improve url language detection fallback and resolution" />
     <MESSAGE value="Add bitbucket pipeline file" />
     <MESSAGE value="Improve server structure + add some working tests" />
@@ -838,7 +838,8 @@
     <MESSAGE value="Lang switcher is now making redirection to the same page :)" />
     <MESSAGE value="Fix now config file and add pipeline alias creation instruction" />
     <MESSAGE value="Restrict pipeline deployment instructions to git develop branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restrict pipeline deployment instructions to git develop branch" />
+    <MESSAGE value="Fix pipeline yml config file structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix pipeline yml config file structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -894,14 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="397" column="28" lean-forward="true" selection-start-line="397" selection-start-column="28" selection-end-line="397" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/getUrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,14 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="12" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1251,18 +1236,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/now.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="133">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/getUrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="375">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding />
         </state>
       </provider>

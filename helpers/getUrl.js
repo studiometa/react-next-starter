@@ -7,15 +7,24 @@ const PROTOCOL     = config.server.protocol || 'http';
 
 module.exports = (pathname = '', port = DEFAULT_PORT) => {
 
-  // Handle Now environment
-  if (process.env.NOW_URL) {
-    return `${process.env.NOW_URL}:${port}`;
+  if (process.env.BASE_URL) {
+    return url.format({
+      hostname: process.env.BASE_URL,
+      protocol: PROTOCOL,
+      pathname,
+    });
+  } else if (process.env.NOW_URL) {
+    return url.format({
+      hostname: process.env.NOW_URL,
+      protocol: PROTOCOL,
+      pathname,
+    });
+  } else {
+    return url.format({
+      hostname: HOST,
+      protocol: PROTOCOL,
+      port: process.env.PORT || port,
+      pathname,
+    });
   }
-
-  return url.format({
-    hostname: HOST,
-    protocol: PROTOCOL,
-    port: process.env.PORT || port,
-    pathname,
-  });
 };

@@ -9,7 +9,7 @@ module.exports = {
   server : {
     port: 3000,
     clientDir: './client',
-    host: process.env.NOW_URL,
+    host: process.env.BASE_URL || process.env.NOW_URL,
     protocol: 'https',
     enableFakeAPI: true,
     get getUrl() {
