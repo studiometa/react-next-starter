@@ -283,8 +283,11 @@ app.launch = (port = DEFAULT_PORT) => (
     } else {
       choosePort(HOST, port)
         .then(port => {
-          process.env.PORT = port;
-          launchServer(port);
+          if (port !== null) {
+            process.env.PORT = port;
+            return launchServer(port);
+          }
+          return null;
         })
         .then(res => resolve(res))
         .catch((err) => {
