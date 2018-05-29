@@ -71,7 +71,7 @@ describe('Testing routes', () => {
 
     await Object.keys(ROUTES.all).forEach(async route => {
       if (!route.includes(':')) {
-        res.push(await fetch(getUrl(route)));
+        res.push(await fetch(config.server.getUrl(route)));
       }
     });
 

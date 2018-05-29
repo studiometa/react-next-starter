@@ -168,7 +168,7 @@ const launchServer = async (port) => {
 
   server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin',
-      dev ? '*' : getUrl(null, port));
+      dev ? '*' : config.server.getUrl());
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
@@ -252,7 +252,7 @@ const launchServer = async (port) => {
     app.server = await server.listen(port);
 
     if (process.env.NODE_ENV !== 'test') {
-      console.log('> Ready on ' + getUrl());
+      console.log('> Ready on ' + config.server.getUrl());
     }
 
   } catch (err) {

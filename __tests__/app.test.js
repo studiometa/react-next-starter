@@ -29,7 +29,7 @@ describe('Testing routes', () => {
 
   test('Get a 200 response for all static routes', async () => {
     try {
-      const res = await fetch(getUrl());
+      const res = await fetch(config.server.getUrl());
       expect(res.statusCode).toBe(200);
     } catch(err) {
       console.error(err);
