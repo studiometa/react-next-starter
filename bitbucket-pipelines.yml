@@ -5,15 +5,21 @@
 image: node:9.8.0
 
 pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - npm install
+          - npm run test
   branches:
-    default:
-      - step:
-          caches:
-            - node
-          script: # Modify the commands below to build your repository.
-            - npm install
-            - npm run test
       develop:
+        - step:
+            caches:
+              - node
+            script: # Modify the commands below to build your repository.
+              - npm install
+              - npm run test
         - step:
             deployment: staging
             caches:
