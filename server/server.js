@@ -81,6 +81,8 @@ const launchServer = async (port) => {
       preload: config.lang.available.map(e => e.lang),
       ns: config.lang.namespaces,
       defaultNS: config.lang.defaultNamespace,
+      pluralSeparator: '__',
+      contextSeparator: '__',
       backend: {
         loadPath: urlJoin(config.lang.localesPath, config.lang.localesFormat),
       },

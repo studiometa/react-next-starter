@@ -1,6 +1,6 @@
 {
   "page_title": "Produits",
-  "nb_products_0": "Aucun produit n'est disponible",
-  "nb_products_1": "Il y a 1 produit",
-  "nb_products_plural": "Il y a {{count}} produits"
+  "nb_products__0": "Aucun produit n'est disponible",
+  "nb_products__1": "Il y a 1 produit",
+  "nb_products__plural": "Il y a {{count}} produits"
 }

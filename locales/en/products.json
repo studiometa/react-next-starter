@@ -1,5 +1,5 @@
 {
   "page_title": "Products",
   "nb_products": "There is {{count}} product",
-  "nb_products_plural": "There is {{count}} products"
+  "nb_products__plural": "There is {{count}} products"
 }

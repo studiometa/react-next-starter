@@ -1,7 +1,5 @@
-- tests & CI/CD
 - global error handling
 - SSL support
-- dotenv support
 - eslint config
 - bundle analyzer
 
