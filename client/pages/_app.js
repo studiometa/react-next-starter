@@ -1,13 +1,13 @@
-import App, { Container }        from 'next/app';
-import React                     from 'react';
-import Router                    from 'next/router';
-import { Provider }              from 'react-redux';
-import withRedux                 from 'next-redux-wrapper';
-import createStore               from '../../store/createStore';
-import { updateAppLanguage }     from '../../store/actions/app.actions';
-import config                    from '../../config';
-import LangSwitch                from '../components/LangSwitch';
-
+import App, { Container }    from 'next/app';
+import React                 from 'react';
+import Router                from 'next/router';
+import { Provider }          from 'react-redux';
+import withRedux             from 'next-redux-wrapper';
+import createStore           from '../../store/createStore';
+import { updateAppLanguage } from '../../store/actions/app.actions';
+import config                from '../../config';
+import LangSwitch            from '../components/LangSwitch';
+import Link                  from '../components/Link';
 import '../styles/app.scss';
 
 
@@ -22,7 +22,7 @@ export default withRedux(createStore)(class _App extends App {
     const props = {
       pageProps: {
         ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
-      }
+      },
     };
 
     if (ctx.isServer === true) {
@@ -68,11 +68,13 @@ export default withRedux(createStore)(class _App extends App {
       <Container>
         <Provider store={store}>
           <div className="app">
-            <h1>APP</h1>
+            <Link to="/">
+              <h1>APP</h1>
+            </Link>
             <LangSwitch
-              asPath={ this.props.router.asPath }
-              push={ Router.push }
-              query={ this.props.query }
+              asPath={this.props.router.asPath}
+              push={Router.push}
+              query={this.props.query}
             />
             {
               this.state.isLoading === true &&

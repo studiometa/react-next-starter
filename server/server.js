@@ -33,50 +33,6 @@ lngDetector.addDetector(customLangDetector.path);
 lngDetector.addDetector(customLangDetector.fallback);
 
 
-// /**
-//  * This function is called when a request is made using the 'redirectToLang' query parameter.
-//  * This parameter is used to call a certain url and to ask the server to make a redirection to the
-//  * same page but in a different language
-//  * @param path
-//  * @param req
-//  * @param currentLang
-//  * @returns {*}
-//  */
-// const getLangRedirectionUrl = (path, req, currentLang) => {
-//   const destLang = req.query.redirectToLang;
-//
-//   // Remove the language segment from the url
-//   path = path.slice(3);
-//
-//   // Check that a page can be retrieved from the current lang
-//   if (typeof routes[currentLang] === 'object'
-//     && typeof routes[currentLang][path] === 'object'
-//     && routes[currentLang][path].page !== undefined) {
-//
-//     // Try to find a page for the requested language that matches the current language
-//     // page
-//     if (typeof routes[destLang] === 'object') {
-//       const target = Object.entries(routes[destLang]).find(([targetPath, targetRoute]) => {
-//         return targetRoute.page === routes[currentLang][path].page;
-//       });
-//
-//       // If a page has been found, build a valid target url and add parameters to it if needed
-//       if (Array.isArray(target)) {
-//         let targetPath = `/${target[1].lang}${target[0]}`;
-//
-//         if (target[1].queryParams && typeof req.params === 'object') {
-//           target[1].queryParams.forEach(param => {
-//             targetPath = targetPath.replace(`:${param}`, req.params[param]);
-//           });
-//         }
-//         return targetPath;
-//       }
-//     }
-//   }
-//   return undefined;
-// };
-
-
 /**
  * Listen to several routes. The routes can be
  * formatted differently depending on if a lang
@@ -92,13 +48,6 @@ const listenToMulti = (routes, server, lang) => {
     const url = lang !== undefined ? `/${ lang }${ path }` : path;
     server.get(url, (req, res) => {
       const queryParams = {};
-
-      // if (req.query.redirectToLang !== undefined) {
-      //   const destUrl = getLangRedirectionUrl(url, req, lang);
-      //   if (destUrl !== undefined) {
-      //     res.redirect(301, destUrl);
-      //   }
-      // }
 
       // Add needed parameters to the response
       if (route.queryParams && route.queryParams.length > 0) {

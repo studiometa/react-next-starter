@@ -25,6 +25,8 @@
     "@zeit/next-sass": "^0.1.2",
     "autoprefixer": "^8.4.1",
     "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
@@ -60,7 +62,11 @@
     "url-loader": "^1.0.1"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-addons-test-utils": "^15.6.2",
     "react-dev-utils": "^5.0.1",
+    "react-test-renderer": "^16.4.0",
     "request-promise": "^4.2.2"
   }
 }
