@@ -4,9 +4,6 @@
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" afterPath="$PROJECT_DIR$/bitbucket-pipelines.yml" />
-      <change beforePath="$PROJECT_DIR$/config/index.js" afterPath="$PROJECT_DIR$/config/index.js" />
-      <change beforePath="$PROJECT_DIR$/config/now.config.js" afterPath="$PROJECT_DIR$/config/now.config.js" />
-      <change beforePath="$PROJECT_DIR$/lib/socket.js" afterPath="$PROJECT_DIR$/lib/socket.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,8 +65,8 @@
       <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -393,14 +390,7 @@
       <workItem from="1526044754161" duration="6834000" />
       <workItem from="1526633254521" duration="14643000" />
       <workItem from="1527084255385" duration="28803000" />
-      <workItem from="1527493694350" duration="28798000" />
-    </task>
-    <task id="LOCAL-00022" summary="Add sass support">
-      <created>1525009269796</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1525009269796</updated>
+      <workItem from="1527493694350" duration="28987000" />
     </task>
     <task id="LOCAL-00023" summary="Improve config for prod">
       <created>1525010391232</created>
@@ -738,11 +728,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527531036847</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Fix now config file and add pipeline alias creation instruction">
+      <created>1527582240634</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1527582240634</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244191000" />
+    <option name="totallyTimeSpent" value="244380000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,7 +813,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add i18next, translation is working but needs to be improved" />
     <MESSAGE value="translation working, need to resolve some routes" />
     <MESSAGE value="Resolve cookies bug" />
     <MESSAGE value="Improve url language detection fallback and resolution" />
@@ -841,7 +837,8 @@
     <MESSAGE value="Fix now config for fake-api" />
     <MESSAGE value="Fix now config" />
     <MESSAGE value="Lang switcher is now making redirection to the same page :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lang switcher is now making redirection to the same page :)" />
+    <MESSAGE value="Fix now config file and add pipeline alias creation instruction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix now config file and add pipeline alias creation instruction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,8 +1261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding />
         </state>
       </provider>

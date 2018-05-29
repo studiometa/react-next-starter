@@ -12,14 +12,16 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - npm install
           - npm run test
-    - step:
-        deployment: staging
-        caches:
-          - node
-        script:
-          - npm install
-          - npm install -g now --unsafe-perm
-          - now rm react-next-starter --yes --token $NOW_TOKEN
-          - now --token $NOW_TOKEN --npm --public
-          - now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com
+    branches:
+        develop:
+          - step:
+              deployment: staging
+              caches:
+                - node
+              script:
+                - npm install
+                - npm install -g now --unsafe-perm
+                - now rm react-next-starter --yes --token $NOW_TOKEN
+                - now --token $NOW_TOKEN --npm --public
+                - now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com
 
