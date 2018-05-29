@@ -4,9 +4,6 @@
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" afterPath="$PROJECT_DIR$/bitbucket-pipelines.yml" />
-      <change beforePath="$PROJECT_DIR$/config/now.config.js" afterPath="$PROJECT_DIR$/config/now.config.js" />
-      <change beforePath="$PROJECT_DIR$/helpers/getUrl.js" afterPath="$PROJECT_DIR$/helpers/getUrl.js" />
-      <change beforePath="$PROJECT_DIR$/lib/env.js" afterPath="$PROJECT_DIR$/lib/env.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,8 +85,8 @@
       <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state relative-caret-position="210">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -391,14 +388,7 @@
       <workItem from="1526044754161" duration="6834000" />
       <workItem from="1526633254521" duration="14643000" />
       <workItem from="1527084255385" duration="28803000" />
-      <workItem from="1527493694350" duration="29741000" />
-    </task>
-    <task id="LOCAL-00025" summary="Add autoprefixer module to the postcss module">
-      <created>1525016929039</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1525016929039</updated>
+      <workItem from="1527493694350" duration="29793000" />
     </task>
     <task id="LOCAL-00026" summary="Add prefetch page feature support to the Link component">
       <created>1525024796684</created>
@@ -736,11 +726,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527582644269</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Try to fix the preprod urls by saving the baseURL to a env variable">
+      <created>1527583437326</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1527583437326</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245134000" />
+    <option name="totallyTimeSpent" value="245186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,7 +811,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Improve url language detection fallback and resolution" />
     <MESSAGE value="Add bitbucket pipeline file" />
     <MESSAGE value="Improve server structure + add some working tests" />
     <MESSAGE value="Build a deployment script" />
@@ -839,7 +835,8 @@
     <MESSAGE value="Fix now config file and add pipeline alias creation instruction" />
     <MESSAGE value="Restrict pipeline deployment instructions to git develop branch" />
     <MESSAGE value="Fix pipeline yml config file structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix pipeline yml config file structure" />
+    <MESSAGE value="Try to fix the preprod urls by saving the baseURL to a env variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to fix the preprod urls by saving the baseURL to a env variable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1262,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="210">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding />
         </state>
       </provider>
