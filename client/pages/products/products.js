@@ -2,31 +2,25 @@ import React from 'react';
 
 import Link          from '../../components/Link/index';
 import Layout        from '../../components/PageLayout';
-import { connect }   from 'react-redux';
-import { fetchPage } from '../../../store/actions/pages.actions';
 import ProductCard   from '../../components/ProductCard';
-import withI18next   from '../../lib/withI18next';
+import pageWrapper   from '../../lib/pageWrapper';
 
 
 
 class Products extends React.Component {
-  static async getInitialProps(props) {
-    const store = props.store;
-    const page  = await store.dispatch(fetchPage('products', false));
-    return { page };
-  }
-
 
   render() {
-    const page = this.props.page || {};
+    const pageData = this.props.pageData;
+
     return (
-      <Layout>
+      <Layout pageData={pageData}>
         <div className="products-page">
-          <h2>{this.props.t('products:nb_products', { count: page.products ? page.products.length : 0 })}</h2>
+          <h2>{this.props.t('products:nb_products',
+            { count: pageData && pageData.content.products ? pageData.content.products.length : 0 })}</h2>
           <ul>
             {
-              page.products !== undefined &&
-              page.products.map((product, key) => (
+              pageData !== undefined && pageData.content.products.length > 0 &&
+              pageData.content.products.map((product, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={{ id: product }}>
                     <ProductCard productId={product}/>
@@ -34,7 +28,6 @@ class Products extends React.Component {
                 </li>
               ))
             }
-
           </ul>
           <Link to="/promotions">Promotions</Link>
         </div>
@@ -45,4 +38,6 @@ class Products extends React.Component {
 
 
 
-export default withI18next(['products'])(connect()(Products));
+export default pageWrapper(Products, {
+  name: 'products'
+});

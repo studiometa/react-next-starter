@@ -1,15 +1,14 @@
 import React       from 'react';
-import { connect } from 'react-redux';
 import Link        from '../components/Link';
 import Layout      from '../components/PageLayout';
-import withI18next from '../lib/withI18next';
+import pageWrapper from '../lib/pageWrapper';
 
 
 
 class Home extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout pageData={this.props.pageData}>
         <div>
           <h2>{this.props.t('home')}</h2>
           <Link to={`/products`}>{this.props.t('products')}</Link>
@@ -21,4 +20,6 @@ class Home extends React.Component {
 
 
 
-export default withI18next()(Home);
+export default pageWrapper(Home, {
+  name: 'home'
+});

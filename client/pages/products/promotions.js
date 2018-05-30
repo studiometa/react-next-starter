@@ -1,9 +1,10 @@
-import Link   from '../../components/Link';
-import Layout from '../../components/PageLayout';
+import Link        from '../../components/Link';
+import Layout      from '../../components/PageLayout';
+import pageWrapper from '../../lib/pageWrapper';
 
 
-export default () => (
-  <Layout>
+export default pageWrapper(({ pageData }) => (
+  <Layout pageData={pageData}>
     <div>
       <h1>Products promotions</h1>
       <ul>
@@ -25,4 +26,6 @@ export default () => (
       </ul>
     </div>
   </Layout>
-)
+), {
+  name: 'promotions'
+})

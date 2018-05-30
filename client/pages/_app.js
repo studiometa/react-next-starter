@@ -10,6 +10,13 @@ import LangSwitch            from '../components/LangSwitch';
 import Link                  from '../components/Link';
 import '../styles/app.scss';
 
+// If we are on a development env and fake-api is enabled, we may have to inject the api store
+// somewhere so that making changes to this file can trigger the webpack HMR event.
+
+if (process.env.NODE_ENV === 'development' && config.server.enableFakeAPI === true) {
+  const fakeAPIStore = require('../../server/fakeAPI/fakeAPI.store');
+}
+
 export default withRedux(createStore)(class _App extends App {
   constructor() {
     super();
@@ -25,8 +32,10 @@ export default withRedux(createStore)(class _App extends App {
     };
 
     if (ctx.isServer === true) {
+
       // If a language is defined, store it as a prop so that we can use it
       // in componentWillMount to save a current language in the redux store
+
       props.lang = ctx.req.language;
     }
 
@@ -36,9 +45,10 @@ export default withRedux(createStore)(class _App extends App {
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
 
     // Save the current language to the store
+
     if (this.props.lang !== undefined) {
       this.props.store.dispatch(updateAppLanguage(this.props.lang));
     } else if (this.props.pageProps.initialLanguage !== undefined) {
@@ -47,10 +57,6 @@ export default withRedux(createStore)(class _App extends App {
       this.props.store.dispatch(updateAppLanguage(config.lang.default));
     }
 
-  }
-
-
-  componentDidMount() {
     Router.onRouteChangeStart    = url => {
       this.setState({ isLoading: true });
     };
@@ -62,7 +68,6 @@ export default withRedux(createStore)(class _App extends App {
 
   render() {
     const { Component, pageProps, store } = this.props;
-
     return (
       <Container>
         <Provider store={store}>

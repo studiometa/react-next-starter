@@ -308,3 +308,40 @@ Ce lien redirigera l'utilisateur vers la page `/product/<PRODUCT_ID>`.
 Tout ce qui sera passé dans la prop `query` sera automatiquement ajouté à la query de l'url (ne sera pas visible directement dans l'url mais uniquement dans la requête)
 Il est donc tout à fait possible d'ajouter des paramètres à l'url. Lorsque l'url est générée, tous les segments de type `:<param>` seront remplacés par la query
 correspondante. **Il est donc indispensable de s'assurer que celle-ci soit toujours définie!!**
+
+
+## Ajouter une page
+
+Plusieurs étapes sont nécessaires pour la création d'une nouvelle page mais le processus a grandement été simplifié. Dans la plupart des cas, suivre les étapes suivantes
+devrait suffir:
+
+### Créer la page
+
+La première chose à faire sera évidemment de créer le fichier correspondant à la nouvelle page (dans /client/pages par défaut).
+
+```
+export default () => (
+    <div>
+      <h1>{ pageData.title }</h1>
+    </div>
+)
+```
+
+L'exemple ci-dessous ne suffira cependant pas à faire en sorte que votre page fonctionne. En effet, chaque page a toujours besoin de trois éléments distincts :
+
+
+#### 
+```
+export default pageWrapper(({ pageData }) => (
+  <Layout pageData={pageData}>
+    <div>
+      <h1>{ pageData.title }</h1>
+    </div>
+  </Layout>
+), {
+  name: 'myPage'
+})
+```
+
+
+d

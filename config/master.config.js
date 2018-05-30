@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+
+  /*****************************************************
+   * LANGUAGE SETTINGS
+   *****************************************************/
+
   lang: {
 
     // The default language also used as a fallback
@@ -68,6 +73,23 @@ module.exports = {
 
     // The life of the cookie in minutes
     cookieMinutes: 120
+  },
+
+  /*****************************************************
+   * SEO SETTINGS
+   *****************************************************/
+
+  seo: {
+
+    // The default pages title that will be showed when no
+    // related title has been found
+    defaultPagesTitle: 'react-next-starter',
+
+    // A list of default meta tags that will be used for the app
+    defaultMetaTags: [
+      { name: 'description', content: 'This is a wonderful starter for React and NextJs'},
+      { name: 'author', content: 'Chuck Durst | Studio Meta'},
+    ]
   }
 
 };
