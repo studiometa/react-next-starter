@@ -13,11 +13,12 @@ module.exports = {
     protocol: 'https',
     enableFakeAPI: true,
     get getUrl() {
-      return () => (
+      return (pathname = '') => (
         url.format({
           hostname: this.host,
           protocol: this.protocol,
           port: process.env.PORT || this.port,
+          pathname
         })
       );
     },

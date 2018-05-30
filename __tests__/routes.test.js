@@ -67,22 +67,18 @@ describe('Testing routes', () => {
     }
   });
 
-  test('Get a 200 response for all static routes', async () => {
-    let promises = [];
 
-    Object.keys(ROUTES.all).forEach(route => {
-      if (route && !route.includes(':')) {
-        promises.push(fetch(config.server.getUrl(route)));
-      }
-    });
-
-    const res = await Promise.all(promises);
-
-    expect(Array.isArray(res)).toBe(true);
-
-    res.forEach(e => {
-      expect(e.status).toBe(200);
-    });
-
-  }, 60000);
+  Object.entries(ROUTES.all).forEach(([route, t]) => {
+    if (route && !route.includes(':')) {
+      route = `${t.lang}${route}`;
+      test(`Get a 200 response for static route '${route}'`, async () => {
+        try {
+          const res = await fetch(config.server.getUrl(route));
+          expect(res.statusCode).toBe(200);
+        } catch (err) {
+          console.error(err);
+        }
+      })
+    }
+  }, 10000);
 });
