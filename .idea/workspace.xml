@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" afterPath="$PROJECT_DIR$/bitbucket-pipelines.yml" />
+      <change beforePath="$PROJECT_DIR$/server/fakeAPI/fakeAPI.js" afterPath="$PROJECT_DIR$/server/fakeAPI/fakeAPI.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fakeAPI.store.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/fakeAPI/fakeAPI.store.js">
+      <file leaf-file-name="fakeAPI.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/fakeAPI/fakeAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bitbucket-pipelines.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            <state relative-caret-position="210">
+              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -214,7 +214,6 @@
         <option value="$PROJECT_DIR$/client/lib/pageWrapper.js" />
         <option value="$PROJECT_DIR$/client/lib/withI18next.js" />
         <option value="$PROJECT_DIR$/store/withRedux.js" />
-        <option value="$PROJECT_DIR$/server/fakeAPI/fakeAPI.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/lib/i18n.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -235,6 +234,7 @@
         <option value="$PROJECT_DIR$/__tests__/routes.test.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
+        <option value="$PROJECT_DIR$/server/fakeAPI/fakeAPI.js" />
       </list>
     </option>
   </component>
@@ -421,14 +421,7 @@
       <workItem from="1526044754161" duration="6834000" />
       <workItem from="1526633254521" duration="14643000" />
       <workItem from="1527084255385" duration="28803000" />
-      <workItem from="1527493694350" duration="58489000" />
-    </task>
-    <task id="LOCAL-00036" summary="Route translation can now be disabled from the config file">
-      <created>1526325965935</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1526325965935</updated>
+      <workItem from="1527493694350" duration="58658000" />
     </task>
     <task id="LOCAL-00037" summary="Add some comments">
       <created>1526326535414</created>
@@ -766,11 +759,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527712073872</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Try not to publish on Now in public mode">
+      <created>1527712302073</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1527712302074</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273882000" />
+    <option name="totallyTimeSpent" value="274051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,7 +868,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Update test port.." />
     <MESSAGE value="Fix tests error (server was not properly closed)" />
     <MESSAGE value="[WIP] links translation" />
     <MESSAGE value="Links are now compatible with routes translation" />
@@ -893,7 +892,8 @@
     <MESSAGE value="Change plural separator in i18next (use '__' instead of '_')" />
     <MESSAGE value="Add Head comment with meta tags support" />
     <MESSAGE value="Fix tests errors for routes.test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix tests errors for routes.test" />
+    <MESSAGE value="Try not to publish on Now in public mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try not to publish on Now in public mode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1101,14 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/fakeAPI/fakeAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1195,14 +1187,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/test.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,8 +1324,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitbucket-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        <state relative-caret-position="210">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/test.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/fakeAPI/fakeAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>

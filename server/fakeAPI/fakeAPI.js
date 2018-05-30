@@ -1,5 +1,5 @@
 const fileStore = require('./fakeAPI.store');
-module.exports  = function (store = fileStore, { minDelay = 300, maxDelay = 1200, } = {}) {
+module.exports  = function (store = fileStore, { minDelay = 0, maxDelay = 300, } = {}) {
 
 
   /**
