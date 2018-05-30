@@ -13,14 +13,16 @@ const {
         prepareUrls,
       }                  = require('react-dev-utils/WebpackDevServerUtils');
 const openBrowser        = require('react-dev-utils/openBrowser');
+const auth               = require('basic-auth');
 const i18nextMiddleware  = require('i18next-express-middleware');
 const Backend            = require('i18next-node-fs-backend');
-const getUrl             = require('../helpers/getUrl');
-const config             = require('../config');
-const getRoutes          = require('./routes');
-const FakeAPI            = require('./fakeAPI');
-const fakeAPIStore       = require('./fakeAPI/fakeAPI.store.js');
-const { i18nInstance }   = require('../lib/i18n');
+
+const getUrl           = require('../helpers/getUrl');
+const config           = require('../config');
+const getRoutes        = require('./routes');
+const FakeAPI          = require('./fakeAPI');
+const fakeAPIStore     = require('./fakeAPI/fakeAPI.store.js');
+const { i18nInstance } = require('../lib/i18n');
 
 const DEFAULT_PORT = config.server.port || '3000';
 const HOST         = config.server.host || 'localhost';
@@ -32,6 +34,15 @@ const lngDetector = new i18nextMiddleware.LanguageDetector();
 lngDetector.addDetector(customLangDetector.path);
 lngDetector.addDetector(customLangDetector.fallback);
 
+
+const htpasswdMiddleware = (request, response, next) => {
+  let user = auth(request);
+
+  if (!user || user.name !== process.env.HTPASSWD_USER || user.pass !== process.env.HTPASSWD_PASSWORD) {
+    response.set('WWW-Authenticate', 'Basic realm="No access"');
+    return response.status(401).send();
+  }
+};
 
 /**
  * Listen to several routes. The routes can be
@@ -48,6 +59,12 @@ const listenToMulti = (routes, server, lang) => {
     const url = lang !== undefined ? `/${ lang }${ path }` : path;
     server.get(url, (req, res) => {
       const queryParams = {};
+
+      // Add an htpasswd on the server if we are
+      // running on the Now pre-production
+      if (process.env.NOW_URL !== undefined) {
+        htpasswdMiddleware(req, res)
+      }
 
       // Add needed parameters to the response
       if (route.queryParams && route.queryParams.length > 0) {
@@ -160,6 +177,14 @@ const launchServer = async (port) => {
   // any defined route
 
   server.get('*', (req, res) => {
+
+    // Add an htpasswd on the server if we are
+    // running on the Now pre-production
+
+    if (process.env.NOW_URL !== undefined) {
+      htpasswdMiddleware(req, res)
+    }
+
 
     // First we must check if a lang is defined in the client request. If yes and that route translation
     // has been enabled, we can try to resolve a matching route with the given lang. If no matching route

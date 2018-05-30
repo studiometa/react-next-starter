@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node server/",
+    "dev": "NODE_ENV=development HTPASSWD_USER=studiometa HTPASSWD_PASSWORD=studiometa node server/",
     "build": "next build ./client",
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent ./__tests__",
@@ -62,6 +62,7 @@
     "url-loader": "^1.0.1"
   },
   "devDependencies": {
+    "basic-auth": "^2.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "react-addons-test-utils": "^15.6.2",
