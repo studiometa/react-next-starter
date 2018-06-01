@@ -12,6 +12,7 @@ module.exports = {
     host: process.env.BASE_URL || process.env.NOW_URL,
     protocol: 'https',
     enableFakeAPI: true,
+    enableHtpasswd: true,
     get getUrl() {
       return (pathname = '') => (
         url.format({

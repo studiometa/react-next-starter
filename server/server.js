@@ -36,11 +36,13 @@ lngDetector.addDetector(customLangDetector.fallback);
 
 
 const htpasswdMiddleware = (request, response, next) => {
-  let user = auth(request);
+  if (config.server.enableHtpasswd === true) {
+    let user = auth(request);
 
-  if (!user || user.name !== process.env.HTPASSWD_USER || user.pass !== process.env.HTPASSWD_PASSWORD) {
-    response.set('WWW-Authenticate', 'Basic realm="No access"');
-    return response.status(401).send();
+    if (!user || user.name !== process.env.HTPASSWD_USER || user.pass !== process.env.HTPASSWD_PASSWORD) {
+      response.set('WWW-Authenticate', 'Basic realm="No access"');
+      return response.status(401).send();
+    }
   }
 };
 
@@ -62,9 +64,7 @@ const listenToMulti = (routes, server, lang) => {
 
       // Add an htpasswd on the server if we are
       // running on the Now pre-production
-      if (process.env.NOW_URL !== undefined) {
-        htpasswdMiddleware(req, res)
-      }
+      htpasswdMiddleware(req, res);
 
       // Add needed parameters to the response
       if (route.queryParams && route.queryParams.length > 0) {
@@ -181,9 +181,7 @@ const launchServer = async (port) => {
     // Add an htpasswd on the server if we are
     // running on the Now pre-production
 
-    if (process.env.NOW_URL !== undefined) {
-      htpasswdMiddleware(req, res)
-    }
+    htpasswdMiddleware(req, res);
 
 
     // First we must check if a lang is defined in the client request. If yes and that route translation

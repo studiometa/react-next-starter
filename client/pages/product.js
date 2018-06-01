@@ -47,7 +47,7 @@ class Product extends React.Component {
     return (
       <Layout pageData={this.props.pageData} title={ title }>
         <div>
-          <h2>product: {product.name}</h2>
+          <h2>{product.name}</h2>
           <div>
             <Link to={`/`}>
               Back home

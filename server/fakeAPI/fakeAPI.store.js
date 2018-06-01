@@ -1,12 +1,12 @@
 module.exports = {
   products: [
-    { name: 'Product 0' },
-    { name: 'Product 1' },
-    { name: 'Product 2' },
-    { name: 'Product 3' },
-    { name: 'Product 4' },
-    { name: 'Product 5' },
-    { name: 'Product 6' },
+    { name: 'First product' },
+    { name: 'The second one' },
+    { name: 'The third' },
+    { name: 'The one after the third' },
+    { name: 'The one before the sixth' },
+    { name: 'The sixth' },
+    { name: 'The last one' },
   ],
   pages: {
     products: {
