@@ -81,8 +81,8 @@
       <file leaf-file-name="routes.test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -424,14 +424,7 @@
       <workItem from="1526633254521" duration="14643000" />
       <workItem from="1527084255385" duration="28803000" />
       <workItem from="1527493694350" duration="66290000" />
-      <workItem from="1527859291479" duration="4229000" />
-    </task>
-    <task id="LOCAL-00044" summary="Resolve cookies bug">
-      <created>1526462388110</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1526462388110</updated>
+      <workItem from="1527859291479" duration="4256000" />
     </task>
     <task id="LOCAL-00045" summary="Improve url language detection fallback and resolution">
       <created>1526472160621</created>
@@ -769,11 +762,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527865837734</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Fix tests by increasing timeout">
+      <created>1527866078512</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1527866078512</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285912000" />
+    <option name="totallyTimeSpent" value="285939000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -871,7 +871,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="[WIP] Lang switch with currentPage" />
     <MESSAGE value="Fix now config for fake-api" />
     <MESSAGE value="Fix now config" />
     <MESSAGE value="Lang switcher is now making redirection to the same page :)" />
@@ -896,7 +895,8 @@
     <MESSAGE value="Replace bitbucket secrets by now secrets + new npm scripts" />
     <MESSAGE value="wip" />
     <MESSAGE value="Add a skinnable page loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a skinnable page loader" />
+    <MESSAGE value="Fix tests by increasing timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix tests by increasing timeout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1296,8 +1296,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
           <folding />
         </state>
       </provider>
