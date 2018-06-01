@@ -9,14 +9,22 @@
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent ./__tests__",
     "preprod": "now --public",
-    "start:pm2": "NODE_ENV=production pm2 start ./config/ecosystem.config.js",
-    "stop:pm2": "pm2 kill"
+    "pm2:start": "NODE_ENV=production pm2 start ./config/ecosystem.config.js",
+    "pm2:stop": "pm2 kill",
+    "now": "now --token $NOW_TOKEN --npm",
+    "now:rm": "now rm react-next-starter --yes --token $NOW_TOKEN",
+    "now:alias": "now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com"
   },
   "engines": {
     "node": "8.9.0"
   },
   "now": {
-    "alias": "preprod.chefsquare.com"
+    "alias": "preprod.chefsquare.com",
+    "env": {
+      "HTPASSWD_USER": "@htpasswd-user",
+      "HTPASSWD_PASSWORD": "@htpasswd-password",
+      "BASE_URL": "preprod.chefsquare.com"
+    }
   },
   "keywords": [],
   "author": "",
