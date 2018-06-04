@@ -3,8 +3,8 @@ const next               = require('next');
 const compression        = require('compression');
 const cors               = require('cors');
 const urlJoin            = require('url-join');
-const clearConsole       = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
+const paths              = require('./lib/paths');
 const customLangDetector = require('./lib/customI18nextLangDetector');
 const {
         choosePort,
@@ -33,7 +33,6 @@ const routes       = getRoutes();
 const lngDetector = new i18nextMiddleware.LanguageDetector();
 lngDetector.addDetector(customLangDetector.path);
 lngDetector.addDetector(customLangDetector.fallback);
-
 
 const htpasswdMiddleware = (request, response, next) => {
   if (config.server.enableHtpasswd === true) {
@@ -87,6 +86,21 @@ const listenToMulti = (routes, server, lang) => {
  * @returns {*|Function}
  */
 const launchServer = async (port) => {
+
+
+  // Warn and crash if required files are missing
+
+  if (!checkRequiredFiles([
+      paths.appServer,
+      paths.appPublic,
+      paths.appClient,
+      paths.appClientPages,
+      paths.appNodeModules,
+      paths.appLocales,
+      paths.appConfig,
+    ])) {
+    process.exit(1);
+  }
 
   // Init i18next first
 
@@ -245,6 +259,7 @@ const launchServer = async (port) => {
  */
 app.launch = (port = DEFAULT_PORT) => (
   new Promise((resolve, reject) => {
+
     // If we are not on a development environment, we do not want
     // to use a different port than the one defined in the configuration
     if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
