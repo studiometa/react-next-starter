@@ -24,9 +24,22 @@ const dev          = process.env.NODE_ENV !== 'production';
 const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
 
+// Build the custom language detector
+
 const lngDetector = new i18nextMiddleware.LanguageDetector();
 lngDetector.addDetector(customLangDetector.path);
 lngDetector.addDetector(customLangDetector.fallback);
+
+
+// Makes the script crash on unhandled rejections instead of silently
+// ignoring them. In the future, promise rejections that are not handled will
+// terminate the Node.js process with a non-zero exit code.
+
+process.on('unhandledRejection', err => {
+  console.error('unhandled promise rejection error', err);
+  return null;
+});
+
 
 const htpasswdMiddleware = (request, response, next) => {
   if (config.server.enableHtpasswd === true) {
