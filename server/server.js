@@ -1,23 +1,17 @@
-const express            = require('express');
-const next               = require('next');
-const compression        = require('compression');
-const cors               = require('cors');
-const urlJoin            = require('url-join');
-const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const paths              = require('./lib/paths');
-const customLangDetector = require('./lib/customI18nextLangDetector');
-const {
-        choosePort,
-        createCompiler,
-        prepareProxy,
-        prepareUrls,
-      }                  = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser        = require('react-dev-utils/openBrowser');
-const auth               = require('basic-auth');
-const i18nextMiddleware  = require('i18next-express-middleware');
-const Backend            = require('i18next-node-fs-backend');
+const express                     = require('express');
+const next                        = require('next');
+const compression                 = require('compression');
+const cors                        = require('cors');
+const urlJoin                     = require('url-join');
+const checkRequiredFiles          = require('react-dev-utils/checkRequiredFiles');
+const paths                       = require('./lib/paths');
+const customLangDetector          = require('./lib/customI18nextLangDetector');
+const { choosePort, prepareUrls } = require('react-dev-utils/WebpackDevServerUtils');
+const openBrowser                 = require('react-dev-utils/openBrowser');
+const auth                        = require('basic-auth');
+const i18nextMiddleware           = require('i18next-express-middleware');
+const Backend                     = require('i18next-node-fs-backend');
 
-const getUrl           = require('../helpers/getUrl');
 const config           = require('../config');
 const getRoutes        = require('./routes');
 const FakeAPI          = require('./fakeAPI');
@@ -140,11 +134,17 @@ const launchServer = async (port) => {
 
   const server = express();
 
+  // Enable cors and compression on production mode
+
   if (dev === false) {
     server.use(cors());
     server.use(compression());
   } else {
   }
+
+  // This will be used to open up the browser on development mode when the
+  // server is ran
+  const { localUrlForBrowser } = prepareUrls(config.server.protocol, HOST, port);
 
   // Enabling cors
 
@@ -241,6 +241,9 @@ const launchServer = async (port) => {
 
     if (process.env.NODE_ENV !== 'test') {
       console.log('> Ready on ' + config.server.getUrl());
+    }
+    if (dev === true) {
+      openBrowser(localUrlForBrowser);
     }
 
   } catch (err) {
