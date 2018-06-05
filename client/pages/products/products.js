@@ -5,7 +5,7 @@ import Layout      from '../../components/PageLayout';
 import ProductCard from '../../components/ProductCard';
 import pageWrapper from '../../lib/pageWrapper';
 import NoSSR       from 'react-no-ssr';
-
+import dynamic from 'next/dynamic'
 
 
 class Products extends React.Component {
@@ -16,6 +16,7 @@ class Products extends React.Component {
     return (
       <Layout pageData={pageData}>
         <div className="products-page">
+          <DynamicComponent />
           <h2>{this.props.t('products:nb_products',
             { count: pageData && pageData.content.products ? pageData.content.products.length : 0 })}</h2>
           <NoSSR>

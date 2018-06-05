@@ -13,7 +13,9 @@
     "pm2:stop": "pm2 kill",
     "now": "now --token $NOW_TOKEN --npm",
     "now:rm": "now rm react-next-starter --yes --token $NOW_TOKEN",
-    "now:alias": "now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com"
+    "now:alias": "now alias --token $NOW_TOKEN $NOW_URL preprod.chefsquare.com",
+    "analyze": "cross-env ANALYZE=1 next build ./client"
+
   },
   "engines": {
     "node": "8.9.0"
@@ -70,10 +72,12 @@
     "redux-thunk": "^2.2.0",
     "style-loader": "^0.21.0",
     "url-join": "^4.0.0",
-    "url-loader": "^1.0.1"
+    "url-loader": "^1.0.1",
+    "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
     "basic-auth": "^2.0.0",
+    "cross-env": "^5.1.6",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "react-addons-test-utils": "^15.6.2",

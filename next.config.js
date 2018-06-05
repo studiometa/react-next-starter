@@ -1,6 +1,7 @@
-const withSass      = require('@zeit/next-sass');
-const webpackConfig = require('./config/webpack.config');
-
+const withSass                 = require('@zeit/next-sass');
+const webpackConfig            = require('./config/webpack.config');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { ANALYZE }              = process.env;
 
 module.exports = withSass({
   cssModules: true,
@@ -8,10 +9,18 @@ module.exports = withSass({
   useFileSystemPublicRoutes: false,
   cssLoaderOptions: {
     importLoaders: 1,
-    localIdentName: "[local]",
+    localIdentName: '[local]',
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    if (ANALYZE) {
+      config.plugins.push(new BundleAnalyzerPlugin({
+        analyzerMode: 'server',
+        analyzerPort: 8888,
+        openAnalyzer: true
+      }))
+    }
+
     return webpackConfig(config);
   },
 
