@@ -1,0 +1,43 @@
+/*------------------------------------*\
+		Pictogrammes
+\*------------------------------------*/
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+
+/*------------------------------------*\
+		Logo Studio Meta
+\*------------------------------------*/
+
+.icon--sm {
+
+	&,
+	svg {
+		display: block;
+		width: 4.93em;
+		height: 0.79em;
+	}
+
+	svg {
+		fill: #999;
+	}
+
+	&.icon--hover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+
+		background: #fff;
+		overflow: hidden;
+		transition: all 0.4s $out-expo;
+
+		svg {
+			fill: #333;
+		}
+	}
+}

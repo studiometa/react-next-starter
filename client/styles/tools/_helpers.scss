@@ -1,0 +1,82 @@
+/*------------------------------------*\
+		Positionnement & Display
+\*------------------------------------*/
+
+// Display
+.u-db  { display: block !important; }
+.u-dn  { display: none !important; }
+.u-dt  { display: table !important; }
+.u-dtc { display: table-cell !important; }
+.u-dib { display: inline-block !important; }
+.u-di  { display: inline !important; }
+.u-dh  { display: inherit !important; }
+.u-df  { display: flex !important; }
+
+// Clearfix
+.u-cf { @include clearfix; }
+
+// Media queries
+@each $breakpoint in $breakpoints {
+	$key: nth($breakpoint, 1);
+
+	@media #{md($key)} {
+
+		// Display
+		.u-db--#{$key}  { display: block !important; }
+		.u-dn--#{$key}  { display: none !important; }
+		.u-dt--#{$key}  { display: table !important; }
+		.u-dtc--#{$key} { display: table-cell !important; }
+		.u-dib--#{$key} { display: inline-block !important; }
+		.u-di--#{$key}  { display: inline !important; }
+		.u-dh--#{$key}  { display: inherit !important; }
+		.u-df--#{$key}  { display: flex !important; }
+
+		// Clearfix
+		.u-cf--#{$key}  { @include clearfix; }
+	}
+}
+
+
+
+/*------------------------------------*\
+		Typographie
+\*------------------------------------*/
+
+// Alignement de texte
+.u-tac { text-align: center !important; }
+.u-tal { text-align: left !important; }
+.u-tar { text-align: right !important; }
+
+// Media queries
+@each $breakpoint in $breakpoints {
+	$key: nth($breakpoint, 1);
+
+	@media #{md($key)} {
+
+		.u-tac--#{$key}  { text-align: center !important; }
+		.u-tal--#{$key}  { text-align: left !important; }
+		.u-tar--#{$key}  { text-align: right !important; }
+	}
+}
+
+
+
+
+/*------------------------------------*\
+		Accessibilité
+\*------------------------------------*/
+
+/**
+ * A class to hide labels and stuff
+ * for accessibility
+ * @author Facebook Accessibility Team
+ * @source https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.u-accessible-item {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	white-space: nowrap;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}

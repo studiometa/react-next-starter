@@ -1,0 +1,174 @@
+/*---------------------------------------*\
+		Positions & dispositions
+\*---------------------------------------*/
+
+@mixin clearfix {
+
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
+
+
+/*---------------------------------------*\
+		Typographie
+\*---------------------------------------*/
+
+@mixin fontfaces($webfonts, $dir) {
+
+	@each $webfont in $webfonts {
+
+		@font-face {
+			font-family: nth($webfont, 1);
+			src: url("#{$dir}#{nth($webfont, 2)}.woff2") format("woff2"),
+					 url("#{$dir}#{nth($webfont, 2)}.woff") format("woff"),
+					 url("#{$dir}#{nth($webfont, 2)}.ttf") format("truetype");
+			font-weight: #{nth($webfont, 3)};
+			font-style: #{nth($webfont, 4)};
+		}
+	}
+}
+
+@mixin reset-ul {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+@mixin ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: antialiased;
+}
+
+// Nicely hyphenate long words
+// cf. https://justmarkup.com/log/2015/07/31/dealing-with-long-words-in-css/
+@mixin hyphenate {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+
+/**
+ * Responsive typograhy
+ * @author Mike Riethmuller http://codepen.io/MadeByMike/pen/YPJJYv
+ * @param  {integer} $min-width: 0            The breakpoint minimum to activate the responsive typography
+ * @param  {integer} $max-width: 2560         The breakpoint maximum to activate th responsive typography
+ * @param  {integer} $min-font:  12           The minimum font-size for the element
+ * @param  {integer} $max-font:  16           The maximum font-size for the element
+ * @return {void}
+ */
+@mixin responsive-type(
+	$min-width: 0,
+	$max-width: 2560,
+	$min-font: 12,
+	$max-font: 16) {
+
+	// Set min size
+	font-size: $min-font * 1px;
+
+	// Adjust size between `$min-width` et `$max-width`
+	@media (min-width: #{$min_width}px) and (max-width: #{$max_width}px){
+		font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
+	}
+
+	// Set max size
+	@media (min-width: #{$max_width}px){
+		font-size: #{$max_font}px;
+	}
+}
+
+
+
+
+/*---------------------------------------*\
+		Triangles
+\*---------------------------------------*/
+
+@mixin triangle-up($triangle-up-width, $triangle-up-height, $triangle-up-color) {
+	width: 0;
+	height: 0;
+	border-color: transparent transparent $triangle-up-color;
+	border-style: solid;
+	border-width: 0 $triangle-up-width / 2 $triangle-up-height;
+}
+
+@mixin triangle-right($triangle-right-width, $triangle-right-height, $triangle-right-color) {
+	width: 0;
+	height: 0;
+	border-color: transparent transparent transparent $triangle-right-color;
+	border-style: solid;
+	border-width: $triangle-right-height / 2 0 $triangle-right-height / 2 $triangle-right-width;
+}
+
+@mixin triangle-down($triangle-down-width, $triangle-down-height, $triangle-down-color) {
+	width: 0;
+	height: 0;
+	border-color: $triangle-down-color transparent transparent;
+	border-style: solid;
+	border-width: $triangle-down-height $triangle-down-width / 2 0;
+}
+
+@mixin triangle-left($triangle-left-width, $triangle-left-height, $triangle-left-color) {
+	width: 0;
+	height: 0;
+	border-color: transparent $triangle-left-color transparent transparent;
+	border-style: solid;
+	border-width: $triangle-left-height / 2 $triangle-left-widt $triangle-left-height / 2 0;
+}
+
+
+
+
+
+/*---------------------------------------*\
+		SVG Responsive
+\*---------------------------------------*/
+
+/*
+Utilitaire pour le padding hack qui permet d'avoir des fichiers `*.svg` responsive.
+Plus d'infos ici : http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+*/
+
+@mixin padding-hack($svg-width, $svg-height, $container-width) {
+	height: 0;
+	width: $container-width;
+	padding-top: strip-units(($svg-height / $svg-width) * $container-width) * 1%;
+}
+
+
+
+
+
+/*------------------------------------*\
+		Gradients
+\*------------------------------------*/
+
+/**
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @param {String | List | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ */
+@mixin linear-gradient($direction, $color-stops...) {
+	@if is-direction($direction) == false {
+		$color-stops: ($direction, $color-stops);
+		$direction: 180deg;
+	}
+
+	background: nth(nth($color-stops, 1), 1);
+	background: linear-gradient($direction, $color-stops);
+}

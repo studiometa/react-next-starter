@@ -8,8 +8,9 @@ import { updateAppLanguage } from '../../store/actions/app.actions';
 import config                from '../../config';
 import LangSwitch            from '../components/LangSwitch';
 import Link                  from '../components/Link';
-import '../styles/app.scss';
 import NProgress             from 'nprogress';
+
+import '../styles/styles.scss';
 
 // If we are on a development env and fake-api is enabled, we may have to inject the api store
 // somewhere so that making changes to this file can trigger the webpack HMR event.

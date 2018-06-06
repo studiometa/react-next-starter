@@ -6,7 +6,6 @@ import ProductCard from '../../components/ProductCard';
 import pageWrapper from '../../lib/pageWrapper';
 import NoSSR       from 'react-no-ssr';
 
-
 class Products extends React.Component {
 
   render() {
