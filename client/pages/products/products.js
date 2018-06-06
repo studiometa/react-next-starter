@@ -23,7 +23,7 @@ class Products extends React.Component {
           <ul>
             {
               pageData !== undefined && pageData.content.products.length > 0 &&
-              pageData.content.products.map((product, key) => (
+              pageData.content.products.map((prod uct, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={{ id: product }}>
                     <ProductCard productId={product}/>
@@ -45,3 +45,6 @@ class Products extends React.Component {
 export default pageWrapper(Products, {
   name: 'products',
 });
+
+
+

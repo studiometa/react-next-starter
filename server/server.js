@@ -255,7 +255,7 @@ const launchServer = async (port) => {
     if (process.env.NODE_ENV !== 'test') {
       console.log('> Ready on ' + config.server.getUrl());
     }
-    if (dev === true) {
+    if (process.env.NODE_ENV === 'development') {
       openBrowser(localUrlForBrowser);
     }
 
