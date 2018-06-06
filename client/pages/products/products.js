@@ -5,7 +5,6 @@ import Layout      from '../../components/PageLayout';
 import ProductCard from '../../components/ProductCard';
 import pageWrapper from '../../lib/pageWrapper';
 import NoSSR       from 'react-no-ssr';
-import dynamic from 'next/dynamic'
 
 
 class Products extends React.Component {
@@ -16,14 +15,13 @@ class Products extends React.Component {
     return (
       <Layout pageData={pageData}>
         <div className="products-page">
-          <DynamicComponent />
           <h2>{this.props.t('products:nb_products',
             { count: pageData && pageData.content.products ? pageData.content.products.length : 0 })}</h2>
           <NoSSR>
           <ul>
             {
               pageData !== undefined && pageData.content.products.length > 0 &&
-              pageData.content.products.map((prod uct, key) => (
+              pageData.content.products.map((product, key) => (
                 <li key={key}>
                   <Link to="/product/:id" query={{ id: product }}>
                     <ProductCard productId={product}/>
@@ -45,6 +43,3 @@ class Products extends React.Component {
 export default pageWrapper(Products, {
   name: 'products',
 });
-
-
-
