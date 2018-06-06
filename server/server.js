@@ -157,8 +157,8 @@ const launchServer = async (port) => {
 
   // This will be used to open up the browser on development mode when the
   // server is ran
-  const { localUrlForBrowser } = process.env.NODE_ENV === 'development'
-    ? prepareUrls(config.server.protocol, HOST, port)
+  const localUrlForBrowser = process.env.NODE_ENV === 'development'
+    ? prepareUrls(config.server.protocol, HOST, port).localUrlForBrowser
     : null;
 
   // Enabling cors
