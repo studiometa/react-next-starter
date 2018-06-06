@@ -13,7 +13,7 @@ module.exports = withSass({
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    if (ANALYZE) {
+    if (ANALYZE && process.env.NODE_ENV !== 'test') {
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'server',
         analyzerPort: 8888,
