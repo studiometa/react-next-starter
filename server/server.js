@@ -97,7 +97,7 @@ const launchServer = async (port) => {
 
   // Warn and crash if required files are missing
 
-  if (!checkRequiredFiles([
+  if (process.env.NODE_ENV === 'development' && !checkRequiredFiles([
       paths.appServer,
       paths.appPublic,
       paths.appClient,
