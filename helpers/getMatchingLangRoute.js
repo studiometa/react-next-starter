@@ -15,17 +15,10 @@ const routes = getRoutes();
  * @returns {*}
  */
 module.exports = (path, lang) => {
-  if (config.lang.enableRouteTranslation === true) {
-    if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
-      return {
-        pathname: routes.client[path][lang],
-        page: routes.client[path].page,
-      };
-    }
-  } else if (typeof routes.all[path] === 'object') {
+  if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
     return {
-      pathname: path,
-      page: routes.all[path].page,
+      pathname: routes.client[path][lang],
+      page: routes.client[path].page,
     };
   }
   return {};

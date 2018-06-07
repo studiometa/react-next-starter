@@ -6,10 +6,13 @@ module.exports = {
     name: 'customPathDetector',
 
     lookup(options) {
-      const possibleUrlLang = options.url.slice(1, 3);
-      return availableLangs.includes(possibleUrlLang)
-        ? possibleUrlLang
-        : undefined;
+      if (config.lang.enableRouteTranslation === true) {
+        const url = typeof window !== 'undefined' ? window.location.pathname : options.url;
+        const possibleUrlLang = url.slice(1, 3);
+        return url[0] === '/' && url[3] === '/' && availableLangs.includes(possibleUrlLang)
+          ? possibleUrlLang
+          : undefined;
+      } else return config.lang.default
     },
   },
   fallback: {

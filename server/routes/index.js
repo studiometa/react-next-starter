@@ -56,7 +56,7 @@ const getRoutes = () => {
   };
 
   // Get routes with locales
-  if (config.lang.enableRouteTranslation === true) {
+  //if (config.lang.enableRouteTranslation === true) {
 
     // Get client routes structure
     routes = mergeClientRoutes(routes);
@@ -77,10 +77,14 @@ const getRoutes = () => {
           }
 
           // Add the route to the routes client attribute so that we can easily retrieve it later
-          if (config.lang.enableRouteTranslation === true && typeof routes.client === 'object' && lang !== config.lang.internalRoutesLang) {
+          if (typeof routes.client === 'object' && lang !== config.lang.internalRoutesLang) {
             Object.entries(routes.client).forEach(([clientKey, clientRoute]) => {
               if (clientRoute.page === route.page) {
-                routes.client[clientKey][lang.lang] = `/${lang.lang}${key}`;
+                if (config.lang.enableRouteTranslation === true) {
+                  routes.client[clientKey][lang.lang] = `/${lang.lang}${key}`;
+                } else {
+                  routes.client[clientKey][lang.lang] = `${key}`;
+                }
               }
             });
           }
@@ -97,14 +101,14 @@ const getRoutes = () => {
         throw new Error(`No route file found for lang '${ lang.lang }'`);
       }
     });
-  } else {
-    try {
-      routes.all = require(`./${config.lang.default}.routes.js`)();
-
-    } catch (err) {
-      throw new Error(`No route file found for lang '${ config.lang.default }'`);
-    }
-  }
+  // } else {
+  //   try {
+  //     routes.all = require(`./${config.lang.default}.routes.js`)();
+  //
+  //   } catch (err) {
+  //     throw new Error(`No route file found for lang '${ config.lang.default }'`);
+  //   }
+  // }
 
   return routes;
 };

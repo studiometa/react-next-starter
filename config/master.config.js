@@ -26,13 +26,14 @@ module.exports = {
     // will only append if a resolving route is found, else it will end with a 404 error.
     enableFallbackRedirection: true,
 
+
     // When writing routes in this starter, you must always use the custom Link component. When using this component,
     // you must specify the route on which the link must be pointing, normal. But when route translation is enabled,
     // you must specify in which lang those routes will be written. For example, you may have a route named /products
     // and an other one called /produits, but you will only use one of those two names in your markup and links must be
     // automatically converted to the user language.
     //
-    // TL;DR : This parameter is only necessary when routes translation is enabled and define in which lang you want to write
+    // TL;DR : This parameter define in which lang you want to write
     // routes when using the Link component to build links inside you app.
     internalRoutesLang: 'en',
 

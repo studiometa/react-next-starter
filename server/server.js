@@ -198,7 +198,7 @@ const launchServer = async (port) => {
       }
     });
   } else {
-    listenToMulti(routes.all, server);
+    listenToMulti(routes[config.lang.default], server);
   }
 
 
