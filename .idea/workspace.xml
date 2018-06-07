@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/index.js" afterPath="$PROJECT_DIR$/config/index.js" />
+      <change beforePath="$PROJECT_DIR$/__tests__/app.test.js" afterPath="$PROJECT_DIR$/__tests__/app.test.js" />
+      <change beforePath="$PROJECT_DIR$/__tests__/routes.test.js" afterPath="$PROJECT_DIR$/__tests__/routes.test.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,20 +32,8 @@
       <file leaf-file-name="product.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/pages/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/bundles/pages/_app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+            <state relative-caret-position="315">
+              <caret line="27" column="82" lean-forward="true" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -75,20 +64,28 @@
       <file leaf-file-name="products.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/pages/products/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.test.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="75" column="50" lean-forward="true" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -136,8 +133,8 @@
       <find>routes.all</find>
       <find>paths</find>
       <find>path</find>
-      <find>moment</find>
       <find>groupe_contacts_regionDirection des Ventes Internationales</find>
+      <find>moment</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -154,6 +151,9 @@
         <entry key="$PROJECT_DIR$" value="resolve-bitbucket-pipelines" />
       </map>
     </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="develop" repo="$PROJECT_DIR$" source="develop" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -162,7 +162,6 @@
         <option value="$PROJECT_DIR$/__tests__/tes_page.react.js" />
         <option value="$PROJECT_DIR$/server/routes/en.routes.js" />
         <option value="$PROJECT_DIR$/__tests__/fake-API.test.js" />
-        <option value="$PROJECT_DIR$/__tests__/app.test.js" />
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/locales/en/products.json" />
         <option value="$PROJECT_DIR$/locales/fr/products.json" />
@@ -187,7 +186,6 @@
         <option value="$PROJECT_DIR$/bitbucket-pipelines.yml" />
         <option value="$PROJECT_DIR$/config/now.config.js" />
         <option value="$PROJECT_DIR$/server/fakeAPI/fakeAPI.store.js" />
-        <option value="$PROJECT_DIR$/__tests__/routes.test.js" />
         <option value="$PROJECT_DIR$/lib/path.js" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -209,6 +207,8 @@
         <option value="$PROJECT_DIR$/config/index.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
         <option value="$PROJECT_DIR$/node_modules/moment/moment.js" />
+        <option value="$PROJECT_DIR$/__tests__/app.test.js" />
+        <option value="$PROJECT_DIR$/__tests__/routes.test.js" />
       </list>
     </option>
   </component>
@@ -260,6 +260,24 @@
               <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="__tests__" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bundles" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bundles" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -273,7 +291,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="nextcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;config/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/index.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;style&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/styles.scss&#10;appscss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;products.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;nextconfig&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;routete&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/routes.test.js&#10;scss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;faks&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;nowcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;pipe&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;apptest&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/app.test.js&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;routes/index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;enrout&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;frroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/fr.routes.js&#10;production&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;nextc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withI18next.js&#10;nextconfigf&#9;null&#9;null&#10;develc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;testconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;deve&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;routeste&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/routes.test.js&#10;La&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout/PageLayout.js&#10;Head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Head.js&#10;_ap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;mastercon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;mas&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;fakeapi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;promo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/promotions.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;withp&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;i1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/i18n.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;i18n&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/i18n.js&#10;appjs&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;pageda&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;withpa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/routes.test.js&#10;app.test&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/app.test.js&#10;nextcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;config/inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/index.js&#10;products&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;style&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/styles.scss&#10;appscss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;products.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;nextconfig&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;routete&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/routes.test.js&#10;scss&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/app.scss&#10;produc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/product.js&#10;faks&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;nowcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;pipe&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bitbucket-pipelines.yml&#10;apptest&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/app.test.js&#10;pack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;routes/index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/index.js&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;enrout&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;frroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/fr.routes.js&#10;production&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;prod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/products.js&#10;nextc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/next.config.js&#10;next&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withI18next.js&#10;nextconfigf&#9;null&#9;null&#10;develc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;testconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;deve&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;routeste&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/routes.test.js&#10;La&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout/PageLayout.js&#10;Head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Head.js&#10;_ap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;mastercon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;fa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;mas&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;fakeapi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;promo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/products/promotions.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;withp&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;i1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/i18n.js&#10;fake&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/fakeAPI/fakeAPI.store.js&#10;i18n&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/i18n.js&#10;appjs&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -346,13 +364,6 @@
       <workItem from="1527493694350" duration="66290000" />
       <workItem from="1527859291479" duration="4722000" />
       <workItem from="1528110929974" duration="1895000" />
-    </task>
-    <task id="LOCAL-00053" summary="Update pipelines">
-      <created>1526648317107</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1526648317108</updated>
     </task>
     <task id="LOCAL-00054" summary="Update pipelines">
       <created>1526649024949</created>
@@ -690,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528290838374</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="small config fix (do not import unecessary configs)">
+      <created>1528378899946</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1528378899946</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303166000" />
+    <option name="totallyTimeSpent" value="303478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -804,7 +822,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Update the pipeline file to make the tests be run on develop branch" />
     <MESSAGE value="Still trying to make the url resolution working on the preprod" />
     <MESSAGE value="Fix port negotiation errors when the default port is already used" />
     <MESSAGE value="Update test to make them work with enzym and React components" />
@@ -829,7 +846,8 @@
     <MESSAGE value="Improve test 'env' for pipeline" />
     <MESSAGE value="Fix a small bug on the server config" />
     <MESSAGE value="Add 'old' (outdated, obsolete, antiquated) starter styles files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add 'old' (outdated, obsolete, antiquated) starter styles files" />
+    <MESSAGE value="small config fix (do not import unecessary configs)" />
+    <option name="LAST_COMMIT_MESSAGE" value="small config fix (do not import unecessary configs)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1004,22 +1022,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/test.js" />
-    <entry file="file://$PROJECT_DIR$/__tests__/app.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/fake-API.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1158,16 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/products/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1175,24 +1167,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/bundles/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,6 +1198,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/bundles/pages/_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="0" column="3250" lean-forward="false" selection-start-line="0" selection-start-column="3250" selection-end-line="0" selection-end-column="3250" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="82" lean-forward="true" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/app.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/products/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="75" column="50" lean-forward="true" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
           <folding />
         </state>
       </provider>

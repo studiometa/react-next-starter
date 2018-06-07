@@ -21,7 +21,7 @@ afterAll(async () => {
 
 describe('Testing routes', () => {
 
-  test('Check that all routes files are defined', async () => {
+  test('Check that all routes files are defined', () => {
     if (config.lang.enableRouteTranslation === true) {
       config.lang.available.forEach(lang => {
         try {
@@ -43,7 +43,7 @@ describe('Testing routes', () => {
     }
   });
 
-  test('Check that all the routes are well defined', async () => {
+  test('Check that all the routes are well defined', () => {
     if (config.lang.enableRouteTranslation === true) {
       Object.values(ROUTES[config.lang.default]).forEach(route => {
         config.lang.available.forEach(({ lang }) => {
@@ -54,7 +54,7 @@ describe('Testing routes', () => {
     }
   });
 
-  test('Check that there is no duplicated pages', async () => {
+  test('Check that there is no duplicated pages', () => {
     for (const [path, routesAttribute] of Object.entries(ROUTES)) {
       if ((config.lang.enableRouteTranslation === false && path === config.lang.default)
         || (config.lang.available.find(e => e.lang === path))) {
@@ -78,7 +78,7 @@ describe('Testing routes', () => {
         } catch (err) {
           console.error(err);
         }
-      })
+      }, 20000)
     }
-  }, 300000);
+  });
 });
