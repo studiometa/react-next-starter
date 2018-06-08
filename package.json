@@ -67,6 +67,7 @@
     "react-i18n": "0.0.6",
     "react-i18next": "^7.6.1",
     "react-jss": "^8.5.0",
+    "react-loading-skeleton": "^0.5.0",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.7",
     "recompose": "^0.27.1",

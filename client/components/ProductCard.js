@@ -1,11 +1,27 @@
 import React            from 'react';
-import { connect }      from 'react-redux';
 import { fetchProduct } from '../../store/actions/products.actions';
+import Card             from '@material-ui/core/Card';
+import CardContent      from '@material-ui/core/CardContent';
+import CardMedia        from '@material-ui/core/CardMedia';
+import Typography       from '@material-ui/core/Typography';
+import wrapper          from '../lib/componentWrapper';
+import Skeleton         from './Skeleton';
+
+
+const styles = {
+  card: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+};
 
 
 
 class ProductCard extends React.Component {
-  state = { data: null };
+  state = { data: undefined };
 
 
   componentDidMount() {
@@ -32,16 +48,33 @@ class ProductCard extends React.Component {
 
   render() {
 
-    // Display a loader if the component has no data
-    if (!this.state.data || !this.state.data.name) {
-      return (
-        <div>Loading...</div>
-      );
-    }
+    const isLoaded    = typeof this.state.data === 'object';
+    const { classes } = this.props;
 
     return (
       <div>
-        {this.state.data.name}
+        <Card className={classes.card}>
+          {
+            isLoaded
+              ? <CardMedia
+                className={classes.media}
+                image="https://picsum.photos/200/300"
+              />
+              : <Skeleton height={200}/>
+          }
+          <CardContent>
+            <Typography gutterBottom variant="headline" component="h2">
+              {isLoaded ? this.state.data.name : <Skeleton/>}
+            </Typography>
+            <Typography component="p">
+              {
+                isLoaded
+                  ? 'are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+                  : <Skeleton count={3}/>
+              }
+            </Typography>
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -55,5 +88,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ProductCard);
+export default wrapper(ProductCard, { mapStateToProps, styles });
 
