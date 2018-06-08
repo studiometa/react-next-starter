@@ -1,6 +1,8 @@
-import withI18next  from './withI18next';
-import withPageData from './withPageData';
-import { connect }  from 'react-redux';
+import withI18next    from './withI18next';
+import withPageData   from './withPageData';
+import { connect }    from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import withMUITheme   from './withMUITheme';
 
 
 /**
@@ -12,18 +14,24 @@ import { connect }  from 'react-redux';
  * @param {string} name: the slug name of the page (used by the api, etc)
  * @param {array} locales: additional locales that can be injected to the page
  * @param {function} mapStateToProps: you know what it is
+ * @param {object} styles: custom component styles
  * @returns {*}
  */
 export default (Component, {
   name,
   locales = [],
-  mapStateToProps = null
+  mapStateToProps = null,
+  styles = {},
 }) => {
   return withPageData(name)(
     withI18next([name, ...locales])(
       connect(mapStateToProps)(
-        Component
-      )
-    )
+        withMUITheme(
+          withStyles(styles)(
+            Component,
+          ),
+        ),
+      ),
+    ),
   );
 };
