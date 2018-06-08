@@ -4,7 +4,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline          from '@material-ui/core/CssBaseline';
 import getPageContext       from './getPageMUIContext';
 
-
 function withRoot(Component) {
   class WithRoot extends React.Component {
     constructor(props) {

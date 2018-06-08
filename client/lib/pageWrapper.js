@@ -4,7 +4,6 @@ import { connect }    from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import withMUITheme   from './withMUITheme';
 
-
 /**
  * This is a page wrapper that does the following things:
  * - connect the component to redux
@@ -35,3 +34,4 @@ export default (Component, {
     ),
   );
 };
+

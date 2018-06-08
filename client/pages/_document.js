@@ -9,7 +9,7 @@ import getPageContext                       from '../lib/getPageMUIContext';
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
-
+console.log(this.props);
 
     return (
       <html>
