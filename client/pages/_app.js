@@ -10,30 +10,10 @@ import LangSwitch            from '../components/LangSwitch';
 import Link                  from '../components/Link';
 import NProgress             from 'nprogress';
 
-import Button            from '@material-ui/core/Button';
-import Dialog            from '@material-ui/core/Dialog';
-import DialogTitle       from '@material-ui/core/DialogTitle';
-import DialogContent     from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogActions     from '@material-ui/core/DialogActions';
-import Typography        from '@material-ui/core/Typography';
 
 import '../styles/styles.scss';
 
-// If we are on a development env and fake-api is enabled, we may have to inject the api store
-// somewhere so that making changes to this file can trigger the webpack HMR event.
-
-if (process.env.NODE_ENV === 'development' && config.server.enableFakeAPI === true) {
-  const fakeAPIStore = require('../../server/fakeAPI/fakeAPI.store');
-}
-
-
 export default withRedux(createStore)(class _App extends App {
-  state = {
-    open: false,
-  };
-
-
   static async getInitialProps({ Component, ctx }) {
     const props = {
       pageProps: {
@@ -76,23 +56,8 @@ export default withRedux(createStore)(class _App extends App {
     Router.onRouteChangeError    = () => NProgress.done();
   }
 
-
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
-
-
   render() {
     const { Component, pageProps, store } = this.props;
-    const { open } = this.state;
 
     return (
       <Container>
@@ -106,26 +71,6 @@ export default withRedux(createStore)(class _App extends App {
               push={Router.push}
               query={this.props.query}
             />
-            <Dialog open={open} onClose={this.handleClose}>
-              <DialogTitle>Super Secret Password</DialogTitle>
-              <DialogContent>
-                <DialogContentText>1-2-3-4-5</DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button color="primary" onClick={this.handleClose}>
-                  OK
-                </Button>
-              </DialogActions>
-            </Dialog>
-            <Typography variant="display1" gutterBottom>
-              Material-UI
-            </Typography>
-            <Typography variant="subheading" gutterBottom>
-              example project
-            </Typography>
-            <Button variant="contained" color="secondary" onClick={this.handleClick}>
-              Super Secret Password
-            </Button>
             <Component {...pageProps}  />
           </div>
         </Provider>

@@ -1,26 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 
-import { SheetsRegistry } from 'jss';
-import { createMuiTheme, createGenerateClassName } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import { SheetsRegistry }          from 'jss';
+import { createGenerateClassName } from '@material-ui/core/styles';
+import theme                       from './MUITheme';
 
-// A theme with custom primary and secondary color.
-// It's optional.
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: purple[100],
-      main: purple[100],
-      dark: purple[100],
-    },
-    secondary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
-    },
-  },
-});
 
 function createPageContext() {
   return {

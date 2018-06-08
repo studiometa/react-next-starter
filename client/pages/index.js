@@ -2,16 +2,26 @@ import React       from 'react';
 import Link        from '../components/Link';
 import Layout      from '../components/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
+import Button      from '@material-ui/core/Button';
 
-
+const styles = {
+  something: {
+    color: 'red'
+  }
+};
 
 class Home extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <Layout pageData={this.props.pageData}>
         <div>
           <h2>{this.props.t('home')}</h2>
-          <Link to={`/products`}>{this.props.t('products')}</Link>
+          <Link to={`/products`}>
+            <Button variant="contained" color="secondary" onClick={this.handleClick}>
+              {this.props.t('products')}
+            </Button>
+          </Link>
         </div>
       </Layout>
     );
@@ -21,5 +31,6 @@ class Home extends React.Component {
 
 
 export default pageWrapper(Home, {
-  name: 'home'
+  name: 'home',
+  styles
 });

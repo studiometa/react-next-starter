@@ -3,6 +3,8 @@ import withPageData   from './withPageData';
 import { connect }    from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import withMUITheme   from './withMUITheme';
+import { compose }    from 'recompose';
+
 
 /**
  * This is a page wrapper that does the following things:
@@ -22,16 +24,35 @@ export default (Component, {
   mapStateToProps = null,
   styles = {},
 }) => {
-  return withPageData(name)(
-    withI18next([name, ...locales])(
-      connect(mapStateToProps)(
-        withMUITheme(
-          withStyles(styles)(
-            Component,
-          ),
-        ),
-      ),
-    ),
-  );
+  return withMUITheme(compose(
+    withPageData(name),
+    withI18next([name, ...locales]),
+    connect(mapStateToProps),
+    withStyles(styles),
+  )(Component));
+
 };
 
+//return withPageData(name)(
+//   withMUITheme(
+//     withI18next([name, ...locales])(
+//       connect(mapStateToProps)(
+//         withStyles(styles)(
+//           Component,
+//         ),
+//       ),
+//     ),
+//   ),
+// );
+
+// return withPageData(name)(
+//   withI18next([name, ...locales])(
+//     connect(mapStateToProps)(
+//       withMUITheme(
+//         withStyles(styles)(
+//           Component,
+//         ),
+//       ),
+//     ),
+//   ),
+// );
