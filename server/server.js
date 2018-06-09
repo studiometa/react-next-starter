@@ -128,7 +128,6 @@ const launchServer = async (port) => {
         order: ['customPathDetector', 'cookie', 'customFallback'],
         lookupCookie: config.lang.lookupCookie,
         lookupFromPathIndex: 1,
-        caches: ['cookie'],
         excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)
 
         // optional expire and domain for set cookie
