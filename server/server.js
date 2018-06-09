@@ -173,7 +173,7 @@ const launchServer = async (port) => {
   // Initialize fake-API
 
   if (config.server.enableFakeAPI !== false) {
-    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 0, maxDelay: 300 });
+    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 200, maxDelay: 1000 });
     server.get('/fake-api', fakeAPI.find);
     server.get('/fake-api/*', fakeAPI.get);
   }
