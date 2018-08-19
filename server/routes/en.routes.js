@@ -1,6 +1,8 @@
 module.exports = () => ({
+
+  '/_sandbox': { page: '/_sandbox' },
+
+  /** GENERAL **/
+
   '/': { page: '/index' },
-  '/products': { page: '/products' },
-  '/promotions': { page: '/products/promotions'},
-  '/product/:id': { page: '/product', queryParams: ['id'] },
 });

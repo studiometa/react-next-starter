@@ -1,11 +1,14 @@
-import React       from 'react';
-import NextLink    from 'next/link';
-import propTypes   from 'prop-types';
-import { connect } from 'react-redux';
-import config      from '../../../config';
-
-import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
+import Typography           from '@material-ui/core/Typography';
+import NextLink             from 'next/link';
+import Router               from 'next/router';
+import propTypes            from 'prop-types';
+import React                from 'react';
+import { connect }          from 'react-redux';
+import config               from '../../../config';
 import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
+import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
+import LoginBox             from '../LoginBox';
+import wrapper from '../../lib/componentWrapper'
 
 
 /**
@@ -30,64 +33,309 @@ import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
  * @returns {*}
  * @constructor
  */
-const Link = (props) => {
-  let {
-        to,
-        children,
-        query,
-        className,
-        lang,
-        dispatch,
-        ...rest
-      } = props;
 
-  // If lang is not defined (it must never be, but who knows?), fallback to default language.
-  // This is important because we must NEVER have urls without language prefix if the
-  // url translation is enabled. This may cause duplicated content pages and have bad effects
-  // on your SEO...
 
-  lang = typeof lang === 'string' ? lang : config.lang.default;
+class Link extends React.Component {
+  static propTypes = {
 
-  // Find a matching route in the route.js config file
-  let { pathname, page } = getMatchingLangRoute(to, lang);
+    // The content of the link
+    children: propTypes.any.isRequired,
 
-  // Check if a matching route has been found
-  // if not, only show an error log on dev env
-  if (typeof pathname !== 'string') {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error(`Link.js: No matching route has been found for '${ to }'`);
-    }
+    // The route path
+    to: propTypes.string.isRequired,
 
-    // If a query is defined and the matching route has a queryParams parameter
-    // add the query to the final link path (href and as parameters)
-  } else if (typeof query === 'object') {
-    Object.entries(query).forEach(([queryName, queryValue]) => {
-      pathname = pathname.replace(`:${queryName}`, queryValue);
-    });
+    // The route query (replacing the :foo in the route path)
+    query: propTypes.any,
+
+    // A className applied to the link
+    className: propTypes.string,
+
+    // A style to be used when the link is active
+    activeStyle: propTypes.object,
+
+    // A className to be used when the link is active
+    activeClassName: propTypes.string,
+
+    // Do not use the Typography element in the link
+    noTypo: propTypes.bool,
+
+    // The name of the link (native)
+    name: propTypes.string,
+
+    // The target of the link (native)
+    target: propTypes.string,
+
+    // Define if the related page must be prefetched (only in prod)
+    prefetch: propTypes.bool,
+
+    // A query that can be passed to the link
+    urlQuery: propTypes.string,
+
+    // Style that can be applied to the link element (<a>)
+    linkStyle: propTypes.object,
+
+    // Class name that can be applied to the link element (<a>)
+    linkClassName: propTypes.string,
+
+    // Defines if the link is disabled
+    disabled: propTypes.bool,
+
+    // Contains custom jsx attributes that will be passed to the final link element
+    // such as name, etc
+    linkAttributes: propTypes.object
+  };
+
+  static defaultProps = {
+    variant: 'button',
+    component: 'span',
+    noTypo: false,
+    target: '_self',
+    prefetch: false,
+    urlQuery: '',
+    linkStyle: { display: 'flex' },
+    disabled: false,
+    linkAttributes: {}
+  };
+
+
+  constructor(props) {
+    super(props);
+    this.state             = {
+      isActive: false,
+      page: null,
+      pathname: null,
+      isHidden: false,
+      restrictToLoggedUsers: false,
+      isExternal: false // Define if the provided route is an external link
+    };
+    this.checkRestrictions = this.checkRestrictions.bind(this);
   }
 
-  page     = removeUrlLastSlash(page);
-  pathname = removeUrlLastSlash(pathname);
+
+  componentDidMount() {
+    this._updateLink();
+  }
 
 
-  return (
-    <NextLink href={{ pathname: page, query }} as={pathname} {...rest}>
-      <a className={className}>{children}</a>
-    </NextLink>
-  );
-};
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState !== this.state
+      || nextProps.lang !== this.props.lang
+      || nextProps.to !== this.props.to
+      || nextProps.urlQuery !== this.props.urlQuery
+      || nextProps.children !== this.props.children
+      || nextProps.query !== this.props.query
+      || nextProps.user !== this.props.user;
+  }
 
-Link.propTypes = {
-  children: propTypes.any.isRequired,
-  to: propTypes.string.isRequired,
-  query: propTypes.any,
-  className: propTypes.string,
-};
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.to !== this.props.to || prevProps.query !== this.props.query) {
+      this._updateLink();
+    }
+  }
+
+
+  /**
+   * Check if the current link is restricted to a particular group of users
+   * If yes, display a login box instead of updating the current page
+   * @param e
+   */
+  checkRestrictions(e) {
+    if (this.state.restrictToLoggedUsers === true) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.setState({ loginModalOpen: true });
+    }
+  }
+
+
+  _updateLink() {
+    if (this._isActive() === true) {
+      this.setState({ isActive: true });
+    }
+
+    let { to, query, lang, target, user } = this.props;
+    let isHidden                          = false;
+    let restrictToLoggedUsers             = false;
+
+    if (!to) return this.setState({isHidden: true})
+
+    // If the 'to' prop contains a dot, it cannot be a valid route
+    // and is probably be an url instead. In this case, all we need to
+    // do is to save the url into the 'pathname' state of the component
+    // and display a native link instead of the Next Link component
+    if (to.includes('.') || to.includes('://')) {
+      return this.setState({
+        isExternal: true,
+        pathname: to,
+      });
+    }
+
+    // If lang is not defined (it must never be, but who knows?), fallback to default language.
+    // This is important because we must NEVER have urls without language prefix if the
+    // url translation is enabled. This may cause duplicated content pages and have bad effects
+    // on your SEO...
+
+    lang = typeof lang === 'string' ? lang : config.lang.default;
+
+    // Find a matching route in the route.js config file
+    let { pathname, page, restrict } = getMatchingLangRoute(to, lang);
+
+    // If this route has some restrictions
+    if (Array.isArray(restrict)) {
+
+      // If the route is restricted to visitors but a user is logged in, hide the link
+      if (restrict.includes('visitor') && user.data) {
+        isHidden = true;
+      }
+
+      // Else if the route is restricted to logged user, we should first display a modal to
+      // ask the user to log in
+      else if (restrict.includes('user') && !user.data) {
+        restrictToLoggedUsers = true;
+      }
+    }
+
+    // Check if a matching route has been found
+    // if not, only show an error log on dev env
+    if (typeof pathname !== 'string') {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(`Link.js: No matching route has been found for '${ to }'`);
+      }
+
+      // If a query is defined and the matching route has a queryParams parameter
+      // add the query to the final link path (href and as parameters)
+    }
+
+    if (typeof query === 'object') {
+      Object.entries(query).forEach(([queryName, queryValue]) => (
+        queryValue && queryName ? pathname = pathname.replace(`:${queryName}`, queryValue) : null
+      ));
+    }
+
+    // If the target is _blank, we must generate an absolute url from the
+    // route pathname. This way we can open an internal page in a new tab/window.
+
+    if (target === '_blank') {
+      return this.setState({
+        isExternal: true,
+        page: removeUrlLastSlash(page),
+        pathname: removeUrlLastSlash(config.server.getUrl(to)),
+        restrictToLoggedUsers,
+        isHidden,
+      });
+    } else {
+      this.setState({
+        page: removeUrlLastSlash(page),
+        pathname: removeUrlLastSlash(pathname),
+        restrictToLoggedUsers,
+        isHidden,
+      });
+    }
+  }
+
+
+  _isActive = () => {
+    return (this.props.to !== '/' && Router.route.indexOf(this.props.to) === 0)
+      || (Router.route === '/index' && this.props.to === '/');
+  };
+
+
+  render() {
+    if (this.state.isHidden === true) return null;
+    if (this.props.disabled === true) return this.props.children;
+    let {
+          className,
+          style,
+          activeStyle,
+          activeClassName,
+          linkStyle,
+          linkClassName,
+          linkAttributes,
+          prefetch,
+          variant,
+          name,
+          component,
+          noTypo,
+          target,
+          children,
+        } = this.props;
+
+    style = this.state.isActive === true && activeClassName !== undefined
+      ? Object.assign({}, style, activeStyle)
+      : style;
+
+    className = this.state.isActive === true && activeClassName !== undefined
+      ? activeClassName
+      : className;
+
+
+    // This is the native link component
+    const NativeLinkComponent = (
+      <a
+        href={this.state.pathname}
+        name={name || typeof children === 'string' ? children : ''}
+        target={target}
+        rel={target === '_blank' ? 'noopener' : ''}
+        style={linkStyle}
+        className={linkClassName}
+        onClick={this.checkRestrictions}
+        {...linkAttributes}
+      >
+        {
+          noTypo === true
+            ? this.props.children
+            : <Typography className={`${ className }`} style={style} variant={variant} component={component}>
+              {children}
+            </Typography>
+        }
+      </a>
+    );
+
+    // Return a native external link if 'to' is not
+    // a route but an url
+    if (this.state.isExternal === true) {
+      return NativeLinkComponent;
+    } else if (this.state.restrictToLoggedUsers === true) {
+      return (
+        <React.Fragment>
+          {NativeLinkComponent}
+          {
+            this.state.loginModalOpen === true && this.state.restrictToLoggedUsers === true &&
+            <LoginBox modal
+                      isOpen={true}
+                      closeModal={() => this.setState({ loginModalOpen: false })}
+                      redirect={this.state.pathname + this.props.urlQuery}
+            />
+          }
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <NextLink href={{
+            pathname: this.state.page,
+            query: this.props.query,
+          }} as={this.state.pathname + this.props.urlQuery} prefetch={prefetch}>
+            {NativeLinkComponent}
+          </NextLink>
+        </React.Fragment>
+      );
+    }
+  };
+}
+
+
 
 const mapStateToProps = (state) => {
   return {
-    lang: state.app ? state.app.lang : undefined,
+    lang: state.app.lang,
+    user: state.user || {},
   };
 };
 
-export default connect(mapStateToProps)(Link);
+export default wrapper(Link, {
+  mapStateToProps,
+  isTranslatable: false,
+  hasStyles: false
+});

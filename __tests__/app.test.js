@@ -13,7 +13,7 @@ const path = require('path');
 
 beforeAll(async () => {
   return await server.launch(PORT);
-}, 10000);
+}, 100000);
 
 afterAll(async () => {
   return await server.stop();
@@ -28,7 +28,7 @@ describe('Global app tests', () => {
     } catch (err) {
       console.error(err);
     }
-  }, 10000);
+  }, 400000);
 });
 
 describe('Translations tests', () => {
@@ -43,5 +43,5 @@ describe('Translations tests', () => {
         expect(fs.existsSync(nsPath)).toBe(true)
       })
     }
-  }, 10000);
+  }, 200000);
 });

@@ -1,29 +1,29 @@
-import React       from 'react';
-import Link        from '../components/Link';
-import Layout      from '../components/PageLayout';
-import pageWrapper from '../lib/pageWrapper';
-import Button      from '@material-ui/core/Button';
+import React                       from 'react';
+import Layout                      from '../components/PageLayout';
+import pageWrapper                 from '../lib/pageWrapper';
 
-class Home extends React.Component {
+
+const styles = theme => ({});
+
+const Home = class extends React.Component {
+
   render() {
+
+    const pageData    = this.props.pageData || { content: {} };
+    const { classes } = this.props;
 
     return (
       <Layout pageData={this.props.pageData}>
-        <div>
-          <h2>{this.props.t('home')}</h2>
-          <Link to={`/products`}>
-            <Button variant="contained" color="primary" onClick={this.handleClick}>
-              {this.props.t('products')}
-            </Button>
-          </Link>
-        </div>
+        Sweet home
       </Layout>
     );
   }
-}
+};
 
-
+const mapStateToProps = state => ({});
 
 export default pageWrapper(Home, {
-  name: 'home'
+  mapStateToProps,
+  name: 'home',
+  styles,
 });

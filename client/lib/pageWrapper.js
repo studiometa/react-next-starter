@@ -14,34 +14,25 @@ import { compose }    from 'recompose';
  * - Add MUI styles
  * @param Component
  * @param {string} name: the slug name of the page (used by the api, etc)
- * @param {array} locales: additional locales that can be injected to the page
+ * @param {array} namespaces: additional locales that can be injected to the page
  * @param {function} mapStateToProps: you know what it is
  * @param {object} styles: custom component styles
+ * @param {boolean} withTheme: define if the prop 'theme' containing the app theme must be injected into the component
  * @returns {*}
  */
+
 export default (Component, {
   name,
-  locales = [],
+  namespaces = [],
   mapStateToProps = null,
   styles = {},
+  withTheme = false,
 }) => {
   return withMUITheme(compose(
     withPageData(name),
-    withI18next([name, ...locales]),
+    withI18next([name, ...namespaces]),
     connect(mapStateToProps),
     withStyles(styles),
-  )(Component));
+  )(Component), withTheme);
 
 };
-
-//return withPageData(name)(
-//   withMUITheme(
-//     withI18next([name, ...locales])(
-//       connect(mapStateToProps)(
-//         withStyles(styles)(
-//           Component,
-//         ),
-//       ),
-//     ),
-//   ),
-// );

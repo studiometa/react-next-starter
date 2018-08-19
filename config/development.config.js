@@ -4,7 +4,7 @@ const url = require('url');
 module.exports = {
 
   // Used by ExpressJs and NextJs to serve the app
-  server : {
+  server: {
     port: 3000,
     clientDir: './client',
     host: 'localhost',
@@ -16,7 +16,7 @@ module.exports = {
           hostname: this.host,
           protocol: this.protocol,
           port: process.env.PORT || this.port,
-          pathname
+          pathname,
         })
       );
     },

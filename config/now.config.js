@@ -14,11 +14,11 @@ module.exports = {
     enableFakeAPI: true,
     enableHtpasswd: true,
     get getUrl() {
-      return (pathname = '') => (
+      return (pathname, withPort = true) => (
         url.format({
           hostname: this.host,
           protocol: this.protocol,
-          port: process.env.PORT || this.port,
+          port: withPort ? (process.env.PORT || this.port) : null,
           pathname
         })
       );
@@ -30,7 +30,7 @@ module.exports = {
   get api() {
     return {
       getUrl: () => {
-        return `${this.server.protocol}://${this.server.host}/fake-api`;
+        return `${this.server.getUrl()}/fake-api`;
       },
     };
   },

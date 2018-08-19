@@ -63,6 +63,11 @@ const htpasswdMiddleware = (request, response, next) => {
 const listenToMulti = (routes, server, lang) => {
   Object.entries(routes).forEach(([path, route]) => {
 
+    // Remove the sandbox page in production
+    if (path === '/_sandbox' && process.env.NODE_ENV === 'production') {
+      return;
+    }
+
     // Add the language segment to the url if defined
     const url = lang !== undefined ? `/${ lang }${ path }` : path;
     server.get(url, (req, res) => {
@@ -78,6 +83,7 @@ const listenToMulti = (routes, server, lang) => {
           queryParams[param] = req.params[param];
         });
       }
+
 
       return app.render(req, res, route.page, queryParams);
     });
@@ -128,8 +134,6 @@ const launchServer = async (port) => {
         order: ['customPathDetector', 'cookie', 'customFallback'],
         lookupCookie: config.lang.lookupCookie,
         lookupFromPathIndex: 1,
-        excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)
-
         // optional expire and domain for set cookie
         cookieMinutes: config.lang.cookieMinutes,
         cookieDomain: config.server.host,
@@ -172,7 +176,7 @@ const launchServer = async (port) => {
   // Initialize fake-API
 
   if (config.server.enableFakeAPI !== false) {
-    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 200, maxDelay: 1000 });
+    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 0, maxDelay: 700 });
     server.get('/fake-api', fakeAPI.find);
     server.get('/fake-api/*', fakeAPI.get);
   }
@@ -206,6 +210,7 @@ const launchServer = async (port) => {
 
   server.get('*', (req, res) => {
 
+    const cleanUrl = req.url.split('?')[0];
     // Add an htpasswd on the server if we are
     // running on the Now pre-production
 
@@ -224,24 +229,20 @@ const launchServer = async (port) => {
     // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
 
     if (!req.url.includes('/_next/')
+      && !req.url.includes('/_sandbox')
       && config.lang.enableRouteTranslation === true
-      && routes.all[req.url] !== undefined) {
+      && routes.all[cleanUrl] !== undefined) {
 
       const language = config.lang.available.find(e => e.lang === req.language);
-
       const matchingRoute = typeof language === 'object'
       && typeof routes[language.lang] === 'object'
-      && routes[language.lang][req.url] !== undefined
-        ? routes[language.lang][req.url]
-        : routes.all[req.url];
+      && routes[language.lang][cleanUrl] !== undefined
+        ? routes[language.lang][cleanUrl]
+        : routes.all[cleanUrl];
 
       // Check if a matching route is defined and the redirection feature enabled
       if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
         res.redirect(301, `/${matchingRoute.lang}${req.url}`);
-      } else {
-
-        // TODO Here we must fallback to the app 404 instead of an express 404 error
-        res.status(404).send('Sorry but we cannot resolve this url.');
       }
     } else {
       return app.getRequestHandler()(req, res);

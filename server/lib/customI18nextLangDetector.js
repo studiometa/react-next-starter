@@ -1,27 +1,60 @@
 const config         = require('../../config');
 const availableLangs = config.lang.available.map(e => e.lang);
 
+function getCookie(cname) {
+  let name          = cname + '=';
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca            = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return '';
+}
+
 module.exports = {
   path: {
     name: 'customPathDetector',
 
-    lookup(options) {
+    lookup(options = {}) {
       if (config.lang.enableRouteTranslation === true) {
-        const url = typeof window !== 'undefined' ? window.location.pathname : options.url;
+        const url             = typeof window !== 'undefined' ? window.location.pathname : options.url || '';
         const possibleUrlLang = url.slice(1, 3);
-        return url[0] === '/' && url[3] === '/' && availableLangs.includes(possibleUrlLang)
+
+        return url[0] === '/' && (url[3] === '/' || url.length === 3) && availableLangs.includes(possibleUrlLang)
           ? possibleUrlLang
           : undefined;
-      } else return config.lang.default
+      } else return config.lang.default;
+    },
+  },
+
+  clientCookie: {
+    name: 'customClientCookie',
+    lookup(options = {}) {
+      if (!process.browser) return null;
+      const cookieValue = getCookie(config.lang.lookupCookie);
+      return cookieValue && cookieValue.length === 2 ? cookieValue : undefined;
+
     },
   },
   fallback: {
     name: 'customFallback',
-    lookup(options) {
+    lookup(options = {}) {
       return availableLangs.includes(options.language)
         ? options.language
         : config.lang.default;
     },
+  },
+
+  get find() {
+    return () => {
+      return this.path.lookup() || this.clientCookie.lookup() || this.fallback.lookup();
+    };
   },
 
 };

@@ -1,19 +1,24 @@
-import App, { Container }    from 'next/app';
-import React                 from 'react';
-import Router                from 'next/router';
-import { Provider }          from 'react-redux';
-import withRedux             from 'next-redux-wrapper';
-import createStore           from '../../store/createStore';
-import { updateAppLanguage } from '../../store/actions/app.actions';
-import config                from '../../config';
-import LangSwitch            from '../components/LangSwitch';
-import Link                  from '../components/Link';
-import NProgress             from 'nprogress';
-
-
+import Hidden                                                          from '@material-ui/core/Hidden';
+import withRedux                                                       from 'next-redux-wrapper';
+import App, { Container }                                              from 'next/app';
+import Router                                                          from 'next/router';
+import NProgress                                                       from 'nprogress';
+import React                                                           from 'react';
+import { Provider }                                                    from 'react-redux';
+import langDetector                                                    from '../../server/lib/customI18nextLangDetector';
+import { fetchAppSettings, updateAppCurrentUrl, updateAppLanguage }    from '../../store/actions/app.actions';
+import createStore                                                     from '../../store/createStore';
 import '../styles/styles.scss';
 
+
 export default withRedux(createStore)(class _App extends App {
+
+  /**
+   * Get App and sub-pages initial props
+   * @param Component
+   * @param ctx
+   * @returns {Promise<{pageProps: {}}>}
+   */
   static async getInitialProps({ Component, ctx }) {
     const props = {
       pageProps: {
@@ -21,12 +26,21 @@ export default withRedux(createStore)(class _App extends App {
       },
     };
 
+
     if (ctx.isServer === true) {
 
       // If a language is defined, store it as a prop so that we can use it
       // in componentWillMount to save a current language in the redux store
 
       props.lang = ctx.req.language;
+
+    } else {
+      props.lang = langDetector.find();
+    }
+
+    // Store the app settings
+    if (ctx.store.getState().app.syncSettings !== true) {
+      await ctx.store.dispatch(fetchAppSettings());
     }
 
     props.query = ctx.query || ctx.req.params;
@@ -35,26 +49,50 @@ export default withRedux(createStore)(class _App extends App {
   }
 
 
-  componentDidMount() {
+  /**
+   * componentDidMount
+   */
+  async componentDidMount() {
 
     // Save the current language to the store
+    this.props.store.dispatch(updateAppLanguage(this.props.lang));
 
-    if (this.props.lang !== undefined) {
-      this.props.store.dispatch(updateAppLanguage(this.props.lang));
-    } else if (this.props.pageProps.initialLanguage !== undefined) {
-      this.props.store.dispatch(updateAppLanguage(this.props.pageProps.initialLanguage));
-    } else {
-      this.props.store.dispatch(updateAppLanguage(config.lang.default));
-    }
+    // Store the current url
+    this.props.store.dispatch(updateAppCurrentUrl(Router.router.asPath));
 
-    Router.onRouteChangeStart    = url => {
+
+    /** On router change start **/
+
+    Router.onRouteChangeStart = url => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.groupCollapsed('%c-- Router change START : ' + url, 'background:#00ff8d;color:#000');
+        console.trace();
+        console.groupEnd();
+      }
       NProgress.start();
     };
-    Router.onRouteChangeComplete = url => {
+
+    /** On router change complete **/
+
+    Router.onRouteChangeComplete = async url => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.groupCollapsed('%c-- Router change COMPLETE : ' + url, 'background:#00ff8d;color:#000');
+        console.trace();
+        console.groupEnd();
+      }
+
+      // Store the current url
+      this.props.store.dispatch(updateAppCurrentUrl(url));
+
       NProgress.done();
     };
-    Router.onRouteChangeError    = () => NProgress.done();
+
+    /** On router change error **/
+
+    Router.onRouteChangeError = () => NProgress.done();
+
   }
+
 
   render() {
     const { Component, pageProps, store } = this.props;
@@ -62,16 +100,32 @@ export default withRedux(createStore)(class _App extends App {
     return (
       <Container>
         <Provider store={store}>
+
           <div className="app">
-            <Link to="/">
-              <h1>APP</h1>
-            </Link>
-            <LangSwitch
-              asPath={this.props.router.asPath}
-              push={Router.push}
-              query={this.props.query}
-            />
-            <Component {...pageProps}  />
+            <Component {...pageProps} />
+
+
+            { // This is a dev component that displays the current screen size label at the bottom right corner
+              // of the screen
+              process.env.NODE_ENV === 'development' &&
+              <div style={{
+                position: 'fixed',
+                bottom: 0,
+                right: 0,
+                background: 'green',
+                color: 'white',
+                padding: 5,
+                fontSize: 16,
+                zIndex: 4000,
+              }}>
+                <Hidden smUp>xs</Hidden>
+                <Hidden xsDown mdUp>sm</Hidden>
+                <Hidden lgUp smDown>md</Hidden>
+                <Hidden xlUp mdDown>lg</Hidden>
+                <Hidden lgDown>xl</Hidden>
+              </div>
+            }
+
           </div>
         </Provider>
       </Container>

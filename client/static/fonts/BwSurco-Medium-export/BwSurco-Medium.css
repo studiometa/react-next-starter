@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "BwSurco";
+    src: url("BwSurco-Medium.woff2") format("woff2"), url("BwSurco-Medium.woff") format("woff"), url("BwSurco-Medium.otf") format("opentype");
+    font-style: normal;
+    font-weight: 500;
+}
+        

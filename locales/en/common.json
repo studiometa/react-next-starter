@@ -1,6 +1,254 @@
 {
-  "home": "Home page",
-  "products": "Products",
-  "test": "this is a test",
-  "back_to_home": "Back to homepage"
+  "actions": {
+    "become_a_partner": "Become a partner",
+    "discover": "Discover",
+    "add_to_wishlist": "Add to the wishlist",
+    "search": "Search",
+    "see_our_offers": "See our offers",
+    "see_all_our_offers": "See all our offers",
+    "see_all_the_collection": "See all the collection",
+    "see_all_our_workshops": "See all our workshops",
+    "see_all_our_good_deals": "See all our good deals",
+    "see_all_our_chefs": "See all our chefs",
+    "back_to_top": "Back to top",
+    "see_his_workshops": "See his workshops",
+    "follow_us": "Follow us",
+    "load_more": "Load more",
+    "book": "Book",
+    "proceed_to_payment": "Proceed to payment",
+    "apply": "Apply",
+    "lean_more": "Learn more",
+    "logout": "Logout",
+    "signup_slash_signin": "Sign in / Sign up",
+    "remove_this_filter": "Remove this filter",
+    "remove_filters": "Remove filters",
+    "display_the_results": "Display the results",
+    "send_to_another_address": "Send to another address",
+    "modify": "Modify",
+    "validate": "Validate",
+    "select_your_country": "Select your country",
+    "undo": "Undo",
+    "add_pictures": "Add a picture",
+    "add_pictures__plural": "Add pictures",
+    "add_more_pictures": "Add more pictures",
+    "cancel": "Cancel"
+  },
+
+
+  "titles": {
+    "to_discover_also": "To discover also",
+    "terms_of_cancelation": "Terms of cancelation"
+  },
+
+
+  "languages": {
+    "english": "English",
+    "french": "French",
+    "german": "German",
+    "spanish": "Spanish",
+    "italian": "Italian"
+  },
+
+
+  "errors": {
+    "cards": {
+      "no_results": "No result"
+    },
+    "fields": {
+      "this_field_is_required": "This field is required",
+      "this_field_is_invalid": "This field is invalid",
+      "this_field_must_be_x_char": "This field must be at least {{count}} characters long",
+      "password_not_enough_strong": "This password is not strong enough"
+    },
+    "files": {
+      "following_files_are_invalid": "The following files are invalid",
+      "error": "An error appends while uploading your files. Please try again."
+    }
+  },
+
+
+  "segments": {
+    "instead_of": "instead of",
+    "x_participants": "{{count}} participant",
+    "x_participants__plural": "{{count}} participants",
+    "x_comments": "{{count}} comment",
+    "x_comments__plural": "{{count}} comments",
+    "in_x_lang": "In {{lang}}",
+    "age_from_x_yo": "From {{count}} years old",
+    "x_ppl": "{{count}} ppl.",
+    "x_people": "{{count}} people",
+    "x_people__plural": "{{count}} people",
+    "enter_your_x": "Enter your {{word}}",
+    "you_can_also": "You can also",
+    "drag_them_here": "drag them here"
+  },
+
+  "forms": {
+    "helpers": {
+      "please_define_a_given_city":  "Please select one of the suggested cities"
+    },
+    "labels": {
+      "current_password": "Current password",
+      "new_password": "New password"
+    },
+    "placeholders": {
+      "date_format": "YYYY-MM-DD",
+      "enter_your_x": "Enter your {{label}}"
+    },
+    "select_options": {
+      "individual": "An individual",
+      "professional": "A particular",
+      "person": "A particular",
+      "company": "A company"
+    }
+  },
+
+  "router": {
+    "pages_name": {
+      "explore": "Explore",
+      "privatize": "Privatize",
+      "learn": "Learn",
+      "gifts_cards": "Gifts cards",
+      "plans": "Plans",
+      "help": "Help",
+      "immersion_and_meetings" : "Immersion and meetings",
+      "group_workshops" : "Group workshops",
+      "tasting" : "Tasting",
+      "team_building" : "Team building",
+      "kitchen_games" : "Kitchen games",
+      "seminary" : "Seminary",
+      "nomad_offer" : "Nomad offer",
+      "business_lunch_and_dinner" : "Business lunch and dinner",
+      "custom_events" : "Custom  events",
+      "workshop" : "Workshop",
+      "unusual" : "Unusual",
+      "adults_birthday" : "Adults birthday",
+      "kids_birthday" : "Kids birthday",
+      "bachelorette_party" : "Bachelorette party",
+      "our_chefs" : "Our chefs",
+      "account" : "Account",
+      "become_partner" : "Become partner",
+      "works_councils" : "Works concils",
+      "recruitment" : "Recruitment",
+      "chefsquare_academy" : "Chefsquare Academy",
+      "sign_up": "Sign up",
+      "booking": "Booking",
+      "orders": "Orders",
+      "profile_and_account": "Profile & account",
+      "signin": "Sign up / Sign in"
+    }
+  },
+
+
+  "components": {
+    "homepage_hero": {
+      "search_input_placeholder": "Where would you like to book?"
+    },
+    "header": {
+      "search_input_placeholder": "What theme are you looking for?"
+    },
+    "footer": {
+      "hotline_text": "Our advisers are at your service on 01 1 87 39 11 61",
+      "hotline_schedules": "Monday to Saturday from 9am to 6.30pm"
+    },
+    "load_more_button": {
+      "text": "You have seen {{count}} of {{total}} {{type}}",
+      "text__plural": "You have seen {{count}}  of {{total}} {{total}}s"
+    },
+    "login_box": {
+      "login": "Log-in",
+      "sign_up": "Sign up",
+      "sign_in": "Sign in",
+      "no_account_q": "You do not have an account?",
+      "sign_up_with_email": "Sign up with an email",
+      "connect_with_facebook": "Sign in with Facebook",
+      "connect_with_google": "Sign in with Google",
+      "connect_with_email": "Sign in with an email"
+    }
+  },
+
+
+  "words": {
+    "everywhere": "everywhere",
+    "at": "at",
+    "professionals": "Professionals",
+    "individuals": "Individuals",
+    "enterprises": "Enterprises",
+    "immersion": "Immersion",
+    "privatization": "Privatization",
+    "date": "Date",
+    "experience_type": "Experience type",
+    "price": "Price",
+    "language": "Language",
+    "desires": "Desires",
+    "participants": "Participants",
+    "date_from": "From",
+    "time_from": "From",
+    "time_to": "to",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "the_place": "The place",
+    "itinerary": "Itinerary",
+    "schedule": "Schedule",
+    "chef": "Chef",
+    "place": "Place",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "email": "Email",
+    "password": "Password",
+    "registration": "Sign-up",
+    "or": "or",
+    "information": "Information",
+    "confirmation": "Confirmation",
+    "you_are": "You are",
+    "phone_number": "Phone number",
+    "address": "Address",
+    "postal_code": "Postal code",
+    "city": "City",
+    "country": "Country",
+    "message": "Message",
+    "month": "Month",
+    "year": "Year",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "var": "VAT",
+    "promotion": "Promotion",
+    "filters": "Filters",
+    "for": "For",
+    "parameters": "Parameters",
+    "birthday": "Birthday",
+    "street": "Street"
+  },
+
+  "filters": {
+    "date": "Date",
+    "experience_type": "Experience type",
+    "price": "Price",
+    "language": "Language",
+    "desires": "Desires",
+    "participants": "Participants",
+    "levels": {
+      "easy": "Pour tous niveaux",
+      "confirmed": "Confirmé",
+      "expert": "Expert"
+    }
+  },
+
+  "workshop": {
+    "service_advantages": "This service advantages",
+    "the_team": "The team",
+    "the_chef": "The chef",
+    "program": "Program",
+    "fully_booked_title": "This workshop is full",
+    "fully_booked_desc_segment": "Places are available regularly. To be kept informed,",
+    "fully_booked_waiting_list_segment": "put yourself on the waiting list.",
+    "only_x_places_available": "{{count}} place left!",
+    "only_x_places_available__plural": "{{count}} places left!",
+    "not_enough_places_for_given_given_persons": "There are not enough places left in this workshop to accommodate the number of people requested"
+  },
+
+  "notifications": {
+    "profile_updated": "Your profile has been updated"
+  }
 }

@@ -8,6 +8,11 @@ module.exports = {
     { name: 'The sixth' },
     { name: 'The last one' },
   ],
+
+  settings: {
+    foo: 'bar'
+  },
+
   pages: {
     products: {
       title: 'Products',
@@ -25,11 +30,11 @@ module.exports = {
         { name: 'description', content: 'This is the home page'},
       ]
     },
-    promotions: {
-      title: 'Promotions',
+    _sandbox: {
+      title: '__SAnNdboOxxX__',
       metaData: [
-        { name: 'description', content: 'This is the promotions page'},
-      ]
+        { name: 'description', content: 'This is the SAnNdboOxx page' },
+      ],
     },
     product: {
       title: 'Product | %s',

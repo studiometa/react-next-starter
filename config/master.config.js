@@ -1,5 +1,15 @@
 const path = require('path');
 
+/******************************************************************************************\
+ *                                                                                        *
+ *      ——— This is the main config file. Most of the app config belongs here ———         *
+ *                                                                                        *
+ *      !!! PLEASE, PLEEEAASSEEE, READ THE README FIRST BEFORE TOUCHING ANYTHING HERE     *
+ *      IF YOU BREAK SOMETHING, YOU'LL BREAK MY HEART TOO AND I'LL BE SAD FOR             *
+ *      THE REST OF MY LIFE. IS THIS WHAT YOU WANT?!                                      *
+ *                                                                                            *
+ ******************************************************************************************/
+
 module.exports = {
 
   /*****************************************************
@@ -22,8 +32,9 @@ module.exports = {
 
 
     // This feature can only be used if routes translation has been enabled. This grant the server
-    // to perform a 301 redirection when any language has been specified in the url. Note that this redirection
+    // to perform a 301 redirection when no language has been specified in the url. Note that this redirection
     // will only append if a resolving route is found, else it will end with a 404 error.
+    // ex: /produit can be resolved to /fr/produit
     enableFallbackRedirection: true,
 
 
@@ -43,28 +54,31 @@ module.exports = {
     // !! Please keep the default language at the end of this array. At least one item is required
     // Note that for urls, when no language is specified the app will try to make a fallback to another language
     // or to the default language instead. Fallbacks goes from the end of this array to the beginning.
+    // Note also that you will probably need to add the new language flag under client/static/imgs/flags
     available: [
       {
         lang: 'en',
         locale: 'en_EN',
+        name: 'English',
       },
       {
         lang: 'fr',
         locale: 'fr_FR',
+        name: 'Français',
       },
     ],
 
     /** All the following config is used by i18next **/
 
     // Defines where and how the locales files are stored
-    localesPath : path.join(__dirname, '../locales'),
+    localesPath: path.join(__dirname, '../locales'),
     localesFormat: '/{{lng}}/{{ns}}.json',
 
     // Enabling debug for i18next
     debug: false,
 
     // Lang namespaces
-    namespaces: ['common', 'products'],
+    namespaces: ['common', 'home'],
 
     // Default language namespace
     defaultNamespace: 'common',
@@ -73,24 +87,50 @@ module.exports = {
     lookupCookie: 'lang',
 
     // The life of the cookie in minutes
-    cookieMinutes: 120
+    cookieMinutes: 120,
   },
 
+
   /*****************************************************
-   * SEO SETTINGS
+   * SEO
    *****************************************************/
 
   seo: {
 
     // The default pages title that will be showed when no
     // related title has been found
-    defaultPagesTitle: 'react-next-starter',
+    defaultPagesTitle: 'React Next Starter',
 
     // A list of default meta tags that will be used for the app
     defaultMetaTags: [
-      { name: 'description', content: 'This is a wonderful starter for React and NextJs'},
-      { name: 'author', content: 'Chuck Durst | Studio Meta'},
-    ]
-  }
+      { name: 'description', content: 'This is a wonderful starter for React and NextJs' },
+      { name: 'author', content: 'Chuck Durst @ Studio Meta' },
+    ],
+  },
 
+
+  /*****************************************************
+   * INTERFACE
+   *****************************************************/
+
+  interface: {
+
+    // The max width of the page content before showing side gutters
+    pageContentMaxWidth: 1440,
+  },
+
+
+  /*****************************************************
+   * REDUX
+   *****************************************************/
+
+  redux: {
+    localStorageStates: ['pages'], // items that should be stored in the local storage
+
+    // For each local-stored item (that is compatible with this feature),
+    // it is possible to define an expiration time (in ms).
+    expires: {
+      page: 1000 * 60 * 60 * 24, // store the pages data
+    },
+  },
 };

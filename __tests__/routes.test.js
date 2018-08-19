@@ -13,7 +13,7 @@ const ROUTES          = getRoutes();
 
 beforeAll(async () => {
   return await server.launch(PORT);
-}, 10000);
+}, 100000);
 
 afterAll(async () => {
   return await server.stop();
@@ -78,7 +78,7 @@ describe('Testing routes', () => {
         } catch (err) {
           console.error(err);
         }
-      }, 20000)
+      }, 400000)
     }
   });
 });

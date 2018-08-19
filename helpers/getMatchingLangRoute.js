@@ -1,6 +1,6 @@
 const getRoutes = require('../server/routes');
 const config    = require('../config');
-
+const removeUrlLastSlash = require('./removeUrlLastSlash');
 
 const routes = getRoutes();
 
@@ -14,11 +14,14 @@ const routes = getRoutes();
  * @param lang
  * @returns {*}
  */
-module.exports = (path, lang) => {
+module.exports = (path = '/', lang = config.lang.default) => {
+  if (path === '/index') path = '/';
   if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
+    const originalRoute = routes[lang][routes.client[path][lang].slice(3)];
     return {
-      pathname: routes.client[path][lang],
+      pathname: removeUrlLastSlash(routes.client[path][lang]),
       page: routes.client[path].page,
+      restrict: originalRoute.restrict
     };
   }
   return {};

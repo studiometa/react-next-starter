@@ -1,10 +1,16 @@
+import Avatar             from '@material-ui/core/Avatar';
+import MenuItem           from '@material-ui/core/MenuItem';
+import Select             from '@material-ui/core/Select';
+import Router             from 'next/router';
 import React              from 'react';
-import config             from '../../config';
 import { connect }        from 'react-redux';
+import config             from '../../config';
 import removeUrlLastSlash from '../../helpers/removeUrlLastSlash';
 
-
 const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {
+
+  // just in case
+  path = decodeURI(path);
 
   // Remove lang segment from the url
   if (path.slice(0, 3) === `/${currentLang}`) {
@@ -57,7 +63,13 @@ const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {
 export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
   routes: state.app ? state.app.routes : undefined,
-}))(({ lang, asPath, push, routes, query }) => {
+  currentUrl: state.app ? state.app.currentUrl : undefined
+}))(({ lang, routes, currentUrl }) => {
+
+  // Works only on the client side while we are using the Next Router instance
+  if (!process.browser) return null;
+
+  let { query, asPath, push } = Router;
 
   let links = [];
 
@@ -66,31 +78,48 @@ export default connect(state => ({
     return null;
   }
 
-  //if (typeof routes === 'object' && routes.current && routes.current)
+  const search = currentUrl && currentUrl.includes('?') ? '?' + currentUrl.split('?')[1] : '';
 
   // Build a link for all available languages (defined in the config)
-  config.lang.available.forEach((e, i) => {
+  config.lang.available.forEach(e => {
     const _lang = e.lang;
     if (typeof lang === 'string' && typeof asPath === 'string') {
-      if (_lang !== lang && asPath.substr(0, 3) === `/${lang}`) {
-        const resolvedPathname = getRouteFromPathname(asPath, lang, _lang, query, routes);
-        if (resolvedPathname !== undefined) {
-          links.push({
-            path: resolvedPathname,
-            name: _lang,
-          });
-        }
+      if (asPath.includes('?')) asPath = asPath.split('?')[0];
+      const resolvedPathname = getRouteFromPathname(asPath, lang, _lang, query, routes);
+      if (resolvedPathname !== undefined) {
+        links.push({
+          path: resolvedPathname + search,
+          name: _lang,
+          display: e.name,
+          locale: e.locale,
+        });
       }
     }
   });
 
-  return links.length > 0 && config.lang.enableRouteTranslation === true ? (
-    <div className="lang-switch">
+  const onChange = ({ target }) => {
+    const link = links.find(l => l.name === target.value);
+
+    if (link) push(link.path);
+  };
+
+  return links.length > 0 && (
+    <Select value={lang} onChange={onChange}>
       {
-        links.map((link, key) => (
-          <a href={link.path} name={link.name} key={key}>{link.name}</a>
-        ))
+        links.map(link =>
+          <MenuItem value={link.name} key={link.name}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Avatar
+                src={`/static/imgs/flags/${link.locale}.png`}
+                alt={link.display}
+                style={{ width: '16px', height: '16px', marginRight: '8px' }}
+              />
+              <span>{link.display}</span>
+            </div>
+          </MenuItem>,
+        )
       }
-    </div>
-  ) : null;
+    </Select>
+  );
+
 });

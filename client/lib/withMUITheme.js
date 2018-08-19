@@ -4,7 +4,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline          from '@material-ui/core/CssBaseline';
 import getPageContext       from './getPageMUIContext';
 
-function withRoot(Component) {
+function withRoot(Component, withTheme = false) {
   class WithRoot extends React.Component {
     constructor(props) {
       super(props);
@@ -34,7 +34,7 @@ function withRoot(Component) {
         >
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline/>
-          <Component {...this.props} />
+          <Component {...this.props} theme={ withTheme ? this.pageContext.theme : undefined }/>
         </MuiThemeProvider>
       );
     }

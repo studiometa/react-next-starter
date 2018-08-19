@@ -1,18 +1,20 @@
-// ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document';
+// ./pages/_document.js
+import React                                from 'react';
 import JssProvider                          from 'react-jss/lib/JssProvider';
 import flush                                from 'styled-jsx/server';
+import customI18nextLangDetector            from '../../server/lib/customI18nextLangDetector';
 import getPageContext                       from '../lib/getPageMUIContext';
-
 
 
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
-
+    const lang            = customI18nextLangDetector.path.lookup() || 'fr';
     return (
-      <html>
+      <html lang={lang}>
       <Head>
+        <meta name="format-detection" content="telephone=no"/>
         <meta
           name="viewport"
           content={
@@ -22,10 +24,15 @@ class MyDocument extends Document {
         />
         {/* PWA primary color */}
         <meta name="theme-color" content={pageContext.theme.palette.primary.main}/>
-        <link rel="stylesheet" href="/_next/static/style.css"/>
+        <script src="/static/js/polyfills/js-object.js"/>
       </Head>
       <body>
       <Main/>
+      <link rel="stylesheet" href="/_next/static/style.css"/>
+      <link rel="stylesheet" href="/static/fonts/BwSurco-Bold-export/BwSurco-Bold.css"/>
+      <link rel="stylesheet" href="/static/fonts/BwSurco-Light-export/BwSurco-Light.css"/>
+      <link rel="stylesheet" href="/static/fonts/BwSurco-Medium-export/BwSurco-Medium.css"/>
+      <link rel="stylesheet" href="/static/fonts/BwSurco-Regular-export/BwSurco-Regular.css"/>
       <NextScript/>
       </body>
       </html>

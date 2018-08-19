@@ -1,6 +1,1 @@
-- global error handling
-- SSL support
-- eslint config
-- bundle analyzer
-
-- better server config (choose port, etc... and better prod conf too);
+- ne devrait pas pouvoir acceder à la page /checkout directement sans être connecté

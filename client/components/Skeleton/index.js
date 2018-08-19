@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default class Skeleton extends React.PureComponent {
   static defaultProps = {
     count: 1,
@@ -23,15 +22,17 @@ export default class Skeleton extends React.PureComponent {
       if (this.props.height !== null) {
         style.height = this.props.height;
       }
+      if (this.props.isCover === true) {
+        style.lineHeight = 'normal';
+      }
       elements.push(
         <span key={i} className="react-loading-skeleton" style={style}>&zwnj;</span>,
       );
     }
 
     const Wrapper = this.props.wrapper;
-    console.log('SKELETON RENDER');
     return (
-      <span>
+      <span className={this.props.className} style={this.props.style}>
                 {Wrapper
                   ? elements.map((element, i) =>
                     <Wrapper key={i}>{element}&zwnj;</Wrapper>,
