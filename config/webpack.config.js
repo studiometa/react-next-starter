@@ -47,6 +47,20 @@ module.exports = (nextWebpackConfig) => {
           test: /\.css$/,
           use: ['style-loader', 'css-loader', 'postcss-loader'],
         },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: "html-loader"
+            },
+            {
+              loader: "markdown-loader",
+              options: {
+                /* your options here */
+              }
+            }
+          ]
+        }
       ],
     },
     plugins: [

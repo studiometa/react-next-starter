@@ -5,6 +5,10 @@ import React          from 'react';
 import config         from '../../config';
 import Error          from '../pages/_error';
 import Head           from './Head';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import packageJson from '../../package'
 
 // xs, sm, md, lg, and xl.
 const styles = theme => ({
@@ -75,6 +79,13 @@ const PageLayout = withStyles(styles)(function Layout(props) {
   return (
     <div className={`${ classes.root } page-${pageData.title}`}>
       <Head {...pageData} />
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          <Typography variant="title" color="inherit">
+            {packageJson.name}
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
         <Grid item xs={12}>
           <div className={classes.container}>
