@@ -9,7 +9,10 @@ function updateAppLanguage(state, action) {
 
 function setAppSettings(state, action) {
 
-  return Object.assign({}, state, { settings: action.settings });
+  return Object.assign({}, state, {
+    settings: action.settings,
+    syncSettings: true // To now that the settings has been set
+  });
 }
 
 function updateAppCurrentUrl(state, action) {

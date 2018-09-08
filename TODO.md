@@ -11,3 +11,4 @@
 - Rendre l'utilisation de germaine plus modulaire (ex: ajouter un parametre de config pour définir si des settings doivent être requêtés, etc)
 - rendre le site traduisible
 - Trouver un meilleur moyen de définir le title des pages
+- Il y a trop d'actions lors des transitions de pages.. Surtout avec redux! 

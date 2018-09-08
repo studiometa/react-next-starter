@@ -37,6 +37,8 @@ export const fetchPage = (pageId, updateIfExist = false, cb = () => {}) => async
     }
   }
 
+  console.log('IN FOR', pageId, currentItems)
+
   try {
     const result = await socket.getPage(pageId);
     dispatch(pushPage(pageId, result, new Date()));

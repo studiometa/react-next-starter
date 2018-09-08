@@ -9,7 +9,6 @@ const styles = theme => ({});
 const Home = class extends React.Component {
 
   render() {
-    const pageData    = this.props.pageData || { content: {} };
     const { classes } = this.props;
 
     return (

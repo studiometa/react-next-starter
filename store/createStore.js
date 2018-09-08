@@ -46,7 +46,7 @@ export default (initialState = DEFAULT_STATE) => {
   } else {
     return createStore(
       reducers,
-      initialState,
+      load({ states: localStorageStates, namespace: 'chefsquare' }),
       applyMiddleware(logger,
         save({ states: localStorageStates, namespace: 'chefsquare' }),
         thunk.withExtraArgument(socket)),

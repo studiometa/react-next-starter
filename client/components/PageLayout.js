@@ -74,7 +74,7 @@ const PageLayout = withStyles(styles)(function Layout(props) {
   Object.assign(pageData, rest);
 
   return (
-    <div className={`${ classes.root } page-${pageData.title}`}>
+    <div className={`${ classes.root }${pageData.title && 'page-' + pageData.title}`}>
       <Head {...pageData} />
       <Header/>
       <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
