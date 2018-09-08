@@ -1,6 +1,16 @@
-import React from 'react';
+import React                 from 'react';
 import { connect, Provider } from 'react-redux';
 
+
+/**
+ * This is a HOC used on pages components that need
+ * to be connected to the redux store. This function is acting
+ * differently depending on the current env (server/client). On the server
+ * we should always make a new store. On the client we should get the server
+ * store back from the server, or create a new one. 
+ * @type {string}
+ * @private
+ */
 
 const __NEXT_REDUX_STORE__ = '__NEXT_REDUX_STORE__';
 

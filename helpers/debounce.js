@@ -1,8 +1,8 @@
 module.exports = (func, wait, immediate) => {
   let timeout;
-  return function() {
+  return function () {
     let context = this, args = arguments;
-    let later = function() {
+    let later   = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };

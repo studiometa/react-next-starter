@@ -8,23 +8,8 @@ function updateAppLanguage(state, action) {
 }
 
 function setAppSettings(state, action) {
-  const currencyRates = action.settings.devises;
 
-  // Because the API is not returning the rates in the expected format
-  // we must do an extra conversion here
-  if (currencyRates && isNaN(currencyRates[0])) {
-    Object.entries(currencyRates).forEach(([name, options]) => {
-      if (isNaN(options)) {
-        currencyRates[name] = (options && !isNaN(options.rate)) ? options.rate : undefined;
-      }
-    });
-  }
-
-  return Object.assign({}, state, {
-    currencyRates: action.settings.devises,
-    countries: action.settings.countries,
-    syncSettings: true // To now that the settings has been set
-  });
+  return Object.assign({}, action.settings);
 }
 
 function updateAppCurrentUrl(state, action) {

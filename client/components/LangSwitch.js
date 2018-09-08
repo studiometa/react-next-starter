@@ -7,6 +7,7 @@ import { connect }        from 'react-redux';
 import config             from '../../config';
 import removeUrlLastSlash from '../../helpers/removeUrlLastSlash';
 
+
 const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {
 
   // just in case
@@ -63,7 +64,7 @@ const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {
 export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
   routes: state.app ? state.app.routes : undefined,
-  currentUrl: state.app ? state.app.currentUrl : undefined
+  currentUrl: state.app ? state.app.currentUrl : undefined,
 }))(({ lang, routes, currentUrl }) => {
 
   // Works only on the client side while we are using the Next Router instance

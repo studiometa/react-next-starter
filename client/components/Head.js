@@ -20,7 +20,7 @@ export default (props) => {
 
   metaData = [...config.seo.defaultMetaTags, ...(metaData || [])];
 
-  const title    = props.title || config.seo.defaultPagesTitle || require('../../package').name;
+  const title = props.title || config.seo.defaultPagesTitle || require('../../package').name;
   return (
     <Head>
       <title>{title}</title>

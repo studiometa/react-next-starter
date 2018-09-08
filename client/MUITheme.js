@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import arrowDownIcon      from '@material-ui/icons/KeyboardArrowDown';
 
 // A theme with custom primary and secondary color.
 // It's optional.

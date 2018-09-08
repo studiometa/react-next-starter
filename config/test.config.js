@@ -21,14 +21,4 @@ module.exports = {
       );
     },
   },
-
-  // Mainly used by the Socket class (utils/socket). This is all
-  // the settings about the API that stores the app data
-  get api() {
-    return {
-      getUrl: () => {
-        return `${this.server.getUrl()}/fake-api`;
-      },
-    };
-  },
 };

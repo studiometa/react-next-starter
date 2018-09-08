@@ -31,7 +31,8 @@ export default wrapper(({ children, preferredCurrency, lang, currencyRates }) =>
   if (preferredCurrency !== config.shop.currencies.default) {
     fx.rates = currencyRates;
     fx.base  = config.shop.currencies.default;
-    value    = Math.round(fx.convert(value, { from: config.shop.currencies.default, to: preferredCurrency }) * 100) / 100;
+    value    = Math.round(fx.convert(value,
+      { from: config.shop.currencies.default, to: preferredCurrency }) * 100) / 100;
   }
 
   // Return the formatted price using the native Intl class

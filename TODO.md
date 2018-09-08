@@ -1,1 +1,13 @@
-- ne devrait pas pouvoir acceder à la page /checkout directement sans être connecté
+- Vérifier la desactivation du multi-lingue
+- noPageData devrait être défini dans le HOC des pages
+- Mettre le readme à jour
+    - Changer de typo
+    - germaine
+    - afficher les erreurs (_error.js)
+- Améliorer Sandbox
+- Utiliser Germaine! 
+- Rendre l'utilisation de germaine plus modulaire (ex: ajouter un parametre de config pour définir si des settings doivent être requêtés, etc)
+- Ajouter une page au starter avec quelques composants
+- Ajouter un lien vers sandbox
+- rendre le site traduisible
+- Trouver un meilleur moyen de définir le title des pages

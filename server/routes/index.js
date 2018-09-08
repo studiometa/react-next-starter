@@ -58,57 +58,49 @@ const getRoutes = () => {
   // Get routes with locales
   //if (config.lang.enableRouteTranslation === true) {
 
-    // Get client routes structure
-    routes = mergeClientRoutes(routes);
+  // Get client routes structure
+  routes = mergeClientRoutes(routes);
 
-    // Map over all the available languages
-    config.lang.available.forEach(lang => {
-      try {
+  // Map over all the available languages
+  config.lang.available.forEach(lang => {
+    try {
 
-        // Get a matching route file
-        const matchingRoutes = require(`./${lang.lang}.routes.js`)();
+      // Get a matching route file
+      const matchingRoutes = require(`./${lang.lang}.routes.js`)();
 
-        // Map over the routes of the language set
-        Object.entries(matchingRoutes).forEach(([key, route]) => {
+      // Map over the routes of the language set
+      Object.entries(matchingRoutes).forEach(([key, route]) => {
 
-          // Store the lang on the route
-          if (typeof route === 'object') {
-            route.lang = lang.lang;
-          }
+        // Store the lang on the route
+        if (typeof route === 'object') {
+          route.lang = lang.lang;
+        }
 
-          // Add the route to the routes client attribute so that we can easily retrieve it later
-          if (typeof routes.client === 'object' && lang !== config.lang.internalRoutesLang) {
-            Object.entries(routes.client).forEach(([clientKey, clientRoute]) => {
-              if (clientRoute.page === route.page) {
-                if (config.lang.enableRouteTranslation === true) {
-                  routes.client[clientKey][lang.lang] = `/${lang.lang}${key}`;
-                } else {
-                  routes.client[clientKey][lang.lang] = `${key}`;
-                }
+        // Add the route to the routes client attribute so that we can easily retrieve it later
+        if (typeof routes.client === 'object' && lang !== config.lang.internalRoutesLang) {
+          Object.entries(routes.client).forEach(([clientKey, clientRoute]) => {
+            if (clientRoute.page === route.page) {
+              if (config.lang.enableRouteTranslation === true) {
+                routes.client[clientKey][lang.lang] = `/${lang.lang}${key}`;
+              } else {
+                routes.client[clientKey][lang.lang] = `${key}`;
               }
-            });
-          }
-        });
+            }
+          });
+        }
+      });
 
-        // Add the routes set to the main routes object
-        routes[lang.lang] = matchingRoutes;
+      // Add the routes set to the main routes object
+      routes[lang.lang] = matchingRoutes;
 
-        // Store a reduced object containing all the routes. Routes with similar keys will be overwritten
-        // but this is fine while this will only be used as a fallback for url resolution
-        routes.all = Object.assign(routes.all, matchingRoutes);
+      // Store a reduced object containing all the routes. Routes with similar keys will be overwritten
+      // but this is fine while this will only be used as a fallback for url resolution
+      routes.all = Object.assign(routes.all, matchingRoutes);
 
-      } catch (err) {
-        throw new Error(`No route file found for lang '${ lang.lang }'`);
-      }
-    });
-  // } else {
-  //   try {
-  //     routes.all = require(`./${config.lang.default}.routes.js`)();
-  //
-  //   } catch (err) {
-  //     throw new Error(`No route file found for lang '${ config.lang.default }'`);
-  //   }
-  // }
+    } catch (err) {
+      throw new Error(`No route file found for lang '${ lang.lang }'`);
+    }
+  });
 
   return routes;
 };

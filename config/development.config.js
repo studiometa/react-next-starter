@@ -26,6 +26,10 @@ module.exports = {
   // the settings about the API that stores the app data
   get api() {
     return {
+      endpoints: {
+        settings: '/settings',
+        pages: '/pages',
+      },
       getUrl: () => {
         return `${this.server.getUrl()}/fake-api`;
       },

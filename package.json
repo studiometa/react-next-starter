@@ -14,7 +14,7 @@
     "pm2:stop": "pm2 kill"
   },
   "engines": {
-    "node": "8.9.0"
+    "node": "8.11.3"
   },
   "now": {
     "env": {

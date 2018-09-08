@@ -1,14 +1,14 @@
+import AppBar         from '@material-ui/core/AppBar';
 import Grid           from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import Toolbar        from '@material-ui/core/Toolbar';
+import Typography     from '@material-ui/core/Typography';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import config         from '../../config';
+import packageJson    from '../../package';
 import Error          from '../pages/_error';
 import Head           from './Head';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import packageJson from '../../package'
 
 // xs, sm, md, lg, and xl.
 const styles = theme => ({

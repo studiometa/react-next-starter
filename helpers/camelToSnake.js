@@ -1,6 +1,6 @@
-module.exports = function(string = '') {
+module.exports = function (string = '') {
   let upperChars = string.match(/([A-Z])/g);
-  if (! upperChars) {
+  if (!upperChars) {
     return string;
   }
 

@@ -26,7 +26,7 @@
 
 ## Requirements
 
-- nodeJs ^9.8.0
+- node ^8.11.3
 
 ## Installation
 

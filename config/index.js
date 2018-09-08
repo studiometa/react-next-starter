@@ -5,10 +5,10 @@ const configs = {
   development: require('./development.config'),
   production: require('./production.config'),
   master: require('./master.config'),
-  now: require('./now.config')
+  now: require('./now.config'),
 };
 
-configs.now = Object.assign({}, configs.production, configs.now);
+configs.now  = Object.assign({}, configs.production, configs.now);
 configs.test = Object.assign({}, configs.development, configs.test);
 
 // Tricky way of casting the now config when running the app
@@ -17,7 +17,6 @@ configs.test = Object.assign({}, configs.development, configs.test);
 if (process.env.NOW_URL) {
   env = 'now';
 }
-
 
 
 module.exports = Object.assign({}, configs.master, configs[env]);

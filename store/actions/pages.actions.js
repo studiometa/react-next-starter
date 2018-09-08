@@ -12,6 +12,16 @@ export function pushPage(pageId, page, lastUpdate) {
   };
 }
 
+
+/****************** ASYNC ACTIONS ******************/
+
+/**
+ * Fetch a page config (defined by a slug) from the API
+ * @param pageId
+ * @param updateIfExist
+ * @param cb
+ * @returns {function(*, *, *)}
+ */
 export const fetchPage = (pageId, updateIfExist = false, cb = () => {}) => async (dispatch, getState, socket) => {
   const currentItems = getState().pages;
 

@@ -1,10 +1,6 @@
 @import "components/nprogress";
 @import "components/skeleton-screens";
 
-body {
-  //overflow-x: hidden;
-  //overflow-y: auto;
-}
 
 a {
   text-decoration: none;
@@ -16,19 +12,13 @@ a:active {
 
 html {
   font-size: 16px;
- // overflow-x: hidden;
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width: 960px) {
   html {
     font-size: 14px;
   }
 }
-
-
-
-
-
 
 //*****>>>> ANIMATIONS
 

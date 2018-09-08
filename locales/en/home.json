@@ -1,24 +1,3 @@
 {
-  "intro_paragraph": "Workshop, demonstration, immersion in a kitchen during a service, find yourself at the heart of your passion and those who feed it.",
-  "categories_cards": {
-    "workshops": "Workshops & culinary experiences",
-    "privatizations": "Privatization & events",
-    "gift_cards" : "Gift cards to offer"
-  },
-  "cards_block_1": {
-    "title": "The most popular workshops & experiences",
-    "subtitle": "Discover a selection of courses warmly recommended by the brigade!"
-  },
-  "cards_block_2": {
-    "title": "Offers dedicated to",
-    "subtitle": "Discover a selection of privatisations dedicated to individuals: EVJF, birthdays and more!"
-  },
-  "chefs_block": {
-    "title": "Our chefs who inspire us and make us proud",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-  },
-  "crossedTextAndImage1": {
-    "title": "Organize the most crunchy birthday party!",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }
+
 }

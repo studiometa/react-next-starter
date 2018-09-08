@@ -22,14 +22,20 @@ export function setAppSettings(settings) {
   };
 }
 
+/****************** ASYNC ACTIONS ******************/
 
-export const fetchAppSettings = () => async (dispatch, getState, socket) => {
+ /**
+ * Fetch the app settings from the API
+ * @returns {function(*, *, *)}
+ */
+export const fetchAppSettings = (cb) => async (dispatch, getState, socket) => {
   try {
     const result = await socket.getSettings();
 
     dispatch(setAppSettings(result));
+    cb(result)
     return result;
   } catch (err) {
-    console.log('error in app.action.js:fetchAppSettings', err);
+    cb(err, null);
   }
 };

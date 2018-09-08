@@ -1,5 +1,5 @@
-const getRoutes = require('../server/routes');
-const config    = require('../config');
+const getRoutes          = require('../server/routes');
+const config             = require('../config');
 const removeUrlLastSlash = require('./removeUrlLastSlash');
 
 const routes = getRoutes();
@@ -21,7 +21,7 @@ module.exports = (path = '/', lang = config.lang.default) => {
     return {
       pathname: removeUrlLastSlash(routes.client[path][lang]),
       page: routes.client[path].page,
-      restrict: originalRoute.restrict
+      restrict: originalRoute.restrict,
     };
   }
   return {};

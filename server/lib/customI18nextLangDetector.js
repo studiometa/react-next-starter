@@ -1,6 +1,12 @@
 const config         = require('../../config');
 const availableLangs = config.lang.available.map(e => e.lang);
 
+// Here we are defining some custom language detectors for i18next. It is mainly
+// a rewriting of some of the current detectors that was not always working as expected
+// in that kind of project architecture.
+
+
+
 function getCookie(cname) {
   let name          = cname + '=';
   let decodedCookie = decodeURIComponent(document.cookie);

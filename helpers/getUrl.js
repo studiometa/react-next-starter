@@ -4,9 +4,13 @@ const DEFAULT_PORT = config.server.port || '3000';
 const HOST         = config.server.host || 'localhost';
 const PROTOCOL     = config.server.protocol || 'http';
 
-
+/**
+ * Get the best url depending on the current environment
+ * @param pathname
+ * @param port
+ * @returns {string}
+ */
 module.exports = (pathname = '', port = DEFAULT_PORT) => {
-
   if (process.env.BASE_URL) {
     return url.format({
       hostname: process.env.BASE_URL,

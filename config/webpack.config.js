@@ -5,6 +5,10 @@ const env                  = getClientEnvironment(config.server.getUrl());
 const Visualizer           = require('webpack-visualizer-plugin');
 const path                 = require('path');
 
+/**
+ * This is not a real webpack but un function that make changes to
+ * the Next's webpack config.
+ */
 module.exports = (nextWebpackConfig) => {
   nextWebpackConfig.node = {
     fs: 'empty',

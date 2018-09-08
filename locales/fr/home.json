@@ -1,24 +1,3 @@
 {
-  "intro_paragraph": "Atelier, démonstration, immersion en cuisine pendant un service, retrouvez-vous au coeur de votre passion et de ceux qui la nourrissent.",
-  "categories_cards": {
-    "workshops": "Ateliers & expériences culinaires",
-    "privatizations": "Privatisation & évènements",
-    "gift_cards" : "Cartes cadeaux à offrir"
-  },
-  "cards_block_1": {
-    "title": "Les ateliers & expériences les plus populaires",
-    "subtitle": "Découvrez une sélection de cours chaleureusement recommandés par la brigade !"
-  },
-  "cards_block_2": {
-    "title": "Des offres dédiées aux",
-    "subtitle": "Découvrez une sélection de privatisation dédiées aux particuliers : EVJF, anniversaires et plus encore !"
-  },
-  "chefs_block": {
-    "title": "Nos chefs qui nous inspirent et font notre fierté",
-    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-  },
-  "crossedTextAndImage1": {
-    "title": "Organisez le plus croquant des anniversaire !",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }
+
 }
