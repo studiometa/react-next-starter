@@ -18,6 +18,7 @@ import { compose }    from 'recompose';
  * @param {function} mapStateToProps: you know what it is
  * @param {object} styles: custom component styles
  * @param {boolean} withTheme: define if the prop 'theme' containing the app theme must be injected into the component
+ * * @param {boolean} noPageData: if no page data is required by the component
  * @returns {*}
  */
 
@@ -27,9 +28,10 @@ export default (Component, {
   mapStateToProps = null,
   styles = {},
   withTheme = false,
+  noPageData = false,
 }) => {
   return withMUITheme(compose(
-    withPageData(name),
+    withPageData(name, {required: !noPageData}),
     withI18next([name, ...namespaces]),
     connect(mapStateToProps),
     withStyles(styles),

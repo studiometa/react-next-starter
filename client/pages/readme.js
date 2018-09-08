@@ -27,4 +27,5 @@ export default pageWrapper(Readme, {
   mapStateToProps,
   name: 'readme',
   styles,
+  noPageData: true
 });

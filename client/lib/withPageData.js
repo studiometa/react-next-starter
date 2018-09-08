@@ -19,6 +19,8 @@ const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) =>
 export default (pageName = '', opts = {}) => ComposedComponent => {
 
 
+  const required = Boolean(opts.required);
+
   const Extended = (props) => React.createElement(ComposedComponent, props);
 
   Extended.getInitialProps = async (props = {}) => {
@@ -26,13 +28,18 @@ export default (pageName = '', opts = {}) => ComposedComponent => {
     // Resolve page data
     let pageData = {};
 
-    try {
-      pageData = await lazyGetPageData(pageName, props.store.dispatch);
-    } catch (err) {
-      const data   = err.data || {};
-      const status = err.status || err.code || err.statusCode || data.status || data.code || data.statusCode || 500;
-      pageData     = { error: status, content: {} }; // Store the status of the error somewhere
+    if (required) {
+      try {
+        pageData = await lazyGetPageData(pageName, props.store.dispatch);
+      } catch (err) {
+        const data   = err.data || {};
+        const status = err.status || err.code || err.statusCode || data.status || data.code || data.statusCode || 500;
+        pageData     = { error: status, content: {} }; // Store the status of the error somewhere
+      }
+    } else {
+      pageData = { content: {} };
     }
+
 
     // Run page getInitialProps with store and isServer
     const initialProps = ComposedComponent.getInitialProps
