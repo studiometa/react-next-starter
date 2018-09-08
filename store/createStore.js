@@ -11,6 +11,7 @@ import reducers                          from './reducers/index';
 const { localStorageStates } = config.redux;
 
 const routes = getRoutes();
+routes.current = {};
 
 const isServer = !process.browser;
 const logger   = createLogger({
@@ -31,10 +32,11 @@ const socket = new Socket();
 const DEFAULT_STATE = {
   app: {
     lang: config.lang.default,
-    routes: Object.assign({}, routes, { current: {} }),
+    routes,
     currentUrl: undefined,
   },
 };
+
 
 export default (initialState = DEFAULT_STATE) => {
   // We do not want middlewares like redux-logger to get

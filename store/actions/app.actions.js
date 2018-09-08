@@ -28,7 +28,7 @@ export function setAppSettings(settings) {
  * Fetch the app settings from the API
  * @returns {function(*, *, *)}
  */
-export const fetchAppSettings = (cb) => async (dispatch, getState, socket) => {
+export const fetchAppSettings = (cb = ()=>{}) => async (dispatch, getState, socket) => {
   try {
     const result = await socket.getSettings();
 

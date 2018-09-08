@@ -5,5 +5,6 @@ module.exports = () => ({
   /** GENERAL **/
 
   '/': { page: '/index' },
+  '/lisez-moi': {page: '/readme'}
 
 });

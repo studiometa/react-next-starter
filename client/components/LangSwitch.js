@@ -33,6 +33,7 @@ const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {
     });
   }
 
+
   // Check that a page can be retrieved from the current lang
   if (typeof routes[currentLang] === 'object'
     && typeof routes[currentLang][path] === 'object'
@@ -65,7 +66,7 @@ export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
   routes: state.app ? state.app.routes : undefined,
   currentUrl: state.app ? state.app.currentUrl : undefined,
-}))(({ lang, routes, currentUrl }) => {
+}))(({ lang, routes, currentUrl, classes = {} }) => {
 
   // Works only on the client side while we are using the Next Router instance
   if (!process.browser) return null;
@@ -75,7 +76,7 @@ export default connect(state => ({
   let links = [];
 
   // Check that push is a function
-  if (typeof push !== 'function') {
+  if (typeof push !== 'function' || !routes || !lang || ! currentUrl) {
     return null;
   }
 
@@ -105,17 +106,18 @@ export default connect(state => ({
   };
 
   return links.length > 0 && (
-    <Select value={lang} onChange={onChange}>
+    <Select value={lang} onChange={onChange} className={classes.select}>
       {
         links.map(link =>
-          <MenuItem value={link.name} key={link.name}>
+          <MenuItem value={link.name} key={link.name} className={classes.menuItem}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Avatar
                 src={`/static/imgs/flags/${link.locale}.png`}
                 alt={link.display}
+                className={classes.icon}
                 style={{ width: '16px', height: '16px', marginRight: '8px' }}
               />
-              <span>{link.display}</span>
+              <span className={classes.text}>{link.display}</span>
             </div>
           </MenuItem>,
         )

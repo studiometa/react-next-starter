@@ -7,7 +7,5 @@
 - Améliorer Sandbox
 - Utiliser Germaine! 
 - Rendre l'utilisation de germaine plus modulaire (ex: ajouter un parametre de config pour définir si des settings doivent être requêtés, etc)
-- Ajouter une page au starter avec quelques composants
-- Ajouter un lien vers sandbox
 - rendre le site traduisible
 - Trouver un meilleur moyen de définir le title des pages

@@ -3,12 +3,11 @@ import NextLink             from 'next/link';
 import Router               from 'next/router';
 import propTypes            from 'prop-types';
 import React                from 'react';
-import { connect }          from 'react-redux';
 import config               from '../../../config';
 import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
 import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
-import LoginBox             from '../LoginBox';
-import wrapper from '../../lib/componentWrapper'
+import wrapper              from '../../lib/componentWrapper';
+import classNames from 'classnames'
 
 
 /**
@@ -82,7 +81,7 @@ class Link extends React.Component {
 
     // Contains custom jsx attributes that will be passed to the final link element
     // such as name, etc
-    linkAttributes: propTypes.object
+    linkAttributes: propTypes.object,
   };
 
   static defaultProps = {
@@ -94,7 +93,7 @@ class Link extends React.Component {
     urlQuery: '',
     linkStyle: { display: 'flex' },
     disabled: false,
-    linkAttributes: {}
+    linkAttributes: {},
   };
 
 
@@ -105,10 +104,8 @@ class Link extends React.Component {
       page: null,
       pathname: null,
       isHidden: false,
-      restrictToLoggedUsers: false,
       isExternal: false // Define if the provided route is an external link
     };
-    this.checkRestrictions = this.checkRestrictions.bind(this);
   }
 
 
@@ -123,8 +120,7 @@ class Link extends React.Component {
       || nextProps.to !== this.props.to
       || nextProps.urlQuery !== this.props.urlQuery
       || nextProps.children !== this.props.children
-      || nextProps.query !== this.props.query
-      || nextProps.user !== this.props.user;
+      || nextProps.query !== this.props.query;
   }
 
 
@@ -135,30 +131,15 @@ class Link extends React.Component {
   }
 
 
-  /**
-   * Check if the current link is restricted to a particular group of users
-   * If yes, display a login box instead of updating the current page
-   * @param e
-   */
-  checkRestrictions(e) {
-    if (this.state.restrictToLoggedUsers === true) {
-      e.preventDefault();
-      e.stopPropagation();
-      this.setState({ loginModalOpen: true });
-    }
-  }
-
-
   _updateLink() {
     if (this._isActive() === true) {
       this.setState({ isActive: true });
     }
 
-    let { to, query, lang, target, user } = this.props;
-    let isHidden                          = false;
-    let restrictToLoggedUsers             = false;
+    let { to, query, lang, target } = this.props;
+    let isHidden                    = false;
 
-    if (!to) return this.setState({isHidden: true})
+    if (!to) return this.setState({ isHidden: true });
 
     // If the 'to' prop contains a dot, it cannot be a valid route
     // and is probably be an url instead. In this case, all we need to
@@ -180,21 +161,6 @@ class Link extends React.Component {
 
     // Find a matching route in the route.js config file
     let { pathname, page, restrict } = getMatchingLangRoute(to, lang);
-
-    // If this route has some restrictions
-    if (Array.isArray(restrict)) {
-
-      // If the route is restricted to visitors but a user is logged in, hide the link
-      if (restrict.includes('visitor') && user.data) {
-        isHidden = true;
-      }
-
-      // Else if the route is restricted to logged user, we should first display a modal to
-      // ask the user to log in
-      else if (restrict.includes('user') && !user.data) {
-        restrictToLoggedUsers = true;
-      }
-    }
 
     // Check if a matching route has been found
     // if not, only show an error log on dev env
@@ -221,14 +187,12 @@ class Link extends React.Component {
         isExternal: true,
         page: removeUrlLastSlash(page),
         pathname: removeUrlLastSlash(config.server.getUrl(to)),
-        restrictToLoggedUsers,
         isHidden,
       });
     } else {
       this.setState({
         page: removeUrlLastSlash(page),
         pathname: removeUrlLastSlash(pathname),
-        restrictToLoggedUsers,
         isHidden,
       });
     }
@@ -266,7 +230,7 @@ class Link extends React.Component {
       : style;
 
     className = this.state.isActive === true && activeClassName !== undefined
-      ? activeClassName
+      ? classNames(className, activeClassName)
       : className;
 
 
@@ -296,20 +260,6 @@ class Link extends React.Component {
     // a route but an url
     if (this.state.isExternal === true) {
       return NativeLinkComponent;
-    } else if (this.state.restrictToLoggedUsers === true) {
-      return (
-        <React.Fragment>
-          {NativeLinkComponent}
-          {
-            this.state.loginModalOpen === true && this.state.restrictToLoggedUsers === true &&
-            <LoginBox modal
-                      isOpen={true}
-                      closeModal={() => this.setState({ loginModalOpen: false })}
-                      redirect={this.state.pathname + this.props.urlQuery}
-            />
-          }
-        </React.Fragment>
-      );
     } else {
       return (
         <React.Fragment>
@@ -330,12 +280,11 @@ class Link extends React.Component {
 const mapStateToProps = (state) => {
   return {
     lang: state.app.lang,
-    user: state.user || {},
   };
 };
 
 export default wrapper(Link, {
   mapStateToProps,
   isTranslatable: false,
-  hasStyles: false
+  hasStyles: false,
 });
