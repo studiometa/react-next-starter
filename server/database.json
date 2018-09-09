@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "foo": "bar"
+  },
+
+  "pages": {
+    "home": {
+      "title": "Home",
+      "metaData": [
+        { "name": "description", "content": "This is the home page"}
+      ]
+    },
+    "_sandbox": {
+      "title": "__SAnNdboOxxX__",
+      "metaData": [
+        { "name": "description", "content": "This is the SAnNdboOxx page" }
+      ]
+    }
+  }
+}

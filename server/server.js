@@ -11,18 +11,20 @@ const openBrowser                 = require('react-dev-utils/openBrowser');
 const auth                        = require('basic-auth');
 const i18nextMiddleware           = require('i18next-express-middleware');
 const Backend                     = require('i18next-node-fs-backend');
+const germaine                    = require('germaine');
+const config                      = require('../config');
+const getRoutes                   = require('./routes');
+const database                    = require('./database');
+const { i18nInstance }            = require('../lib/i18n');
+const path = require('path');
 
-const config           = require('../config');
-const getRoutes        = require('./routes');
-const FakeAPI          = require('./fakeAPI');
-const fakeAPIStore     = require('./fakeAPI/fakeAPI.store.js');
-const { i18nInstance } = require('../lib/i18n');
 
 const DEFAULT_PORT = config.server.port || '3000';
 const HOST         = config.server.host || 'localhost';
 const dev          = process.env.NODE_ENV !== 'production';
 const app          = next({ dev, dir: config.server.clientDir });
 const routes       = getRoutes();
+
 
 // Build the custom language detector
 
@@ -176,9 +178,7 @@ const launchServer = async (port) => {
   // Initialize fake-API
 
   if (config.server.enableFakeAPI !== false) {
-    const fakeAPI = new FakeAPI(fakeAPIStore, { minDelay: 0, maxDelay: 700 });
-    server.get('/fake-api', fakeAPI.find);
-    server.get('/fake-api/*', fakeAPI.get);
+    server.get('/fake-api/*', germaine(path.resolve(__dirname, './database.json')));
   }
 
 
@@ -233,7 +233,7 @@ const launchServer = async (port) => {
       && config.lang.enableRouteTranslation === true
       && routes.all[cleanUrl] !== undefined) {
 
-      const language = config.lang.available.find(e => e.lang === req.language);
+      const language      = config.lang.available.find(e => e.lang === req.language);
       const matchingRoute = typeof language === 'object'
       && typeof routes[language.lang] === 'object'
       && routes[language.lang][cleanUrl] !== undefined

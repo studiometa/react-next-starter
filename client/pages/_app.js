@@ -1,13 +1,14 @@
-import Hidden                                                          from '@material-ui/core/Hidden';
-import withRedux                                                       from 'next-redux-wrapper';
-import App, { Container }                                              from 'next/app';
-import Router                                                          from 'next/router';
-import NProgress                                                       from 'nprogress';
-import React                                                           from 'react';
-import { Provider }                                                    from 'react-redux';
-import langDetector                                                    from '../../server/lib/customI18nextLangDetector';
-import { fetchAppSettings, updateAppCurrentUrl, updateAppLanguage }    from '../../store/actions/app.actions';
-import createStore                                                     from '../../store/createStore';
+import Hidden                                                       from '@material-ui/core/Hidden';
+import withRedux                                                    from 'next-redux-wrapper';
+import App, { Container }                                           from 'next/app';
+import Router                                                       from 'next/router';
+import NProgress                                                    from 'nprogress';
+import React                                                        from 'react';
+import { Provider }                                                 from 'react-redux';
+import config                                                       from '../../config';
+import langDetector                                                 from '../../server/lib/customI18nextLangDetector';
+import { fetchAppSettings, updateAppCurrentUrl, updateAppLanguage } from '../../store/actions/app.actions';
+import createStore                                                  from '../../store/createStore';
 import '../styles/styles.scss';
 
 
@@ -39,7 +40,7 @@ export default withRedux(createStore)(class _App extends App {
     }
 
     // Store the app settings
-    if (ctx.store.getState().app.syncSettings !== true) {
+    if (config.general.fetchAppSettings === true && ctx.store.getState().app.syncSettings !== true) {
       await ctx.store.dispatch(fetchAppSettings());
     }
 

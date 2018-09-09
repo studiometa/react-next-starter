@@ -13,6 +13,19 @@ const path = require('path');
 module.exports = {
 
   /*****************************************************
+   * GENERAL SETTINGS
+   *****************************************************/
+
+  general: {
+
+    // Define if settings must be fetched from an API. If true, a request will be made
+    // using the 'settings' endpoint defining in the environment config file. The result will
+    // be stored in the redux store under state.app.settings. The settings are not cached and
+    // will be requested on the first page load on the server side (getInitialProps of _app)
+    fetchAppSettings: true
+  },
+
+  /*****************************************************
    * LANGUAGE SETTINGS
    *****************************************************/
 

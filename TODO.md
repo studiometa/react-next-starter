@@ -6,9 +6,7 @@
     - pages title
     - sandbox
 - Améliorer Sandbox
-- Utiliser Germaine! 
-- Rendre l'utilisation de germaine plus modulaire (ex: ajouter un parametre de config pour définir si des settings doivent être requêtés, etc)
 - Trouver un meilleur moyen de définir le title des pages
-
+- run npm audit
 
 ser que dans la configuration, si la traduction est désactivée, 
