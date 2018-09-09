@@ -4,6 +4,16 @@ const removeUrlLastSlash = require('./removeUrlLastSlash');
 
 const routes = getRoutes();
 
+const getOrignalRoute = (routes, path, lang) => {
+  if (routes && routes.client && routes[lang]) {
+    if (routes.client[path] && routes.client[path][lang]) {
+      let routePath = routes.client[path][lang].slice(config.lang.enableRouteTranslation ? 3 : 0);
+      routePath     = routePath.length ? routePath : '/';
+
+      return routes[lang][routePath];
+    }
+  }
+};
 
 /**
  * Returns an object that contains the page and the pathname related to
@@ -17,11 +27,12 @@ const routes = getRoutes();
 module.exports = (path = '/', lang = config.lang.default) => {
   if (path === '/index') path = '/';
   if (typeof routes.client[path] === 'object' && routes.client[path][lang] !== undefined) {
-    const originalRoute = routes[lang][routes.client[path][lang].slice(3)];
     return {
       pathname: removeUrlLastSlash(routes.client[path][lang]),
       page: routes.client[path].page,
-      restrict: originalRoute.restrict,
+      restrict: config.router.enableRoutesRestriction
+        ? getOrignalRoute(routes, path, lang).restrict
+        : undefined,
     };
   }
   return {};

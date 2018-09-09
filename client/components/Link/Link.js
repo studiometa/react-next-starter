@@ -1,4 +1,5 @@
 import Typography           from '@material-ui/core/Typography';
+import classNames           from 'classnames';
 import NextLink             from 'next/link';
 import Router               from 'next/router';
 import propTypes            from 'prop-types';
@@ -7,7 +8,7 @@ import config               from '../../../config';
 import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
 import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
 import wrapper              from '../../lib/componentWrapper';
-import classNames from 'classnames'
+
 
 
 /**
@@ -99,7 +100,7 @@ class Link extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state             = {
+    this.state = {
       isActive: false,
       page: null,
       pathname: null,
@@ -243,7 +244,6 @@ class Link extends React.Component {
         rel={target === '_blank' ? 'noopener' : ''}
         style={linkStyle}
         className={linkClassName}
-        onClick={this.checkRestrictions}
         {...linkAttributes}
       >
         {
