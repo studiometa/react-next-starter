@@ -10,7 +10,6 @@ const styles = theme => ({});
 const Readme = class extends React.Component {
 
   render() {
-    const pageData    = this.props.pageData || { content: {} };
     const { classes } = this.props;
 
     return (

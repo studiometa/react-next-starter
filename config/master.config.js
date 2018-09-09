@@ -22,7 +22,13 @@ module.exports = {
     // using the 'settings' endpoint defining in the environment config file. The result will
     // be stored in the redux store under state.app.settings. The settings are not cached and
     // will be requested on the first page load on the server side (getInitialProps of _app)
-    fetchAppSettings: true
+    fetchAppSettings: true,
+
+    // Like for the fetchAppSettings parameter, it is also possible to make a request to an API for
+    // all the pages. The result will be accessible under the pages 'pageData' prop and stored in the redux
+    // store under state.pages.<page_name>. Note that you can disable this feature for a single page by setting
+    // 'withPageData' to false on the pageWrapper composer.
+    fetchPagesData: true
   },
 
   /*****************************************************

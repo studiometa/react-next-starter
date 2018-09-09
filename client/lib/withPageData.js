@@ -1,6 +1,6 @@
 import React         from 'react';
 import { fetchPage } from '../../store/actions/pages.actions';
-
+import config from '../../config'
 
 const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) => {
   dispatch(fetchPage(pageName, false, (res, err) => {
@@ -19,7 +19,7 @@ const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) =>
 export default (pageName = '', opts = {}) => ComposedComponent => {
 
 
-  const required = Boolean(opts.required);
+  const isRequired = Boolean(opts.required);
 
   const Extended = (props) => React.createElement(ComposedComponent, props);
 
@@ -32,7 +32,7 @@ export default (pageName = '', opts = {}) => ComposedComponent => {
 
     if (currentStore && currentStore.pages && currentStore.pages[pageName]) {
       pageData = currentStore.pages[pageName];
-    } else if (required) {
+    } else if (config.general.fetchPagesData === true && isRequired) {
       try {
         pageData = await lazyGetPageData(pageName, props.store.dispatch);
       } catch (err) {

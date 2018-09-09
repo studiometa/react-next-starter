@@ -9,8 +9,6 @@ const styles = theme => ({});
 const Home = class extends React.Component {
 
   render() {
-    const { classes } = this.props;
-
     return (
       <Layout pageData={this.props.pageData}>
         home
