@@ -61,6 +61,7 @@ const PageLayout = withStyles(styles)(function Layout(props) {
         classes, // classes for the page layout components
         backgroundColor, // The background color of the page
         noPageData, // If true, the pageData will not be required
+        title,
         ...rest // Any other property will be assigned to the pageData object
       } = props;
 
@@ -75,7 +76,7 @@ const PageLayout = withStyles(styles)(function Layout(props) {
 
   return (
     <div className={`${ classes.root }${pageData.title && 'page-' + pageData.title}`}>
-      <Head {...pageData} />
+      <Head {...pageData} title={title || pageData.title}/>
       <Header/>
       <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
         <Grid item xs={12}>
@@ -96,6 +97,7 @@ PageLayout.propTypes = {
   classes: PropTypes.object, // classes for the page layout components
   backgroundColor: PropTypes.string, // The background color of the page
   noPageData: PropTypes.bool, // If true, the pageData will not be required
+  title: PropTypes.string, // The title of the page. Can be defined in pageData (pageData.title)
 };
 
 export default PageLayout;
