@@ -243,6 +243,8 @@ const launchServer = async (port) => {
       // Check if a matching route is defined and the redirection feature enabled
       if (typeof matchingRoute.lang === 'string' && config.lang.enableFallbackRedirection === true) {
         res.redirect(301, `/${matchingRoute.lang}${req.url}`);
+      } else {
+        return app.getRequestHandler()(req, res);
       }
     } else {
       return app.getRequestHandler()(req, res);

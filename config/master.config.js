@@ -31,11 +31,11 @@ module.exports = {
     enableRouteTranslation: true,
 
 
-    // This feature can only be used if routes translation has been enabled. This grant the server
+    // This feature can only be used if routes translation has been enabled. This grants the server
     // to perform a 301 redirection when no language has been specified in the url. Note that this redirection
     // will only append if a resolving route is found, else it will end with a 404 error.
     // ex: /produit can be resolved to /fr/produit
-    enableFallbackRedirection: true,
+    enableFallbackRedirection: false,
 
 
     // When writing routes in this starter, you must always use the custom Link component. When using this component,
