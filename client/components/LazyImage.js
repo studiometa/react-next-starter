@@ -98,11 +98,48 @@ class LazyImage extends React.PureComponent {
     const height = this.props.height ? this.props.height + 'px' : '100%';
     const width  = this.props.width ? this.props.width + 'px' : '100%';
 
+    /** LOADING STATE **/
+
     if (this.state.isReady === false || typeof this.state.src !== 'string' || this.props.isLoaded === false) {
-      return this.props.noSkeleton === true
-        ? <div style={{ height, width }} className={this.props.className}/>
-        : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>;
+      return (
+        <div>
+          <script>
+            {
+              this.props.noSkeleton === true
+                ? <div style={{ height, width }} className={this.props.className}/>
+                : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
+            }
+          </script>
+
+          <noscript>
+            {
+              this.props.useBackgroundImage === true &&
+              <div className={this.props.bordered === true ? this.props.classes.borderedImage : ''}>
+                <div
+                  className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-rseady')}
+                  style={{ backgroundImage: `url(${this.props.src})`, height, width, ...this.props.style }}
+                />
+              </div>
+            }
+            {
+              this.props.useBackgroundImage !== true &&
+              <div
+                className={this.props.bordered === true ? this.props.classes.borderedImage : ''}
+                style={this.props.style || {}}
+              >
+                <img
+                  className={classNames(this.props.className, 'async-image-ready')}
+                  src={this.props.src}
+                  style={{ height, width }}
+                />
+              </div>
+            }
+          </noscript>
+        </div>
+      );
     }
+
+    /** LOADED BACKGROUND IMAGE **/
 
     if (this.props.useBackgroundImage === true) {
       return (
@@ -114,6 +151,8 @@ class LazyImage extends React.PureComponent {
         </div>
       );
     }
+
+    /** LOADED IMAGE **/
 
     return (
       <div

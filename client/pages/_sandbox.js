@@ -7,13 +7,14 @@ import config      from '../../config';
 import getRoutes   from '../../server/routes';
 import Layout      from '../components/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
-
+import NoSSR from 'react-no-ssr'
 
 const routes = getRoutes();
 
 
 
 class _sandbox extends React.Component {
+
   render() {
     const { theme } = this.props;
     return (
@@ -50,12 +51,12 @@ class _sandbox extends React.Component {
               {
                 Object.entries(theme.typography).map(([typoName, typoSettings]) => {
                   if (typeof typoSettings !== 'object') return null;
-                  const fontSize = Number(typoSettings.fontSize.replace('rem', ''))
+                  const fontSize = Number(typoSettings.fontSize.replace('rem', ''));
                   return (
                     <Grid item xs={12} key={typoName}>
                       <Typography variant={typoName} component="h1">
                         {typoName} ({fontSize}rem - {fontSize * theme.typography.fontSize}px)
-                        </Typography>
+                      </Typography>
                       <br/>
                       <Typography variant={typoName} component="h1">the quick brown fox jumps over the lazy
                         dogs</Typography>
@@ -118,7 +119,7 @@ class _sandbox extends React.Component {
               }
 
               <Grid item xs={12}>
-              <Typography variant="display1" component="h2" color="primary">Backgrounds</Typography>
+                <Typography variant="display1" component="h2" color="primary">Backgrounds</Typography>
               </Grid>
 
               {
@@ -127,17 +128,17 @@ class _sandbox extends React.Component {
                     <Paper style={{ background: theme.palette.background[colorName], padding: 10 }}>
                       <Typography variant="headline" component="h4" style={{ color: theme.palette.getContrastText(theme.palette.background[colorName]) }}>
                         {colorName.toLowerCase()}
-                        </Typography>
+                      </Typography>
                       <Typography variant="body2" component="p" style={{ color: theme.palette.getContrastText(theme.palette.background[colorName]) }}>
                         {colorHex}
-                        </Typography>
+                      </Typography>
                     </Paper>
                   </Grid>
                 ))
               }
 
               <Grid item xs={12}>
-              <Typography variant="display1" component="h2" color="primary">Greys</Typography>
+                <Typography variant="display1" component="h2" color="primary">Greys</Typography>
               </Grid>
 
               {
@@ -146,10 +147,10 @@ class _sandbox extends React.Component {
                     <Paper style={{ background: theme.palette.grey[colorName], padding: 10 }}>
                       <Typography variant="headline" component="h4" style={{ color: theme.palette.getContrastText(theme.palette.grey[colorName]) }}>
                         {colorName.toLowerCase()}
-                        </Typography>
+                      </Typography>
                       <Typography variant="body2" component="p" style={{ color: theme.palette.getContrastText(theme.palette.grey[colorName]) }}>
                         {colorHex}
-                        </Typography>
+                      </Typography>
                     </Paper>
                   </Grid>
                 ))
@@ -183,11 +184,13 @@ class _sandbox extends React.Component {
           <Grid item xs={12}>
             <Typography variant="display3" component="h1" color="primary">Current routes</Typography>
             <br/><br/>
+            <NoSSR>
             <Inspector
               theme="chromeDark"
               data={routes}
               expandLevel={0}
             />
+            </NoSSR>
           </Grid>
         </Grid>
       </Layout>

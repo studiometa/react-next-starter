@@ -2,15 +2,15 @@ import { applyMiddleware, createStore, } from 'redux';
 import { load, save }                    from 'redux-localstorage-simple';
 import { createLogger }                  from 'redux-logger';
 import thunk                             from 'redux-thunk';
-import Socket                            from '../lib/socket';
 import config                            from '../config';
+import Socket                            from '../lib/socket';
 import getRoutes                         from '../server/routes';
 import reducers                          from './reducers/index';
 
 // Items that be stored in the localStorage
 const { localStorageStates } = config.redux;
 
-const routes = getRoutes();
+const routes   = getRoutes();
 routes.current = {};
 
 const isServer = !process.browser;
@@ -41,12 +41,18 @@ const DEFAULT_STATE = {
 export default (initialState = DEFAULT_STATE) => {
   // We do not want middlewares like redux-logger to get
   // fired on the server side
+
   if (isServer) {
     return createStore(reducers, initialState, applyMiddleware(thunk.withExtraArgument(socket)));
   } else {
+    initialState = Object.assign(
+      {},
+      load({ states: localStorageStates, namespace: 'chefsquare' }),
+      initialState,
+    );
     return createStore(
       reducers,
-      load({ states: localStorageStates, namespace: 'chefsquare' }),
+      initialState,
       applyMiddleware(logger,
         save({ states: localStorageStates, namespace: 'chefsquare' }),
         thunk.withExtraArgument(socket)),

@@ -5,7 +5,4 @@
     - noPageData
     - pages title
     - sandbox
-- Améliorer Sandbox
 - run npm audit
-
-ser que dans la configuration, si la traduction est désactivée, 

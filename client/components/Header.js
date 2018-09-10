@@ -26,7 +26,6 @@ const Header = function Header(props) {
         t,
       } = props;
 
-
   return (
     <AppBar position="static" color="primary">
       <Toolbar>

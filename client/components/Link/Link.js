@@ -107,50 +107,23 @@ class Link extends React.Component {
       isHidden: false,
       isExternal: false // Define if the provided route is an external link
     };
-  }
-
-
-  componentDidMount() {
-    this._updateLink();
-  }
-
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextState !== this.state
-      || nextProps.lang !== this.props.lang
-      || nextProps.to !== this.props.to
-      || nextProps.urlQuery !== this.props.urlQuery
-      || nextProps.children !== this.props.children
-      || nextProps.query !== this.props.query;
-  }
-
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.to !== this.props.to || prevProps.query !== this.props.query) {
-      this._updateLink();
-    }
-  }
-
-
-  _updateLink() {
-    if (this._isActive() === true) {
-      this.setState({ isActive: true });
-    }
 
     let { to, query, lang, target } = this.props;
     let isHidden                    = false;
 
-    if (!to) return this.setState({ isHidden: true });
+    if (!to) {
+      this.state.isHidden = true;
+      return;
+    }
 
     // If the 'to' prop contains a dot, it cannot be a valid route
     // and is probably be an url instead. In this case, all we need to
     // do is to save the url into the 'pathname' state of the component
     // and display a native link instead of the Next Link component
     if (to.includes('.') || to.includes('://')) {
-      return this.setState({
-        isExternal: true,
-        pathname: to,
-      });
+      this.state.isExternal = true;
+      this.state.pathname   = to;
+      return;
     }
 
     // If lang is not defined (it must never be, but who knows?), fallback to default language.
@@ -184,19 +157,32 @@ class Link extends React.Component {
     // route pathname. This way we can open an internal page in a new tab/window.
 
     if (target === '_blank') {
-      return this.setState({
-        isExternal: true,
-        page: removeUrlLastSlash(page),
-        pathname: removeUrlLastSlash(config.server.getUrl(to)),
-        isHidden,
-      });
+      this.state.isExternal = true;
+      this.state.page       = removeUrlLastSlash(page);
+      this.state.pathname   = removeUrlLastSlash(config.server.getUrl(to));
+      this.state.isHidden   = isHidden;
     } else {
-      this.setState({
-        page: removeUrlLastSlash(page),
-        pathname: removeUrlLastSlash(pathname),
-        isHidden,
-      });
+      this.state.page     = removeUrlLastSlash(page);
+      this.state.pathname = removeUrlLastSlash(pathname);
+      this.state.isHidden = isHidden;
     }
+  }
+
+
+  componentDidMount() {
+    if (process.browser && this._isActive() === true) {
+      this.setState({ isActive: true });
+    }
+  }
+
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState !== this.state
+      || nextProps.lang !== this.props.lang
+      || nextProps.to !== this.props.to
+      || nextProps.urlQuery !== this.props.urlQuery
+      || nextProps.children !== this.props.children
+      || nextProps.query !== this.props.query;
   }
 
 
@@ -209,6 +195,7 @@ class Link extends React.Component {
   render() {
     if (this.state.isHidden === true) return null;
     if (this.props.disabled === true) return this.props.children;
+
     let {
           className,
           style,

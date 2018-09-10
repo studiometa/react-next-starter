@@ -4,7 +4,7 @@ import { connect }    from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import withMUITheme   from './withMUITheme';
 import { compose }    from 'recompose';
-
+import config from '../../config'
 
 /**
  * This is a page wrapper that does the following things:
@@ -32,7 +32,7 @@ export default (Component, {
 }) => {
   return withMUITheme(compose(
     withPageData(name, {required: !noPageData}),
-    withI18next([name, ...namespaces]),
+    withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces),
     connect(mapStateToProps),
     withStyles(styles),
   )(Component), withTheme);

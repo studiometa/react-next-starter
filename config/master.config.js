@@ -7,7 +7,7 @@ const path = require('path');
  *      !!! PLEASE, PLEEEAASSEEE, READ THE README FIRST BEFORE TOUCHING ANYTHING HERE     *
  *      IF YOU BREAK SOMETHING, YOU'LL BREAK MY HEART TOO AND I'LL BE SAD FOR             *
  *      THE REST OF MY LIFE. IS THIS WHAT YOU WANT?!                                      *
- *                                                                                            *
+ *                                                                                        *
  ******************************************************************************************/
 
 module.exports = {
@@ -47,14 +47,14 @@ module.exports = {
     //
     // IMPORTANT: Do not update this parameter in production, this will update all the
     // app routes and have a lot of undesired effects on your SEO
-    enableRouteTranslation: false,
+    enableRouteTranslation: true,
 
 
     // This feature can only be used if routes translation has been enabled. This grants the server
     // to perform a 301 redirection when no language has been specified in the url. Note that this redirection
     // will only append if a resolving route is found, else it will end with a 404 error.
     // ex: /produit can be resolved to /fr/produit
-    enableFallbackRedirection: false,
+    enableFallbackRedirection: true,
 
 
     // When writing routes in this starter, you must always use the custom Link component. When using this component,
@@ -140,7 +140,7 @@ module.exports = {
 
 
   /*****************************************************
-   * REDUX
+   * ROUTER
    *****************************************************/
 
   router: {
@@ -161,12 +161,12 @@ module.exports = {
    *****************************************************/
 
   redux: {
-    localStorageStates: ['pages'], // items that should be stored in the local storage
+    localStorageStates: [], // items that should be stored in the local storage
 
     // For each local-stored item (that is compatible with this feature),
     // it is possible to define an expiration time (in ms).
-    expires: {
-      page: 1000 * 60 * 60 * 24, // store the pages data
-    },
+    //
+    // Note: It's absolutely useless to store content that is first generated on the server side (ex: pages)
+    // because this content will override the local-stored copy on each page load!
   },
 };

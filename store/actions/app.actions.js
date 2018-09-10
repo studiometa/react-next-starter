@@ -33,7 +33,7 @@ export const fetchAppSettings = (cb = ()=>{}) => async (dispatch, getState, sock
     const result = await socket.getSettings();
 
     dispatch(setAppSettings(result));
-    cb(result)
+    cb(result);
     return result;
   } catch (err) {
     cb(err, null);
