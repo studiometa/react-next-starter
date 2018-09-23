@@ -4,8 +4,8 @@ import Select             from '@material-ui/core/Select';
 import Router             from 'next/router';
 import React              from 'react';
 import { connect }        from 'react-redux';
-import config             from '../../config';
-import removeUrlLastSlash from '../../helpers/removeUrlLastSlash';
+import config             from '../../../config/index';
+import removeUrlLastSlash from '../../../helpers/removeUrlLastSlash';
 
 
 const getRouteFromPathname = (path, currentLang, destLang, query, routes) => {

@@ -1,6 +1,6 @@
 import Head   from 'next/head';
 import React  from 'react';
-import config from '../../config';
+import config from '../../../config/index';
 
 
 /**
@@ -20,7 +20,7 @@ export default (props) => {
 
   metaData = [...config.seo.defaultMetaTags, ...(metaData || [])];
 
-  const title = props.title || config.seo.defaultPagesTitle || require('../../package').name;
+  const title = props.title || config.seo.defaultPagesTitle || require('../../../package').name;
 
   return (
     <Head>

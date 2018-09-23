@@ -1,5 +1,5 @@
 import React       from 'react';
-import Layout      from '../components/PageLayout';
+import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
 
 

@@ -1,7 +1,7 @@
 import fx      from 'money';
 import React   from 'react';
-import config  from '../../config';
-import wrapper from '../lib/componentWrapper';
+import config  from '../../../config/index';
+import wrapper from '../../lib/componentWrapper';
 
 
 const mapStateToProps = state => ({

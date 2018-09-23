@@ -4,10 +4,10 @@ import NextLink             from 'next/link';
 import Router               from 'next/router';
 import propTypes            from 'prop-types';
 import React                from 'react';
-import config               from '../../../config';
-import getMatchingLangRoute from '../../../helpers/getMatchingLangRoute';
-import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
-import wrapper              from '../../lib/componentWrapper';
+import config               from '../../../../config/index';
+import getMatchingLangRoute from '../../../../helpers/getMatchingLangRoute';
+import removeUrlLastSlash   from '../../../../helpers/removeUrlLastSlash';
+import wrapper              from '../../../lib/componentWrapper';
 
 
 

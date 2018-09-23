@@ -3,11 +3,12 @@ import Paper       from '@material-ui/core/Paper';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Inspector   from 'react-inspector';
+import NoSSR       from 'react-no-ssr';
 import config      from '../../config';
 import getRoutes   from '../../server/routes';
-import Layout      from '../components/PageLayout';
+import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
-import NoSSR from 'react-no-ssr'
+
 
 const routes = getRoutes();
 
@@ -185,11 +186,11 @@ class _sandbox extends React.Component {
             <Typography variant="display3" component="h1" color="primary">Current routes</Typography>
             <br/><br/>
             <NoSSR>
-            <Inspector
-              theme="chromeDark"
-              data={routes}
-              expandLevel={0}
-            />
+              <Inspector
+                theme="chromeDark"
+                data={routes}
+                expandLevel={0}
+              />
             </NoSSR>
           </Grid>
         </Grid>

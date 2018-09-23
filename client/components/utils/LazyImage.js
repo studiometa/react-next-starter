@@ -2,9 +2,9 @@ import classNames     from 'classnames';
 import propTypes      from 'prop-types';
 import React          from 'react';
 import ReactDOMServer from 'react-dom/server';
-import wrapper        from '../lib/componentWrapper';
+import wrapper        from '../../lib/componentWrapper';
 import Skeleton       from './Skeleton/index';
-import NoScript from './NoScript'
+import NoScript       from './NoScript'
 
 const styles = theme => ({
   backgroundImage: {

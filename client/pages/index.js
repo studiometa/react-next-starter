@@ -1,7 +1,7 @@
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
-import LazyImage   from '../components/LazyImage';
-import Layout      from '../components/PageLayout';
+import LazyImage   from '../components/utils/LazyImage';
+import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
 
 

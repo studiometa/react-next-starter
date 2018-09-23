@@ -2,10 +2,10 @@ import AppBar           from '@material-ui/core/AppBar';
 import Grid             from '@material-ui/core/Grid';
 import Toolbar          from '@material-ui/core/Toolbar';
 import React            from 'react';
-import packageJson      from '../../package';
-import componentWrapper from '../lib/componentWrapper';
-import LangSwitch       from './LangSwitch';
-import Link             from './Link';
+import packageJson      from '../../../package';
+import componentWrapper from '../../lib/componentWrapper';
+import LangSwitch       from '../utils/LangSwitch';
+import Link             from './Link/index';
 
 // xs, sm, md, lg, and xl.
 const styles = theme => ({
