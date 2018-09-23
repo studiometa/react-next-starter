@@ -4,7 +4,7 @@ import React          from 'react';
 import ReactDOMServer from 'react-dom/server';
 import wrapper        from '../lib/componentWrapper';
 import Skeleton       from './Skeleton/index';
-
+import NoScript from './NoScript'
 
 const styles = theme => ({
   backgroundImage: {
@@ -25,8 +25,8 @@ const styles = theme => ({
 class LazyImage extends React.PureComponent {
   static propTypes = {
     src: propTypes.string,
-    width: propTypes.number,
-    height: propTypes.number,
+    width: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    height: propTypes.oneOfType([propTypes.string, propTypes.number]),
     useBackgroundImage: propTypes.bool,
     noSkeleton: propTypes.bool,
     className: propTypes.string,
@@ -86,30 +86,15 @@ class LazyImage extends React.PureComponent {
 
 
   render() {
-    const height = this.props.height ? this.props.height + 'px' : '100%';
-    const width  = this.props.width ? this.props.width + 'px' : '100%';
+    const height = this.props.height  ? this.props.height  : '100%';
+    const width  = this.props.width   ? this.props.width  : '100%';
 
 
     // This is used on websites where JavaScript is disabled (or for crawling)
     // This component will be rendered as a string inside a noscript tag
     const NoScriptRender = (
       <React.Fragment>
-        {
-          this.props.useBackgroundImage === true &&
-          <div
-            className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-rseady')}
-            style={{ backgroundImage: `url(${this.props.src})`, height, width, ...this.props.style }}
-          />
-        }
-        {
-          this.props.useBackgroundImage !== true &&
 
-          <img
-            className={classNames(this.props.className, 'async-image-ready')}
-            src={this.props.src}
-            style={{ height, width, ...this.props.style }}
-          />
-        }
       </React.Fragment>
     );
 
@@ -123,8 +108,25 @@ class LazyImage extends React.PureComponent {
               ? <div style={{ height, width }} className={this.props.className}/>
               : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
           }
+          <NoScript>
+            {
+              this.props.useBackgroundImage === true &&
+              <div
+                className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-ready')}
+                style={{ backgroundImage: `url(${this.props.src})`, height, width, ...this.props.style }}
+              />
+            }
+            {
+              this.props.useBackgroundImage !== true &&
 
-          <noscript dangerouslySetInnerHTML={{ __html: ReactDOMServer.renderToStaticMarkup(NoScriptRender) }}/>
+              <img
+                className={classNames(this.props.className, 'async-image-ready')}
+                src={this.props.src}
+                style={{ height, width, ...this.props.style }}
+              />
+            }
+          </NoScript>
+
         </div>
       );
     }

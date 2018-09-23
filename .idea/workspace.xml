@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/components/NoScript.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
       <change beforePath="$PROJECT_DIR$/client/components/LazyImage.js" afterPath="$PROJECT_DIR$/client/components/LazyImage.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/PageLayout.js" afterPath="$PROJECT_DIR$/client/components/PageLayout.js" />
-      <change beforePath="$PROJECT_DIR$/client/pages/_sandbox.js" afterPath="$PROJECT_DIR$/client/pages/_sandbox.js" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.js" afterPath="$PROJECT_DIR$/client/pages/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,18 +55,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Link.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/Link/Link.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2475">
-              <caret line="174" column="5" lean-forward="false" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="master.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/master.config.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,13 +90,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LazyImage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LazyImage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/LazyImage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-926">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="739">
+              <caret line="114" column="110" lean-forward="true" selection-start-line="114" selection-start-column="110" selection-end-line="114" selection-end-column="110" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NoScript.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/NoScript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,7 +117,7 @@
       <file leaf-file-name="_sandbox.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/pages/_sandbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-353">
+            <state relative-caret-position="165">
               <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
@@ -155,7 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>htpasswdMiddleware</find>
       <find>routes</find>
       <find>logged</find>
       <find>user</find>
@@ -177,7 +173,6 @@
       <find>title</find>
       <find>primar</find>
       <find>,</find>
-      <find>width</find>
       <find>---</find>
       <find>config.redux</find>
       <find>expires</find>
@@ -185,6 +180,8 @@
       <find>setState</find>
       <find>Router</find>
       <find>isRequired</find>
+      <find>bordered</find>
+      <find>width</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -208,7 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/lib/customI18nextLangDetector.js" />
         <option value="$PROJECT_DIR$/locales/en/home.json" />
         <option value="$PROJECT_DIR$/locales/fr/home.json" />
         <option value="$PROJECT_DIR$/lib/env.js" />
@@ -258,6 +254,7 @@
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/client/pages/_sandbox.js" />
         <option value="$PROJECT_DIR$/client/pages/index.js" />
+        <option value="$PROJECT_DIR$/client/components/NoScript.js" />
         <option value="$PROJECT_DIR$/client/components/LazyImage.js" />
       </list>
     </option>
@@ -310,6 +307,12 @@
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
@@ -409,14 +412,7 @@
       <workItem from="1536657717960" duration="1756000" />
       <workItem from="1537516200080" duration="120000" />
       <workItem from="1537523428168" duration="1116000" />
-      <workItem from="1537707510556" duration="1418000" />
-    </task>
-    <task id="LOCAL-00077" summary="Still trying to make the url resolution working on the preprod">
-      <created>1527584208085</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1527584208085</updated>
+      <workItem from="1537707510556" duration="2001000" />
     </task>
     <task id="LOCAL-00078" summary="Fix port negotiation errors when the default port is already used">
       <created>1527585127801</created>
@@ -754,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536609227003</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Clean LazyImage + better noscript support">
+      <created>1537709196120</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1537709196121</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355610000" />
+    <option name="totallyTimeSpent" value="356193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +860,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add a server script that checks if all the required files are present before launching the app (long commit sry)" />
     <MESSAGE value="Open the browser when the server is ran on dev mode" />
     <MESSAGE value="Add an analyser script for node modules" />
     <MESSAGE value="This time, I fixed those f** tests for sure :)" />
@@ -882,7 +884,8 @@
     <MESSAGE value="Better pageTitle system" />
     <MESSAGE value="Clean sandbox" />
     <MESSAGE value="Many updates / fix + clean readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Many updates / fix + clean readme" />
+    <MESSAGE value="Clean LazyImage + better noscript support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean LazyImage + better noscript support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,13 +894,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/helpers/removeUrlLastSlash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/ecosystem.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1150,7 +1146,7 @@
         <state relative-caret-position="2475">
           <caret line="174" column="5" lean-forward="false" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1252,14 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_sandbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1270,12 +1258,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_sandbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/components/LazyImage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-926">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="739">
+          <caret line="114" column="110" lean-forward="true" selection-start-line="114" selection-start-column="110" selection-end-line="114" selection-end-column="110" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/NoScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
