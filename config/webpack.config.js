@@ -31,7 +31,28 @@ module.exports = (nextWebpackConfig) => {
     }
   });
 
+  nextWebpackConfig.plugins = nextWebpackConfig.plugins.map(plugin => {
+    if (
+      plugin.constructor.name === 'CommonsChunkPlugin' &&
+      // disable filenameTemplate checks here because they never match
+      // (plugin.filenameTemplate === 'commons.js' ||
+      //     plugin.filenameTemplate === 'main.js')
+      // do check for minChunks though, because this has to (should?) exist
+      plugin.minChunks != null
+    ) {
+      const defaultMinChunks = plugin.minChunks;
+      plugin.minChunks = (module, count) => {
+        if (module.resource && module.resource.match(/\.(sass|scss|css)$/)) {
+          return true;
+        }
+        return defaultMinChunks(module, count);
+      };
+    }
+    return plugin;
+  });
+
   return ({
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     devtool: nextWebpackConfig.devtool,
     name: nextWebpackConfig.name,
     devServer: { quiet: true, noInfo: true, stats: 'errors-only' },
