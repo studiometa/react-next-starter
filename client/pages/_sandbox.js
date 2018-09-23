@@ -17,9 +17,9 @@ const routes = getRoutes();
 class _sandbox extends React.Component {
 
   render() {
-    const { theme } = this.props;
+    const { theme, pageData} = this.props;
     return (
-      <Layout>
+      <Layout pageData={pageData}>
         <Grid container direction="column" spacing={40}>
 
           {/** THEME **/}
