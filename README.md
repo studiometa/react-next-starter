@@ -684,9 +684,7 @@ Si vous avez lu ce readme en entier, c'est la deuxième fois que ce composant es
     
 
 Ce composant gère les paramètres suivants : 
-  - *name** : Requis, correspond au nom de la page (utilisé pour récupérer l'objet pageData et potentiellement le fichier
-  de locale correspondant à la page)
-  - *namespaces* : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu
+  - *name*  - *namespaces* : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu
   - *mapStateToProps* : Même fonction utilisée par Redux pour injecter des props au composant
   - *styles* : Objet utilisé par JSS et Material-ui pour générer les styles de la page
   - *withTheme* : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui
@@ -712,3 +710,10 @@ Ce composant gère les paramètres suivants :
   - *withTheme* : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui
 
 
+# Contribuer
+
+Si vous désirez contribuer à ce projet, vous pouvez :
+- L'utiliser ! :) 
+- Faire remonter des issues
+- Envoyer des pull-request pour proposer des corrections ou des améliorations
+- Aider à l'amélioration de la documentation

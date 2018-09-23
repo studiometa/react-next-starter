@@ -4,7 +4,6 @@
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +45,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1499">
-                <caret line="690" column="12" lean-forward="false" selection-start-line="690" selection-start-column="12" selection-end-line="690" selection-end-column="12" />
+              <first_editor relative-caret-position="3723">
+                <caret line="686" column="10" lean-forward="false" selection-start-line="686" selection-start-column="10" selection-end-line="686" selection-end-column="10" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -91,18 +90,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LazyImage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/utils/LazyImage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="114" column="110" lean-forward="false" selection-start-line="114" selection-start-column="110" selection-end-line="114" selection-end-column="110" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -245,8 +232,8 @@
         <option value="$PROJECT_DIR$/client/components/common/Head.js" />
         <option value="$PROJECT_DIR$/client/components/common/PageLayout.js" />
         <option value="$PROJECT_DIR$/client/components/utils/Price.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TODO.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -297,24 +284,7 @@
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="helpers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -409,14 +379,7 @@
       <workItem from="1536657717960" duration="1756000" />
       <workItem from="1537516200080" duration="120000" />
       <workItem from="1537523428168" duration="1116000" />
-      <workItem from="1537707510556" duration="3713000" />
-    </task>
-    <task id="LOCAL-00080" summary="Update tests">
-      <created>1527593343573</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1527593343573</updated>
+      <workItem from="1537707510556" duration="4037000" />
     </task>
     <task id="LOCAL-00081" summary="[MAJOR] i18n implementation done!">
       <created>1527595899979</created>
@@ -754,11 +717,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537709992435</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Update readme">
+      <created>1537711543871</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1537711543871</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357905000" />
+    <option name="totallyTimeSpent" value="358229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +827,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="This time, I fixed those f** tests for sure :)" />
     <MESSAGE value="Improve test 'env' for pipeline" />
     <MESSAGE value="Fix a small bug on the server config" />
     <MESSAGE value="Add 'old' (outdated, obsolete, antiquated) starter styles files" />
@@ -882,7 +851,8 @@
     <MESSAGE value="Clean LazyImage + better noscript support" />
     <MESSAGE value="Add a NoScript component" />
     <MESSAGE value="New components folder architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="New components folder architecture" />
+    <MESSAGE value="Update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,13 +861,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/styles/components/_skeleton-screens.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/styles/components/nprogress.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1280,11 +1243,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/findClosestParentEl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1499">
-            <caret line="690" column="12" lean-forward="false" selection-start-line="690" selection-start-column="12" selection-end-line="690" selection-end-column="12" />
+          <first_editor relative-caret-position="3723">
+            <caret line="686" column="10" lean-forward="false" selection-start-line="686" selection-start-column="10" selection-end-line="686" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />
