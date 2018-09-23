@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/components/Head.js" afterPath="$PROJECT_DIR$/client/components/common/Head.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/Header.js" afterPath="$PROJECT_DIR$/client/components/common/Header.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/LangSwitch.js" afterPath="$PROJECT_DIR$/client/components/utils/LangSwitch.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/LazyImage.js" afterPath="$PROJECT_DIR$/client/components/utils/LazyImage.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/Link/Link.js" afterPath="$PROJECT_DIR$/client/components/common/Link/Link.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/Link/index.js" afterPath="$PROJECT_DIR$/client/components/common/Link/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/NoScript.js" afterPath="$PROJECT_DIR$/client/components/utils/NoScript.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/PageLayout.js" afterPath="$PROJECT_DIR$/client/components/common/PageLayout.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/Price.js" afterPath="$PROJECT_DIR$/client/components/utils/Price.js" />
-      <change beforePath="$PROJECT_DIR$/client/components/Skeleton/index.js" afterPath="$PROJECT_DIR$/client/components/utils/Skeleton/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/pages/_sandbox.js" afterPath="$PROJECT_DIR$/client/pages/_sandbox.js" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.js" afterPath="$PROJECT_DIR$/client/pages/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/pages/readme.js" afterPath="$PROJECT_DIR$/client/pages/readme.js" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,26 +29,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/common/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="944">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="TODO.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TODO.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/pages/index.js">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1499">
+                <caret line="690" column="12" lean-forward="false" selection-start-line="690" selection-start-column="12" selection-end-line="690" selection-end-column="12" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="componentWrapper.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="32" column="18" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="32" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pageWrapper.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="30" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/common/Link/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -124,28 +135,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LangSwitch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/utils/LangSwitch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="87" column="65" lean-forward="false" selection-start-line="87" selection-start-column="65" selection-end-line="87" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageLayout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/common/PageLayout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="71" column="23" lean-forward="false" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -249,8 +238,6 @@
         <option value="$PROJECT_DIR$/client/components/Header.js" />
         <option value="$PROJECT_DIR$/client/components/Link/Link.js" />
         <option value="$PROJECT_DIR$/client/components/PageLayout.js" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/client/pages/index.js" />
         <option value="$PROJECT_DIR$/client/components/NoScript.js" />
         <option value="$PROJECT_DIR$/client/components/LazyImage.js" />
@@ -258,6 +245,8 @@
         <option value="$PROJECT_DIR$/client/components/common/Head.js" />
         <option value="$PROJECT_DIR$/client/components/common/PageLayout.js" />
         <option value="$PROJECT_DIR$/client/components/utils/Price.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/TODO.md" />
       </list>
     </option>
   </component>
@@ -320,8 +309,7 @@
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
@@ -341,7 +329,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="laz&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LazyImage.js&#10;sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;withpaged&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;pagel&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout.js&#10;pagew&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;create&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;withs&#9;null&#9;null&#10;babel&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.babelrc&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Header.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;mas&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;langs&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;crea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;appred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/app.reducers.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;withpa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;pag&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;datab&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;readmmd&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;Readme&#9;null&#9;null&#10;masterc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;getmat&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/getMatchingLangRoute.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withMUITheme.js&#10;san&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;now&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;test&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;prodc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;devcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;getmatc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/getMatchingLangRoute.js&#10;pageac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;mast&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.json&#10;link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;layou&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout.js&#10;enroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;frrou&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/fr.routes.js&#10;lan&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;createst&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;langsw&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;withpageda&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js" />
+    <property name="SearchEverywhereHistoryKey" value="compo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewra&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;rea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;todo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/TODO.md&#10;laz&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LazyImage.js&#10;sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;inde&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;withpaged&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;pagel&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout.js&#10;pagew&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;create&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;withs&#9;null&#9;null&#10;babel&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.babelrc&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Header.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;mas&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;langs&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;crea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;appred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/app.reducers.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;withpa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;pag&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/index.js&#10;datab&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;readmmd&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;Readme&#9;null&#9;null&#10;masterc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;getmat&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/getMatchingLangRoute.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withMUITheme.js&#10;san&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;master&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;now&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/now.config.js&#10;test&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/test.config.js&#10;prodc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/production.config.js&#10;devcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/development.config.js&#10;getmatc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/getMatchingLangRoute.js&#10;pageac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;mast&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/master.config.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.json&#10;link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/Link/Link.js&#10;layou&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/PageLayout.js&#10;enroute&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/en.routes.js&#10;frrou&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes/fr.routes.js&#10;lan&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/LangSwitch.js&#10;createst&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -421,14 +409,7 @@
       <workItem from="1536657717960" duration="1756000" />
       <workItem from="1537516200080" duration="120000" />
       <workItem from="1537523428168" duration="1116000" />
-      <workItem from="1537707510556" duration="2161000" />
-    </task>
-    <task id="LOCAL-00079" summary="Update test to make them work with enzym and React components">
-      <created>1527587700089</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1527587700090</updated>
+      <workItem from="1537707510556" duration="3713000" />
     </task>
     <task id="LOCAL-00080" summary="Update tests">
       <created>1527593343573</created>
@@ -766,11 +747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537709835794</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="New components folder architecture">
+      <created>1537709992435</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1537709992435</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356353000" />
+    <option name="totallyTimeSpent" value="357905000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -785,15 +773,15 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18459658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1277506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26375908" sideWeight="0.495116" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33537832" sideWeight="0.55378973" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47034764" sideWeight="0.55929095" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47034764" sideWeight="0.44070905" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23415133" sideWeight="0.40586796" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3026585" sideWeight="0.44070905" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24335378" sideWeight="0.59718823" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23415133" sideWeight="0.594132" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.301" sideWeight="0.49285713" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -869,7 +857,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add an analyser script for node modules" />
     <MESSAGE value="This time, I fixed those f** tests for sure :)" />
     <MESSAGE value="Improve test 'env' for pipeline" />
     <MESSAGE value="Fix a small bug on the server config" />
@@ -894,7 +881,8 @@
     <MESSAGE value="Many updates / fix + clean readme" />
     <MESSAGE value="Clean LazyImage + better noscript support" />
     <MESSAGE value="Add a NoScript component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a NoScript component" />
+    <MESSAGE value="New components folder architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="New components folder architecture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -956,13 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1146,16 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="92" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/lib/withPageData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1169,28 +1140,6 @@
         <state relative-caret-position="600">
           <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="202">
-            <caret line="124" column="28" lean-forward="false" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1209,7 +1158,7 @@
         <state relative-caret-position="14">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1219,7 +1168,7 @@
         <state relative-caret-position="944">
           <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#56#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1229,7 +1178,7 @@
         <state relative-caret-position="265">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1239,7 +1188,7 @@
         <state relative-caret-position="231">
           <caret line="71" column="23" lean-forward="false" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1301,6 +1250,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1499">
+            <caret line="690" column="12" lean-forward="false" selection-start-line="690" selection-start-column="12" selection-end-line="690" selection-end-column="12" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

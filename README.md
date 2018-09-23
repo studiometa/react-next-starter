@@ -471,8 +471,8 @@ Chaque page doit également avoir accès aux classes qui la concerne (JSS/Materi
 
 **pageData**
 
-Pour finir, chaque page a besoin d'informations la concernant. Il peut s'agir du contenu de la page, son titre,
-ses meta-datas, etc... Ces données sont par défaut récupérées depuis une API distante (germaine.js dans notre cas) 
+Pour finir, certaines pages peuvent avoir besoin d'informations les concernant. Il peut s'agir de leur contenu, leur titre,
+leurs meta-datas, etc... Ces données sont par défaut récupérées depuis une API distante (germaine.js dans notre cas) 
 puis injectées dans la page par l'intermédiaire d'un autre HOC.
 
 On se retrouve donc avec 4 HOCs à imbriquer les uns dans les autres et cela pour chaque page, 
@@ -491,10 +491,7 @@ Ce composant utilise la librairie recompose.js pour fusionner les HOCs ensembles
     });
 
 Dans cet exemple, on retourne simplement **un appel à la fonction pageWrapper** dont le premier paramètre correspond
-à notre page et le second à des options. Ces options doivent au **minimum contenir le champ** `name` qui contient le 
-nom (slug) de la page qui sera utilisé pour récupérer pageData et les namespaces de i18next correspondant à cette page.
-Il est également possible de définir d'autres namespaces en ajoutant un paramètre `locales` aux options. 
-Enfin, vous pouvez ajouter un dernier paramètre, `mapStateToProps` pour la méthode connect de react-redux.
+à notre page et le second à des options. Son utilisation est documentée un peu plus bas dans ce readme.
 
 Désormais, la page est fonctionnelle. Il manque encore cependant un dernier élément: le wrapper **Layout.**
 
@@ -512,9 +509,8 @@ Ce wrapper est un composant qu'il est préférable d'utiliser sur toutes les pag
           name: 'app'
         });
 
-Il suffit en effet d'utiliser ce composant comme container pour votre page et de lui passer la prop **pageData**. 
+Il suffit en effet d'utiliser ce composant comme container pour votre page et de lui passer la prop **pageData** (si définie). 
 Celle-ci sera notamment utilisée pour générer la balise **<head>** de la page et ses meta-data. 
-
 
 
 **nb:** Toute autre _prop_ passée au composant _Layout_ sera injectée dans l'objet _pageData_. 
@@ -610,7 +606,9 @@ Si vous ne souhaitez** pas ajouter de nom de domaine **à votre préprod, pensez
 ---
 
 
-# Traduire le contenu static
+# Quelques infos en vrac
+
+## Traduire le contenu static
 
 Dans le starter, toutes les traductions sont gérées par l'intermédiaire de la 
 librairie [i18next](https://www.i18next.com/). Le principe de fonctionnement reste donc 
@@ -618,13 +616,13 @@ très similaire à celui décrit dans leur documentation.
 
 
 
-## Ajouter une nouvelle langue
+### Ajouter une nouvelle langue
 
 -   Ajouter la langue dans le fichier `master.config.js` (dans lang > available). Basez vous sur le modèle existant.
 -   Dupliquez un des dossiers du dossier **locales** en le renommant avec le slug de la langue qui vous intéresse
 -   Traduire chaque fichier de locale 
 
-## Traduire le contenu
+### Traduire le contenu
 
 Comme indiqué plus haut il est nécessaire de wrapper chaque page avec la fonction pageWrapper.
 Celle-ci prend en paramètre le nom (slug) de votre page. Ce nom sera utilisé pour récupérer le 
@@ -662,9 +660,55 @@ page grace au wrapper. On pourrait donc traduire quelque chose comme ça :
 
 
 
-# Ajouter un store au state de Redux
+## Ajouter un store au state de Redux
 
--   Créer le fichier .reducer.js en se basant sur les modèles existants (penser à l'ajouter dans store/reducers/index.js)
--   Créer  le fichier .actions.js en se basant sur les modèles existants
+-   Créer le fichier `your_name.reducer.js` en se basant sur les modèles existants (penser à l'ajouter dans store/reducers/index.js)
+-   Créer  le fichier `your_name.actions.js` en se basant sur les modèles existants
 -   (Optionnel) Ajouter quelque chose dans le store par défaut (createStore.js)
+
+## Les wrappers
+
+Ils sont deux et permettent de wrapper facilement vos pages et vos composants afin d'y intégrer facilement certaines fonctionnalités.
+
+Ils sont disponibles dans le dossier `client/lib`. Ce sont des fonctions dont le premier paramètre correspond au composant à "wrapper"
+et le second un objet contenant des paramètres.
+
+### pageWrapper
+
+Si vous avez lu ce readme en entier, c'est la deuxième fois que ce composant est évoqué. Il permet de wrapper chacune de vos pages :
+
+
+    const MyPage = () => <div>coucou</div>
+    
+    export default pageWrapper(MyPage, { name: 'my-page' })
+    
+
+Ce composant gère les paramètres suivants : 
+  - *name** : Requis, correspond au nom de la page (utilisé pour récupérer l'objet pageData et potentiellement le fichier
+  de locale correspondant à la page)
+  - *namespaces* : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu
+  - *mapStateToProps* : Même fonction utilisée par Redux pour injecter des props au composant
+  - *styles* : Objet utilisé par JSS et Material-ui pour générer les styles de la page
+  - *withTheme* : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui
+  - *noPageData* : Indispensable si la page n'est pas supposée récupérer de contenu à travers l'API. 
+
+### componentWrapper
+
+Ce composant est sensiblement le même que le précédent et peut être utilisé pour tous vos composants.
+
+
+    const MyComponent = () => <div>coucou</div>
+    
+    export default componentWrapper(MyComponent, { name: 'my-component' })
+    
+
+Ce composant gère les paramètres suivants :
+  - *isTranslatable* : true par défaut, permet de désactiver la traduction pour ce composant
+  - *isConnected* : Défini si le composant doit être connecté à redux. Si oui, la prop 'dispatch' sera accessible.
+  Si `mapStateToProps` est défini, le composant sera toujours considéré comme étant connecté
+  - *namespaces* : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu
+  - *mapStateToProps* : Même fonction utilisée par Redux pour injecter des props au composant
+  - *styles* : Objet utilisé par JSS et Material-ui pour générer les styles de la page
+  - *withTheme* : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui
+
 

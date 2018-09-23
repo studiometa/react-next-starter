@@ -1,9 +1,0 @@
-- Mettre le readme à jour
-    - Changer de typo
-    - germaine
-    - afficher les erreurs (_error.js)
-    - componentWrapper et pageWrapper
-    - pages title
-    - sandbox
-- run npm audit
-- ajouter un exemple d'utilisation de mapStateToProps
