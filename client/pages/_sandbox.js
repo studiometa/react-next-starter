@@ -18,7 +18,7 @@ class _sandbox extends React.Component {
   render() {
     const { theme } = this.props;
     return (
-      <Layout pageData={this.props.pageData} noPageData>
+      <Layout>
         <Grid container direction="column" spacing={40}>
 
           {/** THEME **/}

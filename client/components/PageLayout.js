@@ -60,19 +60,20 @@ const PageLayout = withStyles(styles)(function Layout(props) {
         children, // the page content
         classes, // classes for the page layout components
         backgroundColor, // The background color of the page
-        noPageData, // If true, the pageData will not be required
         title,
         ...rest // Any other property will be assigned to the pageData object
       } = props;
 
   // Display an error if
-  if (!pageData || (pageData.error === 404 && noPageData !== true) || (pageData.error && pageData.error !== 404)) {
+  if (pageData && pageData.error) {
     return <Error statusCode={pageData.error}/>;
   }
 
   // Here we are merging all other props to the pageData object
   // that will next be sent to the Head component
-  Object.assign(pageData, rest);
+  pageData = typeof pageData === 'object'
+    ? Object.assign(pageData, rest)
+    : rest;
 
   return (
     <div className={`${ classes.root }${pageData.title && 'page-' + pageData.title}`}>
@@ -96,7 +97,6 @@ PageLayout.propTypes = {
   children: PropTypes.any, // the page content
   classes: PropTypes.object, // classes for the page layout components
   backgroundColor: PropTypes.string, // The background color of the page
-  noPageData: PropTypes.bool, // If true, the pageData will not be required
   title: PropTypes.string, // The title of the page. Can be defined in pageData (pageData.title)
 };
 

@@ -25,10 +25,8 @@ const Home = class extends React.Component {
   }
 };
 
-const mapStateToProps = state => ({});
 
 export default pageWrapper(Home, {
-  mapStateToProps,
   name: 'home',
   styles,
 });

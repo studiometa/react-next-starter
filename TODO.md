@@ -2,7 +2,8 @@
     - Changer de typo
     - germaine
     - afficher les erreurs (_error.js)
-    - noPageData
+    - componentWrapper et pageWrapper
     - pages title
     - sandbox
 - run npm audit
+- ajouter un exemple d'utilisation de mapStateToProps

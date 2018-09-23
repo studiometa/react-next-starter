@@ -1,24 +1,12 @@
-import classNames from 'classnames';
-import propTypes  from 'prop-types';
-import React      from 'react';
-import wrapper    from '../lib/componentWrapper';
-import Skeleton   from './Skeleton/index';
+import classNames     from 'classnames';
+import propTypes      from 'prop-types';
+import React          from 'react';
+import ReactDOMServer from 'react-dom/server';
+import wrapper        from '../lib/componentWrapper';
+import Skeleton       from './Skeleton/index';
 
 
 const styles = theme => ({
-  borderedImage: {
-    position: 'relative',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      top: theme.spacing.unit,
-      left: theme.spacing.unit,
-      width: `calc(100% - ${theme.spacing.unit * 2}px)`,
-      height: `calc(100% - ${theme.spacing.unit * 2}px)`,
-      border: '1px solid #fff',
-    },
-  },
-
   backgroundImage: {
     height: '100%',
     width: '100%',
@@ -39,10 +27,13 @@ class LazyImage extends React.PureComponent {
     src: propTypes.string,
     width: propTypes.number,
     height: propTypes.number,
-    bordered: propTypes.bool,
     useBackgroundImage: propTypes.bool,
     noSkeleton: propTypes.bool,
     className: propTypes.string,
+  };
+
+  static defaultProps = {
+    style: {},
   };
 
 
@@ -98,43 +89,42 @@ class LazyImage extends React.PureComponent {
     const height = this.props.height ? this.props.height + 'px' : '100%';
     const width  = this.props.width ? this.props.width + 'px' : '100%';
 
+
+    // This is used on websites where JavaScript is disabled (or for crawling)
+    // This component will be rendered as a string inside a noscript tag
+    const NoScriptRender = (
+      <React.Fragment>
+        {
+          this.props.useBackgroundImage === true &&
+          <div
+            className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-rseady')}
+            style={{ backgroundImage: `url(${this.props.src})`, height, width, ...this.props.style }}
+          />
+        }
+        {
+          this.props.useBackgroundImage !== true &&
+
+          <img
+            className={classNames(this.props.className, 'async-image-ready')}
+            src={this.props.src}
+            style={{ height, width, ...this.props.style }}
+          />
+        }
+      </React.Fragment>
+    );
+
     /** LOADING STATE **/
 
     if (this.state.isReady === false || typeof this.state.src !== 'string' || this.props.isLoaded === false) {
       return (
         <div>
-          <script>
-            {
-              this.props.noSkeleton === true
-                ? <div style={{ height, width }} className={this.props.className}/>
-                : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
-            }
-          </script>
+          {
+            this.props.noSkeleton === true
+              ? <div style={{ height, width }} className={this.props.className}/>
+              : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
+          }
 
-          <noscript>
-            {
-              this.props.useBackgroundImage === true &&
-              <div className={this.props.bordered === true ? this.props.classes.borderedImage : ''}>
-                <div
-                  className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-rseady')}
-                  style={{ backgroundImage: `url(${this.props.src})`, height, width, ...this.props.style }}
-                />
-              </div>
-            }
-            {
-              this.props.useBackgroundImage !== true &&
-              <div
-                className={this.props.bordered === true ? this.props.classes.borderedImage : ''}
-                style={this.props.style || {}}
-              >
-                <img
-                  className={classNames(this.props.className, 'async-image-ready')}
-                  src={this.props.src}
-                  style={{ height, width }}
-                />
-              </div>
-            }
-          </noscript>
+          <noscript dangerouslySetInnerHTML={{ __html: ReactDOMServer.renderToStaticMarkup(NoScriptRender) }}/>
         </div>
       );
     }
@@ -143,28 +133,21 @@ class LazyImage extends React.PureComponent {
 
     if (this.props.useBackgroundImage === true) {
       return (
-        <div className={this.props.bordered === true ? this.props.classes.borderedImage : ''}>
-          <div
-            className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-ready')}
-            style={{ backgroundImage: `url(${this.state.src})`, height, width, ...this.props.style }}
-          />
-        </div>
+        <div
+          className={classNames(this.props.className, this.props.classes.backgroundImage, 'async-image-ready')}
+          style={{ backgroundImage: `url(${this.state.src})`, height, width, ...this.props.style }}
+        />
       );
     }
 
     /** LOADED IMAGE **/
 
     return (
-      <div
-        className={this.props.bordered === true ? this.props.classes.borderedImage : ''}
-        style={this.props.style || {}}
-      >
-        <img
-          className={classNames(this.props.className, 'async-image-ready')}
-          src={this.state.src}
-          style={{ height, width }}
-        />
-      </div>
+      <img
+        className={classNames(this.props.className, 'async-image-ready')}
+        src={this.state.src}
+        style={{ height, width, ...this.props.style }}
+      />
     );
   }
 }
