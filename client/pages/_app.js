@@ -1,7 +1,6 @@
 import Hidden                                                       from '@material-ui/core/Hidden';
 import withRedux                                                    from 'next-redux-wrapper';
 import App, { Container }                                           from 'next/app';
-import Router                                                       from 'next/router';
 import NProgress                                                    from 'nprogress';
 import React                                                        from 'react';
 import { Provider }                                                 from 'react-redux';
@@ -59,12 +58,12 @@ export default withRedux(createStore)(class _App extends App {
     this.props.store.dispatch(updateAppLanguage(this.props.lang));
 
     // Store the current url
-    this.props.store.dispatch(updateAppCurrentUrl(Router.router.asPath));
+    this.props.store.dispatch(updateAppCurrentUrl(this.props.router.asPath));
 
 
     /** On router change start **/
 
-    Router.onRouteChangeStart = url => {
+    this.props.router.onRouteChangeStart = url => {
       if (process.env.NODE_ENV !== 'production') {
         console.groupCollapsed('%c-- Router change START : ' + url, 'background:#00ff8d;color:#000');
         console.trace();
@@ -75,7 +74,7 @@ export default withRedux(createStore)(class _App extends App {
 
     /** On router change complete **/
 
-    Router.onRouteChangeComplete = async url => {
+    this.props.router.onRouteChangeComplete = async url => {
       if (process.env.NODE_ENV !== 'production') {
         console.groupCollapsed('%c-- Router change COMPLETE : ' + url, 'background:#00ff8d;color:#000');
         console.trace();
@@ -90,7 +89,7 @@ export default withRedux(createStore)(class _App extends App {
 
     /** On router change error **/
 
-    Router.onRouteChangeError = () => NProgress.done();
+    this.props.router.onRouteChangeError = () => NProgress.done();
 
   }
 

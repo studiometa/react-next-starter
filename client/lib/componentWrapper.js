@@ -4,6 +4,7 @@ import { translate }  from 'react-i18next';
 import { connect }    from 'react-redux';
 import { compose }    from 'recompose';
 import config         from '../../config';
+import { withRouter as withNextRouter } from 'next/router'
 
 
 /**
@@ -19,6 +20,7 @@ import config         from '../../config';
  * @param {boolean} hasStyles: defines if the component has MUI styles
  * @param {boolean} withTheme: defines if the theme must be injected to the component's props
  * @param {boolean} withWidth: defines if the current screen size breakpoint must be injected to the component's props
+ * @param {boolean} withRouter: inject the pathname, query and asPath in the component
  * @param {array} namespaces: custom namespaces that can be added to i18next
  * @returns {*}
  */
@@ -30,13 +32,17 @@ export default (Component, {
   hasStyles = true,
   withTheme = false,
   withWidth = false,
+  withRouter = false,
   namespaces = [],
 }) => {
   const args = [];
-  (isConnected || typeof mapStateToProps === 'function') && args.push(connect(mapStateToProps));
-  (hasStyles || typeof styles === 'object') && args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
-  withWidth && args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
-  (isTranslatable || namespaces.length > 0) && args.push(translate([config.lang.defaultNamespace, ...namespaces]));
+
+  if (isConnected || typeof mapStateToProps === 'function')  args.push(connect(mapStateToProps));
+  if (hasStyles || typeof styles === 'object')  args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
+  if (withWidth) args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
+  if (isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
+
+  if (withRouter) Component = withNextRouter(Component);
 
   return compose.apply(this, args)(Component);
 };

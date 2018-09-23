@@ -1,7 +1,6 @@
 import Typography           from '@material-ui/core/Typography';
 import classNames           from 'classnames';
 import NextLink             from 'next/link';
-import Router               from 'next/router';
 import propTypes            from 'prop-types';
 import React                from 'react';
 import config               from '../../../../config/index';
@@ -187,8 +186,8 @@ class Link extends React.Component {
 
 
   _isActive = () => {
-    return (this.props.to !== '/' && Router.route.indexOf(this.props.to) === 0)
-      || (Router.route === '/index' && this.props.to === '/');
+    return (this.props.to !== '/' && this.props.router.route.indexOf(this.props.to) === 0)
+      || (this.props.router.route === '/index' && this.props.to === '/');
   };
 
 
@@ -274,4 +273,5 @@ export default wrapper(Link, {
   mapStateToProps,
   isTranslatable: false,
   hasStyles: false,
+  withRouter: true
 });

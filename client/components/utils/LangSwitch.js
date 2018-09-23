@@ -1,7 +1,7 @@
 import Avatar             from '@material-ui/core/Avatar';
 import MenuItem           from '@material-ui/core/MenuItem';
 import Select             from '@material-ui/core/Select';
-import Router             from 'next/router';
+import { withRouter }     from 'next/router';
 import React              from 'react';
 import { connect }        from 'react-redux';
 import config             from '../../../config/index';
@@ -66,17 +66,16 @@ export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
   routes: state.app ? state.app.routes : undefined,
   currentUrl: state.app ? state.app.currentUrl : undefined,
-}))(({ lang, routes, currentUrl, classes = {} }) => {
+}))(withRouter(({ lang, routes, currentUrl, classes = {}, router }) => {
 
-  // Works only on the client side while we are using the Next Router instance
   if (!process.browser) return null;
 
-  let { query, asPath, push } = Router;
+  let { query, asPath, push } = router;
 
   let links = [];
 
   // Check that push is a function
-  if (typeof push !== 'function' || !routes || !lang || ! currentUrl) {
+  if (typeof push !== 'function' || !routes || !lang || !currentUrl) {
     return null;
   }
 
@@ -125,4 +124,4 @@ export default connect(state => ({
     </Select>
   );
 
-});
+}));
