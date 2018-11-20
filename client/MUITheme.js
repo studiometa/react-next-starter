@@ -15,9 +15,6 @@ const theme = createMuiTheme({
     secondary: {
       main: '#42D9C8',
     },
-    error: { // The third palette in MaterialUI is called error 👌
-      main: '#EEC643',
-    },
     grey: {
       50: '#F1F3F6',
       100: '#e6e8eb',
@@ -29,11 +26,6 @@ const theme = createMuiTheme({
       primary: '#070707',
       secondary: '#292929',
       white: '#fff',
-    },
-    background: {
-      black: '#000',
-      darkBlue: '#03121F',
-      darkBlue2: '#252533',
     },
   },
 
@@ -150,6 +142,9 @@ const theme = createMuiTheme({
 
 /***********************************************
  *  Styles
+ *
+ *  This adds some pre-built styles objects that
+ *  can be easily used through the app
  ***********************************************/
 
 

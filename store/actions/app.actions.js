@@ -26,15 +26,13 @@ export function setAppSettings(settings) {
 
  /**
  * Fetch the app settings from the API
- * @returns {function(*, *, *)}
  */
 export const fetchAppSettings = (cb = ()=>{}) => async (dispatch, getState, socket) => {
   try {
     const result = await socket.getSettings();
 
     dispatch(setAppSettings(result));
-    cb(result);
-    return result;
+    return cb(result);
   } catch (err) {
     cb(err, null);
   }

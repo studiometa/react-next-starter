@@ -3,7 +3,7 @@ import { fetchPage } from '../../store/actions/pages.actions';
 import config from '../../config'
 
 const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) => {
-  dispatch(fetchPage(pageName, false, (res, err) => {
+  dispatch(fetchPage(pageName, (res, err) => {
     if (res && !err) return resolve(res);
     else {
       reject(err);
