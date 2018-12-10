@@ -7,6 +7,7 @@ import customI18nextLangDetector            from '../../server/lib/customI18next
 import getPageContext                       from '../lib/getPageMUIContext';
 
 
+
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
@@ -28,7 +29,6 @@ class MyDocument extends Document {
       </Head>
       <body>
       <Main/>
-      <link rel="stylesheet" href="/_next/static/style.css"/>
       <link rel="stylesheet" href="/static/fonts/BwSurco-Bold-export/BwSurco-Bold.css"/>
       <link rel="stylesheet" href="/static/fonts/BwSurco-Light-export/BwSurco-Light.css"/>
       <link rel="stylesheet" href="/static/fonts/BwSurco-Medium-export/BwSurco-Medium.css"/>

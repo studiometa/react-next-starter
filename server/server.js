@@ -254,8 +254,10 @@ const launchServer = async (port) => {
   // Listen on the port defined in the config file
 
   try {
-    app.server = await server.listen(port);
-
+    app.server = await server.listen(port, () => {
+      server.keepAliveTimeout = 0;
+    });
+;
     if (process.env.NODE_ENV !== 'test') {
       console.log('> Ready on ' + config.server.getUrl());
     }
