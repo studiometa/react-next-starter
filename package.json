@@ -60,7 +60,7 @@
     "jss-compose": "^5.0.0",
     "keycode": "^2.2.0",
     "markdown-loader": "^3.0.0",
-    "next": "^7.0.0",
+    "next": "^7.0.2",
     "next-page-transitions": "^1.0.0-alpha.4",
     "next-redux-wrapper": "^2.0.0",
     "node-sass": "^4.9.3",

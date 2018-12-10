@@ -51,20 +51,8 @@ module.exports = (nextWebpackConfig) => {
     return plugin;
   });
 
-  return ({
-    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-    devtool: nextWebpackConfig.devtool,
-    name: nextWebpackConfig.name,
+  return Object.assign({}, nextWebpackConfig, {
     devServer: { quiet: true, noInfo: true, stats: 'errors-only' },
-    cache: nextWebpackConfig.cache,
-    target: nextWebpackConfig.target,
-    externals: nextWebpackConfig.externals,
-    context: nextWebpackConfig.context,
-    entry: nextWebpackConfig.entry,
-    output: nextWebpackConfig.output,
-    performance: nextWebpackConfig.performance,
-    resolve: nextWebpackConfig.resolve,
-    resolveLoader: nextWebpackConfig.resolveLoader,
     module: {
       rules: [
         ...nextWebpackConfig.module.rules,
