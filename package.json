@@ -1,28 +1,24 @@
 {
   "name": "react-next-starter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "server/index.js",
   "scripts": {
     "dev": "NODE_ENV=development node server/",
-    "build": "NODE_ENV=production next build ./client",
+    "build": "NODE_ENV=production next build ./client && npm run post:build",
+    "post:build": "rm -Rf ./client/static/workbox && mv ./static/workbox ./client/static && rmdir ./static",
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent ./__tests__",
-    "test:pipeline": "API_KEY=$API_KEY npm run test",
-    "preprod": "now --public",
-    "pm2:start": "NODE_ENV=production pm2 start ./config/ecosystem.config.js",
-    "pm2:stop": "pm2 kill"
+    "pm2:start": "node ./pm2.js",
+    "pm2:stop": "pm2 kill",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
-    "node": "8.11.3"
-  },
-  "now": {
-    "env": {
-      "API_KEY": "@api_key"
-    }
+    "npm": "^6.0.1",
+    "node": "^8.11.3"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chuck Durst @ Studio Meta",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.1.0",
