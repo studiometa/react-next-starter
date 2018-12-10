@@ -1,9 +1,9 @@
 import React         from 'react';
 import { fetchPage } from '../../store/actions/pages.actions';
-import config from '../../config'
+
 
 const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) => {
-  dispatch(fetchPage(pageName, (res, err) => {
+  dispatch(fetchPage(pageName, false, (res, err) => {
     if (res && !err) return resolve(res);
     else {
       reject(err);
@@ -19,7 +19,7 @@ const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) =>
 export default (pageName = '', opts = {}) => ComposedComponent => {
 
 
-  const isRequired = Boolean(opts.required);
+  const required = Boolean(opts.required);
 
   const Extended = (props) => React.createElement(ComposedComponent, props);
 
@@ -29,10 +29,9 @@ export default (pageName = '', opts = {}) => ComposedComponent => {
     let pageData = {};
 
     const currentStore = props.store.getState();
-
     if (currentStore && currentStore.pages && currentStore.pages[pageName]) {
       pageData = currentStore.pages[pageName];
-    } else if (config.general.fetchPagesData === true && isRequired) {
+    } else if (required) {
       try {
         pageData = await lazyGetPageData(pageName, props.store.dispatch);
       } catch (err) {
@@ -40,17 +39,14 @@ export default (pageName = '', opts = {}) => ComposedComponent => {
         const status = err.status || err.code || err.statusCode || data.status || data.code || data.statusCode || 500;
         pageData     = { error: status }; // Store the status of the error somewhere
       }
-    } else {
-      pageData = {};
     }
-
 
     // Run page getInitialProps with store and isServer
     const initialProps = ComposedComponent.getInitialProps
       ? await ComposedComponent.getInitialProps(Object.assign({}, props, { pageData }))
       : {};
 
-    return Object.assign({}, initialProps, { pageData });
+    return Object.assign({}, initialProps, { pageData, pageName });
   };
 
   return Extended;

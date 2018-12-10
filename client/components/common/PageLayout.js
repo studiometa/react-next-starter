@@ -2,13 +2,23 @@ import Grid           from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import config         from '../../../config/index';
+import Inspector      from 'react-inspector';
+import config         from '../../../config';
 import Error          from '../../pages/_error';
 import Head           from './Head';
 import Header         from './Header';
 
 // xs, sm, md, lg, and xl.
 const styles = theme => ({
+
+  root: {
+    '&.full-page .page-layout-content': {
+      [theme.breakpoints.down('sm')]: {
+        paddingTop: `${theme.spacing.unit * 2}px`,
+      },
+    },
+  },
+
   layout: {
     margin: '0 auto',
     background: theme.palette.grey[50],
@@ -24,7 +34,7 @@ const styles = theme => ({
     paddingTop: `${theme.spacing.unit * 8}px`,
     paddingLeft: theme.styles.responsivePadding.paddingLeft,
     paddingRight: theme.styles.responsivePadding.paddingRight,
-    overflowY: 'hidden',
+    //overflowY: 'hidden',
     [theme.breakpoints.down('md')]: {
       paddingTop: `${theme.spacing.unit * 8}px`,
       ...theme.styles.responsivePadding[theme.breakpoints.down('md')],
@@ -60,24 +70,25 @@ const PageLayout = withStyles(styles)(function Layout(props) {
         children, // the page content
         classes, // classes for the page layout components
         backgroundColor, // The background color of the page
-        title,
+        noPageData, // If true, the pageData will not be required
+        fullPage, // Hide the header and the footer
+        debug, // An object to display on the inspector (dev only)
         ...rest // Any other property will be assigned to the pageData object
       } = props;
 
   // Display an error if
-  if (pageData && pageData.error) {
-    return <Error statusCode={pageData.error}/>;
+  if (noPageData !== true && (!pageData || pageData.error === 404 || (pageData.error && pageData.error !== 404))) {
+    const statusCode = pageData && pageData.statusCode ? pageData.statusCode : 404;
+    return <Error statusCode={statusCode}/>;
   }
 
   // Here we are merging all other props to the pageData object
   // that will next be sent to the Head component
-  pageData = typeof pageData === 'object'
-    ? Object.assign(pageData, rest)
-    : rest;
+  Object.assign(pageData || {}, rest);
 
   return (
-    <div className={`${ classes.root }${pageData.title && 'page-' + pageData.title}`}>
-      <Head {...pageData} title={title || pageData.title}/>
+    <div className={`${ classes.root } page-${pageData.title} ${fullPage ? 'full-page' : 'no-full'}`}>
+      <Head {...pageData}/>
       <Header/>
       <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
         <Grid item xs={12}>
@@ -88,6 +99,25 @@ const PageLayout = withStyles(styles)(function Layout(props) {
           </div>
         </Grid>
       </Grid>
+
+      {
+        // This is only for dev purpose (it displays the workshop object at the bottom of the page)
+        process.env.NODE_ENV === 'development' && typeof debug === 'object' &&
+        <div style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1000,
+        }}>
+          <Inspector
+            theme="chromeDark"
+            data={debug}
+            expandLevel={0}
+          />
+        </div>
+      }
+
     </div>
   );
 });
@@ -97,7 +127,9 @@ PageLayout.propTypes = {
   children: PropTypes.any, // the page content
   classes: PropTypes.object, // classes for the page layout components
   backgroundColor: PropTypes.string, // The background color of the page
-  title: PropTypes.string, // The title of the page. Can be defined in pageData (pageData.title)
+  noPageData: PropTypes.bool, // If true, the pageData will not be required
+  fullPage: PropTypes.bool, // Hide the header and the footer
+  debug: PropTypes.object,
 };
 
 export default PageLayout;

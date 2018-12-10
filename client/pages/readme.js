@@ -11,7 +11,7 @@ const Readme = class extends React.Component {
   render() {
 
     return (
-      <Layout title={this.props.t('menu_links.readme')}>
+      <Layout title={this.props.t('menu_links.readme')} pageData={this.props.pageData}>
         <div dangerouslySetInnerHTML={{ __html: readme }}/>
       </Layout>
     );

@@ -4,12 +4,14 @@ const config               = require('./index');
 const env                  = getClientEnvironment(config.server.getUrl());
 const Visualizer           = require('webpack-visualizer-plugin');
 const path                 = require('path');
+const NextWorkboxPlugin    = require('next-workbox-webpack-plugin');
+const serviceWorkerConfig  = require('./serviceWorker.config');
 
 /**
  * This is not a real webpack but un function that make changes to
  * the Next's webpack config.
  */
-module.exports = (nextWebpackConfig) => {
+module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
   nextWebpackConfig.node = {
     fs: 'empty',
   };
@@ -20,8 +22,14 @@ module.exports = (nextWebpackConfig) => {
   }
 
   // Add source map for prod
-  if (nextWebpackConfig.devtool === false && config.enableSourceMap === true) {
+  if (!dev && !isServer && nextWebpackConfig.devtool === false && (process.env.ENABLE_SOURCE_MAP === '1' || process.env.ENABLE_SOURCE_MAP === 'TRUE')) {
     nextWebpackConfig.devtool = 'source-map';
+    nextWebpackConfig.plugins.map((p) => {
+      if (p.constructor.name === 'UglifyJsPlugin') {
+        p.options.sourceMap = true;
+      }
+      return p;
+    });
   }
 
   // Ask babel to compile all route files instead of just "client"
@@ -30,6 +38,14 @@ module.exports = (nextWebpackConfig) => {
       r.include = [path.resolve(__dirname + '/..')];
     }
   });
+
+
+  // Add service worker and manifest on production
+  if (!isServer && !dev) {
+    nextWebpackConfig.plugins.push(
+      new NextWorkboxPlugin(serviceWorkerConfig({ buildId, distDir }))
+    );
+  }
 
   nextWebpackConfig.plugins = nextWebpackConfig.plugins.map(plugin => {
     if (

@@ -12,15 +12,7 @@ module.exports = withSass({
     localIdentName: '[local]',
   },
 
-  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    if (ANALYZE && process.env.NODE_ENV !== 'test') {
-      config.plugins.push(new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerPort: 8888,
-        openAnalyzer: true
-      }))
-    }
-
-    return webpackConfig(config);
-  }
+  webpack: (config, { dev, isServer, defaultLoaders, buildId, config: { distDir } }) => {
+    return webpackConfig(config, { isServer, buildId, distDir, dev });
+  },
 });

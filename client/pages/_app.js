@@ -57,6 +57,9 @@ export default withRedux(createStore)(class _App extends App {
     // Save the current language to the store
     this.props.store.dispatch(updateAppLanguage(this.props.lang));
 
+    // Init the service-worker
+    this._initServiceWorker();
+
     // Store the current url
     this.props.store.dispatch(updateAppCurrentUrl(this.props.router.asPath));
 
@@ -91,6 +94,40 @@ export default withRedux(createStore)(class _App extends App {
 
     this.props.router.onRouteChangeError = () => NProgress.done();
 
+  }
+
+
+  /**
+   * Init the service worker
+   * @private
+   */
+  _initServiceWorker() {
+    if (process.browser && 'serviceWorker' in navigator) {
+      if (process.env.NODE_ENV !== 'development'
+        && (process.env.ENABLE_SERVICE_WORKER === 'TRUE' || process.env.ENABLE_SERVICE_WORKER === '1')) {
+        navigator.serviceWorker
+          .register('/static/workbox/sw.js')
+          .then(() => {
+            console.log('> service worker registration successful');
+          })
+          .catch(err => {
+            console.warn('> service worker registration failed', err.message);
+          });
+      } else {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (let registration of registrations) {
+            registration.unregister()
+              .then(() => {
+                console.log('> service worker successfully unregistered');
+              })
+              .catch(err => {
+                console.warn('> service worker unregistration failed', err.message);
+              });
+
+          }
+        });
+      }
+    }
   }
 
 

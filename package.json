@@ -63,6 +63,7 @@
     "next": "^7.0.2",
     "next-page-transitions": "^1.0.0-alpha.4",
     "next-redux-wrapper": "^2.0.0",
+    "next-workbox-webpack-plugin": "^1.1.0",
     "node-sass": "^4.9.3",
     "nprogress": "^0.2.0",
     "postcss-import": "^11.1.0",
