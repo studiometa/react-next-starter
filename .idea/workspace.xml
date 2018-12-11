@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Upgrade some modules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/i18n.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="667">
+              <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -410,13 +408,6 @@
       <workItem from="1538654360536" duration="2135000" />
       <workItem from="1539097632379" duration="214000" />
       <workItem from="1542696462292" duration="2775000" />
-    </task>
-    <task id="LOCAL-00091" summary="wip">
-      <created>1527865006757</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1527865006757</updated>
     </task>
     <task id="LOCAL-00092" summary="Add a skinnable page loader">
       <created>1527865837733</created>
@@ -754,11 +745,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544525495237</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Upgrade some modules">
+      <created>1544530723691</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1544530723691</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378392000" />
+    <option name="totallyTimeSpent" value="378781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -785,9 +783,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49483716" weight="0.263589" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.55378973" side_tool="true" weight="0.33537832" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.5722796" visible="true" weight="0.366344" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.5722796" visible="true" weight="0.366344" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.42772043" side_tool="true" visible="true" weight="0.366344" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.42772043" side_tool="true" visible="true" weight="0.366344" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -1251,8 +1249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/i18n.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="667">
+          <caret line="44" column="23" lean-forward="true" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
         </state>
       </provider>
     </entry>
