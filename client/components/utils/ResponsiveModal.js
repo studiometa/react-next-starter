@@ -17,8 +17,8 @@ function Transition(props) {
 
 
 /**
- * This is a modal component that works very well on desktop and on mobile
- * It it fully customizable to meet all your needs
+ * This is a modal component that works very well on desktop and mobile
+ * It is fully customizable to meet all your needs
  * Enjoy <3
  * @see https://material-ui.com/api/modal/#modal
  */
