@@ -72,10 +72,10 @@
     "react": "^16.6.3",
     "react-debounce-input": "^3.2.0",
     "react-dom": "^16.6.3",
-    "react-i18n": "0.0.6",
+    "react-i18n": "^1.0.1",
     "react-i18next": "^7.12.0",
     "react-jss": "^8.6.1",
-    "react-loading-skeleton": "^0.5.0",
+    "react-loading-skeleton": "^1.0.0",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.7",
     "recompose": "^0.30.0",
@@ -87,7 +87,6 @@
     "style-loader": "^0.23.1",
     "url-join": "^4.0.0",
     "url-loader": "^1.1.2",
-    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "devDependencies": {

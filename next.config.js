@@ -1,7 +1,5 @@
 const withSass                 = require('@zeit/next-sass');
 const webpackConfig            = require('./config/webpack.config');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { ANALYZE }              = process.env;
 
 module.exports = withSass({
   cssModules: true,

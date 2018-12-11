@@ -18,7 +18,7 @@ const Home = class extends React.Component {
     return (
       <Layout pageData={pageData}>
         <Typography variant="h1" className={classes.title}>{pageData.title}</Typography>
-        <Typography variant="h4"><b>Welcome message : </b>{pageData.welcomeMessage}</Typography>
+        <Typography variant="h4" paragraph><b>Welcome message : </b>{pageData.welcomeMessage}</Typography>
         <LazyImage src="https://cdn-images-1.medium.com/max/2000/1*HSisLuifMO6KbLfPOKtLow.jpeg" useBackgroundImage height={300}/>
       </Layout>
     );
