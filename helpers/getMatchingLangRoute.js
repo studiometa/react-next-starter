@@ -1,7 +1,7 @@
 const routes  = require('../server/routes');
 const config  = require('../config');
 const urlJoin = require('url-join');
-const removeUrlLastSlash = require('./removeUrlLastSlash')
+const removeUrlLastSlash = require('./removeUrlLastSlash');
 
 /**
  * Returns an object that contains the page and the pathname related to

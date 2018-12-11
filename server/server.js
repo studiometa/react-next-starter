@@ -319,6 +319,7 @@ class App {
     // language
     if (this.config.lang.enableRouteTranslation === true) {
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        this._checkRouteConfigValidity(routeConfig, routeName);
         if (typeof routeConfig.langRoutes === 'object') {
           Object.entries(routeConfig.langRoutes).forEach(([lang, routePath]) => {
             if (this.config.lang.available.find(e => e.lang === lang)) {
@@ -332,6 +333,7 @@ class App {
       // attributes that contains a route for the default language, we should to share this route instead of the route name.
     } else {
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        this._checkRouteConfigValidity(routeConfig, routeName);
         const routePath = typeof routeConfig.lang === 'object' && routeConfig.lang[this.config.lang.default] !== undefined
           ? routeConfig.langRoutes[this.config.lang.default]
           : routeName;
@@ -348,8 +350,8 @@ class App {
 
     this.server.get('*', (req, res) => {
 
-      const parsedUrl            = parse(req.url, true);
-      const { pathname, search } = parsedUrl;
+      const parsedUrl    = parse(req.url, true);
+      const { pathname } = parsedUrl;
 
       // Add an htpasswd on the server if we are
       // running on the Now pre-production
@@ -444,6 +446,39 @@ class App {
     return `${req.url}`;
   }
 
+
+  /**
+   * Check the validity of a given 'routeConfig' object
+   * It throws and error when necessary or it just log a warning
+   * if the error is not critical
+   * @param routeConfig
+   * @param routeName
+   * @private
+   */
+  _checkRouteConfigValidity(routeConfig, routeName) {
+    if (typeof routeConfig !== 'object') {
+      throw new Error(`Route error : the route "${routeName}" should be and object, ${typeof routeConfig} given.`);
+    }
+    if (typeof routeConfig.page !== 'string' || routeConfig.page.length < 1) {
+      throw new Error(`Route error : the route "${routeName}" should have a valid 'page' attribute but none was given.`);
+    }
+    if (this.config.lang.enableRouteTranslation) {
+      if (typeof routeConfig.langRoutes !== 'object') {
+        if (process.env.NODE_ENV === 'production') {
+          throw new Error(`Route error : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given.`);
+        } else {
+          console.warn(`Route warning : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given. This will throw an error on production.`);
+        }
+      } else {
+        this.config.lang.available.forEach(lang => {
+          lang = lang.lang;
+          if (typeof routeConfig.langRoutes[lang] !== 'string') {
+            console.warn(`Route warning : the route "${routeName}" have no defined langRoute for the lang "${lang}" and won't be available in this language.`);
+          }
+        })
+      }
+    }
+  }
 }
 
 
