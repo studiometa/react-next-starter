@@ -16,6 +16,8 @@ const path                        = require('path');
 const LRUCache                    = require('lru-cache');
 const { join }                    = require('path');
 const removeUrlLastSlash          = require('../helpers/removeUrlLastSlash');
+const chalk = require('chalk');
+
 
 const config           = require('../config');
 const routes           = require('./routes');
@@ -256,7 +258,7 @@ class App {
     }
 
     if (process.env.NODE_ENV !== 'production') {
-      console.log('>', routePath);
+      console.log(chalk.cyan('>', routePath));
     }
 
     // Add the language segment to the url if defined
@@ -313,7 +315,7 @@ class App {
    */
   _initExpressListeners() {
     if (process.env.NODE_ENV !== 'production') {
-      console.log('\nExpress is now listening to the following routes :');
+      console.log(chalk.cyan.bold('\nExpress is now listening to the following routes :'));
     }
     // In this situation, each route should be served in several languages. We should therefore add a new listener to each
     // language
@@ -467,13 +469,13 @@ class App {
         if (process.env.NODE_ENV === 'production') {
           throw new Error(`Route error : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given.`);
         } else {
-          console.warn(`Route warning : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given. This will throw an error on production.`);
+          console.warn(chalk.yellow(`Route warning : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given. This will throw an error on production.`));
         }
       } else {
         this.config.lang.available.forEach(lang => {
           lang = lang.lang;
           if (typeof routeConfig.langRoutes[lang] !== 'string') {
-            console.warn(`Route warning : the route "${routeName}" have no defined langRoute for the lang "${lang}" and won't be available in this language.`);
+            console.warn(chalk.yellow(`Route warning : the route "${routeName}" have no defined langRoute for the lang "${lang}" and won't be available in this language.`));
           }
         })
       }
@@ -488,7 +490,7 @@ class App {
 // terminate the Node.js process with a non-zero exit code.
 if (process.env.NODE_ENV === 'development') {
   process.on('unhandledRejection', err => {
-    console.error('unhandled promise rejection error', err);
+    console.error(chalk.red('unhandled promise rejection error', err));
     return null;
   });
 }

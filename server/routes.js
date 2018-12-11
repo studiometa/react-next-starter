@@ -8,7 +8,5 @@ module.exports = {
   /** GENERAL **/
 
   '/': { page: '/index', langRoutes: { fr: '/', en: '/' }, prefetch: true, neverCache: true },
-  //'/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi', en: '/readme' } },
-
-  '/test': { page: '/readme', langRoutes: { fr: '/lisez-moi' } },
+  '/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi', en: '/readme' } },
 };
