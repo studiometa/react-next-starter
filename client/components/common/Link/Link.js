@@ -136,7 +136,7 @@ class Link extends React.Component {
     lang = typeof lang === 'string' ? lang : config.lang.default;
 
     // Find a matching route in the route.js config file
-    let { pathname, page, restrict } = getMatchingLangRoute(to, lang);
+    let { pathname, page } = getMatchingLangRoute(to, lang);
 
     // Check if a matching route has been found
     // if not, only show an error log on dev env

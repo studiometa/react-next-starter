@@ -1,17 +1,14 @@
-import { applyMiddleware, createStore, } from 'redux';
-import { load, save }                    from 'redux-localstorage-simple';
-import { createLogger }                  from 'redux-logger';
-import thunk                             from 'redux-thunk';
-import config                            from '../config';
-import Socket                            from '../lib/socket';
-import getRoutes                         from '../server/routes';
-import reducers                          from './reducers/index';
+import { applyMiddleware, createStore } from 'redux';
+import { load, save }                   from 'redux-localstorage-simple';
+import { createLogger }                 from 'redux-logger';
+import thunk                            from 'redux-thunk';
+import config                           from '../config';
+import Socket                           from '../lib/socket';
+import routes                           from '../server/routes';
+import reducers                         from './reducers/index';
 
 // Items that be stored in the localStorage
 const { localStorageStates } = config.redux;
-
-const routes   = getRoutes();
-routes.current = {};
 
 const isServer = !process.browser;
 const logger   = createLogger({

@@ -15,9 +15,10 @@ const Backend                     = require('i18next-node-fs-backend');
 const path                        = require('path');
 const LRUCache                    = require('lru-cache');
 const { join }                    = require('path');
+const removeUrlLastSlash          = require('../helpers/removeUrlLastSlash');
 
 const config           = require('../config');
-const getRoutes        = require('./routes');
+const routes           = require('./routes');
 const { i18nInstance } = require('../lib/i18n');
 const germaine         = require('germaine');
 
@@ -31,9 +32,9 @@ class App {
     this.enableFakeApi    = (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE');
     this.enableHtpasswd   = (process.env.ENABLE_HTPASSWD === '1' || process.env.ENABLE_HTPASSWD === 'TRUE');
     this.protocol         = process.env.PROTOCOL || 'http';
-    this.host          = process.env.HOST || this.config.server.baseUrl || 'localhost';
+    this.host             = process.env.HOST || this.config.server.baseUrl || 'localhost';
     this.port             = parseInt(process.env.PORT || this.config.server.port || 3000);
-    this.routes           = getRoutes();
+    this.routes           = routes;
     this.url              = `${this.protocol}://${this.host}:${this.port}`;
     this.server           = null;
     this.enableSSRCaching = (process.env.ENABLE_SSR_CACHING === '1' || process.env.ENABLE_SSR_CACHING === 'TRUE');
@@ -242,71 +243,61 @@ class App {
 
 
   /**
-   * Listen to several routes. The routes can be
-   * formatted differently depending on if a lang
-   * is defined or not
-   * @param routes
-   * @param server
-   * @param lang
+   * push a listener for a given route
+   * @param routePath
+   * @param routeConfig
+   * @param routeName
    */
-  _listenToMulti(routes, server, lang) {
-    Object.entries(routes).forEach(([path, route]) => {
+  _pushRouteListener(routePath, routeConfig, routeName) {
 
-      // Remove the sandbox page in production
-      if (path === '/_sandbox' && process.env.NODE_ENV === 'production') {
-        return;
-      }
+    // Remove the sandbox page in production
+    if ((routeName.indexOf('/_sandbox') === 0 || routeName.indexOf('/_doc') === 0) && process.env.NODE_ENV === 'production') {
+      return;
+    }
 
-      // Check that the lang is valid and enabled
-      if (lang && !this.config.lang.available.find(e => e.lang === lang)) {
-        return;
-      }
+    // Add the language segment to the url if defined
+    this.server.get(routePath, async (req, res) => {
+        const cacheKey       = this._getCacheKey(req);
+        const queryParams    = {};
+        const shouldBeCached = (this.enableSSRCaching === true && routeConfig.neverCache !== true);
+        // Add an htpasswd on the server if we are
+        // running on the Now pre-production
+        this._htpasswdMiddleware(req, res);
 
-      // Add the language segment to the url if defined
-      const url = lang !== undefined ? urlJoin('/', lang, path) : path;
-      server.get(url, async (req, res) => {
-          const cacheKey       = this._getCacheKey(req);
-          const queryParams    = {};
-          const shouldBeCached = (this.enableSSRCaching === true && route.neverCache !== true);
-          // Add an htpasswd on the server if we are
-          // running on the Now pre-production
-          this._htpasswdMiddleware(req, res);
+        // Add needed parameters to the response
+        if (routeConfig.queryParams && routeConfig.queryParams.length > 0) {
+          routeConfig.queryParams.forEach(param => {
+            queryParams[param] = req.params[param];
+          });
+        }
 
-          // Add needed parameters to the response
-          if (route.queryParams && route.queryParams.length > 0) {
-            route.queryParams.forEach(param => {
-              queryParams[param] = req.params[param];
-            });
-          }
+        // If we have a page in the cache, let's serve it
+        if (shouldBeCached && this.ssrCache.has(cacheKey)) {
+          res.setHeader('x-cache', 'HIT');
+          res.send(this.ssrCache.get(cacheKey));
+          return;
+        }
 
-          // If we have a page in the cache, let's serve it
-          if (shouldBeCached && this.ssrCache.has(cacheKey)) {
-            res.setHeader('x-cache', 'HIT');
-            res.send(this.ssrCache.get(cacheKey));
+        try {
+          // If not let's render the page into HTML
+          const html = await this.nextApp.renderToHTML(req, res, routeConfig.page, queryParams);
+
+          // Cache is disabled or something is wrong with the request, let's skip the cache
+          if (!shouldBeCached || res.statusCode !== 200) {
+            res.send(html);
             return;
           }
 
-          try {
-            // If not let's render the page into HTML
-            const html = await this.nextApp.renderToHTML(req, res, route.page, queryParams);
+          // Let's cache this page
+          this.ssrCache.set(cacheKey, html);
 
-            // Cache is disabled or something is wrong with the request, let's skip the cache
-            if (!shouldBeCached || res.statusCode !== 200) {
-              res.send(html);
-              return;
-            }
-
-            // Let's cache this page
-            this.ssrCache.set(cacheKey, html);
-
-            res.setHeader('x-cache', 'MISS');
-            res.send(html);
-          } catch (err) {
-            this.nextApp.renderError(err, req, res, route.page, queryParams);
-          }
-        },
-      );
-    });
+          res.setHeader('x-cache', 'MISS');
+          res.send(html);
+        } catch (err) {
+          this.nextApp.renderError(err, req, res, routeConfig.page, queryParams);
+        }
+      },
+    );
   }
 
 
@@ -316,14 +307,29 @@ class App {
    * @private
    */
   _initExpressListeners() {
+
+    // In this situation, each route should be served in several languages. We should therefore add a new listener to each
+    // language
     if (this.config.lang.enableRouteTranslation === true) {
-      Object.entries(this.routes).forEach(([lang, children]) => {
-        if (typeof children === 'object') {
-          this._listenToMulti(children, this.server, lang);
+      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        if (typeof routeConfig.langRoutes === 'object') {
+          Object.entries(routeConfig.langRoutes).forEach(([lang, routePath]) => {
+            if (this.config.lang.available.find(e => e.lang === lang)) {
+              this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routePath)), routeConfig, routeName);
+            }
+          });
         }
       });
+
+      // In this case, the translation is disabled. We should only add one listener by route. if the route has a 'langRoutes'
+      // attributes that contains a route for the default language, we should to share this route instead of the route name.
     } else {
-      this._listenToMulti(this.routes[this.config.lang.default], this.server);
+      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        const routePath = typeof routeConfig.lang === 'object' && routeConfig.lang[this.config.lang.default] !== undefined
+          ? routeConfig.langRoutes[this.config.lang.default]
+          : routeName;
+        this._pushRouteListener(removeUrlLastSlash(urlJoin('/', routePath)), routeConfig, routeName);
+      });
     }
 
     // Fallback server entry for requests that do not match
@@ -343,10 +349,6 @@ class App {
       if (req.url.startsWith('/static/workbox/')) {
         this.nextApp.serveStatic(req, res, path.join(paths.appClient, req.url));
 
-        // First we must check if a lang is defined in the client request. If yes and that route translation
-        // has been enabled, we can try to resolve a matching route with the given lang. If no matching route
-        // has been found, the action will fallback to the next condition.
-        //
         // If no language has been defined in the request, we must try to find a route that matches the request.
         // If a route has been founded, we must trigger a redirection to add the language segment to the url.
         // For example, /products must probably be resolved with /en/products.
@@ -354,21 +356,44 @@ class App {
         // all assets and other resource files that may be asked to the server but do never need to get resolved with a
         // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
 
-      } else if (!pathname.includes('/_next/')
-        && !pathname.includes('/_sandbox')
+      } else if (
+        !pathname.includes('/_next/')
+        && !pathname.includes('/static')
         && this.config.lang.enableRouteTranslation === true
-        && this.routes.all[pathname] !== undefined) {
+        && this.config.lang.enableFallbackRedirection === true) {
 
-        const language      = this.config.lang.available.find(e => e.lang === req.language);
-        const matchingRoute = typeof language === 'object'
-        && typeof this.routes[language.lang] === 'object'
-        && this.routes[language.lang][pathname] !== undefined
-          ? this.routes[language.lang][pathname]
-          : this.routes.all[pathname];
+        let language     = this.config.lang.available.find(e => e.lang === req.language);
+        let matchingLang = undefined;
 
-        // Check if a matching route is defined and the redirection feature enabled
-        if (typeof matchingRoute.lang === 'string' && this.config.lang.enableFallbackRedirection === true) {
-          res.redirect(301, `/${matchingRoute.lang}${req.url}`);
+        // If a lang is defined from another provider like cookie, it should be easy to resolve to
+        // good route
+        if (language) {
+          Object.values(this.routes).forEach(e => {
+            if (e.langRoutes && e.langRoutes[language.lang] === pathname) {
+              return matchingLang = language.lang;
+            }
+          });
+        }
+
+        // Else, we must loop over every langRoute of every route and look for a match
+        if (!matchingLang) {
+          Object.values(this.routes).forEach(e => {
+            if (e.langRoutes) {
+              return Object.entries(e.langRoutes).forEach(([_lang, _lroute]) => {
+                if (_lroute === pathname) {
+                  matchingLang = _lang;
+                }
+              });
+            }
+          });
+        }
+
+        // Finally if a lang has been found, we can resolve the url, else we should let the next App trigger a
+        // 404 error
+        if (matchingLang) {
+          res.redirect(301, urlJoin('/', matchingLang, pathname));
+        } else {
+          return this.nextApp.getRequestHandler()(req, res);
         }
       } else {
         return this.nextApp.getRequestHandler()(req, res);

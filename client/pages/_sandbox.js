@@ -5,12 +5,9 @@ import React       from 'react';
 import Inspector   from 'react-inspector';
 import NoSSR       from 'react-no-ssr';
 import config      from '../../config';
-import getRoutes   from '../../server/routes';
+import routes      from '../../server/routes';
 import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
-
-
-const routes = getRoutes();
 
 
 
