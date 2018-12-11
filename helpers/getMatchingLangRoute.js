@@ -30,7 +30,7 @@ module.exports = (path = '/', lang = config.lang.default) => {
     return {
       pathname: removeUrlLastSlash(routes.client[path][lang]),
       page: routes.client[path].page,
-      restrict: config.router.enableRoutesRestriction
+      restrict: config.server.enableRoutesRestriction
         ? getOrignalRoute(routes, path, lang).restrict
         : undefined,
     };

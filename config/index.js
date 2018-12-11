@@ -1,6 +1,6 @@
-const env          = process.env.NODE_ENV;
-const serverConfig = require('./server.config');
-let envConfig      = null;
+const env     = process.env.NODE_ENV;
+let envConfig = null;
+
 
 try {
   envConfig = require(`./env/${env}.config`);
@@ -11,10 +11,13 @@ try {
 // Build the final config object
 const masteredConfig = () => {
   return Object.assign({
-      server: serverConfig,
+      server: require('./server.config'),
       api: require('./api.config'),
+      lang: require('./lang.config'),
+      seo: require('./seo.config'),
+      layout: require('./layout.config'),
+      redux: require('./redux.config'),
     },
-    require('./master.config'),
     envConfig,
   );
 };

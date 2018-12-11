@@ -49,7 +49,7 @@ export default withRedux(createStore)(class _App extends App {
     }
 
     // Store the app settings
-    if (config.general.fetchAppSettings === true && ctx.store.getState().app.syncSettings !== true) {
+    if (config.api.fetchAppSettings === true && ctx.store.getState().app.syncSettings !== true) {
       await ctx.store.dispatch(fetchAppSettings());
     }
 

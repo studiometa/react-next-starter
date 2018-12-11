@@ -8,8 +8,10 @@ const NextWorkboxPlugin    = require('next-workbox-webpack-plugin');
 const serviceWorkerConfig  = require('./serviceWorker.config');
 
 /**
- * This is not a real webpack but un function that make changes to
- * the Next's webpack config.
+ * This is not a real webpack configuration file but a function that makes changes to
+ * the Next's webpack config. It take the original config as parameter and return a
+ * final config object. You can easily perform any needed changes to the original webpack
+ * config here, but keep in mind that you may break the app or produce unexpected behaviors
  */
 module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
   nextWebpackConfig.node = {

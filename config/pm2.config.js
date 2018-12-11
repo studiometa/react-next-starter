@@ -2,7 +2,7 @@ const instances = process.env.WEB_CONCURRENCY || -1;
 const maxMemory = process.env.WEB_MEMORY || 512;
 
 /**
- * This config file is used by pm2
+ * PM2 settings (for production and staging)
  */
 module.exports = {
   name: 'chefsquare',

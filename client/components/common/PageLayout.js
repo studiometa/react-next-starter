@@ -25,7 +25,7 @@ const styles = theme => ({
   },
 
   container: {
-    maxWidth: config.interface.pageContentMaxWidth,
+    maxWidth: config.layout.pageContentMaxWidth,
     minHeight: '100vh',
     margin: 'auto',
   },
