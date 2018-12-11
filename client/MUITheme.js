@@ -10,10 +10,13 @@ const theme = createMuiTheme({
 
   palette: {
     primary: {
-      main: '#EE4266',
+      main: '#1D1C2A',
     },
     secondary: {
-      main: '#42D9C8',
+      main: '#FF4040',
+    },
+    error: {
+      main: '#FFDD99',
     },
     grey: {
       50: '#F1F3F6',
@@ -35,63 +38,74 @@ const theme = createMuiTheme({
 
   typography: {
     fontSize: 16,
+    useNextVariants: true, // @see https://material-ui.com/style/typography/#migration-to-typography-v2
     fontFamily: 'BwSurco, Arial, sans-serif',
-    display4: { // Hero
+    h1: {
       fontSize: '3rem',
       color: '#070707',
       fontWeight: 400,
+      newSet: true
     },
-    display3: { // H1
+    h2: {
       fontSize: '2.5rem',
       color: '#070707',
       fontWeight: 300,
+      newSet: true
     },
-    display2: { // H2
+    h3: {
       fontSize: '2rem',
       color: '#070707',
       fontWeight: 500,
       lineHeight: '2.5rem',
+      newSet: true
     },
-    display1: { // H3
+    h4: {
       fontSize: '1.6875rem',
       color: '#292929',
       fontWeight: 500,
+      newSet: true
     },
-    headline: { // H4
+    h5: {
       fontSize: '1.375rem',
       color: '#292929',
       fontWeight: 400,
+      newSet: true
     },
-    title: { // H5
+    h6: {
       fontSize: '1.125rem',
       color: '#292929',
       fontWeight: 500,
     },
-    subheading: { // H6
+    subtitle1: {
       fontSize: '0.5625rem',
       color: '#292929',
       fontWeight: 400,
+      newSet: true
     },
-    body2: { // Paragraph L
+    body2: {
       fontSize: '1.125rem',
       color: '#070707',
       fontWeight: 300,
+      newSet: true
     },
-    body1: { // Paragraph
+    body1: {
       fontSize: '1rem',
       color: '#070707',
       fontWeight: 300,
+      newSet: true
     },
-    caption: { // Paragraph S
+    caption: {
       fontSize: '0.8125rem',
       color: '#292929',
       fontWeight: 300,
+      newSet: true
     },
     button: {
       fontSize: '0.875rem',
       color: '#070707',
       fontWeight: 500,
       textTransform: 'none',
+      newSet: true
     },
   },
 

@@ -10,19 +10,28 @@ import Link             from './Link/index';
 // xs, sm, md, lg, and xl.
 const styles = theme => ({
   link: {
-    color: theme.palette.getContrastText(theme.palette.primary.main),
+    color: theme.palette.error.main,
   },
 
   link__active: {
-    textDecoration: 'underline'
-  }
+    color: theme.palette.secondary.main,
+  },
+
+  langSwitchSelect: {
+    color: theme.palette.error.main,
+  },
+
+  langSwitchText: {
+    fontSize: theme.typography.body1.fontSize,
+  },
+
 });
 
 
 const Header = function Header(props) {
 
   let {
-        classes, // classes for the page layout components
+        classes,
         t,
       } = props;
 
@@ -33,24 +42,24 @@ const Header = function Header(props) {
           <Grid item>
             <Grid container alignItems="center" justify="flex-start" spacing={32}>
               <Grid item>
-                <Link to={'/'} className={classes.link} variant="title">
+                <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
                   {packageJson.name}
                 </Link>
               </Grid>
               <Grid item>
-                <Link to={'/readme'} className={classes.link}  activeClassName={classes.link__active}>
+                <Link to={'/readme'} className={classes.link} activeClassName={classes.link__active}>
                   {t('menu_links.readme')}
                 </Link>
               </Grid>
               <Grid item>
-                <Link to={'/_sandbox'} className={classes.link} activeClassName={classes.link__active}>
+                <Link to={'/_sandbox'} className={classes.link} activeClassName={classes.link__active} color="error">
                   {t('menu_links.sandbox')}
                 </Link>
               </Grid>
             </Grid>
           </Grid>
           <Grid item>
-            <LangSwitch/>
+            <LangSwitch classes={{ select: classes.langSwitchSelect, text: classes.langSwitchText }}/>
           </Grid>
         </Grid>
       </Toolbar>

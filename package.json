@@ -23,8 +23,8 @@
   "dependencies": {
     "@babel/core": "^7.2.0",
     "@chuck-durst/react-carousel": "^1.1.4",
-    "@material-ui/core": "^1.5.1",
-    "@material-ui/icons": "^1.1.1",
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^8.6.5",
     "axios": "^0.18.0",

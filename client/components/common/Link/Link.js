@@ -82,11 +82,14 @@ class Link extends React.Component {
     // Contains custom jsx attributes that will be passed to the final link element
     // such as name, etc
     linkAttributes: propTypes.object,
+
+    color: propTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
   };
 
   static defaultProps = {
     variant: 'button',
     component: 'span',
+    color: 'default',
     noTypo: false,
     target: '_self',
     prefetch: false,
@@ -104,7 +107,7 @@ class Link extends React.Component {
       page: null,
       pathname: null,
       isHidden: false,
-      isExternal: false // Define if the provided route is an external link
+      isExternal: false, // Define if the provided route is an external link
     };
 
     let { to, query, lang, target } = this.props;
@@ -210,6 +213,7 @@ class Link extends React.Component {
           noTypo,
           target,
           children,
+          color,
         } = this.props;
 
     style = this.state.isActive === true && activeClassName !== undefined
@@ -235,7 +239,8 @@ class Link extends React.Component {
         {
           noTypo === true
             ? this.props.children
-            : <Typography className={`${ className }`} style={style} variant={variant} component={component}>
+            :
+            <Typography className={`${ className }`} style={style} variant={variant} component={component} color={color}>
               {children}
             </Typography>
         }
@@ -273,5 +278,5 @@ export default wrapper(Link, {
   mapStateToProps,
   isTranslatable: false,
   hasStyles: false,
-  withRouter: true
+  withRouter: true,
 });
