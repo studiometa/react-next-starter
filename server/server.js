@@ -255,6 +255,10 @@ class App {
       return;
     }
 
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('>', routePath);
+    }
+
     // Add the language segment to the url if defined
     this.server.get(routePath, async (req, res) => {
         const cacheKey       = this._getCacheKey(req);
@@ -265,11 +269,12 @@ class App {
         this._htpasswdMiddleware(req, res);
 
         // Add needed parameters to the response
-        if (routeConfig.queryParams && routeConfig.queryParams.length > 0) {
-          routeConfig.queryParams.forEach(param => {
+        routePath.split('/').forEach(routeSeg => {
+          if (routeSeg.indexOf(':') === 0) {
+            const param        = routeSeg.slice(1);
             queryParams[param] = req.params[param];
-          });
-        }
+          }
+        });
 
         // If we have a page in the cache, let's serve it
         if (shouldBeCached && this.ssrCache.has(cacheKey)) {
@@ -307,7 +312,9 @@ class App {
    * @private
    */
   _initExpressListeners() {
-
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('\nExpress is now listening to the following routes :');
+    }
     // In this situation, each route should be served in several languages. We should therefore add a new listener to each
     // language
     if (this.config.lang.enableRouteTranslation === true) {
@@ -330,6 +337,10 @@ class App {
           : routeName;
         this._pushRouteListener(removeUrlLastSlash(urlJoin('/', routePath)), routeConfig, routeName);
       });
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('\n');
     }
 
     // Fallback server entry for requests that do not match
