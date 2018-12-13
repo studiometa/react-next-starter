@@ -62,6 +62,11 @@ const Header = function Header(props) {
                   {t('menu_links.sandbox')}
                 </Link>
               </Grid>
+              <Grid item>
+                <Link to={'/_doc/intro'} className={classes.link} activeClassName={classes.link__active} color="error">
+                  {t('menu_links.doc')}
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item>

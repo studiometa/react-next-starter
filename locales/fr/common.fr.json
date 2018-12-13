@@ -2,6 +2,7 @@
   "menu_links": {
     "readme": "Lisez-moi",
     "sandbox": "Sandbox",
-    "home": "Home"
+    "home": "Home",
+    "doc": "Documentation"
   }
 }

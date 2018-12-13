@@ -55,6 +55,8 @@ export default withRedux(createStore)(class _App extends App {
 
     props.query = ctx.query || ctx.req.params;
 
+    ctx.store.dispatch(updateAppLanguage(props.lang));
+
     return props;
   }
 
@@ -63,9 +65,6 @@ export default withRedux(createStore)(class _App extends App {
    * componentDidMount
    */
   async componentDidMount() {
-
-    // Save the current language to the store
-    this.props.store.dispatch(updateAppLanguage(this.props.lang));
 
     // Init the service-worker
     this._initServiceWorker();

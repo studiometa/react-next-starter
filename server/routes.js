@@ -24,6 +24,7 @@ module.exports = {
   /** _DEV_ **/
 
   '/_sandbox': { page: '/_sandbox', langRoutes: { fr: '/_sandbox', en: '/_sandbox' } },
+  '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro', en: '/_doc/intro' } },
 
 
   /** GENERAL **/
