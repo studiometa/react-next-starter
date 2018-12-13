@@ -5,19 +5,6 @@ import ReactDOMServer from 'react-dom/server';
 // and never render again. This is useful for SRR when you want to display a fallback
 // content in case JavaScript has been disabled on the client side
 
-class NoScript extends React.Component {
-  shouldComponentUpdate() {
-    return false;
-  }
-
-
-  render() {
-    return (
-      <noscript dangerouslySetInnerHTML={{ __html: ReactDOMServer.renderToStaticMarkup(this.props.children) }}/>
-    );
-  }
-}
-
-
-
-export default NoScript;
+export default React.memo(({children}) => (
+  <noscript dangerouslySetInnerHTML={{ __html: ReactDOMServer.renderToStaticMarkup(children) }}/>
+));

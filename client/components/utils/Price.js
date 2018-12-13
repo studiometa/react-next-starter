@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
  * - Show the price in the user currency
  * - Format the price in the user language
  */
-export default wrapper(({ children, preferredCurrency, lang, currencyRates }) => {
+export default React.memo(wrapper(({ children, preferredCurrency, lang, currencyRates }) => {
 
   // Check that the price value is valid or return it
   if (children === undefined || typeof children !== 'number') return children;
@@ -48,4 +48,4 @@ export default wrapper(({ children, preferredCurrency, lang, currencyRates }) =>
   isTranslatable: false,
   mapStateToProps,
   hasStyles: false,
-});
+}));

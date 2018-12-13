@@ -3,7 +3,7 @@ import propTypes      from 'prop-types';
 import React          from 'react';
 import ReactDOMServer from 'react-dom/server';
 import wrapper        from '../../lib/componentWrapper';
-import Skeleton       from './Skeleton/index';
+import Skeleton       from './Skeleton';
 import NoScript       from './NoScript'
 
 const styles = theme => ({
