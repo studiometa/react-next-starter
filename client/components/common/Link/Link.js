@@ -194,8 +194,16 @@ class Link extends React.Component {
 
 
   _isActive = () => {
-    return (this.props.to !== '/' && this.props.router.route.indexOf(this.props.checkSubActive ?`/${this.props.to.split('/')[0]}` : this.props.to) === 0)
-      || (this.props.router.route === '/index' && this.props.to === '/');
+    if (this.props.router.route === '/index' && this.props.to === '/') {
+      return true;
+    } else if (this.props.checkSubActive) {
+      const segment = this.props.to
+        .slice(1)
+        .split('/')[0];
+      return this.props.router.route.indexOf(`/${segment}`) === 0
+    } else {
+      return  this.props.to !== '/' && this.props.router.route.indexOf(this.props.to) === 0
+    }
   };
 
 

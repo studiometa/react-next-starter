@@ -21,7 +21,7 @@ class MyDocument extends Document {
           }
         />
         {/* PWA primary color */}
-        <meta name="theme-color" content={pageContext.theme.palette.primary.main}/>
+        <meta name="theme-color" content={pageContext ? pageContext.theme.palette.primary.main : null}/>
         <script src="/static/js/polyfills/js-object.js"/>
         <noscript>
           <style type="text/css">
