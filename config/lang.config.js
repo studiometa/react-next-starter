@@ -44,13 +44,13 @@ module.exports = {
 
   // Defines where and how the locales files are stored
   localesPath: path.join(__dirname, '../locales'),
-  localesFormat: '/{{lng}}/{{ns}}.{{lng}}.json',
+  localesFormat: '/{{lng}}/{{ns}}.json',
 
   // Enabling debug for i18next
   debug: false,
 
   // Lang namespaces
-  namespaces: ['common', 'home', '_doc'],
+  namespaces: ['common', 'home'],
 
   // Default language namespace
   defaultNamespace: 'common',

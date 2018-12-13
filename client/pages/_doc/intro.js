@@ -23,8 +23,6 @@ const DocIntro = class extends React.Component {
 
   render() {
     const { pageData, docData } = this.props;
-    console.log(docData, this.props.error);
-
 
     if (typeof docData !== 'object' || this.props.error) {
       return <Error statusCode={this.props.error ? this.props.error.statusCode : 500}/>;

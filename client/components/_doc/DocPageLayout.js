@@ -46,7 +46,7 @@ class DocPageLayout extends React.Component {
                 this.routes.map((route, key) => (
                   <ListItem key={route}>
                     <Link to={route} className={classes.link} activeClassName={classes.link__active}>
-                      {key + 1}. {t(`_doc:routes:${route}`)}
+                      {key + 1}. {t(`_doc.routes.${route}`)}
                     </Link>
                   </ListItem>
                 ))

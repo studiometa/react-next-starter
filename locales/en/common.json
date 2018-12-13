@@ -4,5 +4,11 @@
     "sandbox": "Sandbox",
     "home": "Home",
     "doc": "Documentation"
+  },
+  "_doc": {
+    "routes": {
+      "/_doc/intro": "Introduction",
+      "/_doc/requirements": "Requirements"
+    }
   }
 }
