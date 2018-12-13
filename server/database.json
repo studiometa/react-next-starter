@@ -54,12 +54,32 @@
         "title": "Documentation",
         "metaData": [
           { "name": "description", "content": "Documentation du starter" }
-        ],
+        ]
+      }
+    },
+    "_doc": {
+      "intro": {
+        "title": "Introduction",
         "pageBuilder": {
           "blocks": [
             {
               "type": "text",
-              "value": "Lorem ipsum dolor sit amet",
+              "value": "I Lorem ipsum dolor sit amet",
+              "options": {
+                "variant": "body1",
+                "paragraph": true
+              }
+            }
+          ]
+        }
+      },
+      "requirements": {
+        "title": "pré-requis",
+        "pageBuilder": {
+          "blocks": [
+            {
+              "type": "text",
+              "value": "R Lorem ipsum dolor sit amet",
               "options": {
                 "variant": "body1",
                 "paragraph": true

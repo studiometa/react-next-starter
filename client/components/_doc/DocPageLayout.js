@@ -6,6 +6,7 @@ import Typography    from '@material-ui/core/Typography';
 import React    from 'react';
 import wrapper  from '../../lib/componentWrapper';
 import Link     from '../common/Link';
+import PageBuilder   from '../utils/PageBuilder';
 
 
 const styles = theme => ({
@@ -31,14 +32,10 @@ class DocPageLayout extends React.Component {
         this.routes.push(routeName);
       }
     });
-
-    this.state = {
-      currentRouteIndex: this.routes.indexOf(props.router.route)
-    };
   }
 
   render() {
-    const { classes, t } = this.props;
+    const { data, classes, t } = this.props;
 
     return (
       <Grid container spacing={40}>
@@ -60,8 +57,9 @@ class DocPageLayout extends React.Component {
 
         <Grid item md={9}>
           <Typography variant="h1" paragraph>
-            {t(`_doc:routes:${this.routes[this.state.currentRouteIndex]}`)}
+            {data.title}
           </Typography>
+          <PageBuilder structure={data.pageBuilder}/>
           {this.props.children}
         </Grid>
       </Grid>
@@ -75,4 +73,4 @@ const mapStateToProps = state => ({
   routes: state.app.routes,
 });
 
-export default wrapper(DocPageLayout, { styles, mapStateToProps, withRouter: true });
+export default wrapper(DocPageLayout, { styles, mapStateToProps });

@@ -46,7 +46,7 @@ export default withRedux(createStore)(class _App extends App {
     ctx.store.dispatch(updateAppLanguage(props.lang));
 
     props.pageProps = {
-      ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+      ...(Component.getInitialProps ? await Component.getInitialProps({ ...ctx, lang: props.lang }) : {}),
     };
 
     // Store the app settings
