@@ -8,7 +8,6 @@ import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
 import Link             from './Link/index';
 
-// xs, sm, md, lg, and xl.
 const styles = theme => ({
   link: {
     color: theme.palette.error.main,
@@ -25,10 +24,16 @@ const styles = theme => ({
   langSwitchText: {
     fontSize: theme.typography.body1.fontSize,
   },
-
 });
 
 
+/**
+ * Header component of the App
+ * You can keep and customize this component or remove it depending on your needs
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 const Header = function Header(props) {
 
   let {

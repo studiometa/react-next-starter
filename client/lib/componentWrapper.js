@@ -1,10 +1,10 @@
-import { withStyles } from '@material-ui/core/styles';
-import withUIWidth    from '@material-ui/core/withWidth';
-import { translate }  from 'react-i18next';
-import { connect }    from 'react-redux';
-import { compose }    from 'recompose';
-import config         from '../../config';
-import { withRouter as withNextRouter } from 'next/router'
+import { withStyles }                   from '@material-ui/core/styles';
+import withUIWidth                      from '@material-ui/core/withWidth';
+import { withRouter as withNextRouter } from 'next/router';
+import { translate }                    from 'react-i18next';
+import { connect }                      from 'react-redux';
+import { compose }                      from 'recompose';
+import config                           from '../../config';
 
 
 /**
@@ -37,8 +37,8 @@ export default (Component, {
 }) => {
   const args = [];
 
-  if (isConnected || typeof mapStateToProps === 'function')  args.push(connect(mapStateToProps));
-  if (hasStyles || typeof styles === 'object')  args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
+  if (isConnected || typeof mapStateToProps === 'function') args.push(connect(mapStateToProps));
+  if (hasStyles || typeof styles === 'object') args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
   if (withWidth) args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
   if (isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
 

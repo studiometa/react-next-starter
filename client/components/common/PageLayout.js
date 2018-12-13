@@ -54,7 +54,7 @@ const styles = theme => ({
 /**
  *  This component is a simple page layout that must be added to every pages of the app.
  *  Note that in order to work properly, this component needs a 'pageData' prop that contains
- *  all the information about the page (those information has generally been fetched from an API but it can also
+ *  all the information about the page (those information have generally been fetched from an API but it can also
  *  be a simple config file !). This prop will principally be used for SEO purpose, like generating the page <head>
  *  children like metas, title, etc.
  *
@@ -117,7 +117,6 @@ const PageLayout = withStyles(styles)(function Layout(props) {
           />
         </div>
       }
-
     </div>
   );
 });

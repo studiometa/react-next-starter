@@ -5,6 +5,7 @@ import config from '../../../config/index';
 
 /**
  * This component generates the <head> tag of the pages
+ * @see https://github.com/zeit/next.js#populating-head
  */
 export default (props) => {
 

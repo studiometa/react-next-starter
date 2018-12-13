@@ -1,6 +1,6 @@
-const routes  = require('../server/routes');
-const config  = require('../config');
-const urlJoin = require('url-join');
+const routes             = require('../server/routes');
+const config             = require('../config');
+const urlJoin            = require('url-join');
 const removeUrlLastSlash = require('./removeUrlLastSlash');
 
 /**
@@ -20,7 +20,7 @@ module.exports = (path = '/', lang = config.lang.default) => {
       : path;
 
     if (config.lang.enableRouteTranslation) {
-      pathname =  urlJoin('/', lang, pathname);
+      pathname = urlJoin('/', lang, pathname);
     }
 
     return {

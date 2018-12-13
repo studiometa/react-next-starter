@@ -20,7 +20,7 @@ const styles = theme => ({
 /**
  * This component allows you to very easily add an async image that will display
  * a skeleton screen while loading. It can be both an image or a background-image.
- * Checkout the prop types to see how you can customize it :).
+ * Check out the prop types to see how you can customize it :).
  */
 class LazyImage extends React.PureComponent {
   static propTypes = {
