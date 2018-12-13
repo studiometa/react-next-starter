@@ -1,10 +1,10 @@
-import classNames     from 'classnames';
-import propTypes      from 'prop-types';
-import React          from 'react';
-import ReactDOMServer from 'react-dom/server';
-import wrapper        from '../../lib/componentWrapper';
-import Skeleton       from './Skeleton';
-import NoScript       from './NoScript'
+import classNames from 'classnames';
+import propTypes  from 'prop-types';
+import React      from 'react';
+import wrapper    from '../../lib/componentWrapper';
+import NoScript   from './NoScript';
+import Skeleton   from './Skeleton';
+
 
 const styles = theme => ({
   backgroundImage: {
@@ -20,7 +20,7 @@ const styles = theme => ({
 /**
  * This component allows you to very easily add an async image that will display
  * a skeleton screen while loading. It can be both an image or a background-image.
- * Check out the prop types to see how you can customize it :).
+ * Checkout the prop types to see how you can customize it :).
  */
 class LazyImage extends React.PureComponent {
   static propTypes = {
@@ -86,28 +86,22 @@ class LazyImage extends React.PureComponent {
 
 
   render() {
-    const height = this.props.height  ? this.props.height  : '100%';
-    const width  = this.props.width   ? this.props.width  : '100%';
+    const height = this.props.height ? this.props.height : '100%';
+    const width  = this.props.width ? this.props.width : '100%';
 
-
-    // This is used on websites where JavaScript is disabled (or for crawling)
-    // This component will be rendered as a string inside a noscript tag
-    const NoScriptRender = (
-      <React.Fragment>
-
-      </React.Fragment>
-    );
 
     /** LOADING STATE **/
 
     if (this.state.isReady === false || typeof this.state.src !== 'string' || this.props.isLoaded === false) {
       return (
         <div>
-          {
-            this.props.noSkeleton === true
-              ? <div style={{ height, width }} className={this.props.className}/>
-              : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
-          }
+          <div className="hidden-no-script">
+            {
+              this.props.noSkeleton === true
+                ? <div style={{ height, width }} className={this.props.className}/>
+                : <Skeleton height={height} width={width} isCover={true} className={this.props.className}/>
+            }
+          </div>
           <NoScript>
             {
               this.props.useBackgroundImage === true &&

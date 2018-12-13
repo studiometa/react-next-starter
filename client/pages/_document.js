@@ -1,10 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-// ./pages/_document.js
 import React                                from 'react';
-import JssProvider                          from 'react-jss/lib/JssProvider';
 import flush                                from 'styled-jsx/server';
 import customI18nextLangDetector            from '../../server/lib/customI18nextLangDetector';
-import getPageContext                       from '../lib/getPageMUIContext';
 
 
 
@@ -26,6 +23,11 @@ class MyDocument extends Document {
         {/* PWA primary color */}
         <meta name="theme-color" content={pageContext.theme.palette.primary.main}/>
         <script src="/static/js/polyfills/js-object.js"/>
+        <noscript>
+          <style type="text/css">
+            {` .hidden-no-script {display:none;} `}
+          </style>
+        </noscript>
       </Head>
       <body>
       <Main/>

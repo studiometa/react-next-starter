@@ -349,7 +349,7 @@ class App {
 
     // Fallback server entry for requests that do not match
     // any defined route
-x
+
     this.server.get('*', (req, res) => {
 
       const parsedUrl    = parse(req.url, true);
