@@ -8,6 +8,7 @@ import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
 import Link             from './Link/index';
 
+
 const styles = theme => ({
   link: {
     color: theme.palette.error.main,
@@ -63,7 +64,7 @@ const Header = function Header(props) {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to={'/_doc/intro'} className={classes.link} activeClassName={classes.link__active} color="error">
+                <Link to={'/_doc/intro'} className={classes.link} activeClassName={classes.link__active} color="error" checkSubActive>
                   {t('menu_links.doc')}
                 </Link>
               </Grid>

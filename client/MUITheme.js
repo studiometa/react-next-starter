@@ -40,6 +40,7 @@ const theme = createMuiTheme({
     fontSize: 16,
     useNextVariants: true, // @see https://material-ui.com/style/typography/#migration-to-typography-v2
     fontFamily: 'BwSurco, Arial, sans-serif',
+    fontWeightBold: 700,
     h1: {
       fontSize: '3rem',
       color: '#070707',

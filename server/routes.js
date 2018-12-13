@@ -25,6 +25,7 @@ module.exports = {
 
   '/_sandbox': { page: '/_sandbox', langRoutes: { fr: '/_sandbox', en: '/_sandbox' } },
   '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro', en: '/_doc/intro' } },
+  '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis', en: '/_doc/requirements' } },
 
 
   /** GENERAL **/

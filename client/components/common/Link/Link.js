@@ -83,7 +83,11 @@ class Link extends React.Component {
     // such as name, etc
     linkAttributes: propTypes.object,
 
+    // Colors for the Typography component
     color: propTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
+
+    // if true, the component will consider the link active whenever its first segment matches the current route
+    checkSubActive: propTypes.bool
   };
 
   static defaultProps = {
@@ -96,6 +100,7 @@ class Link extends React.Component {
     urlQuery: '',
     linkStyle: { display: 'flex' },
     disabled: false,
+    checkSubActive: false,
     linkAttributes: {},
   };
 
@@ -189,7 +194,7 @@ class Link extends React.Component {
 
 
   _isActive = () => {
-    return (this.props.to !== '/' && this.props.router.route.indexOf(this.props.to) === 0)
+    return (this.props.to !== '/' && this.props.router.route.indexOf(this.props.checkSubActive ?`/${this.props.to.split('/')[0]}` : this.props.to) === 0)
       || (this.props.router.route === '/index' && this.props.to === '/');
   };
 

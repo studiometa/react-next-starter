@@ -1,9 +1,8 @@
-import Typography  from '@material-ui/core/Typography';
-import React       from 'react';
-import LazyImage   from '../../components/utils/LazyImage';
-import Layout      from '../../components/common/PageLayout';
-import pageWrapper from '../../lib/pageWrapper';
-
+import React         from 'react';
+import DocPageLayout from '../../components/_doc/DocPageLayout';
+import Layout        from '../../components/common/PageLayout';
+import pageWrapper   from '../../lib/pageWrapper';
+import PageBuilder from '../../components/utils/PageBuilder'
 
 const styles = theme => ({
   title: {
@@ -17,9 +16,9 @@ const DocIntro = class extends React.Component {
 
     return (
       <Layout pageData={pageData}>
-        <Typography variant="h1" className={classes.title}>{pageData.title}</Typography>
-        <Typography variant="h4" paragraph><b>Welcome message : </b>{pageData.welcomeMessage}</Typography>
-        <LazyImage src="https://cdn-images-1.medium.com/max/2000/1*HSisLuifMO6KbLfPOKtLow.jpeg" useBackgroundImage height={300}/>
+        <DocPageLayout>
+          <PageBuilder structure={pageData.pageBuilder}/>
+        </DocPageLayout>
       </Layout>
     );
   }
@@ -28,6 +27,5 @@ const DocIntro = class extends React.Component {
 
 export default pageWrapper(DocIntro, {
   name: '_doc',
-  noPageData: true,
   styles,
 });

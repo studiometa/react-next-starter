@@ -30,12 +30,7 @@ export default withRedux(createStore)(class _App extends App {
    * @returns {Promise<{pageProps: {}}>}
    */
   static async getInitialProps({ Component, ctx }) {
-    const props = {
-      pageProps: {
-        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
-      },
-    };
-
+    const props = {};
 
     if (ctx.isServer === true) {
 
@@ -48,6 +43,12 @@ export default withRedux(createStore)(class _App extends App {
       props.lang = langDetector.find();
     }
 
+    ctx.store.dispatch(updateAppLanguage(props.lang));
+
+    props.pageProps = {
+      ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+    };
+
     // Store the app settings
     if (config.api.fetchAppSettings === true && ctx.store.getState().app.syncSettings !== true) {
       await ctx.store.dispatch(fetchAppSettings());
@@ -55,7 +56,6 @@ export default withRedux(createStore)(class _App extends App {
 
     props.query = ctx.query || ctx.req.params;
 
-    ctx.store.dispatch(updateAppLanguage(props.lang));
 
     return props;
   }
@@ -153,7 +153,7 @@ export default withRedux(createStore)(class _App extends App {
         <Provider store={store}>
           {/* Wrap every page in Jss and Theme providers */}
           <JssProvider
-            registry={this.pageContext.sheetsRegistry}
+            registry={this.pageContext ? this.pageContext.sheetsRegistry : {}}
             generateClassName={this.pageContext.generateClassName}
           >
             {/* MuiThemeProvider makes the theme available down the React

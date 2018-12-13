@@ -1,10 +1,10 @@
 
 export const UPDATE_APP_LANGUAGE = 'UPDATE_APP_LANGUAGE';
-export function updateAppLanguage(lang) {
-  return {
-    type: UPDATE_APP_LANGUAGE,
-    lang,
-  };
+export function _updateAppLanguage(lang) {
+    return {
+      type: UPDATE_APP_LANGUAGE,
+      lang,
+  }
 }
 export const UPDATE_APP_CURRENT_URL = 'UPDATE_APP_CURRENT_URL';
 export function updateAppCurrentUrl(url) {
@@ -23,6 +23,16 @@ export function setAppSettings(settings) {
 }
 
 /****************** ASYNC ACTIONS ******************/
+
+
+export const updateAppLanguage = (lang) => async (dispatch, getState, socket) => {
+  try {
+    socket.setLang(lang);
+    dispatch(_updateAppLanguage(lang));
+  } catch (err) {
+    console.log(err);
+  }
+};
 
  /**
  * Fetch the app settings from the API
