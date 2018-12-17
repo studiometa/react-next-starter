@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Update docs">
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Improve the way the server is handling the routes translations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/readme.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/readme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/lang.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +39,9 @@
         <counts>
           <entry key="Procfile" value="1" />
           <entry key="env" value="4" />
-          <entry key="js" value="254" />
+          <entry key="js" value="256" />
           <entry key="json" value="28" />
-          <entry key="md" value="18" />
+          <entry key="md" value="19" />
           <entry key="production" value="1" />
           <entry key="scss" value="2" />
           <entry key="ts" value="1" />
@@ -50,8 +51,8 @@
         <counts>
           <entry key=".env file" value="5" />
           <entry key="JSON" value="28" />
-          <entry key="JavaScript" value="254" />
-          <entry key="Markdown" value="18" />
+          <entry key="JavaScript" value="256" />
+          <entry key="Markdown" value="19" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="2" />
           <entry key="TypeScript" value="1" />
@@ -60,21 +61,21 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="49" />
-          <entry key="js" value="18681" />
+          <entry key="js" value="18789" />
           <entry key="json" value="997" />
-          <entry key="md" value="406" />
+          <entry key="md" value="408" />
           <entry key="production" value="1" />
           <entry key="scss" value="33" />
-          <entry key="txt" value="814" />
+          <entry key="txt" value="885" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="50" />
           <entry key="JSON" value="997" />
-          <entry key="JavaScript" value="18681" />
-          <entry key="Markdown" value="406" />
-          <entry key="PLAIN_TEXT" value="814" />
+          <entry key="JavaScript" value="18789" />
+          <entry key="Markdown" value="408" />
+          <entry key="PLAIN_TEXT" value="885" />
           <entry key="SCSS" value="33" />
         </counts>
       </usages-collector>
@@ -88,18 +89,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/common/Link/Link.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -111,13 +100,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/_doc/DocPageLayout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="77" column="3" lean-forward="true" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+            <state relative-caret-position="95">
+              <caret line="53" column="4" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="53" selection-end-column="4" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
+                <element signature="e#620#1300#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/lang.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="46">
+                <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/pages/readme.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+              <folding>
+                <element signature="e#224#904#0" />
               </folding>
             </state>
           </provider>
@@ -170,24 +193,6 @@
                 <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/locales/fr/common.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/locales/en/common.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -251,7 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/locales/fr/_doc.fr.json" />
         <option value="$PROJECT_DIR$/build/server/static/development/pages/_app.js" />
         <option value="$PROJECT_DIR$/client/components/utils/PageBuilder/blocks/Text.js" />
         <option value="$PROJECT_DIR$/client/components/utils/PageBuilder/index.js" />
@@ -260,12 +264,10 @@
         <option value="$PROJECT_DIR$/locales/fr/home.json" />
         <option value="$PROJECT_DIR$/locales/fr/home.fr.json" />
         <option value="$PROJECT_DIR$/client/lib/pageWrapper.js" />
-        <option value="$PROJECT_DIR$/config/lang.config.js" />
         <option value="$PROJECT_DIR$/client/pages/_doc/requirements.js" />
         <option value="$PROJECT_DIR$/client/pages/_doc/intro.js" />
         <option value="$PROJECT_DIR$/server/lib/paths.js" />
         <option value="$PROJECT_DIR$/client/pages/_app.js" />
-        <option value="$PROJECT_DIR$/client/pages/readme.js" />
         <option value="$PROJECT_DIR$/client/components/common/Header.js" />
         <option value="$PROJECT_DIR$/store/actions/app.actions.js" />
         <option value="$PROJECT_DIR$/lib/socket.js" />
@@ -302,6 +304,9 @@
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" />
+        <option value="$PROJECT_DIR$/client/pages/readme.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/config/lang.config.js" />
       </list>
     </option>
   </component>
@@ -376,7 +381,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;router.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/router.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/ROUTER.md&#10;under&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;pa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;compone&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;data&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;intro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/intro.js&#10;read&#9;null&#9;null&#10;requi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/requirements.js&#10;i18n&#9;null&#9;null&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;docum&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;cap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/capitalize.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/PageBuilder/index.js&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_a&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/build/server/static/development/pages/_app.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;comm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.fr.json&#10;langconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Head.js" />
+    <property name="SearchEverywhereHistoryKey" value="readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;lang&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;router.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/router.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/ROUTER.md&#10;under&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;pa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;compone&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;data&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;intro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/intro.js&#10;read&#9;null&#9;null&#10;requi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/requirements.js&#10;i18n&#9;null&#9;null&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;docum&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;cap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/capitalize.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/PageBuilder/index.js&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_a&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/build/server/static/development/pages/_app.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;comm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.fr.json" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -464,13 +469,6 @@
       <workItem from="1538654360536" duration="2135000" />
       <workItem from="1539097632379" duration="214000" />
       <workItem from="1542696462292" duration="2775000" />
-    </task>
-    <task id="LOCAL-00108" summary="[WIP] MUI integration">
-      <created>1528461496440</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1528461496440</updated>
     </task>
     <task id="LOCAL-00109" summary="[WIP] MUI integration">
       <created>1528461977229</created>
@@ -808,11 +806,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545061155663</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Improve the way the server is handling the routes translations">
+      <created>1545063773969</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1545063773969</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="428598000" />
+    <option name="totallyTimeSpent" value="429118000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -922,7 +927,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Clean LazyImage + better noscript support" />
     <MESSAGE value="Add a NoScript component" />
     <MESSAGE value="New components folder architecture" />
     <MESSAGE value="Update readme" />
@@ -947,7 +951,8 @@
     <MESSAGE value="[WIP] documentation - add pages and starting page-builder component" />
     <MESSAGE value="Fix locales bug" />
     <MESSAGE value="Update docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update docs" />
+    <MESSAGE value="Improve the way the server is handling the routes translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve the way the server is handling the routes translations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -960,19 +965,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/readme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/createStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -1064,13 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/lang.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1367,11 +1352,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/_doc/DocPageLayout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="77" column="3" lean-forward="true" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+        <state relative-caret-position="95">
+          <caret line="53" column="4" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="53" selection-end-column="4" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#620#1300#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/readme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="e#224#904#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="46">
+            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/lang.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
