@@ -50,7 +50,7 @@ const Header = function Header(props) {
             <Grid container alignItems="center" justify="flex-start" spacing={32}>
               <Grid item>
                 <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
-                  {packageJson.name}
+                  {packageJson.name} <small>v{packageJson.version}</small>
                 </Link>
               </Grid>
               <Grid item>

@@ -1,23 +1,27 @@
-import Grid     from '@material-ui/core/Grid';
-import List     from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Paper    from '@material-ui/core/Paper';
-import Typography    from '@material-ui/core/Typography';
-import React    from 'react';
-import wrapper  from '../../lib/componentWrapper';
-import Link     from '../common/Link';
-import PageBuilder   from '../utils/PageBuilder';
+import Grid       from '@material-ui/core/Grid';
+import List       from '@material-ui/core/List';
+import ListItem   from '@material-ui/core/ListItem';
+import Paper      from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import React      from 'react';
+
+import wrapper from '../../lib/componentWrapper';
+import Link    from '../common/Link';
 
 
 const styles = theme => ({
   link: {
-    ...theme.styles.hover.offLinkUnderline
+    ...theme.styles.hover.offLinkUnderline,
   },
 
   link__active: {
     color: theme.palette.secondary.main,
-    fontWeight: theme.typography.fontWeightBold
-  }
+    fontWeight: theme.typography.fontWeightBold,
+  },
+
+  mdContent: {
+    fontFamily: theme.typography.fontFamily,
+  },
 });
 
 
@@ -32,10 +36,20 @@ class DocPageLayout extends React.Component {
         this.routes.push(routeName);
       }
     });
+
+    this.state = {};
+
+    try {
+      const camelToSnake = require('../../../helpers/camelToSnake');
+      this.state.readme  = require(`../../../doc/${camelToSnake(props.name).toUpperCase()}.md`);
+    } catch (err) {
+      throw new Error(err);
+    }
   }
 
+
   render() {
-    const { data, classes, t } = this.props;
+    const { classes, t } = this.props;
 
     return (
       <Grid container spacing={40}>
@@ -56,10 +70,7 @@ class DocPageLayout extends React.Component {
         </Grid>
 
         <Grid item md={9}>
-          <Typography variant="h1" paragraph>
-            {data.title}
-          </Typography>
-          <PageBuilder structure={data.pageBuilder}/>
+          <div dangerouslySetInnerHTML={{ __html: this.state.readme }} className={classes.mdContent}/>
           {this.props.children}
         </Grid>
       </Grid>
@@ -73,4 +84,4 @@ const mapStateToProps = state => ({
   routes: state.app.routes,
 });
 
-export default wrapper(DocPageLayout, { styles, mapStateToProps });
+export default wrapper(DocPageLayout, { styles, mapStateToProps, withRouter: true });
