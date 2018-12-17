@@ -16,7 +16,7 @@ const path                        = require('path');
 const LRUCache                    = require('lru-cache');
 const { join }                    = require('path');
 const removeUrlLastSlash          = require('../helpers/removeUrlLastSlash');
-const chalk = require('chalk');
+const chalk                       = require('chalk');
 
 
 const config           = require('../config');
@@ -28,22 +28,23 @@ const germaine         = require('germaine');
 
 class App {
   constructor(props) {
-    this.config           = props.config;
-    this.dev              = process.env.NODE_ENV !== 'production';
-    this.nextApp          = next({ dev: this.dev, dir: this.config.server.clientDir });
-    this.enableFakeApi    = (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE');
-    this.enableHtpasswd   = (process.env.ENABLE_HTPASSWD === '1' || process.env.ENABLE_HTPASSWD === 'TRUE');
-    this.protocol         = process.env.PROTOCOL || 'http';
-    this.host             = process.env.HOST || this.config.server.baseUrl || 'localhost';
-    this.port             = parseInt(process.env.PORT || this.config.server.port || 3000);
-    this.routes           = routes;
-    this.url              = `${this.protocol}://${this.host}:${this.port}`;
-    this.server           = null;
-    this.enableSSRCaching = (process.env.ENABLE_SSR_CACHING === '1' || process.env.ENABLE_SSR_CACHING === 'TRUE');
-    this.ssrCache         = new LRUCache({
+    this.config             = props.config;
+    this.dev                = process.env.NODE_ENV !== 'production';
+    this.nextApp            = next({ dev: this.dev, dir: this.config.server.clientDir });
+    this.enableFakeApi      = (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE');
+    this.enableHtpasswd     = (process.env.ENABLE_HTPASSWD === '1' || process.env.ENABLE_HTPASSWD === 'TRUE');
+    this.protocol           = process.env.PROTOCOL || 'http';
+    this.host               = process.env.HOST || this.config.server.baseUrl || 'localhost';
+    this.port               = parseInt(process.env.PORT || this.config.server.port || 3000);
+    this.routes             = routes;
+    this.url                = `${this.protocol}://${this.host}:${this.port}`;
+    this.server             = null;
+    this.enableSSRCaching   = (process.env.ENABLE_SSR_CACHING === '1' || process.env.ENABLE_SSR_CACHING === 'TRUE');
+    this.ssrCache           = new LRUCache({
       max: process.env.SRR_CACHE_MAX_SIZE ? parseInt(process.env.SRR_CACHE_MAX_SIZE) : 100,
       maxAge: process.env.SSR_CACHE_MAX_AGE ? parseInt(process.env.SSR_CACHE_MAX_AGE) : 1000 * 60 * 60, // 1hour
     });
+    this._routesCheckUnique = [];
 
     // Build the custom language detector
 
@@ -322,13 +323,13 @@ class App {
     if (this.config.lang.enableRouteTranslation === true) {
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
         this._checkRouteConfigValidity(routeConfig, routeName);
-        if (typeof routeConfig.langRoutes === 'object') {
-          Object.entries(routeConfig.langRoutes).forEach(([lang, routePath]) => {
-            if (this.config.lang.available.find(e => e.lang === lang)) {
-              this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routePath)), routeConfig, routeName);
-            }
-          });
-        }
+        this.config.lang.available.forEach(({ lang }) => {
+          if (typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[lang] !== undefined) {
+            this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routeConfig.langRoutes[lang])), routeConfig, routeName);
+          } else {
+            this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routeName)), routeConfig, routeName);
+          }
+        });
       });
 
       // In this case, the translation is disabled. We should only add one listener by route. if the route has a 'langRoutes'
@@ -336,7 +337,7 @@ class App {
     } else {
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
         this._checkRouteConfigValidity(routeConfig, routeName);
-        const routePath = typeof routeConfig.lang === 'object' && routeConfig.lang[this.config.lang.default] !== undefined
+        const routePath = typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[this.config.lang.default] !== undefined
           ? routeConfig.langRoutes[this.config.lang.default]
           : routeName;
         this._pushRouteListener(removeUrlLastSlash(urlJoin('/', routePath)), routeConfig, routeName);
@@ -464,21 +465,20 @@ class App {
     if (typeof routeConfig.page !== 'string' || routeConfig.page.length < 1) {
       throw new Error(`Route error : the route "${routeName}" should have a valid 'page' attribute but none was given.`);
     }
-    if (this.config.lang.enableRouteTranslation) {
-      if (typeof routeConfig.langRoutes !== 'object') {
-        if (process.env.NODE_ENV === 'production') {
-          throw new Error(`Route error : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given.`);
-        } else {
-          console.warn(chalk.yellow(`Route warning : the route "${routeName}" should have a valid 'langRoutes' attribute but none was given. This will throw an error on production.`));
+    if (typeof routeConfig.langRoutes === 'object') {
+      let routesToPush = [];
+      Object.values(routeConfig.langRoutes).forEach(lr => {
+        if (this._routesCheckUnique.includes(lr)) {
+          throw new Error(`Route error : the route "${routeName}" have a langRoute '${lr}' that is already used on an other route.`);
         }
-      } else {
-        this.config.lang.available.forEach(lang => {
-          lang = lang.lang;
-          if (typeof routeConfig.langRoutes[lang] !== 'string') {
-            console.warn(chalk.yellow(`Route warning : the route "${routeName}" have no defined langRoute for the lang "${lang}" and won't be available in this language.`));
-          }
-        })
+        routesToPush.push(lr);
+      });
+      this._routesCheckUnique = [...this._routesCheckUnique, ...routesToPush];
+    } else {
+      if (this._routesCheckUnique.includes(routeName)) {
+        throw new Error(`Route error : the route "${routeName}" is already defined.`);
       }
+      this._routesCheckUnique.push(routeName);
     }
   }
 }

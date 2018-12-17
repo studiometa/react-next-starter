@@ -9,6 +9,7 @@ import Link    from '../common/Link';
 
 
 const styles = theme => ({
+
   link: {
     ...theme.styles.hover.offLinkUnderline,
   },
@@ -16,6 +17,11 @@ const styles = theme => ({
   link__active: {
     color: theme.palette.secondary.main,
     fontWeight: theme.typography.fontWeightBold,
+  },
+
+  stickyMenu: {
+    position: 'sticky',
+    top: theme.spacing.unit * 3
   },
 
   mdContent: {
@@ -76,9 +82,9 @@ class DocPageLayout extends React.Component {
     const { classes, t } = this.props;
 
     return (
-      <Grid container spacing={40}>
+      <Grid container spacing={40} className={classes.root}>
         <Grid item md={3}>
-          <Paper>
+          <Paper className={classes.stickyMenu}>
             <List component="nav">
               {
                 this.routes.map((route, key) => (
