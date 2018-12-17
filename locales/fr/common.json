@@ -8,7 +8,17 @@
   "_doc": {
     "routes": {
       "/_doc/intro": "Introduction",
-      "/_doc/requirements": "Pré-requis"
+      "/_doc/requirements": "Pré-requis",
+      "/_doc/configuration": "Configuration",
+      "/_doc/discover": "Découvrir",
+      "/_doc/i18n": "Internationalisation",
+      "/_doc/performances": "Performances",
+      "/_doc/router": "Routeur",
+      "/_doc/api": "API et pageData",
+      "/_doc/store": "Store",
+      "/_doc/theme": "Thème",
+      "/_doc/under-the-hood": "Fonctionnement",
+      "/_doc/wrappers": "Wrappers"
     }
   }
 }

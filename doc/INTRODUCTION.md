@@ -1,38 +1,22 @@
-# Introduction
-
-## Présentation
-
-Ce starter a été développé dans le but de simplifier la mise en place d'un site React en SSR avec NextJs et Material-ui.
+# Introduction  
+  
+## Présentation  
+  
+Ce starter a été développé dans le but de simplifier la mise en place d'un site React en SSR avec NextJs et Material-ui.  
+   
+ **Les fonctionnalités suivante sont disponibles et prêtes à l'emploi :**   
+   
+- routing SSR natif  
+- Configuration selon l'environnement grace aux fichiers '.env'  
+- server node (expressJs) prêt à l'emploi  
+- redux utilisable en SSR nativement et gestion du localstorage  
+- custom loading (prefetch, webpack chunks, code splitting, etc)  
+- support sass natif (même si je recommande d'utiliser JSS autant que possible  
+- fake API pour le développement (basé sur germaine.js)  
+- Support natif de l'i18n avec routeur multi-langue et système de traduction natif des chaines de caractères  
+- tests & CI/CD  
+- Support JSS (Css-In-Js)  
+- Intégration de Material-ui  
+- Gestion du cache-serveur native  
+- Gestion du cache client à l'aide d'un service-worker
  
- **Les fonctionnalités suivante sont disponibles et prêtes à l'emploi :** 
- 
- - routing SSR avec NextJs
- - server node (expressJs)
- - redux (compatible ssr & localstorage caching)
- - support sass
- - modules & components async
- - custom webpack config
- - fake-API (germaine.js)
- - support multilingue (i18next)
- - Traduction des urls (custom)
- - tests & CI/CD
- - Support JSS
- - MaterialUI built-in
-
-**Attention, vous ne pourrez pas utiliser ce starter correctement sans maîtriser les éléments suivants :**
-
-- JavaScript es6 (!!!)
-- ReactJs & Redux (!!!)
-- SSR & NextJs (!!!)
-- Material-UI (!!)
-- Node / express (!)
-- JSS / postcss (!)
-- SASS (!)
-- Webpack (!)
-- Babel (!)
-- axios (!)
-
-J'insiste sur le fait de bien comprendre les principes du SSR. C'est une manière particulière de développer et vous 
-risquez vite de vous arracher les cheveux sans une bonne maîtrise de ses principaux concepts. Dans ce readme, 
-je pars du principe que vous êtes déjà à l'aise avec les éléments listés ci-dessus.
-

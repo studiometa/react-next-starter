@@ -47,5 +47,4 @@ export default React.memo(wrapper(({ children, preferredCurrency, lang, currency
 }, {
   isTranslatable: false,
   mapStateToProps,
-  hasStyles: false,
 }));

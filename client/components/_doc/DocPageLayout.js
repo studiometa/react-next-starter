@@ -1,9 +1,8 @@
-import Grid       from '@material-ui/core/Grid';
-import List       from '@material-ui/core/List';
-import ListItem   from '@material-ui/core/ListItem';
-import Paper      from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import React      from 'react';
+import Grid     from '@material-ui/core/Grid';
+import List     from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Paper    from '@material-ui/core/Paper';
+import React    from 'react';
 
 import wrapper from '../../lib/componentWrapper';
 import Link    from '../common/Link';
@@ -21,6 +20,31 @@ const styles = theme => ({
 
   mdContent: {
     fontFamily: theme.typography.fontFamily,
+    '&> h1': {
+      marginBottom: theme.spacing.unit * 8,
+    },
+    '&> h2': {
+      marginBottom: theme.spacing.unit * 4,
+      marginTop: theme.spacing.unit * 6,
+    },
+    '&> h3': {
+      marginTop: theme.spacing.unit * 4,
+    },
+    '& * code, & pre': {
+      background: '#fff',
+      padding: 2,
+    },
+    '& p, & * p, & * li': {
+      'line-height': '1.5em'
+    },
+    '& table, & * table': {
+      borderCollapse: 'collapse',
+      border: `1px solid ${theme.palette.grey[200]}`,
+      '& td, & tr, & th': {
+        border: `1px solid ${theme.palette.grey[200]}`,
+        padding: theme.spacing.unit / 2
+      }
+    }
   },
 });
 

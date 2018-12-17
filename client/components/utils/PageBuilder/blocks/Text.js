@@ -15,4 +15,4 @@ class Text extends Component {
 
 
 
-export default wrapper(Text, {hasStyles: false, isTranslatable: false});
+export default wrapper(Text, {isTranslatable: false});

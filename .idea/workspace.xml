@@ -2,18 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Fix locales bug">
-      <change afterPath="$PROJECT_DIR$/doc/INTRODUCTION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/configuration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/discover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/i18n.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/performances.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/under-the-hood.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_doc/wrappers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/API.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/CONFIGURATION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/DISCOVER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/I18N.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/PERFORMANCES.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/REQUIREMENTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/ROUTER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/STORE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/THEME.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/WRAPPERS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/common/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/_doc/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_doc/intro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/_doc/requirements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_doc/requirements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/paths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/utils/PageBuilder/blocks/Text.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/utils/PageBuilder/blocks/Text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/utils/Price.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/utils/Price.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/INTRODUCTION.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/INTRODUCTION.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locales/fr/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/fr/common.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/actions/pages.actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/actions/pages.actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/withRedux.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,10 +63,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="1" />
-          <entry key="env" value="3" />
-          <entry key="js" value="227" />
-          <entry key="json" value="26" />
-          <entry key="md" value="4" />
+          <entry key="env" value="4" />
+          <entry key="js" value="254" />
+          <entry key="json" value="28" />
+          <entry key="md" value="18" />
           <entry key="production" value="1" />
           <entry key="scss" value="2" />
           <entry key="ts" value="1" />
@@ -57,10 +74,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="4" />
-          <entry key="JSON" value="26" />
-          <entry key="JavaScript" value="227" />
-          <entry key="Markdown" value="4" />
+          <entry key=".env file" value="5" />
+          <entry key="JSON" value="28" />
+          <entry key="JavaScript" value="254" />
+          <entry key="Markdown" value="18" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="2" />
           <entry key="TypeScript" value="1" />
@@ -69,8 +86,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="49" />
-          <entry key="js" value="17335" />
-          <entry key="json" value="715" />
+          <entry key="js" value="18094" />
+          <entry key="json" value="997" />
           <entry key="md" value="406" />
           <entry key="production" value="1" />
           <entry key="scss" value="33" />
@@ -80,8 +97,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="50" />
-          <entry key="JSON" value="715" />
-          <entry key="JavaScript" value="17335" />
+          <entry key="JSON" value="997" />
+          <entry key="JavaScript" value="18094" />
           <entry key="Markdown" value="406" />
           <entry key="PLAIN_TEXT" value="803" />
           <entry key="SCSS" value="33" />
@@ -99,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/common/Link/Link.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="532">
+              <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -109,37 +126,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/actions/pages.actions.js">
+        <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state relative-caret-position="468">
+              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#72#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env.production">
+        <entry file="file://$PROJECT_DIR$/client/components/_doc/DocPageLayout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/redux.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/env.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="244">
+              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,46 +152,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="118" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="118" />
+            <state relative-caret-position="467">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/lang.config.js">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="595">
+              <caret line="355" column="37" lean-forward="true" selection-start-line="355" selection-start-column="37" selection-end-line="355" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/env.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/database.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding>
-                <element signature="n#!!block;n#settings#0;n#!!block;n#fr#0;n#!!top" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/doc/ROUTER.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="6072">
+                <caret line="264" column="2" selection-start-line="264" selection-start-column="2" selection-end-line="264" selection-end-column="2" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socket.js">
+        <entry file="file://$PROJECT_DIR$/client/pages/_doc/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="69">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/UNDER_THE_HOOD.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="506">
+                <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locales/fr/common.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locales/en/common.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -195,9 +222,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.props</find>
-      <find>lang</find>
-      <find>active</find>
       <find>_doc</find>
       <find>isact</find>
       <find>fakeapi</find>
@@ -225,6 +249,9 @@
       <find>pagedata</find>
       <find>fake</find>
       <find>className</find>
+      <find>hasStyles</find>
+      <find>servicew</find>
+      <find>classes</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -250,57 +277,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/pm2.config.js" />
-        <option value="$PROJECT_DIR$/config/redux.config.js" />
-        <option value="$PROJECT_DIR$/config/seo.config.js" />
-        <option value="$PROJECT_DIR$/config/webpack.config.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/ResponsiveModal.js" />
-        <option value="$PROJECT_DIR$/server/routes.json" />
-        <option value="$PROJECT_DIR$/store/createStore.js" />
-        <option value="$PROJECT_DIR$/config/server.config.js" />
-        <option value="$PROJECT_DIR$/client/lib/componentWrapper.js" />
-        <option value="$PROJECT_DIR$/helpers/getMatchingLangRoute.js" />
-        <option value="$PROJECT_DIR$/client/components/common/PageLayout.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/NoScript.js" />
-        <option value="$PROJECT_DIR$/client/components/common/Head.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/Price.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/LangSwitch.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/Skeleton/index.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/Skeleton.js" />
-        <option value="$PROJECT_DIR$/client/components/utils/LazyImage.js" />
-        <option value="$PROJECT_DIR$/locales/fr/_doc.json" />
-        <option value="$PROJECT_DIR$/locales/fr/common.fr.json" />
-        <option value="$PROJECT_DIR$/locales/en/common.en.json" />
-        <option value="$PROJECT_DIR$/client/MUITheme.js" />
-        <option value="$PROJECT_DIR$/config/api.config.js" />
         <option value="$PROJECT_DIR$/locales/fr/_doc.fr.json" />
         <option value="$PROJECT_DIR$/build/server/static/development/pages/_app.js" />
         <option value="$PROJECT_DIR$/client/components/utils/PageBuilder/blocks/Text.js" />
         <option value="$PROJECT_DIR$/client/components/utils/PageBuilder/index.js" />
-        <option value="$PROJECT_DIR$/client/components/common/Link/Link.js" />
         <option value="$PROJECT_DIR$/client/pages/_document.js" />
         <option value="$PROJECT_DIR$/client/components/utils/PageBuilder/PageBuilder.js" />
         <option value="$PROJECT_DIR$/locales/fr/home.json" />
         <option value="$PROJECT_DIR$/locales/fr/home.fr.json" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/lib/pageWrapper.js" />
-        <option value="$PROJECT_DIR$/locales/fr/common.json" />
-        <option value="$PROJECT_DIR$/locales/en/common.json" />
         <option value="$PROJECT_DIR$/config/lang.config.js" />
         <option value="$PROJECT_DIR$/client/pages/_doc/requirements.js" />
         <option value="$PROJECT_DIR$/client/pages/_doc/intro.js" />
         <option value="$PROJECT_DIR$/server/lib/paths.js" />
         <option value="$PROJECT_DIR$/client/pages/_app.js" />
-        <option value="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" />
-        <option value="$PROJECT_DIR$/doc/INTRODUCTION.md" />
         <option value="$PROJECT_DIR$/client/pages/readme.js" />
         <option value="$PROJECT_DIR$/client/components/common/Header.js" />
-        <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/store/actions/app.actions.js" />
         <option value="$PROJECT_DIR$/lib/socket.js" />
         <option value="$PROJECT_DIR$/server/database.json" />
         <option value="$PROJECT_DIR$/store/actions/pages.actions.js" />
         <option value="$PROJECT_DIR$/.env.production" />
+        <option value="$PROJECT_DIR$/config/serviceWorker.config.js" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/discover.js" />
+        <option value="$PROJECT_DIR$/doc/INTRODUCTION.md" />
+        <option value="$PROJECT_DIR$/doc/REQUIREMENTS.md" />
+        <option value="$PROJECT_DIR$/doc/DISCOVER.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/api.js" />
+        <option value="$PROJECT_DIR$/doc/API.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/configuration.js" />
+        <option value="$PROJECT_DIR$/doc/CONFIGURATION.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/i18n.js" />
+        <option value="$PROJECT_DIR$/doc/I18N.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/performances.js" />
+        <option value="$PROJECT_DIR$/doc/PERFORMANCES.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/store.js" />
+        <option value="$PROJECT_DIR$/doc/STORE.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/theme.js" />
+        <option value="$PROJECT_DIR$/doc/THEME.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/under-the-hood.js" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/wrappers.js" />
+        <option value="$PROJECT_DIR$/doc/WRAPPERS.md" />
+        <option value="$PROJECT_DIR$/client/components/common/Link/Link.js" />
+        <option value="$PROJECT_DIR$/client/lib/componentWrapper.js" />
+        <option value="$PROJECT_DIR$/locales/fr/common.json" />
+        <option value="$PROJECT_DIR$/locales/en/common.json" />
+        <option value="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" />
+        <option value="$PROJECT_DIR$/server/routes.js" />
+        <option value="$PROJECT_DIR$/doc/ROUTER.md" />
+        <option value="$PROJECT_DIR$/client/pages/_doc/router.js" />
+        <option value="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" />
       </list>
     </option>
   </component>
@@ -351,25 +378,19 @@
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="_doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -381,7 +402,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.json&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;data&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;intro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/intro.js&#10;read&#9;null&#9;null&#10;requi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/requirements.js&#10;i18n&#9;null&#9;null&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;docum&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;cap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/capitalize.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/PageBuilder/index.js&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_a&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/build/server/static/development/pages/_app.js&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;comm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.fr.json&#10;langconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Head.js&#10;docu&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;Laz&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LazyImage.js&#10;noscri&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/NoScript.js&#10;skelet&#9;null&#9;null&#10;packa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;componwra&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewra&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js" />
+    <property name="SearchEverywhereHistoryKey" value="server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;router.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/router.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/ROUTER.md&#10;under&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;pa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;compone&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;data&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;intro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/intro.js&#10;read&#9;null&#9;null&#10;requi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/requirements.js&#10;i18n&#9;null&#9;null&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;docum&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;cap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/helpers/capitalize.js&#10;index&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/PageBuilder/index.js&#10;_app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;_a&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/build/server/static/development/pages/_app.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;comm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/fr/common.fr.json&#10;langconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;Head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Head.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -396,11 +417,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc" />
+      <recent name="$PROJECT_DIR$/client/pages/_doc" />
       <recent name="$PROJECT_DIR$/locales/fr" />
       <recent name="$PROJECT_DIR$/client/components/utils/PageBuilder" />
       <recent name="$PROJECT_DIR$/client/components/utils" />
-      <recent name="$PROJECT_DIR$/server/fake-api-databases" />
-      <recent name="$PROJECT_DIR$/client/pages/_doc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/fake-api-databases" />
@@ -469,13 +490,6 @@
       <workItem from="1538654360536" duration="2135000" />
       <workItem from="1539097632379" duration="214000" />
       <workItem from="1542696462292" duration="2775000" />
-    </task>
-    <task id="LOCAL-00106" summary="@@">
-      <created>1528459553998</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1528459553998</updated>
     </task>
     <task id="LOCAL-00107" summary="[WIP] MUI integration">
       <created>1528461365307</created>
@@ -813,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544734484295</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Fix locales bug">
+      <created>1545054200606</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1545054200607</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422901000" />
+    <option name="totallyTimeSpent" value="426649000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -837,16 +858,16 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info active="true" anchor="bottom" id="Find" order="2" sideWeight="0.4992057" visible="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.493895" weight="0.4260231" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4992057" weight="0.32911393" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4932486" visible="true" weight="0.42591214" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49285713" weight="0.301" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49483716" weight="0.263589" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49444002" weight="0.263589" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.55378973" side_tool="true" weight="0.33537832" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48371723" weight="0.25688756" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4833201" weight="0.25688756" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5007943" side_tool="true" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5067514" side_tool="true" visible="true" weight="0.42591214" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -965,210 +986,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/server/static/development/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1231">
-          <caret line="457" column="23" selection-start-line="457" selection-start-column="16" selection-end-line="457" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/customI18nextLangDetector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-287">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/pageBuilder/Slider.js" />
-    <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/PageBuilder/blocks/Text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/capitalize.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr/_doc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/PageBuilder/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/PageBuilder/PageBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_document.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="98" column="26" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/germaine/build/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="65" selection-start-column="65" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/germaine/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/en/home.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr/home.json" />
-    <entry file="file://$PROJECT_DIR$/locales/fr/home.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-i18next/src/I18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/i18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1585" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr/_doc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr/doc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/en/common.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="143" column="31" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/paths.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/fr/common.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_doc/intro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_doc/requirements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="92">
-            <caret line="4" selection-start-line="4" selection-end-line="15" selection-end-column="21" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__tests__/routes.test.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1178,26 +995,6 @@
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/INTRODUCTION.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="253">
-            <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/common/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1227,16 +1024,6 @@
           <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/_doc/DocPageLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1278,13 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/actions/pages.actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -1298,9 +1078,6 @@
           <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/env.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/api.config.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1316,27 +1093,311 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes.js">
+    <entry file="file://$PROJECT_DIR$/config/lang.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="118" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="118" />
+        <state relative-caret-position="713">
+          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/discover.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/INTRODUCTION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="483">
+            <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/REQUIREMENTS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="805">
+            <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/DISCOVER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/API.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="52" selection-start-line="52" selection-end-line="52" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/configuration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/CONFIGURATION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="529">
+            <caret line="23" column="277" selection-start-line="23" selection-start-column="277" selection-end-line="23" selection-end-column="277" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/serviceWorker.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/MUITheme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="242" column="29" lean-forward="true" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/I18N.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1426">
+            <caret line="62" selection-start-line="62" selection-end-line="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/performances.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/PERFORMANCES.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/STORE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="61" selection-start-line="61" selection-end-line="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/THEME.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/under-the-hood.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/wrappers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/WRAPPERS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="779">
+            <caret line="39" selection-start-line="39" selection-end-line="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/common/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/common/Link/Link.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="532">
+          <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/lang.config.js">
+    <entry file="file://$PROJECT_DIR$/locales/fr/common.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="368">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locales/en/common.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/UNDER_THE_HOOD.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="506">
+            <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/ROUTER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="6072">
+            <caret line="264" column="2" selection-start-line="264" selection-start-column="2" selection-end-line="264" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_doc/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/_doc/DocPageLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="355" column="37" lean-forward="true" selection-start-line="355" selection-start-column="37" selection-end-line="355" selection-end-column="37" />
         </state>
       </provider>
     </entry>
