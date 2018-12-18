@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production next build ./client && npm run post:build",
     "post:build": "rm -Rf ./client/static/workbox && mv ./static/workbox ./client/static && rmdir ./static",
     "start": "NODE_ENV=production node server/",
-    "test": "NODE_ENV=test jest --silent ./__tests__",
+    "test": "NODE_ENV=test jest --silent --detectOpenHandles ./__tests__",
     "pm2:start": "node ./pm2.js",
     "pm2:stop": "pm2 kill",
     "heroku-postbuild": "npm run build"

@@ -9,11 +9,11 @@ module.exports = {
 
   // API hosting parameters
 
-  host: process.env.API_HOST,
-  pathname: process.env.API_PATHNAME,
-  port: process.env.API_PORT,
-  protocol: process.env.API_PROTOCOL,
-  enableFakeAPI: (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE'),
+  get host() { return process.env.API_HOST; },
+  get pathname() { return process.env.API_PATHNAME;},
+  get port() { return process.env.API_PORT;},
+  get protocol() { return process.env.API_PROTOCOL;},
+  get enableFakeAPI() { return (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE');},
 
   // Here you can define your api endpoints
 

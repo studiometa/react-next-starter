@@ -70,7 +70,7 @@ class App {
     if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
       process.env.PORT = port + '';
       try {
-        return this._launchServer(port);
+        return await this._launchServer(port);
       } catch (err) {
         throw err;
       }
@@ -80,7 +80,7 @@ class App {
 
         if (resolvedPort !== null) {
           process.env.PORT = resolvedPort;
-          return this._launchServer(resolvedPort);
+          return await this._launchServer(resolvedPort);
         }
       } catch (err) {
         throw (err);
@@ -101,6 +101,54 @@ class App {
 
 
   /**
+   * Return true if all the routes pass the validity check
+   * @returns {boolean}
+   */
+  areRoutesValid() {
+    try {
+      this._routesCheckUnique = [];
+      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        this._checkRouteConfigValidity(routeConfig, routeName);
+      });
+      this._routesCheckUnique = [];
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+
+  /**
+   * Resolve the best pathname for a given routeName
+   * A lang code must also be given in order to check for
+   * the pathname into the routes langRoutes parameter
+   * @param routeName
+   * @param lang
+   * @returns {*}
+   */
+  getBestPathnameFromRouteName(routeName, lang = this.config.lang.default) {
+    if (!this.routes[routeName]) {
+      return undefined;
+    }
+
+    const routeConfig = this.routes[routeName];
+
+    if (this.config.lang.available.find(e => e.lang === lang)) {
+      if (typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[lang] !== undefined) {
+        if (this.config.lang.enableRouteTranslation) {
+          return urlJoin('/', lang, routeConfig.langRoutes[lang]);
+        } else {
+          return urlJoin('/', routeConfig.langRoutes[lang]);
+        }
+      } else if (this.config.lang.enableRouteTranslation) {
+        return urlJoin('/', lang, routeName);
+      }
+    }
+    return routeName;
+  }
+
+
+  /**
    * Run the server
    * This method can only be called after the app has been
    * prepared
@@ -109,7 +157,7 @@ class App {
    */
   async _launchServer(port = this.port) {
 
-    this._checkRequiredFiles();
+    this.checkRequiredFiles();
 
     try {
       await this._initI18nextInstance();
@@ -171,10 +219,10 @@ class App {
 
   /**
    * Warn and crash if required files are missing
-   * @private
+   * On test env, it should only return false if a path is missing
    */
-  _checkRequiredFiles() {
-    if (process.env.NODE_ENV === 'development' && !checkRequiredFiles([
+  checkRequiredFiles() {
+    if (!checkRequiredFiles([
       paths.appServer,
       paths.appPublic,
       paths.appClient,
@@ -183,8 +231,10 @@ class App {
       paths.appLocales,
       paths.appConfig,
     ])) {
+      if (process.env.NODE_ENV === 'test') return false;
       process.exit(1);
     }
+    return true;
   }
 
 
@@ -240,6 +290,7 @@ class App {
    */
   _initFakeApi() {
     if (this.enableFakeApi !== false && this.server !== null) {
+      this.server.get('/fake-api', germaine(path.resolve(__dirname, './database.json')));
       this.server.get('/fake-api/*', germaine(path.resolve(__dirname, './database.json')));
     }
   }
@@ -318,31 +369,18 @@ class App {
     if (process.env.NODE_ENV !== 'production') {
       console.log(chalk.cyan.bold('\nExpress is now listening to the following routes :'));
     }
-    // In this situation, each route should be served in several languages. We should therefore add a new listener to each
-    // language
-    if (this.config.lang.enableRouteTranslation === true) {
-      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-        this._checkRouteConfigValidity(routeConfig, routeName);
-        this.config.lang.available.forEach(({ lang }) => {
-          if (typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[lang] !== undefined) {
-            this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routeConfig.langRoutes[lang])), routeConfig, routeName);
-          } else {
-            this._pushRouteListener(removeUrlLastSlash(urlJoin('/', lang, routeName)), routeConfig, routeName);
-          }
-        });
-      });
 
-      // In this case, the translation is disabled. We should only add one listener by route. if the route has a 'langRoutes'
-      // attributes that contains a route for the default language, we should to share this route instead of the route name.
-    } else {
+    this.config.lang.available.forEach(({ lang }) => {
+      if (this.config.lang.enableRouteTranslation !== true && lang !== this.config.lang.default) {
+        return;
+      }
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-        this._checkRouteConfigValidity(routeConfig, routeName);
-        const routePath = typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[this.config.lang.default] !== undefined
-          ? routeConfig.langRoutes[this.config.lang.default]
-          : routeName;
-        this._pushRouteListener(removeUrlLastSlash(urlJoin('/', routePath)), routeConfig, routeName);
+        const pathname = this.getBestPathnameFromRouteName(routeName, lang);
+        if (pathname && pathname.length > 0) {
+          this._pushRouteListener(removeUrlLastSlash(pathname), routeConfig, routeName);
+        }
       });
-    }
+    });
 
     if (process.env.NODE_ENV !== 'production') {
       console.log('\n');

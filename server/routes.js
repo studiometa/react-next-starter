@@ -23,15 +23,15 @@ module.exports = {
 
   /** _DEV_ **/
 
-  '/_sandbox': { page: '/_sandbox', langRoutes: { fr: '/_sandbox', en: '/_sandbox' } },
+  '/_sandbox': { page: '/_sandbox', langRoutes: { fr: '/_sandbox' } },
 
-  '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro', en: '/_doc/intro' } },
-  '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis', en: '/_doc/requirements' } },
-  '/_doc/discover': { page: '/_doc/discover', langRoutes: { fr: '/_doc/decouvrir', en: '/_doc/discover' } },
-  '/_doc/under-the-hood': { page: '/_doc/under-the-hood', langRoutes: { fr: '/_doc/fonctionnement', en: '/_doc/under-the-hood' } },
-  '/_doc/configuration': { page: '/_doc/configuration', langRoutes: { fr: '/_doc/configuration', en: '/_doc/configuration' } },
-  '/_doc/router': { page: '/_doc/router', langRoutes: { fr: '/_doc/routeur', en: '/_doc/router' } },
-  '/_doc/api': { page: '/_doc/api', langRoutes: { fr: '/_doc/api-et-page-data', en: '/_doc/api-and-page-data' } },
+  '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro' } },
+  '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis' } },
+  '/_doc/discover': { page: '/_doc/discover', langRoutes: { fr: '/_doc/decouvrir' } },
+  '/_doc/under-the-hood': { page: '/_doc/under-the-hood', langRoutes: { fr: '/_doc/fonctionnement' } },
+  '/_doc/configuration': { page: '/_doc/configuration', langRoutes: { fr: '/_doc/configuration' } },
+  '/_doc/router': { page: '/_doc/router', langRoutes: { fr: '/_doc/routeur' } },
+  '/_doc/api': { page: '/_doc/api', langRoutes: { fr: '/_doc/api-et-page-data' } },
   '/_doc/i18n': { page: '/_doc/i18n' },
   '/_doc/wrappers': { page: '/_doc/wrappers' },
   '/_doc/store': { page: '/_doc/store' },
@@ -41,6 +41,6 @@ module.exports = {
 
   /** GENERAL **/
 
-  '/': { page: '/index', langRoutes: { fr: '/', en: '/' }, prefetch: true, neverCache: true },
-  '/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi', en: '/readme' } },
+  '/': { page: '/index', langRoutes: { fr: '/' }, prefetch: true, neverCache: true },
+  '/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi'} },
 };

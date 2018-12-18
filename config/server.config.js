@@ -7,19 +7,18 @@ const url = require('url');
  */
 
 module.exports = {
-  port: parseInt(process.env.PORT),
   clientDir: './client',
-  host: process.env.HOST,
-  protocol: process.env.PROTOCOL,
-
+  get port() { return parseInt(process.env.PORT);},
+  get host() {return process.env.HOST; },
+  get protocol() {return process.env.PROTOCOL;},
   get getUrl() {
-    return (pathname, withPort = true) => (
-      url.format({
+    return (pathname, withPort = true) => {
+      return url.format({
         hostname: this.host,
         protocol: this.protocol,
         port: withPort ? this.port : null,
         pathname,
-      })
-    );
+      });
+    };
   },
 };
