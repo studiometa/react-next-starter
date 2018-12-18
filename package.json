@@ -104,6 +104,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "html-loader": "^0.5.5",
     "jsonwebtoken": "^8.4.0",
+    "pm2": "^3.2.3",
     "react-addons-test-utils": "^15.6.2",
     "react-dev-utils": "^6.1.1",
     "react-inspector": "^2.3.1",
