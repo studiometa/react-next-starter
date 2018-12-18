@@ -25,7 +25,7 @@ module.exports = {
 
     'ENABLE_FAKE_API': { client: true, required: false },
     'API_HOST': { client: true, required: true },
-    'API_PORT': { client: true, required: true },
+    'API_PORT': { client: true, required: false },
     'API_PROTOCOL': { client: true, required: true },
     'API_PATHNAME': { client: true, required: true },
 

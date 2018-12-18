@@ -13,7 +13,7 @@ module.exports = {
   //
   // IMPORTANT: Do not update this parameter in production, this will update all the
   // app routes and have a lot of undesired effects on your SEO
-  enableRouteTranslation: false,
+  enableRouteTranslation: true,
 
 
   // This feature can only be used if routes translation has been enabled. This grants the server

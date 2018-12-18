@@ -1,7 +1,7 @@
 /** PM2 settings (for production and staging)
  */
 module.exports = {
-  name: 'chefsquare',
+  name: 'react-next-starter',
   get max_memory_restart() { return `${process.env.WEB_MEMORY || 512}M`; },
   get instances() { return process.env.WEB_CONCURRENCY || -1; },
   exec_mode: 'cluster',
