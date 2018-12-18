@@ -27,6 +27,7 @@ module.exports = {
 
   '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro' } },
   '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis' } },
+  '/_doc/get-started': { page: '/_doc/get-started', langRoutes: { fr: '/_doc/premiers-pas' } },
   '/_doc/discover': { page: '/_doc/discover', langRoutes: { fr: '/_doc/decouvrir' } },
   '/_doc/under-the-hood': { page: '/_doc/under-the-hood', langRoutes: { fr: '/_doc/fonctionnement' } },
   '/_doc/configuration': { page: '/_doc/configuration', langRoutes: { fr: '/_doc/configuration' } },

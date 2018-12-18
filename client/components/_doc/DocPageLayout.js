@@ -37,8 +37,12 @@ const styles = theme => ({
       marginTop: theme.spacing.unit * 4,
     },
     '& * code, & pre': {
-      background: '#fff',
+      background: '#000',
+      color: theme.palette.text.white,
       padding: 2,
+      '&.language-shell': {
+        lineHeight: 2
+      }
     },
     '& p, & * p, & * li': {
       'line-height': '1.5em'

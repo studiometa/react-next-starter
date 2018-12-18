@@ -27,11 +27,6 @@ Voici quelques liens utiles pour bien démarrer en SSR :
 
 ## Pré-requis techniques 
 
-- node ^8.11.3  
-  
-## Installation  
-  
-### Installer les dépendances du projet  
-  
-     npm i  
-
+- Mac OS X, Windows, or Linux
+- node ^8.11.3 or newer
+- Yarn/NPM package

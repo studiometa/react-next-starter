@@ -38,12 +38,6 @@ module.exports = {
   // This method is used to generate an API URL for a given pathname
   get getUrl() {
     return (pathname = '') => {
-      console.log(this.port, url.format({
-        hostname: this.host,
-        protocol: this.protocol,
-        port: this.port,
-        pathname: urlJoin(this.pathname, pathname),
-      }));
       return url.format({
         hostname: this.host,
         protocol: this.protocol,
