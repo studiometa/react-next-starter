@@ -21,7 +21,7 @@ export default React.memo(connect(state => ({
   routes: state.app ? state.app.routes : undefined,
 }))(withRouter(({ lang, routes, classes = {}, router }) => {
 
-  if (!process.browser) return null;
+  if (!process.browser || config.lang.enableRouteTranslation !== true) return null;
 
   let { route, push } = router;
 
