@@ -13,6 +13,7 @@ module.exports = {
     'PROTOCOL': { client: true, required: true },
     'HOST': { client: true, required: true },
     'ENABLE_SOURCE_MAP': { client: true, required: false },
+    'KEEP_DEV_TOOLS_ON_PRODUCTION': { client: true, required: false },
 
     // HTPASSWD
 

@@ -42,6 +42,8 @@ const Header = function Header(props) {
         t,
       } = props;
 
+  const showDevToolsLinks = process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === 'TRUE' || process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === '1' || process.env.NODE_ENV !== 'production';
+
   return (
     <AppBar position="static" color="primary">
       <Toolbar>
@@ -50,7 +52,8 @@ const Header = function Header(props) {
             <Grid container alignItems="center" justify="flex-start" spacing={32}>
               <Grid item>
                 <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
-                  {packageJson.name} <small>v{packageJson.version}</small>
+                  {packageJson.name}
+                  <small>v{packageJson.version}</small>
                 </Link>
               </Grid>
               <Grid item>
@@ -59,7 +62,7 @@ const Header = function Header(props) {
                 </Link>
               </Grid>
               {
-                process.env.NODE_ENV !== 'production' &&
+                showDevToolsLinks === true &&
                 <Grid item>
                   <Link to={'/_sandbox'} className={classes.link} activeClassName={classes.link__active} color="error">
                     {t('menu_links.sandbox')}
@@ -67,7 +70,7 @@ const Header = function Header(props) {
                 </Grid>
               }
               {
-                process.env.NODE_ENV !== 'production' &&
+                showDevToolsLinks === true &&
                 <Grid item>
                   <Link to={'/_doc/intro'} className={classes.link} activeClassName={classes.link__active} color="error" checkSubActive>
                     {t('menu_links.doc')}

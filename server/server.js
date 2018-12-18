@@ -305,7 +305,9 @@ class App {
   _pushRouteListener(routePath, routeConfig, routeName) {
 
     // Remove the sandbox page in production
-    if ((routeName.indexOf('/_sandbox') === 0 || routeName.indexOf('/_doc') === 0) && process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production'
+      && process.env.KEEP_DEV_TOOLS_ON_PRODUCTION !== 'TRUE' && process.env.KEEP_DEV_TOOLS_ON_PRODUCTION !== '1'
+      && (routeName.indexOf('/_sandbox') === 0 || routeName.indexOf('/_doc') === 0)) {
       return;
     }
 
