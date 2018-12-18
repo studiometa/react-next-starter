@@ -1,6 +1,6 @@
 {
   "name": "react-next-starter",
-  "version": "2.0.0-aplha.1",
+  "version": "2.0.0-aplha.2",
   "description": "A production-ready starter to build a SSR React app using NextJs and Material-ui.",
   "main": "server/server.js",
   "scripts": {
@@ -17,7 +17,19 @@
     "npm": "^6.0.1",
     "node": "^8.11.3"
   },
-  "keywords": ["react", "nextjs", "starter", "js", "JavaScript", "node", "express", "material-ui", "es6", "headless", "jss"],
+  "keywords": [
+    "react",
+    "nextjs",
+    "starter",
+    "js",
+    "JavaScript",
+    "node",
+    "express",
+    "material-ui",
+    "es6",
+    "headless",
+    "jss"
+  ],
   "author": "chuck-durst @ studiometa",
   "license": "MIT",
   "dependencies": {
