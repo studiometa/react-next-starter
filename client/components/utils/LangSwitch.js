@@ -46,6 +46,13 @@ export default React.memo(connect(state => ({
           display: e.name,
           locale: e.locale,
         });
+      } else {
+        links.push({
+          path: urlJoin('/', e.lang, route, search),
+          name: e.lang,
+          display: e.name,
+          locale: e.locale,
+        });
       }
     });
   } else {
