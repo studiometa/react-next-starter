@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Update, improve and fix tests + improve the router dispatcher">
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +46,8 @@
           <entry key="Procfile" value="1" />
           <entry key="env" value="5" />
           <entry key="js" value="291" />
-          <entry key="json" value="30" />
-          <entry key="md" value="19" />
+          <entry key="json" value="32" />
+          <entry key="md" value="22" />
           <entry key="production" value="2" />
           <entry key="scss" value="2" />
           <entry key="test" value="2" />
@@ -58,9 +57,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="9" />
-          <entry key="JSON" value="30" />
+          <entry key="JSON" value="32" />
           <entry key="JavaScript" value="291" />
-          <entry key="Markdown" value="19" />
+          <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="2" />
           <entry key="TypeScript" value="1" />
@@ -70,21 +69,21 @@
         <counts>
           <entry key="env" value="49" />
           <entry key="js" value="22668" />
-          <entry key="json" value="1020" />
+          <entry key="json" value="1206" />
           <entry key="md" value="1341" />
           <entry key="production" value="2" />
           <entry key="scss" value="33" />
           <entry key="test" value="44" />
-          <entry key="txt" value="989" />
+          <entry key="txt" value="1007" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="95" />
-          <entry key="JSON" value="1020" />
+          <entry key="JSON" value="1206" />
           <entry key="JavaScript" value="22668" />
           <entry key="Markdown" value="1341" />
-          <entry key="PLAIN_TEXT" value="989" />
+          <entry key="PLAIN_TEXT" value="1007" />
           <entry key="SCSS" value="33" />
         </counts>
       </usages-collector>
@@ -101,7 +100,16 @@
         <entry file="file://$PROJECT_DIR$/__tests__/common.test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -115,11 +123,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env.test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            <state relative-caret-position="322">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="276">
+                <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -155,11 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>res</find>
-      <find>locales</find>
-      <find>_resolveUrl</find>
-      <find>localesFormat</find>
-      <find>router</find>
       <find>conso</find>
       <find>sheets</find>
       <find>liste</find>
@@ -185,6 +200,11 @@
       <find>checkRouteConfigValidity</find>
       <find>_SANDB</find>
       <find>enableFallbackRedirection</find>
+      <find>carousel</find>
+      <find>transitions</find>
+      <find>debounce</find>
+      <find>showdown</find>
+      <find>basic-auth</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -248,7 +268,6 @@
         <option value="$PROJECT_DIR$/__tests__/fake-API.test.js" />
         <option value="$PROJECT_DIR$/__tests__/api.test.js" />
         <option value="$PROJECT_DIR$/__tests__/routes.test.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/server.config.js" />
         <option value="$PROJECT_DIR$/config/api.config.js" />
         <option value="$PROJECT_DIR$/config/pm2.config.js" />
@@ -258,6 +277,7 @@
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/__tests__/common.test.js" />
         <option value="$PROJECT_DIR$/.env.test" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -304,11 +324,6 @@
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
               <item name="__tests__" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -318,7 +333,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="en&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;envtes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.test&#10;enprod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.production&#10;langconfig&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;SERVER&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;ROUTES&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;apicon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;servercon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/server.config.js&#10;se&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/server.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;rea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;packa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;lang&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;router.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/router.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/ROUTER.md&#10;under&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;pa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;compone&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;data&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;intro&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/intro.js" />
+    <property name="SearchEverywhereHistoryKey" value="packa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;md&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/STORE.md&#10;read&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;en&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;envtes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.test&#10;enprod&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.production&#10;langconfig&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;lang con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;SERVER&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;ROUTES&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;api&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;apicon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;servercon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/server.config.js&#10;se&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/server.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;rea&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;readm&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/README.md&#10;lang&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;router.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_doc/router.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/ROUTER.md&#10;under&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;pa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;doc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;.env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env&#10;env&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;compone&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;pagewrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;langconfi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;env.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;apiconf&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/api.config.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;ENVCONF&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env.config.js&#10;ENV&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/env.js&#10;socket&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/lib/socket.js&#10;pageact&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/pages.actions.js&#10;pagesred&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/reducers/pages.reducers.js&#10;appac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/actions/app.actions.js&#10;createstore&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;route&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;head&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -490,14 +505,7 @@
       <workItem from="1542696462292" duration="2775000" />
       <workItem from="1545125601127" duration="43000" />
       <workItem from="1545125654589" duration="1782000" />
-      <workItem from="1545127637262" duration="7866000" />
-    </task>
-    <task id="LOCAL-00112" summary="Add cards &amp; skeleton screen (very simple demo)">
-      <created>1528468041550</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1528468041551</updated>
+      <workItem from="1545127637262" duration="11380000" />
     </task>
     <task id="LOCAL-00113" summary="[BREAKING] Merge changes from Chefsquare (looooot of changes)">
       <created>1534710133092</created>
@@ -835,7 +843,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545140292488</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="Fix env config">
+      <created>1545140478346</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1545140478346</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,7 +886,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443790000" />
+    <option name="totallyTimeSpent" value="447304000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -898,9 +913,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49444002" weight="0.263589" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51231134" side_tool="true" weight="0.27922562" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4785544" visible="true" weight="0.42516753" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.48490867" visible="true" weight="0.34251675" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5079428" side_tool="true" weight="0.4132539" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.51509136" side_tool="true" visible="true" weight="0.34251675" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -982,7 +997,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="New components folder architecture" />
     <MESSAGE value="Better page title example" />
     <MESSAGE value="[WIP] Migrate to next@7.0.0" />
     <MESSAGE value="Fix a bug with i18next namespaces" />
@@ -1007,7 +1021,8 @@
     <MESSAGE value="Improve the way the server is handling the routes translations" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="Update, improve and fix tests + improve the router dispatcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update, improve and fix tests + improve the router dispatcher" />
+    <MESSAGE value="Fix env config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix env config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,16 +1115,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/STORE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="779">
-            <caret line="61" selection-start-line="61" selection-end-line="61" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/_doc/theme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1186,16 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/UNDER_THE_HOOD.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="506">
-            <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/_doc/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1208,16 +1203,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="6072">
             <caret line="264" column="2" selection-start-line="264" selection-start-column="2" selection-end-line="264" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="51">
-            <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
           </first_editor>
           <second_editor />
         </state>
@@ -1311,13 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1356,13 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__tests__/common.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -1372,8 +1343,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env.test">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        <state relative-caret-position="322">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/UNDER_THE_HOOD.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="506">
+            <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/STORE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="785">
+            <caret line="61" selection-start-line="61" selection-end-line="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="276">
+            <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__tests__/common.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
