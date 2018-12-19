@@ -1,6 +1,6 @@
 {
   "name": "react-next-starter",
-  "version": "2.0.0-aplha.5",
+  "version": "2.0.0-aplha.6",
   "description": "A production-ready starter to build a SSR React app using NextJs and Material-ui.",
   "main": "server/server.js",
   "scripts": {
