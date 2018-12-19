@@ -25,23 +25,23 @@ module.exports = {
 
   '/_sandbox': { page: '/_sandbox', langRoutes: { fr: '/_sandbox' } },
 
-  '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro' } },
-  '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis' } },
-  '/_doc/get-started': { page: '/_doc/get-started', langRoutes: { fr: '/_doc/premiers-pas' } },
-  '/_doc/discover': { page: '/_doc/discover', langRoutes: { fr: '/_doc/decouvrir' } },
-  '/_doc/under-the-hood': { page: '/_doc/under-the-hood', langRoutes: { fr: '/_doc/fonctionnement' } },
-  '/_doc/configuration': { page: '/_doc/configuration', langRoutes: { fr: '/_doc/configuration' } },
-  '/_doc/router': { page: '/_doc/router', langRoutes: { fr: '/_doc/routeur' } },
-  '/_doc/api': { page: '/_doc/api', langRoutes: { fr: '/_doc/api-et-page-data' } },
-  '/_doc/i18n': { page: '/_doc/i18n' },
-  '/_doc/wrappers': { page: '/_doc/wrappers' },
-  '/_doc/store': { page: '/_doc/store' },
-  '/_doc/theme': { page: '/_doc/theme' },
-  '/_doc/performances': { page: '/_doc/performances' },
+  '/_doc/intro': { page: '/_doc/intro', langRoutes: { fr: '/_doc/intro', en:'/_doc/intro' } },
+  '/_doc/requirements': { page: '/_doc/requirements', langRoutes: { fr: '/_doc/pre-requis',en: '/_doc/requirements' } },
+  '/_doc/get-started': { page: '/_doc/get-started', langRoutes: { fr: '/_doc/premiers-pas', en: '/_doc/get-started' } },
+  '/_doc/discover': { page: '/_doc/discover', langRoutes: { fr: '/_doc/decouvrir', en: '/_doc/discover' } },
+  '/_doc/under-the-hood': { page: '/_doc/under-the-hood', langRoutes: { fr: '/_doc/fonctionnement', en: '/_doc/under-the-hood' } },
+  '/_doc/configuration': { page: '/_doc/configuration', langRoutes: { fr: '/_doc/configuration', en: '/_doc/configuration' } },
+  '/_doc/router': { page: '/_doc/router', langRoutes: { fr: '/_doc/routeur', en: '/_doc/router' } },
+  '/_doc/api': { page: '/_doc/api', langRoutes: { fr: '/_doc/api-et-page-data', en: '/_doc/api-and-page-data' } },
+  '/_doc/i18n': { page: '/_doc/i18n', langRoutes: { fr: '/_doc/i18n', en: '/_doc/i18n' } },
+  '/_doc/wrappers': { page: '/_doc/wrappers', langRoutes: { fr: '/_doc/wrappers', en: '/_doc/wrappers' } },
+  '/_doc/store': { page: '/_doc/store',langRoutes: { fr: '/_doc/store', en: '/_doc/store' } },
+  '/_doc/theme': { page: '/_doc/theme', langRoutes: { fr: '/_doc/theme', en: '/_doc/theme' } },
+  '/_doc/performances': { page: '/_doc/performances', langRoutes: { fr: '/_doc/performances', en: '/_doc/performances' } },
 
 
   /** GENERAL **/
 
-  '/': { page: '/index', langRoutes: { fr: '/' }, prefetch: true, neverCache: true },
-  '/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi'} },
+  '/': { page: '/index', langRoutes: { fr: '/', en: '/' }, prefetch: true, neverCache: true },
+  '/readme': { page: '/readme', langRoutes: { fr: '/lisez-moi', en: '/readme'} },
 };

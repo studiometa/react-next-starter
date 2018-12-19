@@ -1,7 +1,7 @@
 /** PM2 settings (for production and staging)
  */
 module.exports = {
-  name: 'react-next-starter',
+  name: require('../package').name,
   get max_memory_restart() { return `${process.env.WEB_MEMORY || 512}M`; },
   get instances() { return process.env.WEB_CONCURRENCY || -1; },
   exec_mode: 'cluster',

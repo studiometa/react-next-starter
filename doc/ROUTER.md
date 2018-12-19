@@ -47,8 +47,11 @@ Si vous envisagez de développer un site multi-langue, il vous sera nécessaire 
 - Un segment de langue est ajouté à toutes vos Urls (/en, /fr, etc)
 - Vous pouvez traduire entièrement l'url à partir du paramètre `langRoutes`de vos routes, sinon ce sera le nom de la route qui sera utilisé.
 
+Je vous conseille fortement de définir toutes vos langues dans l'attribut `langRoutes`, même si certaines routes sont identiques à `routeName`, surtout si vous
+activez la résolution automatique d'URL avec le paramètre `enableFallbackRedirection` puisqu'elles sont nécessaires au bon fonctionnement de cette fonctionnalité. 
+
 **Exemple :**
-`"/user/profile/:id": { page: "/user/pofile", langRoutes: {"fr": "/utilisateur/profil/:id"} }`
+`"/user/profile/:id": { page: "/user/pofile", langRoutes: {"fr": "/utilisateur/profil/:id", "en": "/user/profile/:id"} }`
 
 **en :** `/en/user/profile/32`
 **fr :** `/fr/utilisateur/profil/32`
