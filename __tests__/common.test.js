@@ -10,7 +10,7 @@ const fs     = require('fs');
 const path   = require('path');
 const routes = require('../server/routes');
 const assert = require('assert');
-
+const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName')
 
 beforeAll(async () => {
   return await server.start(process.env.PORT);
@@ -86,7 +86,7 @@ describe('Testing routes', () => {
       return;
     }
     Object.values(routes).forEach(routeName => {
-      const pathname = server.getBestPathnameFromRouteName(routeName, lang);
+      const pathname = resolvePathnameFromRouteName(routeName, lang);
       if (pathname && pathname.length > 0) {
         test(`Check if the route ${routeName} returns a 200`, async () => {
           try {

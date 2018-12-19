@@ -2,7 +2,6 @@ import AppBar           from '@material-ui/core/AppBar';
 import Grid             from '@material-ui/core/Grid';
 import Toolbar          from '@material-ui/core/Toolbar';
 import React            from 'react';
-import NoSSR            from 'react-no-ssr';
 import packageJson      from '../../../package';
 import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
@@ -52,7 +51,8 @@ const Header = function Header(props) {
             <Grid container alignItems="center" justify="flex-start" spacing={32}>
               <Grid item>
                 <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
-                  {packageJson.name } <small> v{packageJson.version}</small>
+                  {packageJson.name}
+                  <small> v{packageJson.version}</small>
                 </Link>
               </Grid>
               <Grid item>
@@ -79,9 +79,7 @@ const Header = function Header(props) {
             </Grid>
           </Grid>
           <Grid item>
-            <NoSSR>
-              <LangSwitch classes={{ select: classes.langSwitchSelect, text: classes.langSwitchText }}/>
-            </NoSSR>
+            <LangSwitch classes={{ select: classes.langSwitchSelect, text: classes.langSwitchText }}/>
           </Grid>
         </Grid>
       </Toolbar>

@@ -17,7 +17,7 @@ const LRUCache                    = require('lru-cache');
 const { join }                    = require('path');
 const removeUrlLastSlash          = require('../helpers/removeUrlLastSlash');
 const chalk                       = require('chalk');
-
+const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName');
 
 const config           = require('../config');
 const routes           = require('./routes');
@@ -115,36 +115,6 @@ class App {
     } catch (err) {
       return false;
     }
-  }
-
-
-  /**
-   * Resolve the best pathname for a given routeName
-   * A lang code must also be given in order to check for
-   * the pathname into the routes langRoutes parameter
-   * @param routeName
-   * @param lang
-   * @returns {*}
-   */
-  getBestPathnameFromRouteName(routeName, lang = this.config.lang.default) {
-    if (!this.routes[routeName]) {
-      return undefined;
-    }
-
-    const routeConfig = this.routes[routeName];
-
-    if (this.config.lang.available.find(e => e.lang === lang)) {
-      if (typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[lang] !== undefined) {
-        if (this.config.lang.enableRouteTranslation) {
-          return urlJoin('/', lang, routeConfig.langRoutes[lang]);
-        } else {
-          return urlJoin('/', routeConfig.langRoutes[lang]);
-        }
-      } else if (this.config.lang.enableRouteTranslation) {
-        return urlJoin('/', lang, routeName);
-      }
-    }
-    return routeName;
   }
 
 
@@ -381,7 +351,7 @@ class App {
         return;
       }
       Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-        const pathname = this.getBestPathnameFromRouteName(routeName, lang);
+        const pathname = resolvePathnameFromRouteName(routeName, lang);
         if (pathname && pathname.length > 0) {
           this._pushRouteListener(removeUrlLastSlash(pathname), routeConfig, routeName);
         }
