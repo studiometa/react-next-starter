@@ -2,16 +2,16 @@
 
 **Avant de vous lancer, soyez certain d'être à l'aise avec les éléments listés ci-dessous :**  
   
-- JavaScript es6 (!!!)  
-- ReactJs & Redux (!!!)  
-- SSR & NextJs (!!!)  
-- Material-UI (!!)  
-- Node / express (!)  
-- JSS / postcss (!)  
-- SASS (!)  
-- Webpack (!)  
-- Babel (!)  
-- axios (!)  
+- JavaScript es6 (🔥🔥🔥)  
+- ReactJs & Redux (🔥🔥🔥)  
+- SSR & NextJs (🔥🔥🔥)  
+- Material-UI (🔥🔥)  
+- Node / express (🔥)  
+- JSS / postcss (🔥)  
+- SASS (🔥)  
+- Webpack (🔥)  
+- Babel (🔥)  
+- REST / axios (🔥)  
   
 J'insiste sur le fait de bien comprendre les principes du SSR. C'est une manière particulière de développer et vous   
 risquez vite de vous arracher les cheveux sans une bonne maîtrise de ses principaux concepts. Dans ce readme,   
