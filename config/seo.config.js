@@ -8,7 +8,7 @@ module.exports = {
 
   // A list of default meta tags that will be used for the app on every pages
   defaultMetaTags: [
-    { name: 'description', content: 'This is a wonderful starter for React and NextJs' },
+    { name: 'description', content: 'A production-ready starter to build a SSR React app using NextJs and Material-ui.' },
     { name: 'author', content: 'Chuck Durst @ Studio Meta' },
   ],
 };

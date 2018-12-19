@@ -50,3 +50,7 @@
  - Vérification de la validité des routes
  - Mise en route du cache serveur
  
+ 
+ ## Le dossier /client/static
+ 
+ Stockez tous vos assets dans ce dossier et accédez-y ensuite depuis le pathname `/static` 
