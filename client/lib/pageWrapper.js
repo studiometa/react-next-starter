@@ -1,10 +1,11 @@
-import withI18next    from './withI18next';
-import withPageData   from './withPageData';
-import { connect }    from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import withMUITheme   from './withMUITheme';
+import { connect }    from 'react-redux';
 import { compose }    from 'recompose';
-import config from '../../config'
+import config         from '../../config';
+import withI18next    from './withI18next';
+import withMUITheme   from './withMUITheme';
+import withPageData   from './withPageData';
+
 
 /**
  * This is a page wrapper that does the following things:
@@ -31,7 +32,7 @@ export default (Component, {
   noPageData = false,
 }) => {
   const args = [
-    withPageData(name, {required: !noPageData}),
+    withPageData(name, { required: !noPageData }),
     connect(mapStateToProps),
     withStyles(styles),
   ];

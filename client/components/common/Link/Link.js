@@ -1,12 +1,13 @@
-import Typography           from '@material-ui/core/Typography';
-import classNames           from 'classnames';
-import NextLink             from 'next/link';
-import propTypes            from 'prop-types';
-import React                from 'react';
-import config               from '../../../../config/index';
-import getMatchingLangRoute from '../../../../helpers/getMatchingLangRoute';
-import removeUrlLastSlash   from '../../../../helpers/removeUrlLastSlash';
-import wrapper              from '../../../lib/componentWrapper';
+import Typography                   from '@material-ui/core/Typography';
+import classNames                   from 'classnames';
+import NextLink                     from 'next/link';
+import propTypes                    from 'prop-types';
+import React                        from 'react';
+import config                       from '../../../../config/index';
+import removeUrlLastSlash           from '../../../../helpers/removeUrlLastSlash';
+import resolvePathnameFromRouteName from '../../../../helpers/resolvePathnameFromRouteName';
+import routes                       from '../../../../server/routes';
+import wrapper                      from '../../../lib/componentWrapper';
 
 
 
@@ -87,7 +88,7 @@ class Link extends React.Component {
     color: propTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
 
     // if true, the component will consider the link active whenever its first segment matches the current route
-    checkSubActive: propTypes.bool
+    checkSubActive: propTypes.bool,
   };
 
   static defaultProps = {
@@ -141,7 +142,8 @@ class Link extends React.Component {
     lang = typeof lang === 'string' ? lang : config.lang.default;
 
     // Find a matching route in the route.js config file
-    let { pathname, page } = getMatchingLangRoute(to, lang);
+    let pathname = resolvePathnameFromRouteName(to, lang);
+    let { page } = routes[to];
 
     // Check if a matching route has been found
     // if not, only show an error log on dev env
@@ -200,9 +202,9 @@ class Link extends React.Component {
       const segment = this.props.to
         .slice(1)
         .split('/')[0];
-      return this.props.router.route.indexOf(`/${segment}`) === 0
+      return this.props.router.route.indexOf(`/${segment}`) === 0;
     } else {
-      return  this.props.to !== '/' && this.props.router.route.indexOf(this.props.to) === 0
+      return this.props.to !== '/' && this.props.router.route.indexOf(this.props.to) === 0;
     }
   };
 
