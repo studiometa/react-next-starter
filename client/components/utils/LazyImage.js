@@ -75,7 +75,7 @@ class LazyImage extends React.PureComponent {
       this._mounted === true && this.setState({ isReady: true, src: this.props.src });
     };
     const error      = () => {
-      this._mounted === true && this.setState({ isReady: true, src: '/static/imgs/default_image.png' });
+      this._mounted === true && this.setState({ isReady: true, src: '/static/imgs/fallback_image.png' });
     };
 
     this.imageObject.onload  = success;

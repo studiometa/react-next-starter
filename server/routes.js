@@ -37,6 +37,7 @@ module.exports = {
   '/_doc/wrappers': { page: '/_doc/wrappers', langRoutes: { fr: '/_doc/wrappers', en: '/_doc/wrappers' } },
   '/_doc/store': { page: '/_doc/store',langRoutes: { fr: '/_doc/store', en: '/_doc/store' } },
   '/_doc/theme': { page: '/_doc/theme', langRoutes: { fr: '/_doc/theme', en: '/_doc/theme' } },
+  '/_doc/components': { page: '/_doc/components', langRoutes: { fr: '/_doc/composants', en: '/_doc/components' } },
   '/_doc/performances': { page: '/_doc/performances', langRoutes: { fr: '/_doc/performances', en: '/_doc/performances' } },
 
 

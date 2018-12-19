@@ -70,14 +70,12 @@ const PageLayout = withStyles(styles)(function Layout(props) {
         children, // the page content
         classes, // classes for the page layout components
         backgroundColor, // The background color of the page
-        noPageData, // If true, the pageData will not be required
-        fullPage, // Hide the header and the footer
         debug, // An object to display on the inspector (dev only)
         ...rest // Any other property will be assigned to the pageData object
       } = props;
 
   // Display an error if
-  if (noPageData !== true && (!pageData || pageData.error === 404 || (pageData.error && pageData.error !== 404))) {
+  if (!pageData || pageData.error === 404 || (pageData.error && pageData.error !== 404)) {
     const statusCode = pageData && pageData.statusCode ? pageData.statusCode : 404;
     return <Error statusCode={statusCode}/>;
   }
@@ -87,7 +85,7 @@ const PageLayout = withStyles(styles)(function Layout(props) {
   Object.assign(pageData || {}, rest);
 
   return (
-    <div className={`${ classes.root } page-${pageData.title} ${fullPage ? 'full-page' : 'no-full'}`}>
+    <div className={`${ classes.root } page-${pageData.title}`}>
       <Head {...pageData}/>
       <Header/>
       <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
@@ -126,8 +124,6 @@ PageLayout.propTypes = {
   children: PropTypes.any, // the page content
   classes: PropTypes.object, // classes for the page layout components
   backgroundColor: PropTypes.string, // The background color of the page
-  noPageData: PropTypes.bool, // If true, the pageData will not be required
-  fullPage: PropTypes.bool, // Hide the header and the footer
   debug: PropTypes.object,
 };
 

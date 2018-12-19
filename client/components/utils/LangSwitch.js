@@ -118,7 +118,13 @@ export default React.memo(connect(state => ({
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {
             links.map(link =>
-              <a className={classes.text} style={{ marginRight: 8, color: '#fff' }} href={link.path}>{link.name}</a>,
+              <a
+                className={classes.text}
+                style={{ marginRight: 8, color: '#fff' }}
+                href={link.path}
+                key={link.name}>
+                {link.name}
+              </a>,
             )
           }
         </div>
