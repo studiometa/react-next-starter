@@ -9,17 +9,15 @@ try {
 }
 
 // Build the final config object
-const masteredConfig = () => {
-  return Object.assign({
-      server: require('./server.config'),
-      api: require('./api.config'),
-      lang: require('./lang.config'),
-      seo: require('./seo.config'),
-      layout: require('./layout.config'),
-      redux: require('./redux.config'),
-    },
-    envConfig,
-  );
-};
+const masteredConfig = Object.assign({
+    server: require('./server.config'),
+    api: require('./api.config'),
+    lang: require('./lang.config'),
+    seo: require('./seo.config'),
+    layout: require('./layout.config'),
+    redux: require('./redux.config'),
+  },
+  envConfig,
+);
 
-module.exports = masteredConfig();
+module.exports = masteredConfig;

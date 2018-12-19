@@ -196,7 +196,10 @@ class App {
 
     // Here we are adding new server listeners for the custom routes of the application. We are making this
     // differently depending on if the route translation has been enable or not
-    this._initExpressListeners();
+    this._initMainListeners();
+
+    // Fallback server entry for requests that do not match any defined route
+    this._initFallbackListener();
 
 
     // Listen on the port defined in the config file
@@ -320,6 +323,7 @@ class App {
         const cacheKey       = this._getCacheKey(req);
         const queryParams    = {};
         const shouldBeCached = (this.enableSSRCaching === true && routeConfig.neverCache !== true);
+
         // Add an htpasswd on the server if we are
         // running on the Now pre-production
         this._htpasswdMiddleware(req, res);
@@ -367,7 +371,7 @@ class App {
    * routing files
    * @private
    */
-  _initExpressListeners() {
+  _initMainListeners() {
     if (process.env.NODE_ENV !== 'production') {
       console.log(chalk.cyan.bold('\nExpress is now listening to the following routes :'));
     }
@@ -387,9 +391,14 @@ class App {
     if (process.env.NODE_ENV !== 'production') {
       console.log('\n');
     }
+  }
 
-    // Fallback server entry for requests that do not match
-    // any defined route
+
+  /**
+   * Listen to any not-handled requests
+   * @private
+   */
+  _initFallbackListener() {
 
     this.server.get('*', (req, res) => {
 

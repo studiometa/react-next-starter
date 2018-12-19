@@ -4,7 +4,6 @@ import LazyImage   from '../components/utils/LazyImage';
 import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
 
-
 const styles = theme => ({
   title: {
     marginBottom: theme.spacing.unit * 4,

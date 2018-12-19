@@ -2,7 +2,6 @@ import React       from 'react';
 import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
 
-
 const readme = require('../../README.md');
 
 const styles = theme => ({
