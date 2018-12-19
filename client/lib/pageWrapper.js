@@ -30,11 +30,14 @@ export default (Component, {
   withTheme = false,
   noPageData = false,
 }) => {
-  return withMUITheme(compose(
+  const args = [
     withPageData(name, {required: !noPageData}),
-    withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces),
     connect(mapStateToProps),
     withStyles(styles),
-  )(Component), withTheme);
+  ];
+  if (config.lang.enabled) {
+    args.push(withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces));
+  }
+  return withMUITheme(compose(...args)(Component), withTheme);
 
 };

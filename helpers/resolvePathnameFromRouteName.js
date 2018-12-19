@@ -9,7 +9,7 @@ module.exports = function (routeName, lang = config.lang.default) {
 
   const routeConfig = routes[routeName];
 
-  if (config.lang.available.find(e => e.lang === lang)) {
+  if (config.lang.enabled && config.lang.available.find(e => e.lang === lang)) {
     if (typeof routeConfig.langRoutes === 'object' && routeConfig.langRoutes[lang] !== undefined) {
       if (config.lang.enableRouteTranslation) {
         return urlJoin('/', lang, routeConfig.langRoutes[lang]);

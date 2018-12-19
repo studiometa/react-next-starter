@@ -40,7 +40,7 @@ export default (Component, {
   if (isConnected || typeof mapStateToProps === 'function') args.push(connect(mapStateToProps));
   if (hasStyles || typeof styles === 'object') args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
   if (withWidth) args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
-  if (isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
+  if (config.lang.enabled && isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
 
   if (withRouter) Component = withNextRouter(Component);
 

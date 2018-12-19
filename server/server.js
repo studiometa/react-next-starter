@@ -1,22 +1,21 @@
-const express                     = require('express');
-const next                        = require('next');
-const compression                 = require('compression');
-const cors                        = require('cors');
-const urlJoin                     = require('url-join');
-const { parse }                   = require('url');
-const checkRequiredFiles          = require('react-dev-utils/checkRequiredFiles');
-const paths                       = require('./lib/paths');
-const customLangDetector          = require('./lib/customI18nextLangDetector');
-const { choosePort, prepareUrls } = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser                 = require('react-dev-utils/openBrowser');
-const auth                        = require('basic-auth');
-const i18nextMiddleware           = require('i18next-express-middleware');
-const Backend                     = require('i18next-node-fs-backend');
-const path                        = require('path');
-const LRUCache                    = require('lru-cache');
-const { join }                    = require('path');
-const removeUrlLastSlash          = require('../helpers/removeUrlLastSlash');
-const chalk                       = require('chalk');
+const express                      = require('express');
+const next                         = require('next');
+const compression                  = require('compression');
+const cors                         = require('cors');
+const urlJoin                      = require('url-join');
+const { parse }                    = require('url');
+const checkRequiredFiles           = require('react-dev-utils/checkRequiredFiles');
+const paths                        = require('./lib/paths');
+const customLangDetector           = require('./lib/customI18nextLangDetector');
+const { choosePort, prepareUrls }  = require('react-dev-utils/WebpackDevServerUtils');
+const openBrowser                  = require('react-dev-utils/openBrowser');
+const auth                         = require('basic-auth');
+const i18nextMiddleware            = require('i18next-express-middleware');
+const Backend                      = require('i18next-node-fs-backend');
+const path                         = require('path');
+const LRUCache                     = require('lru-cache');
+const removeUrlLastSlash           = require('../helpers/removeUrlLastSlash');
+const chalk                        = require('chalk');
 const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName');
 
 const config           = require('../config');
@@ -130,7 +129,9 @@ class App {
     this.checkRequiredFiles();
 
     try {
-      await this._initI18nextInstance();
+      if (this.config.lang.enabled) {
+        await this._initI18nextInstance();
+      }
       await this.nextApp.prepare();
     } catch (err) {
       throw err;
@@ -157,11 +158,14 @@ class App {
     // Initialize fake-API
     this._initFakeApi();
 
-    // enable middleware for i18next
-    this.server.use(i18nextMiddleware.handle(i18nInstance));
+    if (this.config.lang.enabled) {
 
-    // serve locales for client
-    this.server.use('/locales', express.static(this.config.lang.localesPath));
+      // enable middleware for i18next
+      this.server.use(i18nextMiddleware.handle(i18nInstance));
+
+      // serve locales for client
+      this.server.use('/locales', express.static(this.config.lang.localesPath));
+    }
 
 
     // Here we are adding new server listeners for the custom routes of the application. We are making this
@@ -217,6 +221,8 @@ class App {
    * @private
    */
   async _initI18nextInstance() {
+    if (!this.config.lang.enabled) return;
+
     await i18nInstance
       .use(Backend)
       .use(this.lngDetector)
@@ -288,7 +294,6 @@ class App {
       console.log(chalk.cyan('>', routePath));
     }
 
-    // Add the language segment to the url if defined
     this.server.get(routePath, async (req, res) => {
         const cacheKey       = this._getCacheKey(req);
         const queryParams    = {};
@@ -346,17 +351,23 @@ class App {
       console.log(chalk.cyan.bold('\nExpress is now listening to the following routes :'));
     }
 
-    this.config.lang.available.forEach(({ lang }) => {
-      if (this.config.lang.enableRouteTranslation !== true && lang !== this.config.lang.default) {
-        return;
-      }
-      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-        const pathname = resolvePathnameFromRouteName(routeName, lang);
-        if (pathname && pathname.length > 0) {
-          this._pushRouteListener(removeUrlLastSlash(pathname), routeConfig, routeName);
+    if (this.config.lang.enabled) {
+      this.config.lang.available.forEach(({ lang }) => {
+        if (this.config.lang.enableRouteTranslation !== true && lang !== this.config.lang.default) {
+          return;
         }
+        Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+          const pathname = resolvePathnameFromRouteName(routeName, lang);
+          if (pathname && pathname.length > 0) {
+            this._pushRouteListener(removeUrlLastSlash(pathname), routeConfig, routeName);
+          }
+        });
       });
-    });
+    } else {
+      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+        this._pushRouteListener(removeUrlLastSlash(routeName), routeConfig, routeName);
+      });
+    }
 
     if (process.env.NODE_ENV !== 'production') {
       console.log('\n');
@@ -392,7 +403,8 @@ class App {
         // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
 
       } else if (
-        !pathname.includes('/_next/')
+        this.config.lang.enabled
+        && !pathname.includes('/_next/')
         && !pathname.includes('/static')
         && this.config.lang.enableRouteTranslation === true
         && this.config.lang.enableFallbackRedirection === true) {
@@ -484,7 +496,7 @@ class App {
     if (typeof routeConfig.page !== 'string' || routeConfig.page.length < 1) {
       throw new Error(`Route error : the route "${routeName}" should have a valid 'page' attribute but none was given.`);
     }
-    if (typeof routeConfig.langRoutes === 'object') {
+    if (this.config.lang.enabled && typeof routeConfig.langRoutes === 'object') {
       let routesToPush = [];
       Object.values(routeConfig.langRoutes).forEach(lr => {
         if (this._routesCheckUnique.includes(lr)) {

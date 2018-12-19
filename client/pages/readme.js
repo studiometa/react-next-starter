@@ -2,6 +2,7 @@ import React       from 'react';
 import Layout      from '../components/common/PageLayout';
 import pageWrapper from '../lib/pageWrapper';
 
+
 const readme = require('../../README.md');
 
 const styles = theme => ({
@@ -22,25 +23,25 @@ const styles = theme => ({
       padding: 2,
     },
     '& p, & * p, & * li': {
-      'line-height': '1.5em'
+      'line-height': '1.5em',
     },
     '& table, & * table': {
       borderCollapse: 'collapse',
       border: `1px solid ${theme.palette.grey[200]}`,
       '& td, & tr, & th': {
         border: `1px solid ${theme.palette.grey[200]}`,
-        padding: theme.spacing.unit / 2
-      }
-    }
+        padding: theme.spacing.unit / 2,
+      },
+    },
   },
-})
+});
 
 const Readme = class extends React.Component {
 
   render() {
-const { classes } = this.props;
+    const { classes, t = e => e } = this.props;
     return (
-      <Layout title={this.props.t('menu_links.readme')} pageData={this.props.pageData}>
+      <Layout title={t('menu_links.readme')} pageData={this.props.pageData}>
         <div dangerouslySetInnerHTML={{ __html: readme }} className={classes.mdContent}/>
       </Layout>
     );
@@ -53,5 +54,5 @@ export default pageWrapper(Readme, {
   mapStateToProps,
   styles,
   name: 'readme',
-  noPageData: true
+  noPageData: true,
 });

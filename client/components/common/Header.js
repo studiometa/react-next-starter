@@ -45,7 +45,7 @@ const Header = function Header(props) {
 
   let {
         classes,
-        t,
+        t = e => e,
       } = props;
 
   const showDevToolsLinks = process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === 'TRUE' || process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === '1' || process.env.NODE_ENV !== 'production';

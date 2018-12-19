@@ -21,7 +21,7 @@ const styles = theme => ({
 
   stickyMenu: {
     position: 'sticky',
-    top: theme.spacing.unit * 3
+    top: theme.spacing.unit * 3,
   },
 
   mdContent: {
@@ -41,20 +41,20 @@ const styles = theme => ({
       color: theme.palette.text.white,
       padding: 2,
       '&.language-shell': {
-        lineHeight: 2
-      }
+        lineHeight: 2,
+      },
     },
     '& p, & * p, & * li': {
-      'line-height': '1.5em'
+      'line-height': '1.5em',
     },
     '& table, & * table': {
       borderCollapse: 'collapse',
       border: `1px solid ${theme.palette.grey[200]}`,
       '& td, & tr, & th': {
         border: `1px solid ${theme.palette.grey[200]}`,
-        padding: theme.spacing.unit / 2
-      }
-    }
+        padding: theme.spacing.unit / 2,
+      },
+    },
   },
 });
 
@@ -83,7 +83,7 @@ class DocPageLayout extends React.Component {
 
 
   render() {
-    const { classes, t } = this.props;
+    const { classes, t = e => e } = this.props;
 
     return (
       <Grid container spacing={40} className={classes.root}>
