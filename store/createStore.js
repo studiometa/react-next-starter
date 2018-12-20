@@ -3,7 +3,7 @@ import { load, save }                   from 'redux-localstorage-simple';
 import { createLogger }                 from 'redux-logger';
 import thunk                            from 'redux-thunk';
 import config                           from '../config';
-import Socket                           from '../lib/socket';
+import Socket                           from '../client/lib/socket';
 import routes                           from '../server/routes';
 import reducers                         from './reducers/index';
 

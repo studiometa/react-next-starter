@@ -1,4 +1,4 @@
-const getClientEnvironment = require('../lib/env');
+const getClientEnvironment = require('../server/lib/env');
 const webpack              = require('webpack');
 const config               = require('./index');
 const env                  = getClientEnvironment(config.server.getUrl());

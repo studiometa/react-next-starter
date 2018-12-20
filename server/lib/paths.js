@@ -48,7 +48,7 @@ module.exports = {
   appClient: resolveApp('client'),
   appClientPages: resolveApp('client/pages'),
   appServer: resolveApp('server'),
-  testsSetup: resolveApp('jest.setup.js'),
+  testsSetup: resolveApp('config/jest.setup.js'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   appLocales: resolveApp('locales'),

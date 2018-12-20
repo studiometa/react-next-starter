@@ -20,7 +20,7 @@ const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRout
 
 const config           = require('../config');
 const routes           = require('./routes');
-const { i18nInstance } = require('../lib/i18n');
+const { i18nInstance } = require('./lib/i18n');
 const germaine         = require('germaine');
 
 

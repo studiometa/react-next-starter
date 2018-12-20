@@ -1,6 +1,6 @@
 import { loadNamespaces, translate } from 'react-i18next';
 import config                        from '../../config';
-import { getInitialProps, I18n }     from '../../lib/i18n';
+import { getInitialProps, I18n }     from '../../server/lib/i18n';
 
 
 export default (namespaces = []) => ComposedComponent => {

@@ -1,7 +1,7 @@
 import axios        from 'axios';
 import urlJoin      from 'url-join';
-import config       from '../config';
-import langDetector from '../server/lib/customI18nextLangDetector';
+import config       from '../../config/index';
+import langDetector from '../../server/lib/customI18nextLangDetector';
 
 
 export default class Socket {

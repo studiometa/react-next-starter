@@ -1,8 +1,8 @@
 const i18next            = require('i18next');
 const XHR                = require('i18next-xhr-backend');
 const LngDetector        = require('i18next-browser-languagedetector');
-const config             = require('../config');
-const customLangDetector = require('../server/lib/customI18nextLangDetector');
+const config             = require('../../config/index');
+const customLangDetector = require('./customI18nextLangDetector');
 
 const lngDetector = new LngDetector();
 lngDetector.addDetector(customLangDetector.path);

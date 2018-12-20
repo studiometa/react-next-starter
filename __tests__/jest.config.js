@@ -1,4 +1,6 @@
+const path = require('path');
 module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFiles: ['./jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  testRegex: "./*.test.js",
 };

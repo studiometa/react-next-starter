@@ -11,7 +11,6 @@
     ├── node_modules            # The projet dependencies  
     ├── server                  # Contains all the code that belongs to the server slide  
     ├── static                  # All the statics files, assets, images, fonts, etc  
-    ├── lib                     # Lib files used on both server and client sides  
     ├── locales                 # Locales files for i18n  
     ├── store                   # Contains all the code that belongs to the store  
     ├── doc                     # Contains all the documentation files
