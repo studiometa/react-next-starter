@@ -22,7 +22,7 @@ class _sandbox extends React.Component {
           {/** THEME **/}
 
           <Grid item>
-            <Typography variant="h2" color="primary">Thème</Typography>
+            <Typography variant="h2" color="primary">Theme</Typography>
             <br/><br/>
             <Inspector
               theme="chromeDark"
