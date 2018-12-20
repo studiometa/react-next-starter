@@ -45,32 +45,32 @@ const theme = createMuiTheme({
       fontSize: '3rem',
       color: '#070707',
       fontWeight: 400,
-      newSet: true
+      newSet: true,
     },
     h2: {
       fontSize: '2.5rem',
       color: '#070707',
       fontWeight: 300,
-      newSet: true
+      newSet: true,
     },
     h3: {
       fontSize: '2rem',
       color: '#070707',
       fontWeight: 500,
       lineHeight: '2.5rem',
-      newSet: true
+      newSet: true,
     },
     h4: {
       fontSize: '1.6875rem',
       color: '#292929',
       fontWeight: 500,
-      newSet: true
+      newSet: true,
     },
     h5: {
       fontSize: '1.375rem',
       color: '#292929',
       fontWeight: 400,
-      newSet: true
+      newSet: true,
     },
     h6: {
       fontSize: '1.125rem',
@@ -81,32 +81,32 @@ const theme = createMuiTheme({
       fontSize: '0.5625rem',
       color: '#292929',
       fontWeight: 400,
-      newSet: true
+      newSet: true,
     },
     body2: {
       fontSize: '1.125rem',
       color: '#070707',
       fontWeight: 300,
-      newSet: true
+      newSet: true,
     },
     body1: {
       fontSize: '1rem',
       color: '#070707',
       fontWeight: 300,
-      newSet: true
+      newSet: true,
     },
     caption: {
       fontSize: '0.8125rem',
       color: '#292929',
       fontWeight: 300,
-      newSet: true
+      newSet: true,
     },
     button: {
       fontSize: '0.875rem',
       color: '#070707',
       fontWeight: 500,
       textTransform: 'none',
-      newSet: true
+      newSet: true,
     },
   },
 
@@ -129,7 +129,7 @@ const theme = createMuiTheme({
 
   overrides: {
     MuiInput: {
-      "&$focused": {
+      '&focused': {
         background: 'inherit',
       },
     },

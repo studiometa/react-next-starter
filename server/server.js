@@ -384,7 +384,7 @@ class App {
     this.server.get('*', (req, res) => {
 
       const parsedUrl    = parse(req.url, true);
-      const { pathname } = parsedUrl;
+      const  pathname  = removeUrlLastSlash(parsedUrl.pathname);
 
       // Add an htpasswd on the server if we are
       // running on the Now pre-production
@@ -408,7 +408,6 @@ class App {
         && !pathname.includes('/static')
         && this.config.lang.enableRouteTranslation === true
         && this.config.lang.enableFallbackRedirection === true) {
-
         let language     = this.config.lang.available.find(e => e.lang === req.language);
         let matchingLang = undefined;
 
