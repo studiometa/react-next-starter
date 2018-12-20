@@ -20,7 +20,8 @@
       "/_doc/under-the-hood": "Fonctionnement",
       "/_doc/wrappers": "Wrappers",
       "/_doc/get-started": "Premiers pas",
-      "/_doc/components": "Composants"
+      "/_doc/components": "Composants",
+      "/_doc/troubleshooting": "Dépannage"
     }
   }
 }
