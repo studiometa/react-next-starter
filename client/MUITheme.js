@@ -129,7 +129,7 @@ const theme = createMuiTheme({
 
   overrides: {
     MuiInput: {
-      focused: {
+      "&$focused": {
         background: 'inherit',
       },
     },

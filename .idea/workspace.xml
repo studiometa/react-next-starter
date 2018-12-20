@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translation _sandbox + add a .env.development file">
-      <change afterPath="$PROJECT_DIR$/client/pages/_doc/troubleshooting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/en/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locales/fr/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/locales/fr/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/MUITheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/MUITheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +52,7 @@
           <entry key="env" value="7" />
           <entry key="example" value="3" />
           <entry key="js" value="375" />
-          <entry key="json" value="44" />
+          <entry key="json" value="45" />
           <entry key="md" value="38" />
           <entry key="production" value="5" />
           <entry key="scss" value="3" />
@@ -65,7 +63,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="15" />
-          <entry key="JSON" value="44" />
+          <entry key="JSON" value="45" />
           <entry key="JavaScript" value="375" />
           <entry key="Markdown" value="38" />
           <entry key="PLAIN_TEXT" value="4" />
@@ -78,8 +76,8 @@
           <entry key="development" value="2" />
           <entry key="env" value="50" />
           <entry key="example" value="2" />
-          <entry key="js" value="28066" />
-          <entry key="json" value="1330" />
+          <entry key="js" value="28072" />
+          <entry key="json" value="1331" />
           <entry key="md" value="17746" />
           <entry key="production" value="28" />
           <entry key="scss" value="33" />
@@ -90,9 +88,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="124" />
-          <entry key="JSON" value="1330" />
+          <entry key="JSON" value="1331" />
           <entry key="JSX Harmony" value="8" />
-          <entry key="JavaScript" value="28066" />
+          <entry key="JavaScript" value="28072" />
           <entry key="Markdown" value="17738" />
           <entry key="PLAIN_TEXT" value="2101" />
           <entry key="SCSS" value="33" />
@@ -125,8 +123,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state relative-caret-position="-742">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4930">
+              <caret line="8995" column="46" selection-start-line="8995" selection-start-column="46" selection-end-line="8995" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -136,27 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/pages/_document.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1221">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/lib/pageWrapper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -209,8 +195,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+            <state relative-caret-position="758">
+              <caret line="100" column="6" lean-forward="true" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/next.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -219,9 +214,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>location</find>
-      <find>console.log(</find>
-      <find>getmatching</find>
       <find>console</find>
       <find>this</find>
       <find>getbes</find>
@@ -247,8 +239,11 @@
       <find>getMatchingLangRoute</find>
       <find>css-loader</find>
       <find>404</find>
-      <find>css</find>
       <find>css-load</find>
+      <find>mini-css-extract-plugin/</find>
+      <find>postc</find>
+      <find>css</find>
+      <find>Muiinput</find>
     </findStrings>
     <replaceStrings>
       <replace>nextWebpackConfig</replace>
@@ -277,7 +272,6 @@
         <option value="$PROJECT_DIR$/config/server.config.js" />
         <option value="$PROJECT_DIR$/.env.test" />
         <option value="$PROJECT_DIR$/.env.production" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/lib/env.js" />
@@ -323,6 +317,7 @@
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" />
         <option value="$PROJECT_DIR$/client/pages/_app.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
       </list>
     </option>
@@ -364,11 +359,6 @@
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -933,7 +923,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483640000" />
+    <option name="totallyTimeSpent" value="484421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,9 +950,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49444002" weight="0.263589" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51231134" side_tool="true" weight="0.27922562" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48411438" visible="true" weight="0.3127327" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48371723" visible="true" weight="0.3127327" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.51588565" side_tool="true" visible="true" weight="0.3127327" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.51628274" side_tool="true" visible="true" weight="0.3127327" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -1082,16 +1072,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doc/INTRODUCTION.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="345">
-            <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1184,15 +1164,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/Price.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/utils/Price.js" />
     <entry file="file://$PROJECT_DIR$/client/components/utils/LazyImage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -1231,9 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="29" column="63" lean-forward="true" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1281,13 +1250,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/getMatchingLangRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/getMatchingLangRoute.js" />
     <entry file="file://$PROJECT_DIR$/client/components/common/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -1475,13 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1489,10 +1445,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4930">
+          <caret line="8995" column="46" selection-start-line="8995" selection-start-column="46" selection-end-line="8995" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-742">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+        <state relative-caret-position="758">
+          <caret line="100" column="6" lean-forward="true" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
         </state>
       </provider>
     </entry>
