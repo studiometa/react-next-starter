@@ -28,10 +28,6 @@ class MyDocument extends Document {
             {` .hidden-no-script {display:none;} `}
           </style>
         </noscript>
-        {
-          process.env.NODE_ENV !== 'development' &&
-          <link rel="manifest" href="/manifest.json" />
-        }
       </Head>
       <body>
       <Main/>

@@ -39,6 +39,10 @@ export default React.memo((props) => {
           ),
         )
       }
+      {
+        process.env.NODE_ENV !== 'development' &&
+        <link rel="manifest" href="/manifest.json" />
+      }
     </Head>
   );
 });
