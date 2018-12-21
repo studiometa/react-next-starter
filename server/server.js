@@ -299,6 +299,10 @@ class App {
         const queryParams    = {};
         const shouldBeCached = (this.enableSSRCaching === true && routeConfig.neverCache !== true);
 
+        if (req.url && req.url.length > 1 && req.url.substr(req.url.length - 1) === '/') {
+          res.redirect(301, removeUrlLastSlash(req.url));
+        }
+
         // Add an htpasswd on the server if we are
         // running on the Now pre-production
         this._htpasswdMiddleware(req, res);
@@ -383,8 +387,8 @@ class App {
 
     this.server.get('*', (req, res) => {
 
-      const parsedUrl    = parse(req.url, true);
-      const  pathname  = removeUrlLastSlash(parsedUrl.pathname);
+      const parsedUrl = parse(req.url, true);
+      const pathname  = removeUrlLastSlash(parsedUrl.pathname);
 
       // Add an htpasswd on the server if we are
       // running on the Now pre-production
