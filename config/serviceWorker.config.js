@@ -16,27 +16,27 @@ module.exports = {
     'build': '/_next',
   },
   runtimeCaching: [
-    {
-      urlPattern: /(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/,
-      handler: 'cacheFirst',
-      options: {
-        cacheName: 'images',
-      },
-    },
-    {
-      urlPattern: /\.(?:woff|woff2|otf|ttf)$/,
-      handler: 'cacheFirst',
-      options: {
-        cacheName: 'fonts',
-      },
-    },
-    {
-      urlPattern: /\.(?:js|jsx)$/,
-      handler: 'networkFirst',
-      options: {
-        cacheName: 'scripts',
-      },
-    },
+    // {
+    //   urlPattern: /(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/,
+    //   handler: 'cacheFirst',
+    //   options: {
+    //     cacheName: 'images',
+    //   },
+    // },
+    // {
+    //   urlPattern: /\.(?:woff|woff2|otf|ttf)$/,
+    //   handler: 'cacheFirst',
+    //   options: {
+    //     cacheName: 'fonts',
+    //   },
+    // },
+    // {
+    //   urlPattern: /\.(?:js|jsx)$/,
+    //   handler: 'networkFirst',
+    //   options: {
+    //     cacheName: 'scripts',
+    //   },
+    // },
     {
       urlPattern: /http[s]?:\/\/.*/,
       handler: 'networkFirst',

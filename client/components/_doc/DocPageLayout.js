@@ -36,6 +36,9 @@ const styles = theme => ({
     '&> h3': {
       marginTop: theme.spacing.unit * 4,
     },
+    '& * code': {
+      overflow: 'scroll'
+    },
     '& * code, & pre': {
       background: '#000',
       color: theme.palette.text.white,
