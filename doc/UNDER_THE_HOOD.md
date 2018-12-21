@@ -6,17 +6,22 @@
     ├── build                   # The app build after running `npm run build`  
     ├── client                  # Contains all the code that belongs to the client side  
     │ ├── components            # All the client components  
-    │ └── pages                 # All the client pages  
+    │ ├── lib                   # Lib files for the client side   
+    │ ├── pages                 # All the client pages   
+    │ ├── public                # Everything in this folder will be accessible at the root of your project URL (robots.txt, htaccess, etc)   
+    │ ├── static                # Static files will be accessible under /static. It's a good place to put your assets for example   
+    │ └── styles                # Here you can put some scss files for your styles   
     ├── config                  # The app config files used in both client and server sides  
     ├── node_modules            # The projet dependencies  
-    ├── server                  # Contains all the code that belongs to the server slide  
+    ├── server                  # Contains all the code that belongs to the server slide
+    │ └── lib                   # Lib files for the server side  
     ├── static                  # All the statics files, assets, images, fonts, etc  
     ├── locales                 # Locales files for i18n  
-    ├── store                   # Contains all the code that belongs to the store  
     ├── doc                     # Contains all the documentation files
-    ├── __tests__               # Contains all the tests files
+    ├── store                   # Contains all the code that belongs to the store  
     │ ├── actions               # All the app actions  
     │ └── reducers              # All the app reducers  
+    ├── __tests__               # Contains all the tests files
     └── helpers                 # Contains helpers that can be used in the whole project  
 ```
  

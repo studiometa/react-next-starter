@@ -158,6 +158,9 @@ class App {
     // Initialize fake-API
     this._initFakeApi();
 
+    // Listen to the public folder
+    this.server.use('/', express.static(paths.appPublic));
+
     if (this.config.lang.enabled) {
 
       // enable middleware for i18next
@@ -174,9 +177,6 @@ class App {
 
     // Fallback server entry for requests that do not match any defined route
     this._initFallbackListener();
-
-
-    // Listen on the port defined in the config file
 
     try {
       this.nextApp.server = await this.server.listen(port);

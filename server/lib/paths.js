@@ -43,7 +43,7 @@ module.exports = {
   app: resolveApp('.'),
   appBuild: resolveApp('build'),
   appDoc: resolveApp('build'),
-  appPublic: resolveApp('client/static'),
+  appPublic: resolveApp('client/public'),
   appPackageJson: resolveApp('package.json'),
   appClient: resolveApp('client'),
   appClientPages: resolveApp('client/pages'),
