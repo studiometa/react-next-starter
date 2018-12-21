@@ -6,6 +6,7 @@ import config                           from '../config';
 import Socket                           from '../client/lib/socket';
 import routes                           from '../server/routes';
 import reducers                         from './reducers/index';
+import packageJson from '../package.json'
 
 // Items that be stored in the localStorage
 const { localStorageStates } = config.redux;
@@ -44,14 +45,14 @@ export default (initialState = DEFAULT_STATE) => {
   } else {
     initialState = Object.assign(
       {},
-      load({ states: localStorageStates, namespace: 'chefsquare' }),
+      load({ states: localStorageStates, namespace: packageJson.name }),
       initialState,
     );
     return createStore(
       reducers,
       initialState,
       applyMiddleware(logger,
-        save({ states: localStorageStates, namespace: 'chefsquare' }),
+        save({ states: localStorageStates, namespace: packageJson.name }),
         thunk.withExtraArgument(socket)),
     );
   }
