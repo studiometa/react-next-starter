@@ -4,7 +4,7 @@ const withOffline = require('next-offline')
 const workboxOpts = require('./config/serviceWorker.config');
 module.exports = withOffline(withSass({
   cssModules: true,
-  distDir: '../build',
+  distDir: 'build',
   workboxOpts,
   generateInDevMode: true,
   //registerSwPrefix: '/static',
