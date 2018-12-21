@@ -1,5 +1,5 @@
 const pm2       = require('pm2');
-const options    = require('./config/pm2.config');
+const options    = require('../config/pm2.config');
 
 console.log(`Starting server with ${options.instances} instances.`);
 
