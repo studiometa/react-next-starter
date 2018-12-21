@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Remove .idea folder 😇">
-      <change afterPath="$PROJECT_DIR$/client/public/fallback_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Add a public folder to serve things like robots.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/MUITheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/MUITheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Bold-export/BwSurco-Bold.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Bold-export/BwSurco-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Bold-export/BwSurco-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Bold-export/BwSurco-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Bold-export/BwSurco-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Light-export/BwSurco-Light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Light-export/BwSurco-Light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Light-export/BwSurco-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Light-export/BwSurco-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Light-export/BwSurco-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Medium-export/BwSurco-Medium.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Medium-export/BwSurco-Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Medium-export/BwSurco-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Medium-export/BwSurco-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Medium-export/BwSurco-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Regular-export/BwSurco-Regular.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Regular-export/BwSurco-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Regular-export/BwSurco-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Regular-export/BwSurco-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/static/fonts/BwSurco-Regular-export/BwSurco-Regular.woff2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,13 +74,13 @@
           <entry key="example" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="htaccess" value="1" />
-          <entry key="js" value="402" />
-          <entry key="json" value="49" />
+          <entry key="js" value="406" />
+          <entry key="json" value="50" />
           <entry key="md" value="40" />
           <entry key="production" value="6" />
-          <entry key="scss" value="3" />
+          <entry key="scss" value="4" />
           <entry key="test" value="2" />
-          <entry key="ts" value="1" />
+          <entry key="ts" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -70,12 +88,12 @@
         <counts>
           <entry key=".env file" value="16" />
           <entry key="Git file" value="1" />
-          <entry key="JSON" value="50" />
-          <entry key="JavaScript" value="402" />
+          <entry key="JSON" value="51" />
+          <entry key="JavaScript" value="406" />
           <entry key="Markdown" value="40" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="SCSS" value="3" />
-          <entry key="TypeScript" value="1" />
+          <entry key="SCSS" value="4" />
+          <entry key="TypeScript" value="2" />
           <entry key="htaccess" value="1" />
         </counts>
       </usages-collector>
@@ -86,32 +104,32 @@
           <entry key="example" value="2" />
           <entry key="gitignore" value="12" />
           <entry key="htaccess" value="10" />
-          <entry key="js" value="28451" />
-          <entry key="json" value="1415" />
+          <entry key="js" value="28477" />
+          <entry key="json" value="1416" />
           <entry key="md" value="18126" />
           <entry key="production" value="28" />
-          <entry key="scss" value="33" />
+          <entry key="scss" value="34" />
           <entry key="test" value="44" />
-          <entry key="txt" value="2324" />
+          <entry key="txt" value="2424" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="124" />
           <entry key="Git file" value="12" />
-          <entry key="JSON" value="1415" />
+          <entry key="JSON" value="1416" />
           <entry key="JSX Harmony" value="8" />
-          <entry key="JavaScript" value="28451" />
+          <entry key="JavaScript" value="28477" />
           <entry key="Markdown" value="18118" />
-          <entry key="PLAIN_TEXT" value="2326" />
-          <entry key="SCSS" value="33" />
+          <entry key="PLAIN_TEXT" value="2426" />
+          <entry key="SCSS" value="34" />
           <entry key="htaccess" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
           <entry key="LanguageService" value="1" />
-          <entry key="TypeScriptServerServiceImpl" value="1" />
+          <entry key="TypeScriptServerServiceImpl" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -123,11 +141,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+            <state relative-caret-position="263">
+              <caret line="161" column="4" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/serviceWorker.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/pages/_document.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/MUITheme.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="656">
+              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -204,9 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/doc/GET_STARTED.md" />
-        <option value="$PROJECT_DIR$/doc/INTRODUCTION.md" />
-        <option value="$PROJECT_DIR$/doc/REQUIREMENTS.md" />
         <option value="$PROJECT_DIR$/config/index.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/client/pages/index.js" />
@@ -238,23 +304,26 @@
         <option value="$PROJECT_DIR$/client/pages/_doc/troubleshooting.js" />
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" />
-        <option value="$PROJECT_DIR$/client/pages/_app.js" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/bin/server/server.js" />
         <option value="$PROJECT_DIR$/bin/server/lib/customI18nextLangDetector.js" />
         <option value="$PROJECT_DIR$/bin/server/lib/paths.js" />
         <option value="$PROJECT_DIR$/config/jest.config.js" />
         <option value="$PROJECT_DIR$/__tests__/jest.config.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/lib/i18n.js" />
-        <option value="$PROJECT_DIR$/client/MUITheme.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/static/workbox/workbox-v3.6.3/workbox-sw.js" />
         <option value="$PROJECT_DIR$/client/static/.htaccess" />
         <option value="$PROJECT_DIR$/server/lib/paths.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/client/public/robots.txt" />
         <option value="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" />
+        <option value="$PROJECT_DIR$/config/serviceWorker.config.js" />
+        <option value="$PROJECT_DIR$/client/styles/styles.scss" />
+        <option value="$PROJECT_DIR$/client/MUITheme.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/pages/_app.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/pages/_document.js" />
       </list>
     </option>
   </component>
@@ -315,7 +384,13 @@
             <path>
               <item name="react-next-starter" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="react-next-starter" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +400,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="undert&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;webpack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/webpack.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.production&#10;producon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env/production.config.js&#10;servi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/serviceWorker.config.js&#10;underh&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;muithem&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;jests&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/jest.setup.js&#10;jest.con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/jest.config.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;customi1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bin/server/lib/customI18nextLangDetector.js&#10;packa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;Mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10; Tr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/TROUBLESHOOTING.md&#10;routes.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;_sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;.env.ex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.example&#10;with1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withI18next.js&#10;pagew&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;docum&#9;null&#9;null&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;stylesc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/styles.scss&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;Docpa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;withpag&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;sandbo&#9;null&#9;null&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;componenwrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;Lang&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LangSwitch.js&#10;seo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/seo.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;commo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;Lazy&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LazyImage.js&#10;laz&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LazyImage.js&#10;LangS&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LangSwitch.js&#10;langc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;seo.con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/seo.config.js&#10;lazy&#9;null&#9;null&#10;commontest&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/__tests__/common.test.js&#10;router&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/node_modules/next/router.js" />
+    <property name="SearchEverywhereHistoryKey" value="a&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;app`&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;the&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;mi&#9;null&#9;null&#10;styles&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/styles.scss&#10;docume&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_document.js&#10;undert&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;server&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/server.js&#10;webpack&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/webpack.config.js&#10;produ&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.production&#10;producon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/env/production.config.js&#10;servi&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/serviceWorker.config.js&#10;underh&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/UNDER_THE_HOOD.md&#10;muithem&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;creates&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/store/createStore.js&#10;jests&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/jest.setup.js&#10;jest.con&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/jest.config.js&#10;paths&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/lib/paths.js&#10;customi1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/bin/server/lib/customI18nextLangDetector.js&#10;packa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;Mui&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10; Tr&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/doc/TROUBLESHOOTING.md&#10;routes.js&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;common&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;app&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_app.js&#10;langcon&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/lang.config.js&#10;_sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;.env.ex&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/.env.example&#10;with1&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withI18next.js&#10;pagew&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/pageWrapper.js&#10;docum&#9;null&#9;null&#10;Link&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Link/Link.js&#10;stylesc&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/styles/styles.scss&#10;theme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/MUITheme.js&#10;Docpa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/_doc/DocPageLayout.js&#10;sand&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/_sandbox.js&#10;databa&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/database.json&#10;withpag&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/withPageData.js&#10;sandbo&#9;null&#9;null&#10;header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;readme&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/pages/readme.js&#10;componenwrap&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/lib/componentWrapper.js&#10;Lang&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LangSwitch.js&#10;seo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/config/seo.config.js&#10;pac&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/package.json&#10;Header&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/common/Header.js&#10;routes&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/server/routes.js&#10;commo&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/locales/en/common.json&#10;Lazy&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LazyImage.js&#10;laz&#9;FILE&#9;file:///Users/chuck/Work/projects/react-next-starter/client/components/utils/LazyImage.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -348,11 +423,11 @@
       <recent name="$PROJECT_DIR$/client/static/imgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/static/fonts" />
       <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/client/lib" />
       <recent name="$PROJECT_DIR$/server/lib" />
       <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/__tests__" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -499,13 +574,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00137" summary="Add Procfile for preproduction">
-      <created>1544459991003</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1544459991003</updated>
     </task>
     <task id="LOCAL-00138" summary="[BREAKING CHANGES] Upgrade material-ui from 1.5.1 to 3.6.2&#10;&#10;See https://github.com/mui-org/material-ui/releases for more details">
       <created>1544518888155</created>
@@ -843,7 +911,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545382544499</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="Add a public folder to serve things like robots.txt">
+      <created>1545383357657</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1545383357657</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -879,7 +954,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490491000" />
+    <option name="totallyTimeSpent" value="491265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -894,7 +969,7 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18149325" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18149325" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
@@ -908,7 +983,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51231134" side_tool="true" weight="0.27922562" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48371723" visible="true" weight="0.3127327" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.51628274" side_tool="true" visible="true" weight="0.3127327" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.51628274" side_tool="true" visible="true" weight="0.3127327" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -990,7 +1065,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Update, improve and fix tests + improve the router dispatcher" />
     <MESSAGE value="Fix env config" />
     <MESSAGE value="update package.json" />
     <MESSAGE value="Update production .env file" />
@@ -1015,7 +1089,8 @@
     <MESSAGE value="Fix a router bug that was blocking some route redirection" />
     <MESSAGE value="[WIP] Update the global project structure" />
     <MESSAGE value="Remove .idea folder " />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove .idea folder " />
+    <MESSAGE value="Add a public folder to serve things like robots.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a public folder to serve things like robots.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1028,13 +1103,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/server/database.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/lib/componentWrapper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
@@ -1054,9 +1122,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/styles/styles.scss">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/resolvePathnameFromRouteName.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1082,13 +1147,6 @@
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_document.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1221">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1189,13 +1247,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/TROUBLESHOOTING.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1255,13 +1306,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/lib/env.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/MUITheme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="122" column="6" lean-forward="true" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/static/workbox/sw.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1348,20 +1392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/serviceWorker.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/UNDER_THE_HOOD.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1372,10 +1402,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/serviceWorker.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/styles/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redux/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="320" column="17" selection-start-line="320" selection-start-column="17" selection-end-line="320" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/MUITheme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+        <state relative-caret-position="263">
+          <caret line="161" column="4" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/_document.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

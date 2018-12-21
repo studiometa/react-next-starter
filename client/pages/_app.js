@@ -15,7 +15,6 @@ import getPageContext                                               from '../lib
 
 import '../styles/styles.scss';
 
-
 export default withRedux(createStore)(class _App extends App {
   constructor(props) {
     super(props);

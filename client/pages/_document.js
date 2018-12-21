@@ -31,10 +31,11 @@ class MyDocument extends Document {
       </Head>
       <body>
       <Main/>
-      <link rel="stylesheet" href="/static/fonts/BwSurco-Bold-export/BwSurco-Bold.css"/>
-      <link rel="stylesheet" href="/static/fonts/BwSurco-Light-export/BwSurco-Light.css"/>
-      <link rel="stylesheet" href="/static/fonts/BwSurco-Medium-export/BwSurco-Medium.css"/>
-      <link rel="stylesheet" href="/static/fonts/BwSurco-Regular-export/BwSurco-Regular.css"/>
+      {
+        process.env.NODE_ENV !== 'development' &&
+        <link rel="manifest" href="/static/manifest.json"/>
+      }
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
       <NextScript/>
       </body>
       </html>
