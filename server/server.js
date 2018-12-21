@@ -392,8 +392,8 @@ class App {
 
       // Serve the service-worker
 
-      if (req.url.startsWith('/static/workbox/')) {
-        this.nextApp.serveStatic(req, res, path.join(paths.appClient, req.url));
+      if (req.url === '/service-worker.js') {
+        this.nextApp.serveStatic(req, res, paths.appStatic + req.url);
 
         // If no language has been defined in the request, we must try to find a route that matches the request.
         // If a route has been founded, we must trigger a redirection to add the language segment to the url.

@@ -44,6 +44,7 @@ module.exports = {
   appBuild: resolveApp('build'),
   appDoc: resolveApp('build'),
   appPublic: resolveApp('client/public'),
+  appStatic: resolveApp('client/static'),
   appPackageJson: resolveApp('package.json'),
   appClient: resolveApp('client'),
   appClientPages: resolveApp('client/pages'),

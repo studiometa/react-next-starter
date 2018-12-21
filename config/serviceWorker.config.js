@@ -1,26 +1,21 @@
+const paths = require('../server/lib/paths');
+const path  = require('path');
+
 /**
  * Service Worker Configuration
- * @see https://github.com/drenther/next-pwa/blob/d3198b92bbb64bf2c4ada26d49bbccf85e98b32b/next.config.js
- * @see https://github.com/ragingwind/next-workbox-webpack-plugin
+ * @see https://github.com/hanford/next-offline
  * @see https://developers.google.com/web/tools/workbox/
+ * @see https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#generatesw_plugin
  */
-module.exports = ({buildId, distDir}) => ({
-  buildId,
+module.exports = {
   clientsClaim: true,
   skipWaiting: true,
+  swDest: paths.appStatic + '/service-worker.js',
   globPatterns: ['build/static/*', 'build/static/commons/*'],
   modifyUrlPrefix: {
     'build': '/_next',
   },
-  distDir,
   runtimeCaching: [
-    {
-      urlPattern: '/',
-      handler: 'networkFirst',
-      options: {
-        cacheName: 'html-cache',
-      },
-    },
     {
       urlPattern: /(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/,
       handler: 'cacheFirst',
@@ -42,5 +37,12 @@ module.exports = ({buildId, distDir}) => ({
         cacheName: 'scripts',
       },
     },
+    {
+      urlPattern: /http[s]?:\/\/.*/,
+      handler: 'networkFirst',
+      options: {
+        cacheName: 'html-cache',
+      },
+    },
   ],
-});
+};

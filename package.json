@@ -5,8 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "dev": "NODE_ENV=development node server/",
-    "build": "NODE_ENV=production next build ./client && npm run post:build",
-    "post:build": "rm -Rf ./client/static/workbox && mv ./static/workbox ./client/static && rmdir ./static",
+    "build": "NODE_ENV=production next build ./client",
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent --detectOpenHandles --config ./__tests__/jest.config.js",
     "pm2:start": "node ./server/pm2.js",
@@ -74,6 +73,7 @@
     "keycode": "^2.2.0",
     "markdown-loader": "^4.0.0",
     "next": "^7.0.2",
+    "next-offline": "^3.3.1",
     "next-redux-wrapper": "^2.1.0",
     "next-workbox-webpack-plugin": "^1.1.0",
     "node-sass": "^4.11.0",

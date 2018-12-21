@@ -119,7 +119,7 @@ export default withRedux(createStore)(class _App extends App {
       if (process.env.NODE_ENV !== 'development'
         && (process.env.ENABLE_SERVICE_WORKER === 'TRUE' || process.env.ENABLE_SERVICE_WORKER === '1')) {
         navigator.serviceWorker
-          .register('/static/workbox/sw.js')
+          .register('/static/service-worker.js')
           .then(() => {
             console.log('> service worker registration successful');
           })

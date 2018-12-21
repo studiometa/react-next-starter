@@ -42,13 +42,6 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
   });
 
 
-  // Add service worker and manifest on production
-  if (!isServer && !dev) {
-    nextWebpackConfig.plugins.push(
-      new NextWorkboxPlugin(serviceWorkerConfig({ buildId, distDir }))
-    );
-  }
-
   nextWebpackConfig.plugins = nextWebpackConfig.plugins.map(plugin => {
     if (
       plugin.constructor.name === 'CommonsChunkPlugin' &&
