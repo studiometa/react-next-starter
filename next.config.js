@@ -1,8 +1,9 @@
-const withSass                 = require('@zeit/next-sass');
-const webpackConfig            = require('./config/webpack.config');
-const withOffline = require('next-offline')
-const workboxOpts = require('./config/serviceWorker.config');
-module.exports = withOffline(withSass({
+const withSass      = require('@zeit/next-sass');
+const webpackConfig = require('./config/webpack.config');
+const withOffline   = require('next-offline');
+const workboxOpts   = require('./config/serviceWorker.config');
+
+module.exports      = withOffline(withSass({
   cssModules: true,
   distDir: '../build', // from client folder
   workboxOpts,

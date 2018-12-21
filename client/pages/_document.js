@@ -28,13 +28,13 @@ class MyDocument extends Document {
             {` .hidden-no-script {display:none;} `}
           </style>
         </noscript>
+        {
+          process.env.NODE_ENV !== 'development' &&
+          <link rel="manifest" href="/manifest.json" />
+        }
       </Head>
       <body>
       <Main/>
-      {
-        process.env.NODE_ENV !== 'development' &&
-        <link rel="manifest" href="/static/manifest.json"/>
-      }
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
       <NextScript/>
       </body>

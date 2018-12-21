@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/router.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/router.js"
   },
   {
     "url": "/_next/static/chunks/commons.f643062badde09274c68.js"
@@ -18,61 +18,61 @@ self.__precacheManifest = [
     "url": "/_next/static/runtime/webpack-89179faa512dd01fbb62.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/troubleshooting.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/troubleshooting.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/configuration.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/configuration.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/get-started.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/get-started.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/i18n.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/i18n.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/intro.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/intro.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/performances.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/performances.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/requirements.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/requirements.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/readme.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/readme.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/store.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/store.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/theme.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/theme.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/discover.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/discover.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/under-the-hood.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/under-the-hood.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/wrappers.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/wrappers.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_error.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_error.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_sandbox.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_sandbox.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/index.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/index.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/components.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/components.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_doc/api.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_doc/api.js"
   },
   {
-    "url": "/_next/static/L5dwvQK4iDUylNMpGrEo_/pages/_app.js"
+    "url": "/_next/static/Ww45VC9utVnqT50qrbaOC/pages/_app.js"
   }
 ];
 
@@ -100,7 +100,6 @@ workbox.clientsClaim();
 workbox.setConfig({
   debug: true
 });
-
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
@@ -110,4 +109,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
+workbox.routing.registerRoute(/(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/, workbox.strategies.cacheFirst({ "cacheName":"images", plugins: [] }), 'GET');
+workbox.routing.registerRoute(/\.(?:woff|woff2|otf|ttf)$/, workbox.strategies.cacheFirst({ "cacheName":"fonts", plugins: [] }), 'GET');
+workbox.routing.registerRoute(/\.(?:js|jsx)$/, workbox.strategies.networkFirst({ "cacheName":"scripts", plugins: [] }), 'GET');
 workbox.routing.registerRoute(/http[s]?:\/\/.*/, workbox.strategies.networkFirst({ "cacheName":"html-cache", plugins: [] }), 'GET');
