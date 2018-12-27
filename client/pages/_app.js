@@ -8,12 +8,14 @@ import React                                                        from 'react'
 import JssProvider                                                  from 'react-jss/lib/JssProvider';
 import { Provider }                                                 from 'react-redux';
 import config                                                       from '../../config';
+import envBoolean                                                   from '../../helpers/envBoolean';
 import langDetector                                                 from '../../server/lib/customI18nextLangDetector';
 import { fetchAppSettings, updateAppCurrentUrl, updateAppLanguage } from '../../store/actions/app.actions';
 import createStore                                                  from '../../store/createStore';
 import getPageContext                                               from '../lib/getPageMUIContext';
 
 import '../styles/styles.scss';
+
 
 export default withRedux(createStore)(class _App extends App {
   constructor(props) {
@@ -22,22 +24,11 @@ export default withRedux(createStore)(class _App extends App {
   }
 
 
-  /**
-   * Get App and sub-pages initial props
-   * @param Component
-   * @param ctx
-   * @returns {Promise<{pageProps: {}}>}
-   */
   static async getInitialProps({ Component, ctx }) {
     const props = {};
 
     if (ctx.isServer === true) {
-
-      // If a language is defined, store it as a prop so that we can use it
-      // in componentWillMount to save a current language in the redux store
-
       props.lang = ctx.req.language;
-
     } else {
       props.lang = langDetector.find();
     }
@@ -116,7 +107,7 @@ export default withRedux(createStore)(class _App extends App {
    */
   _initServiceWorker() {
     if (process.browser && 'serviceWorker' in navigator) {
-      if (process.env.ENABLE_SERVICE_WORKER === 'TRUE' || process.env.ENABLE_SERVICE_WORKER === '1') {
+      if (envBoolean(process.env.ENABLE_SERVICE_WORKER)) {
         navigator.serviceWorker
           .register('/static/service-worker.js')
           .then(() => {

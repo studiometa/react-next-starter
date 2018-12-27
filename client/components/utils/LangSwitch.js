@@ -61,9 +61,6 @@ const resolveLinks = (routes, route, search = '') => {
  * This component displays a button to switch the current language
  * It can resolve a given url to any other language at the condition that
  * this url is not dynamic.
- *
- * Nb: this component can only be used on the client side while it requires
- * the NextJs instance. You may also need to wrap it with the react-no-ssr component.
  */
 export default React.memo(connect(state => ({
   lang: state.app ? state.app.lang : undefined,

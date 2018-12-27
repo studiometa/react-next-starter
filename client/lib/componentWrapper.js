@@ -15,12 +15,12 @@ import config                           from '../../config';
  * @param Component
  * @param {function} mapStateToProps: you know what it is
  * @param {object} styles: custom component styles
- * @param {boolean} isTranslatable: defines if the component must be translatable (will add the 't' function)
- * @param {boolean} isConnected: defines if the component must be connected to redux store
+ * @param {boolean} isTranslatable: defines if the component should be translatable (will add the 't' function)
+ * @param {boolean} isConnected: defines if the component should be connected to redux store
  * @param {boolean} hasStyles: defines if the component has MUI styles
- * @param {boolean} withTheme: defines if the theme must be injected to the component's props
- * @param {boolean} withWidth: defines if the current screen size breakpoint must be injected to the component's props
- * @param {boolean} withRouter: inject the pathname, query and asPath in the component
+ * @param {boolean} withTheme: defines if the theme should be injected to the component's props
+ * @param {boolean} withWidth: defines if the current screen size breakpoint should be injected to the component's props
+ * @param {boolean} withRouter: inject the pathname, query and asPath into the component
  * @param {array} namespaces: custom namespaces that can be added to i18next
  * @returns {*}
  */

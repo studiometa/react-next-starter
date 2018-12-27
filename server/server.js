@@ -17,6 +17,7 @@ const LRUCache                     = require('lru-cache');
 const removeUrlLastSlash           = require('../helpers/removeUrlLastSlash');
 const chalk                        = require('chalk');
 const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName');
+const envBoolean                   = require('../helpers/envBoolean');
 
 const config           = require('../config');
 const routes           = require('./routes');
@@ -30,15 +31,15 @@ class App {
     this.config             = props.config;
     this.dev                = process.env.NODE_ENV !== 'production';
     this.nextApp            = next({ dev: this.dev, dir: this.config.server.clientDir });
-    this.enableFakeApi      = (process.env.ENABLE_FAKE_API === '1' || process.env.ENABLE_FAKE_API === 'TRUE');
-    this.enableHtpasswd     = (process.env.ENABLE_HTPASSWD === '1' || process.env.ENABLE_HTPASSWD === 'TRUE');
+    this.enableFakeApi      = envBoolean(process.env.ENABLE_FAKE_API);
+    this.enableHtpasswd     = envBoolean(process.env.ENABLE_HTPASSWD);
     this.protocol           = process.env.PROTOCOL || 'http';
     this.host               = process.env.HOST || this.config.server.baseUrl || 'localhost';
     this.port               = parseInt(process.env.PORT || this.config.server.port || 3000);
     this.routes             = routes;
     this.url                = `${this.protocol}://${this.host}:${this.port}`;
     this.server             = null;
-    this.enableSSRCaching   = (process.env.ENABLE_SSR_CACHING === '1' || process.env.ENABLE_SSR_CACHING === 'TRUE');
+    this.enableSSRCaching   = envBoolean(process.env.ENABLE_SSR_CACHING);
     this.ssrCache           = new LRUCache({
       max: process.env.SRR_CACHE_MAX_SIZE ? parseInt(process.env.SRR_CACHE_MAX_SIZE) : 100,
       maxAge: process.env.SSR_CACHE_MAX_AGE ? parseInt(process.env.SSR_CACHE_MAX_AGE) : 1000 * 60 * 60, // 1hour
@@ -285,7 +286,7 @@ class App {
 
     // Remove the sandbox page in production
     if (process.env.NODE_ENV === 'production'
-      && process.env.KEEP_DEV_TOOLS_ON_PRODUCTION !== 'TRUE' && process.env.KEEP_DEV_TOOLS_ON_PRODUCTION !== '1'
+      && !envBoolean(process.env.KEEP_DEV_TOOLS_ON_PRODUCTION)
       && (routeName.indexOf('/_sandbox') === 0 || routeName.indexOf('/_doc') === 0)) {
       return;
     }

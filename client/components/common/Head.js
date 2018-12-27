@@ -4,21 +4,12 @@ import config from '../../../config/index';
 
 
 /**
- * This component generates the <head> tag of the pages
+ * This component generates the pages <head> tag
  * @see https://github.com/zeit/next.js#populating-head
  */
 export default React.memo((props) => {
 
   let metaData = props.metaData;
-
-  // Just in case 'metaData' will be an object an not an array
-  // it should always be
-  // an array but the API is currently returning an object so...)
-  if (typeof metaData === 'object' && !Array.isArray((metaData))) {
-    metaData = Object.entries(metaData).map(([name, content]) => {
-      return { name, content };
-    });
-  }
 
   metaData = [...config.seo.defaultMetaTags, ...(metaData || [])];
 

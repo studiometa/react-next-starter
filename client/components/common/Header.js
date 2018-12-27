@@ -6,7 +6,7 @@ import packageJson      from '../../../package';
 import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
 import Link             from './Link/index';
-
+import envBoolean from '../../../helpers/envBoolean'
 
 const styles = theme => ({
   link: {
@@ -48,7 +48,7 @@ const Header = function Header(props) {
         t = e => e,
       } = props;
 
-  const showDevToolsLinks = process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === 'TRUE' || process.env.KEEP_DEV_TOOLS_ON_PRODUCTION === '1' || process.env.NODE_ENV !== 'production';
+  const showDevToolsLinks = envBoolean(process.env.KEEP_DEV_TOOLS_ON_PRODUCTION) || process.env.NODE_ENV !== 'production';
 
   return (
     <AppBar position="static" color="primary">

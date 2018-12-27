@@ -11,9 +11,9 @@ const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) =>
   }));
 });
 
-// This is a Higher Order Component that can be used with all the app pages.
+// This is a HOC that can be used with all the app pages.
 // Its goal is simply to make a request to the API when the Component getInitialProps is called
-// an retrieve specific data for the page. This data will be accessible under the page prop 'pageData'
+// an retrieve specific data for the page. these data will be accessible under the page prop 'pageData'
 
 
 export default (pageName = '', opts = {}) => ComposedComponent => {

@@ -64,8 +64,7 @@ class LazyImage extends React.PureComponent {
 
 
   /**
-   * Here we are fetching the image silently and handling the load
-   * result
+   * Here we are fetching the image silently and handling the load result
    */
   getCover() {
     if (!this.props.src) return;

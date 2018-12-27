@@ -82,8 +82,6 @@ export default class Socket {
    * Computes axios errors to make them
    * more reusable. It is also possible to define
    * a custom message if needed.
-   * This function may be moved
-   * to the utils folder in the future
    * @param error
    * @param message
    * @returns {{}}
@@ -94,7 +92,6 @@ export default class Socket {
     if (error.response) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx
-      //_result.data = error.response.data; // TODO enable this when real server errors model is defined
       _result.status = error.response.status;
     }
 

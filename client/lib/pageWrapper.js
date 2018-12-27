@@ -18,8 +18,8 @@ import withPageData   from './withPageData';
  * @param {array} namespaces: additional locales that can be injected to the page
  * @param {function} mapStateToProps: you know what it is
  * @param {object} styles: custom component styles
- * @param {boolean} withTheme: define if the prop 'theme' containing the app theme must be injected into the component
- * * @param {boolean} noPageData: if no page data is required by the component
+ * @param {boolean} withTheme: define if the prop 'theme' containing the app theme should be injected into the component
+ * @param {boolean} noPageData: true if no pageData is required by the page
  * @returns {*}
  */
 

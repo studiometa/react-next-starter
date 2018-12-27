@@ -4,8 +4,7 @@ const config               = require('./index');
 const env                  = getClientEnvironment(config.server.getUrl());
 const Visualizer           = require('webpack-visualizer-plugin');
 const path                 = require('path');
-const NextWorkboxPlugin    = require('next-workbox-webpack-plugin');
-const serviceWorkerConfig  = require('./serviceWorker.config');
+const envBoolean           = require('../helpers/envBoolean');
 
 /**
  * This is not a real webpack configuration file but a function that makes changes to
@@ -24,7 +23,7 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
   }
 
   // Add source map for prod
-  if (!dev && !isServer && nextWebpackConfig.devtool === false && (process.env.ENABLE_SOURCE_MAP === '1' || process.env.ENABLE_SOURCE_MAP === 'TRUE')) {
+  if (!dev && !isServer && nextWebpackConfig.devtool === false && envBoolean(process.env.ENABLE_SOURCE_MAP)) {
     nextWebpackConfig.devtool = 'source-map';
     nextWebpackConfig.plugins.map((p) => {
       if (p.constructor.name === 'UglifyJsPlugin') {
@@ -52,7 +51,7 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
       plugin.minChunks != null
     ) {
       const defaultMinChunks = plugin.minChunks;
-      plugin.minChunks = (module, count) => {
+      plugin.minChunks       = (module, count) => {
         if (module.resource && module.resource.match(/\.(sass|scss|css)$/)) {
           return true;
         }
@@ -75,16 +74,16 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
           test: /\.md$/,
           use: [
             {
-              loader: "html-loader"
+              loader: 'html-loader',
             },
             {
-              loader: "markdown-loader",
+              loader: 'markdown-loader',
               options: {
                 /* your options here */
-              }
-            }
-          ]
-        }
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [

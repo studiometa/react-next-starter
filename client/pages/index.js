@@ -1,8 +1,9 @@
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
-import LazyImage   from '../components/utils/LazyImage';
 import Layout      from '../components/common/PageLayout';
+import LazyImage   from '../components/utils/LazyImage';
 import pageWrapper from '../lib/pageWrapper';
+
 
 const styles = theme => ({
   title: {

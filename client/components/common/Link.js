@@ -3,32 +3,23 @@ import classNames                   from 'classnames';
 import NextLink                     from 'next/link';
 import propTypes                    from 'prop-types';
 import React                        from 'react';
-import config                       from '../../../../config/index';
-import removeUrlLastSlash           from '../../../../helpers/removeUrlLastSlash';
-import resolvePathnameFromRouteName from '../../../../helpers/resolvePathnameFromRouteName';
-import routes                       from '../../../../server/routes';
-import wrapper                      from '../../../lib/componentWrapper';
+import config                       from '../../../config/index';
+import removeUrlLastSlash           from '../../../helpers/removeUrlLastSlash';
+import resolvePathnameFromRouteName from '../../../helpers/resolvePathnameFromRouteName';
+import routes                       from '../../../server/routes';
+import wrapper                      from '../../lib/componentWrapper';
 
 
 
 /**
- * This component is a handler to make it more easy to build
- * links that works with NextJs.
+ * This component can be used to build links that works properly with NextJs
+ * and the custom router.
  *
- * Here we can simply build a link like this:
- * <Link to="/products/:id" query="my-product">My product</Link>
+ * This is an example of how it should be used :
+ * <Link to="/products/:id" query="my-product">Some link text</Link>
  *
- * The to parameter defines the href of the route
+ * Take a look at the documentation if you want to know more about this component
  *
- * If a query parameter is set, the component will look for the matching
- * route in the server/routes/routes.js file. If a matching route is found and
- * that route has a queryParams parameter, the first element of this array will
- * be taken and set has url query key.
- * For example, if the queryParams value of matching route of the Link defined before
- * is ['id'], the href generated would be "/product?id=my-product"
- *
- * This way we do not have to cary about the query key but only about its value. This
- * makes it more easy for us to build links that follow the same pattern.
  * @param props
  * @returns {*}
  * @constructor
@@ -38,16 +29,16 @@ import wrapper                      from '../../../lib/componentWrapper';
 class Link extends React.Component {
   static propTypes = {
 
-    // The content of the link
+    // The content of the link, it can be almost anything
     children: propTypes.any.isRequired,
 
-    // The route path
+    // The route path as defined in the routes.js file
     to: propTypes.string.isRequired,
 
-    // The route query (replacing the :foo in the route path)
+    // The route query(ies)
     query: propTypes.any,
 
-    // A className applied to the link
+    // A className that is applied to the <a> tag of the link
     className: propTypes.string,
 
     // A style to be used when the link is active
@@ -56,7 +47,7 @@ class Link extends React.Component {
     // A className to be used when the link is active
     activeClassName: propTypes.string,
 
-    // Do not use the Typography element in the link
+    // Do not use the M-ui Typography element in the link
     noTypo: propTypes.bool,
 
     // The name of the link (native)
@@ -65,7 +56,7 @@ class Link extends React.Component {
     // The target of the link (native)
     target: propTypes.string,
 
-    // Define if the related page must be prefetched (only in prod)
+    // Define if the related page must be pre-fetched (only in prod)
     prefetch: propTypes.bool,
 
     // A query that can be passed to the link
@@ -125,7 +116,7 @@ class Link extends React.Component {
     }
 
     // If the 'to' prop contains a dot, it cannot be a valid route
-    // and is probably be an url instead. In this case, all we need to
+    // and is probably be an url. In this case, all we need to
     // do is to save the url into the 'pathname' state of the component
     // and display a native link instead of the Next Link component
     if (to.includes('.') || to.includes('://')) {
@@ -134,8 +125,8 @@ class Link extends React.Component {
       return;
     }
 
-    // If lang is not defined (it must never be, but who knows?), fallback to default language.
-    // This is important because we must NEVER have urls without language prefix if the
+    // If 'lang' is not defined (it should always be, but who knows?), we should fallback to the default language.
+    // This is important because we must NEVER have urls without a language prefix if the
     // url translation is enabled. This may cause duplicated content pages and have bad effects
     // on your SEO...
 
@@ -151,9 +142,6 @@ class Link extends React.Component {
       if (process.env.NODE_ENV !== 'production') {
         console.error(`Link.js: No matching route has been found for '${ to }'`);
       }
-
-      // If a query is defined and the matching route has a queryParams parameter
-      // add the query to the final link path (href and as parameters)
     }
 
     if (typeof query === 'object') {
@@ -162,7 +150,7 @@ class Link extends React.Component {
       ));
     }
 
-    // If the target is _blank, we must generate an absolute url from the
+    // If the 'target' is _blank, we must generate an absolute url from the
     // route pathname. This way we can open an internal page in a new tab/window.
 
     if (target === '_blank') {
@@ -187,11 +175,7 @@ class Link extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return nextState !== this.state
-      || nextProps.lang !== this.props.lang
-      || nextProps.to !== this.props.to
-      || nextProps.urlQuery !== this.props.urlQuery
       || nextProps.children !== this.props.children
-      || nextProps.query !== this.props.query;
   }
 
 
@@ -262,8 +246,7 @@ class Link extends React.Component {
       </a>
     );
 
-    // Return a native external link if 'to' is not
-    // a route but an url
+    // Return a native external link if 'to' is not a route but an url
     if (this.state.isExternal === true) {
       return NativeLinkComponent;
     } else {

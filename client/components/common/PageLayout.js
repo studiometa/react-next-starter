@@ -8,7 +8,6 @@ import Error          from '../../pages/_error';
 import Head           from './Head';
 import Header         from './Header';
 
-// xs, sm, md, lg, and xl.
 const styles = theme => ({
 
   root: {
@@ -34,7 +33,6 @@ const styles = theme => ({
     paddingTop: `${theme.spacing.unit * 8}px`,
     paddingLeft: theme.styles.responsivePadding.paddingLeft,
     paddingRight: theme.styles.responsivePadding.paddingRight,
-    //overflowY: 'hidden',
     [theme.breakpoints.down('md')]: {
       paddingTop: `${theme.spacing.unit * 8}px`,
       ...theme.styles.responsivePadding[theme.breakpoints.down('md')],
@@ -52,11 +50,11 @@ const styles = theme => ({
 
 
 /**
- *  This component is a simple page layout that must be added to every pages of the app.
- *  Note that in order to work properly, this component needs a 'pageData' prop that contains
- *  all the information about the page (those information have generally been fetched from an API but it can also
- *  be a simple config file !). This prop will principally be used for SEO purpose, like generating the page <head>
- *  children like metas, title, etc.
+ *  This component is a simple page layout that must be added to every page of the app.
+ *  Note that in order to work properly, it needs a 'pageData' prop that contains
+ *  all the information about the current page (those information have generally been fetched from an API but it can also
+ *  be a simple config file or anything else). This prop will principally be used for SEO purpose, like generating the page <head>
+ *  tag with some metas, title, etc.
  *
  *  Note that all other props passed to this component (except 'children' of course) will be passed
  *  to the Head component. It means that you can easily override some pageData properties like title for example.
@@ -68,20 +66,18 @@ const PageLayout = withStyles(styles)(function Layout(props) {
   let {
         pageData, // The pageData object received by the component
         children, // the page content
-        classes, // classes for the page layout components
+        classes,
         backgroundColor, // The background color of the page
-        debug, // An object to display on the inspector (dev only)
+        debug, // An object to display on the inspector tool (dev only)
         ...rest // Any other property will be assigned to the pageData object
       } = props;
 
-  // Display an error if
+  // Display an error if pageData is not defined or if it contains an error
   if (!pageData || pageData.error === 404 || (pageData.error && pageData.error !== 404)) {
     const statusCode = pageData && pageData.statusCode ? pageData.statusCode : 404;
     return <Error statusCode={statusCode}/>;
   }
 
-  // Here we are merging all other props to the pageData object
-  // that will next be sent to the Head component
   Object.assign(pageData || {}, rest);
 
   return (
@@ -99,7 +95,7 @@ const PageLayout = withStyles(styles)(function Layout(props) {
       </Grid>
 
       {
-        // This is only for dev purpose (it displays the workshop object at the bottom of the page)
+        // Optional inspector tool displayed at the bottom of the page
         process.env.NODE_ENV === 'development' && typeof debug === 'object' &&
         <div style={{
           position: 'fixed',
@@ -120,10 +116,10 @@ const PageLayout = withStyles(styles)(function Layout(props) {
 });
 
 PageLayout.propTypes = {
-  pageData: PropTypes.object, // The pageData object received by the component
-  children: PropTypes.any, // the page content
-  classes: PropTypes.object, // classes for the page layout components
-  backgroundColor: PropTypes.string, // The background color of the page
+  pageData: PropTypes.object,
+  children: PropTypes.any,
+  classes: PropTypes.object,
+  backgroundColor: PropTypes.string,
   debug: PropTypes.object,
 };
 
