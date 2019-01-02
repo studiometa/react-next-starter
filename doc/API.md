@@ -1,15 +1,15 @@
 # API and Page data
 
-Comme ce starter a été conçu pour une utilisation headless, il vous sera probablement nécessaire de mettre en place un moyen de communiquer avec une API distance pour récupérer les données à afficher. Dans le cas d'un site entièrement static, vous pouvez sauter cette section.
+As this starter was designed for headless use, you will probably need to set up a way to communicate with a remote API to retrieve the data to be displayed. In the case of a completely static site, you can skip this section.
 
-## Configuration de l'API
+## API Configuration
 
-Certaines options de l'API sont configurations via les variables d'environnement. Rendez-vous dans la section "configuration" de la documentation pour plus d'infos. 
+Some API settings are configured via environment variables. See the "configuration" section of the documentation for more information. 
 
 
 ## pageData
 
-L'objet pageData est accessible à partir de n'importe quelle page de l'application. Il contient un certain nombre d'informations sur la page et doit respecter la structure suivante : 
+The pageData object is accessible from any page of the application. It contains a certain amount of information on the page and must follow the structure below: 
 
     {  
       "title": "Home",
@@ -20,33 +20,33 @@ L'objet pageData est accessible à partir de n'importe quelle page de l'applicat
 	  "settings": {...} 
     },
 
-- **title** : Le titre de la page tel qu'il sera affiché dans la balise `<title>` 
-- **metaData**: Un tableau permettant de générer des balises `<meta>`. Chaque élément du tableau doit être un objet, tous les attributs de ces objets seront passés à la balise `<meta>`.
-- **content**: Le contenu de votre page, peut contenir tout et n'importe quoi selon vos besoins
-- **settings**: Des paramètres supplémentaires propres à cette page, encore une fois vous pouvez y mettre tout ce qui vous semble utile. 
+- **title** : The title of the page as it will be displayed in the `<title>` tag 
+- **metaData**: An array to generate `<meta>` tags. Each element of the array must be an object, all the attributes of these objects will be passed to the tag `<meta>`.
+- **content**: The content of your page can contain anything depending on your needs
+- **settings**: Additional settings specific to this page, once again you can put anything you think is useful. 
 
-Il vous est possible de définir qu'une page n'a pas besoin de l'objet pageData en définissant l'attribut `noPageData` à `true` dans les paramètres du wrapper de la page. Si vous ne désirez pas du tout utiliser cette feature, il est possible de la désactiver depuis le fichier `/config/api.config.js` à l'aide du paramètre `fetchPagesData`.
+You can define that a page does not need the pageData object by setting the attribute `noPageData` to `true` in the page wrapper settings. If you do not want to use this feature at all, it is possible to disable it from the `/config/api.config.js` file using the `fetchPagesData` parameter.
 
 ## Socket.js
 
-La classe `Socket` a été conçue dans le but de simplifier les requêtes faites à l'API. Elle est disponible à cet endroit : `/lib/socket.js`.
+The `Socket` class was designed to simplify requests made to the API. It is available at this location: `/client/lib/socket.js`.
 
-- Par défaut, cette classe est utilisée afin de récupérer les données pour certaines pages ainsi que des paramètres d'application
-- Une instance de cette classe est également accessible depuis les actions de redux (voir la section "store" de la documentation).
-- Il ne tient qu'à vous de mettre cette classe à jour pour lui permettre de gérer toutes les requêtes dont vous pourriez avoir besoin à partir d'un seul et même endroit. 
+- By default, this class is used to retrieve data for certain pages and application settings.
+- An instance of this class is also accessible from the redux actions (see the "store" section of the documentation).
+- It is up to you to update this class to allow it to handle all the requests you may need from a single location. 
 
 
 ## Fake-api
 
-Comme son nom l'indique, il s'agit d'une "fausse API" ne prenant en charge que les paramètre de type GET. Cette API a été conçue à l'aide de la librairie [germaine.js](https://github.com/chuck-durst/germaine). Je vous invite à lire la doc de cette librairie pour comprendre ses principes de fonctionnement.
+As the name suggests, this is a "fake API" that only supports GET parameters. This API has been designed using the[germaine.js](https://github.com/chuck-durst/germaine) library. I invite you to read the doc of this library to understand how it works.
 
-- Les requêtes sont faites sur le endpoint `/fake-api`de votre application (non modifiable)
-- Les données sont accessibles dans le dossier `/server/database.json`. 
-- Vous pouvez également désactiver cette fonctionnalité à l'aide de la variable d'environnement `ENABLE_FAKE_API`. 
+- Requests are made on the `/fake-api` endpoint of your application (not editable)
+- The data is accessible in the `/server/database.json` folder. 
+- You can also disable this feature using the `ENABLE_FAKE_API` environment variable. 
 
-**Vous pouvez vous servir de ce service pour trois raisons :**
-- En développement, si un endpoint de l'API n'a pas encore été développé, vous pouvez utiliser fake-api pour simuler les requêtes
-- En production, fake-api peut très bien être utilisé comme base de donnée statique 
-- En production, il vous serait également possible de mettre en place un système de fallback. Si une requête à votre API échoue (404, 500, etc) vous pourriez alors résoudre un contenu statique grace à fake-api.
+**You can use this service for three reasons:**
+- In development, if an API endpoint has not yet been developed, you can use fake-api to simulate requests
+- In production, fake-api can be used as a static database 
+- In production, it would also be possible to set up a fallback system. If a request to your API fails (404, 500, etc.) you could then solve static content with fake-api.
 
 

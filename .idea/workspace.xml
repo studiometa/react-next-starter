@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="[WIP] Update the Js doc">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Update the Js doc">
+      <change afterPath="$PROJECT_DIR$/doc/fr/API.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/COMPONENTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/CONFIGURATION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/DISCOVER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/GET_STARTED.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/I18N.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/INTRODUCTION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/PERFORMANCES.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/REQUIREMENTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/ROUTER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/STORE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/THEME.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/TROUBLESHOOTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/UNDER_THE_HOOD.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/fr/WRAPPERS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/api.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/api.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/env.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/env.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/lang.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pm2.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/pm2.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/redux.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/redux.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/seo.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/seo.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/server.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/server.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/buildUrlWithSearchState.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/buildUrlWithSearchState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/getFormatedTimeFromMinutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/getFormatedTimeFromMinutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/removeUrlLastSlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/removeUrlLastSlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/lib/paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/API.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
           <entry key="htaccess" value="1" />
           <entry key="js" value="486" />
           <entry key="json" value="56" />
-          <entry key="md" value="44" />
+          <entry key="md" value="48" />
           <entry key="production" value="7" />
           <entry key="scss" value="4" />
           <entry key="test" value="2" />
@@ -83,7 +83,7 @@
           <entry key="Git file" value="3" />
           <entry key="JSON" value="57" />
           <entry key="JavaScript" value="486" />
-          <entry key="Markdown" value="44" />
+          <entry key="Markdown" value="48" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="2" />
@@ -99,11 +99,11 @@
           <entry key="htaccess" value="10" />
           <entry key="js" value="31181" />
           <entry key="json" value="1471" />
-          <entry key="md" value="18456" />
+          <entry key="md" value="18535" />
           <entry key="production" value="61" />
           <entry key="scss" value="34" />
           <entry key="test" value="44" />
-          <entry key="txt" value="2701" />
+          <entry key="txt" value="2707" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -113,8 +113,8 @@
           <entry key="JSON" value="1471" />
           <entry key="JSX Harmony" value="8" />
           <entry key="JavaScript" value="31181" />
-          <entry key="Markdown" value="18448" />
-          <entry key="PLAIN_TEXT" value="2703" />
+          <entry key="Markdown" value="18527" />
+          <entry key="PLAIN_TEXT" value="2709" />
           <entry key="SCSS" value="34" />
           <entry key="htaccess" value="10" />
         </counts>
@@ -133,52 +133,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/database.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-554">
-              <caret line="479" column="6" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/next.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TODO.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="69">
-                <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -236,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/static/.htaccess" />
         <option value="$PROJECT_DIR$/client/public/robots.txt" />
         <option value="$PROJECT_DIR$/doc/UNDER_THE_HOOD.md" />
         <option value="$PROJECT_DIR$/client/styles/styles.scss" />
@@ -287,6 +241,7 @@
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/doc/API.md" />
       </list>
     </option>
   </component>
@@ -336,43 +291,13 @@
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="fr" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,11 +334,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc/fr" />
       <recent name="$PROJECT_DIR$/client/static/imgs" />
       <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/client/static" />
       <recent name="$PROJECT_DIR$/client/pages/_doc" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/components/common" />
@@ -567,13 +492,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00148" summary="Add a method to the server to check the validity of the given routes">
-      <created>1544548132437</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1544548132437</updated>
     </task>
     <task id="LOCAL-00149" summary="Add colors to the terminal 👧">
       <created>1544548532400</created>
@@ -911,7 +829,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545926413610</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="Update the Js doc">
+      <created>1546441651600</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1546441651600</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -947,7 +872,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="510222000" />
+    <option name="totallyTimeSpent" value="510831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,7 +885,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17521368" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -1058,7 +982,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="[WIP] Update docs + add a get-started page" />
     <MESSAGE value="Update LangSwitch component to handle new routes structure" />
     <MESSAGE value="Hide temporary the LangSwitch component when the routes translation is disable" />
     <MESSAGE value="Update doc" />
@@ -1083,26 +1006,10 @@
     <MESSAGE value="Remove service-worker.js file from git" />
     <MESSAGE value="Perform a 301 redirection when an url ends with a slash" />
     <MESSAGE value="[WIP] Update the Js doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="[WIP] Update the Js doc" />
+    <MESSAGE value="Update the Js doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the Js doc" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/components/utils/Skeleton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/utils/LazyImage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1543">
-          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/components/utils/NoScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1424,6 +1331,27 @@
         <state relative-caret-position="-232" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/next.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="479" column="6" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/database.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1437,24 +1365,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+    <entry file="file://$PROJECT_DIR$/doc/fr/API.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-216">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-554">
-          <caret line="479" column="6" selection-start-line="479" selection-start-column="6" selection-end-line="479" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/next.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+    <entry file="file://$PROJECT_DIR$/doc/API.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="317">
+            <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
