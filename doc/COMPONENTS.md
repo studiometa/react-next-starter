@@ -1,122 +1,113 @@
-# Composants
+# Components
 
-Si vous jetez un oeil au dossier `/client/components` vous remarquerez 3 sous-dossiers :
+If you take a look at the `/client/components` folder you will notice 3 sub-folders :
 
-- **_doc** : Contient quelques composants utilisés pour les pages de documentation. Vous n'aurez à priori jamais besoin
-d'y toucher
-- **common** : Contient certains composants communs à toutes les pages et fréquement utilisés
-- **utils** : Contient une bibliothèque de plusieurs composants prêts à l'emploi et supposés vous aider dans le développement de votre projet
+- **_doc** : Contains some components used for documentation pages. You will normally never need to touch it.
+- **common** : Contains some frequently used components common to all pages
+- **utils** : Contains a library of several components ready-to-use and supposed to help you in the development of your project
 
 ## common
 
 ### PageLayout.js
 
-Ce composant est un wrapper utilisé dans toutes les pages. Nous vous conseillons fortement de l'utiliser à chaque fois.
-Il permet par exemple d'ajouter votre Header ou votre Footer sur toutes les pages, mais également d'appliquer un layout
-commun à chacune d'entre elles. C'est aussi ce composant qui est indirectement chargé de générer les balises `<meta>` de vos
-pages (voir composant Head.js ci-dessous).
+This component is a wrapper used in all pages. We strongly recommend that you use it every time.
+It allows you for example to add your Header or Footer on all pages, but also to apply a layout common to each of them. It is also this component that is indirectly responsible for generating the `<meta>' tags for your pages (see Head.js component below).
 
-Par défaut, les props suivantes sont disponibles pour ce composant. Selon vos besoin, vous devrez cependant probablement modifier
-ce composant pour y ajouter les fonctionnalités que vous jugerez nécessaires :
+By default, the following props are available for this component. However, depending on your needs, you will probably have to modify this component to add the functionalities you consider necessary:
 
         
-| Nom | Requis | Type | Description | Défaut |
-|-----|--------|------|-------------|--------|
-| children | Oui | any | Le contenu de votre page | - |
-| backgroundColor | Non | string | Permet de modifier la couleur de fond de votre page | theme.palette.grey[50] |
-| pageData | Oui | Object | Contient l'objet pageData. Passez un objet vite si votre page n'en a pas besoin. Si pageData n'est pas défini, la page retournera une 404 | - |
-| debug | Non | Object | Passez n'importe quel objet à cette prop permet d'afficher un debugger en bas de page à l'aide de la librairie react-inspector. Cette feature n'est disponible qu'en développement | - |
+| Name | Require | Type | Description | Default |
+|------|---------|------|-------------|---------|
+| children | Yes | any | Your page content | - |
+| backgroundColor | No | string | Allows you to change the background color of your page | theme.palette.grey[50] |
+| pageData | Yes | Object | Contains the pageData object. Pass an empty object if your page does not need it. If pageData is not defined, the page will return a 404 | - |
+| debug | No | Object |Passing any object to this prop displays a debugger at the bottom of the page using the react-inspector library. This feature is only available in development | - |
 
 
 ### Head.js
 
-Ce composant sert principalement de wrapper pour le [composant Head de NextJs](https://github.com/zeit/next.js#populating-head).
+This component is mainly used as a wrapper for the [NextJs Head](https://github.com/zeit/next.js#populating-head) component.
 
-Il est utilisé pour générer la balise `<head>` de toutes vos pages. À noter que le titre de la page peut être défini
-via l'objet `pageData` ou au travers du composant `PageLayout` à l'aide de la props `title`. Les balises `<meta>` sont
-quant à elles uniquement générées via l'objet `pageData`. Vous pouvez cependant définir des balises par défaut dans le fichier
-`seo.config.js` à l'aide de l'attribut `defaultMetaTags`.
+It is used to generate the `<head>` tag for all your pages. Note that the page title can be defined via the `pageData` object or through the `PageLayout` component using the `title` prop. The `<meta>` tags are only generated via the `pageData` object. However, you can define default tags in the `seo.config.js` file using the `defaultMetaTags` attribute.
 
 ### Header.js
 
-Conçu à titre d'exemple, il s'agit simplement du Header présent sur toutes les pages du starter. Si votre projet nécessite un header,
-vous pouvez reprendre celui-ci et le modifier à votre sauce. Sinon, supprimez-le.
-
+Designed as an example, it is simply the Header present on all the starter pages. If your project requires a header, you can take it back and modify it to your liking. If not, delete it.
 
 ## Utils
 
 ### LangSwitch.js
 
-Ce composant permet d'afficher un sélecteur de langue. Toute la logique est en place, vous n'avez plus qu'à le customizer comme bon vous semble.
+This component displays a language selector. All the logic is in place, all you have to do is customising it as you wish.
 
-Voici quelques features intéressantes : 
-- Permet de changer de langue en restant sur la même page (fonctionnement uniquement avec les URLs statiques pour le moment)
-- Fonctionne avec ou sans le paramètre `enableRouteTranslation` activé
-- Fonctionne même si JavaScript est désactivé côté client
-- Ne nécessite aucune props, vous pouvez placer ce composant n'importe où sans avoir à le configurer
+Here are some interesting features : 
+- Allows you to change the language while remaining on the same page (only works with static URLs for the moment)
+- Works with or without the `enableRouteTranslation` parameter enabled
+- Works even if JavaScript is disabled on the client side
+- No props required, you can place this component anywhere without having to configure it
 
 
 ### LazyImage.js
 
-Comme son nom l'indique, ce composant permet de créer facilement des images lazy-loadées. Il fonctionne également avec
-les background-images. En cas d'erreur de chargement, l'image suivante sera affichée : `/static/imgs/fallback_image.png`. 
+As its name suggests, this component makes it easy to create lazy-loaded images. It also works with
+background-images. In case of loading error, the following image will be displayed: `/static/imgs/fallback_image.png`. 
 
-Voici la liste des props de ce composant :
+Here is the list of props of this component:
 
-| Nom | Requis | Type | Description | Défaut |
-|-----|--------|------|-------------|--------|
-| src | Non | String | La source de l'image à afficher | - |
-| width | Non | String, Number | Largeur de l'image | '100%' |
-| height | Non | String, Number | Hauteur de l'image | '100%' |
-| useBackgroundImage | Non | Boolean | Définie si l'image doit être affichée en background | false |
-| noSkeleton | Non | Boolean | Si true, le skeleton utilisé pour animer le chargement de l'image sera désactivé | false |
-| className | Non | String | Une classe appliquable à l'image | - |
+| Name | Required | Type | Description | Default |
+|------|----------|------|-------------|---------|
+| src | No | String | The image source | - |
+| width | No | String, Number | The image width | '100%' |
+| height | No | String, Number | The image height | '100%' |
+| useBackgroundImage | Non| Boolean | Define if the image should be display as a background-image | false |
+| noSkeleton | No | Boolean | If true, the skeleton used to animate the loading of the image will be disabled | false |
+| className | No | String | A class that can be applied to the image | - |
 
 ### NoScript.js
 
-Permet de créer une balise `<noscript>` 100% fonctionnelle et isomorphique.
+Allows to create a 100% functional and isomorphic `<noscript>` tag.
 
-**nb**: Si vous désirez effectuer la mécanique inverse, c'est à dire masquer un élément lorsque le JavaScript est activé
-sur la partie client, vous pouvez lui attribuer la classe `hidden-no-script`. Celle-ci aura pour effet d'appliquer un
-`display: none;` à votre élément. Ce n'est pas idéal, mais ça peut s'avérer pratique. Jetez un oeil au composant LazyImage.js
-pour un exemple d'utilisation.
+**nb**: If you want to perform the reverse mechanics, i. e. hide an element when JavaScript is enabled
+        on the client side, you can assign it the class `hidden-no-script`. This will have the effect of applying a
+        `display: none;` to your element. It's not ideal, but it can be practical. Take a look at the LazyImage.js component
+        for an example of use.
 
 ### Skeleton.js
 
-Ce composant permet de générer un "skeleton-screen".
+This component generates a "skeleton-screen".
 
-Voici la liste des props de ce composant : 
+Here is the list of the props of this component: 
 
-| Nom | Requis | Type | Description | Défaut |
-|-----|--------|------|-------------|--------|
-| count | Non | Number | Nombre de lignes à générer | 1 |
-| duration | Non | Number | Durée de l'animation en secondes | 1.2 |
-| width | Non | Number, String | Largeur du skeleton | null |
-| wrapper | Non | ReactNode | Permet d'ajouter un wrapper au skeleton | null |
-| lineHeight | Non | Number, String | Hauteur d'une ligne du skeleton | 'normal' |
-| className | Non | String | Ajoute une classe au composant | - |
-| styles | Non | Object | Ajoute des styles au composant | - |
+| Name | Required | Type | Description | Default |
+|------|----------|------|-------------|---------|
+| count | No | Number | Number of lines to be generated | 1 |
+| duration | No | Number | Animation duration in seconds | 1.2 |
+| width | No | Number, String | Skeleton width | null |
+| wrapper | No | ReactNode | Allows to add a wrapper to the skeleton | null |
+| lineHeight | No | Number, String | Height of a skeleton line | 'normal' |
+| className | No | String | Adds a class to the component | - |
+| styles | No | Object | Add some styles to the component | - |
 
 
 ### ResponsiveModal.js
 
-Permet de générer une modal fonctionnant sur mobile. Ce composant est un wrapper au composant [Modal](https://material-ui.com/api/modal/#modal) de material-ui.
+Allows to generate a modal running on mobile phones. This component is a wrapper to the [Modal component](https://material-ui.com/api/modal/#modal) of material-ui.
 
-Voici la liste des props de ce composant :
+Here is the list of the props of this component:
     
-| Nom | Requis | Type | Description | Défaut |
-|-----|--------|------|-------------|--------|
-| isOpen  | Oui | Boolean | Défini si la modal est affichée ou non | - |
-| closeModal  | Oui | Function | Callback à appeler pour fermer la modal | - |
-| modalProps | Non | Object | Des props custom appliquables au composant Modal | - |
-| paperProps | Non | Object | Des props custom appliquables au composant Paper | - |
-| contentProps | Non | Object | Des props custom appliquables au composant DialogContent | - |
-| maxWidth | Non | String, Number | Largeur max de la modal sur desktop | 480 |
-| noCloseBtn | Non | Boolean | Permet de masquer le bouton de fermeture de la modal | false |
-| fullScreen | Non | Boolean | Permet d'afficher la modal en plein écran | false |
-| title | Non | String | Titre optionnel de la modal  | - |
-| bottomActions | Non | ReactNode | Permet d'ajouter des éléments dans le footer de la modal | - |
+| Name | Required | Type | Description | Default |
+|------|----------|------|-------------|---------|
+| isOpen  | Yes | Boolean | Defined if the modal is displayed or not | - |
+| closeModal  | Yes | Function | Callback to call to close the modal | - |
+| modalProps | No | Object | Custom props that can be applied to the Modal component | - |
+| paperProps | No | Object | Custom props that can be applied to the Paper component | - |
+| contentProps | No | Object | Custom props that can be applied to the DialogContent component | - |
+| maxWidth | No | String, Number | Max modal width on desktop | 480 |
+| noCloseBtn | No | Boolean | Hide the modal close button | false |
+| fullScreen | No | Boolean | Allows you to display the modal in full screen | false |
+| title | No | String | Optional title of the modal  | - |
+| bottomActions | No | ReactNode | Allows to add elements in the modal footer | - |
 
 ### PageBuilder
 
-Ce composant est encore en cours de développement.
+WIP.

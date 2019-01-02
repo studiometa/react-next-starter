@@ -24,7 +24,7 @@ ce composant pour y ajouter les fonctionnalités que vous jugerez nécessaires :
 |-----|--------|------|-------------|--------|
 | children | Oui | any | Le contenu de votre page | - |
 | backgroundColor | Non | string | Permet de modifier la couleur de fond de votre page | theme.palette.grey[50] |
-| pageData | Oui | Object | Contient l'objet pageData. Passez un objet vite si votre page n'en a pas besoin. Si pageData n'est pas défini, la page retournera une 404 | - |
+| pageData | Oui | Object | Contient l'objet pageData. Passez un objet vide si votre page n'en a pas besoin. Si pageData n'est pas défini, la page retournera une 404 | - |
 | debug | Non | Object | Passez n'importe quel objet à cette prop permet d'afficher un debugger en bas de page à l'aide de la librairie react-inspector. Cette feature n'est disponible qu'en développement | - |
 
 
@@ -47,7 +47,7 @@ vous pouvez reprendre celui-ci et le modifier à votre sauce. Sinon, supprimez-l
 
 ### LangSwitch.js
 
-Ce composant permet d'afficher un sélecteur de langue. Toute la logique est en place, vous n'avez plus qu'à le customizer comme bon vous semble.
+Ce composant permet d'afficher un sélecteur de langue. Toute la logique est en place, vous n'avez plus qu'à le customiser comme bon vous semble.
 
 Voici quelques features intéressantes : 
 - Permet de changer de langue en restant sur la même page (fonctionnement uniquement avec les URLs statiques pour le moment)
