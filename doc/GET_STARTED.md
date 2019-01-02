@@ -1,54 +1,50 @@
-# Premiers pas
+# First steps
 
 
-## Obtenir la dernière version 
+## Get the last version
 
-Commencez par télécharger la dernière version du starter : 
+Start by downloading the latest version of the starter: 
 
 ```shell
 $ git clone https://github.com/studiometa/react-next-starter.git MyApp
 $ cd MyApp
 ```
   
-## Installer les dépendances  
+## Install the dependencies
 ```shell
 $ npm i  
 ```
 
-## Éxécuter l'application en mode développement
+## Launch the app in dev mode
 ```shell
 $ npm run dev
 ```
 
-## Éxécuter l'application en mode production
+## Launch the app in production mode
 ```shell
 $ npm run build
 $ npm run start
 ```
 
-## Éxécuter l'application en mode production avec PM2
+## Launch the app in production mode with PM2
 
-[PM2](http://pm2.keymetrics.io/) est un puissant outils qui permet entre autre de "[clusteriser](http://pm2.keymetrics.io/docs/usage/cluster-mode/)"
-votre application, c'est à dire de la rendre multi-process. PM2 assure également la maintenance de votre projet avec
-l'accès à une interface de [monitoring](http://pm2.keymetrics.io/docs/usage/monitoring/). Pour finir, il permet également
-de relancer automatiquement votre application si celle-ci venait à cracher. Tout cela fait de PM2 l'arme ultime pour les
-mises en production.
+[PM2](http://pm2.keymetrics.io/) is a powerful tool that allows you to "[cluster](http://pm2.keymetrics.io/docs/usage/cluster-mode/)"  your application, i.e. to make it multi-process. PM2 also ensures the maintenance of your project with access to a [monitoring interface](http://pm2.keymetrics.io/docs/usage/monitoring/). Finally, it allows to automatically restart your application if it crashes. All this makes PM2 the ultimate weapon for production.
 
 ```shell
 $ npm run build
 $ npm run pm2:start
 ```
 
-Attention, cette commande va éxécuter un daemon qui sera exécuté en tache de fond. Pour stoper ce processus utilisez la commande suivante :
+Warning, this command will execute a daemon that will be executed in the background. To stop this process use the following command:
 
 ```shell
 $ npm run pm2:stop <process_name>
 ```
 
-Le nom du processus correspond au nom de votre projet tel qu'il est défini dans le fichier `package.json`.
+The process name corresponds to the name of your project as defined in the `package.json` file.
 
 
-## Éxécuter les tests
+## Launch tests
 ```shell
 $ npm run test
 ```

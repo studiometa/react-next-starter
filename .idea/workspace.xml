@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - CONFIGURATION">
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - DISCOVER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/DISCOVER.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/DISCOVER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/fr/DISCOVER.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/fr/DISCOVER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/GET_STARTED.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/GET_STARTED.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
           <entry key="htaccess" value="1" />
           <entry key="js" value="486" />
           <entry key="json" value="56" />
-          <entry key="md" value="55" />
+          <entry key="md" value="57" />
           <entry key="production" value="7" />
           <entry key="scss" value="4" />
           <entry key="test" value="2" />
@@ -69,7 +68,7 @@
           <entry key="Git file" value="3" />
           <entry key="JSON" value="57" />
           <entry key="JavaScript" value="486" />
-          <entry key="Markdown" value="55" />
+          <entry key="Markdown" value="57" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="2" />
@@ -85,11 +84,11 @@
           <entry key="htaccess" value="10" />
           <entry key="js" value="31181" />
           <entry key="json" value="1471" />
-          <entry key="md" value="19146" />
+          <entry key="md" value="19345" />
           <entry key="production" value="61" />
           <entry key="scss" value="34" />
           <entry key="test" value="44" />
-          <entry key="txt" value="2785" />
+          <entry key="txt" value="2793" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -99,8 +98,8 @@
           <entry key="JSON" value="1471" />
           <entry key="JSX Harmony" value="8" />
           <entry key="JavaScript" value="31181" />
-          <entry key="Markdown" value="19138" />
-          <entry key="PLAIN_TEXT" value="2787" />
+          <entry key="Markdown" value="19337" />
+          <entry key="PLAIN_TEXT" value="2795" />
           <entry key="SCSS" value="34" />
           <entry key="htaccess" value="10" />
         </counts>
@@ -121,11 +120,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/DISCOVER.md">
+        <entry file="file://$PROJECT_DIR$/doc/GET_STARTED.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="340">
-                <caret line="73" column="3" lean-forward="true" selection-start-line="73" selection-start-column="3" selection-end-line="73" selection-end-column="3" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="294">
+                <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               </first_editor>
               <second_editor />
             </state>
@@ -190,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.env.production" />
         <option value="$PROJECT_DIR$/server/pm2.js" />
         <option value="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" />
@@ -241,6 +239,7 @@
         <option value="$PROJECT_DIR$/doc/CONFIGURATION.md" />
         <option value="$PROJECT_DIR$/doc/DISCOVER.md" />
         <option value="$PROJECT_DIR$/doc/fr/DISCOVER.md" />
+        <option value="$PROJECT_DIR$/doc/GET_STARTED.md" />
       </list>
     </option>
   </component>
@@ -291,12 +290,6 @@
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
               <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -491,13 +484,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00152" summary="Fix a bug in the router (lang hydration)">
-      <created>1544714787367</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1544714787368</updated>
     </task>
     <task id="LOCAL-00153" summary="[WIP] documentation - add pages and starting page-builder component">
       <created>1544721567310</created>
@@ -835,7 +821,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546443765604</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="Translate and update the doc - DISCOVER">
+      <created>1546444423756</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1546444423756</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,7 +864,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="512950000" />
+    <option name="totallyTimeSpent" value="513186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -982,7 +975,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Improve the way the language is detected when enableRouteTranslation is disabled&#10;&#10;Add a way to detected the language from an url query (lang)" />
     <MESSAGE value="Improve the LangSwitch component&#10;&#10;- It now works on the server side&#10;- It works when routes translation is disabled&#10;- It works when JavaScript is disabled on the client side as well :D" />
     <MESSAGE value="Add a &quot;components&quot; article to the doc" />
     <MESSAGE value="Add a github link on the Header" />
@@ -1007,29 +999,10 @@
     <MESSAGE value="Translate and update the doc - API" />
     <MESSAGE value="Translate and update the doc - COMPONENTS" />
     <MESSAGE value="Translate and update the doc - CONFIGURATION" />
-    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - CONFIGURATION" />
+    <MESSAGE value="Translate and update the doc - DISCOVER" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - DISCOVER" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/lib/withPageData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2923">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/lib/withMUITheme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-911">
@@ -1379,8 +1352,26 @@
     <entry file="file://$PROJECT_DIR$/doc/DISCOVER.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="340">
-            <caret line="73" column="3" lean-forward="true" selection-start-line="73" selection-start-column="3" selection-end-line="73" selection-end-column="3" />
+          <first_editor relative-caret-position="363">
+            <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/fr/GET_STARTED.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/GET_STARTED.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="294">
+            <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           </first_editor>
           <second_editor />
         </state>
