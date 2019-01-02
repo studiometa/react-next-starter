@@ -1,7 +1,10 @@
 /**
  * Here you can define some custom parameters about the environment variables
- * If a variable is required: the app will throw an error on first launch if not defined
- * If "client" is enabled, the variable will be available from the client side (be careful!)
+ * If a variable is required, the app will throw an error on first launch if it is not defined
+ * If "client" is enabled, the variable will be available on the client side as well (be careful!)
+ *
+ * It's a good idea to put all your environment variables in this file to keep track of all the
+ * variables you're app may need
  */
 
 module.exports = {

@@ -3,6 +3,6 @@
  */
 module.exports = {
 
-  // items that should be stored in the local storage (ex: 'pages', 'user.profile', etc)
+  // items that should be stored in the local storage (ex: 'user.profile', etc)
   localStorageStates: [],
 };

@@ -4,12 +4,12 @@ const envBoolean = require('../helpers/envBoolean');
 
 
 /**
- * Contains the parameters of the API
+ * API parameters
  */
 
 module.exports = {
 
-  // API hosting parameters
+  // Hosting parameters
 
   get host() { return process.env.API_HOST; },
   get pathname() { return process.env.API_PATHNAME;},
@@ -24,13 +24,13 @@ module.exports = {
     settings: '{{lang}}/settings',
   },
 
-  // Define if settings must be fetched from the API. If so, a request will be made
+  // Define whether settings should be fetched from the API. If yes, a request will be made
   // using the 'settings' endpoint defined above. The result will
   // be stored in the redux store under state.app.settings. These settings are not cached and
-  // will be requested on the first page load on the server side (getInitialProps of _app)
+  // will be requested on each server-side page load
   fetchAppSettings: true,
 
-  // Like for the fetchAppSettings parameter, it is also possible to make a request to the API for
+  // Like for the fetchAppSettings parameter, it is also possible to make a request to the API to fetch data for
   // all the pages. The result will be accessible under the pages 'pageData' prop and stored in the redux
   // store under state.pages.<page_name>. Note that you can disable this feature for a single page by setting
   // 'withPageData' to false on the pageWrapper composer.

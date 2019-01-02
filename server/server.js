@@ -58,8 +58,8 @@ class App {
   /**
    * Launch the app
    *
-   * Also check if the requested port is free and
-   * ask the user for an other one if not.
+   * Also checks if the requested port is free, otherwise
+   * ask the user to use another one.
    * @param port
    * @returns {Promise<any>}
    */
@@ -120,8 +120,7 @@ class App {
 
   /**
    * Run the server
-   * This method can only be called after the app has been
-   * prepared
+   * This method can only be called after the app has been prepared
    * @param port
    * @returns {*|Function}
    */
@@ -148,7 +147,7 @@ class App {
     }
 
     // This will be used to open up the browser on development mode when the
-    // server is ran
+    // server is run
     const localUrlForBrowser = process.env.NODE_ENV === 'development'
       ? prepareUrls(this.protocol, this.host, port).localUrlForBrowser
       : null;
@@ -304,8 +303,6 @@ class App {
           res.redirect(301, removeUrlLastSlash(req.url));
         }
 
-        // Add an htpasswd on the server if we are
-        // running on the Now pre-production
         this._htpasswdMiddleware(req, res);
 
         // Add needed parameters to the response
@@ -324,7 +321,6 @@ class App {
         }
 
         try {
-          // If not let's render the page into HTML
           const html = await this.nextApp.renderToHTML(req, res, routeConfig.page, queryParams);
 
           // Cache is disabled or something is wrong with the request, let's skip the cache
@@ -391,8 +387,6 @@ class App {
       const parsedUrl = parse(req.url, true);
       const pathname  = removeUrlLastSlash(parsedUrl.pathname);
 
-      // Add an htpasswd on the server if we are
-      // running on the Now pre-production
       this._htpasswdMiddleware(req, res);
 
       // Serve the service-worker
@@ -400,12 +394,9 @@ class App {
       if (req.url === '/service-worker.js') {
         this.nextApp.serveStatic(req, res, paths.appStatic + req.url);
 
-        // If no language has been defined in the request, we must try to find a route that matches the request.
+        // If no language has been defined in the request, we should try to find a route that matches the request.
         // If a route has been founded, we must trigger a redirection to add the language segment to the url.
-        // For example, /products must probably be resolved with /en/products.
-        // Note that the we are always testing if the url contains '/_next/', this is an easy way to directly exclude
-        // all assets and other resource files that may be asked to the server but do never need to get resolved with a
-        // language. This is not necessary but it may increase the server speed by skipping more sophisticated conditions.
+        // For example, /products should probably be resolved to /en/products.
 
       } else if (
         this.config.lang.enabled
@@ -416,8 +407,7 @@ class App {
         let language     = this.config.lang.available.find(e => e.lang === req.language);
         let matchingLang = undefined;
 
-        // If a lang is defined from another provider like cookie, it should be easy to resolve to
-        // good route
+        // If a lang is defined from another provider like cookies, it should be easy to resolve the right route
         if (language) {
           Object.values(this.routes).forEach(e => {
             if (e.langRoutes && e.langRoutes[language.lang] === pathname) {
@@ -487,8 +477,6 @@ class App {
 
   /**
    * Check the validity of a given 'routeConfig' object
-   * It throws and error when necessary or it just log a warning
-   * if the error is not critical
    * @param routeConfig
    * @param routeName
    * @private

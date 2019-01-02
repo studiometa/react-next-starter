@@ -1,5 +1,5 @@
 /**
- * Returns a string computed like that : 3h42
+ * Returns a string computed like this : 3h42
  * @param minutes
  * @returns {string}
  */

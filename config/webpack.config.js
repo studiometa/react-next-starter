@@ -7,8 +7,8 @@ const path                 = require('path');
 const envBoolean           = require('../helpers/envBoolean');
 
 /**
- * This is not a real webpack configuration file but a function that makes changes to
- * the Next's webpack config. It take the original config as parameter and return a
+ * This is not a real webpack configuration file but a function that performs changes to
+ * the Next's webpack config. It takes the original config as parameter and returns a
  * final config object. You can easily perform any needed changes to the original webpack
  * config here, but keep in mind that you may break the app or produce unexpected behaviors
  */
@@ -44,10 +44,6 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
   nextWebpackConfig.plugins = nextWebpackConfig.plugins.map(plugin => {
     if (
       plugin.constructor.name === 'CommonsChunkPlugin' &&
-      // disable filenameTemplate checks here because they never match
-      // (plugin.filenameTemplate === 'commons.js' ||
-      //     plugin.filenameTemplate === 'main.js')
-      // do check for minChunks though, because this has to (should?) exist
       plugin.minChunks != null
     ) {
       const defaultMinChunks = plugin.minChunks;
@@ -78,9 +74,6 @@ module.exports = (nextWebpackConfig, { isServer, buildId, distDir, dev }) => {
             },
             {
               loader: 'markdown-loader',
-              options: {
-                /* your options here */
-              },
             },
           ],
         },

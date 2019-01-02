@@ -1,9 +1,8 @@
 const url = require('url');
 
 /**
- * The server config, mainly build from env variables
- * If you wish to change an attribute defined in the env, please to it directly
- * from your system or using a .env file !
+ * The server config
+ * You may need to change these settings from a '.env' file
  */
 
 module.exports = {

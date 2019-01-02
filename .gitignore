@@ -68,4 +68,6 @@ build/
 .sass-cache/
 *.css.map
 
+# Other stuff
+TODO.md
 /client/static/service-worker.js

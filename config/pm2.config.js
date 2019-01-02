@@ -1,5 +1,8 @@
-/** PM2 settings (for production and staging)
- */
+/**
+ *  PM2 settings (for production and staging)
+ *  @see http://pm2.keymetrics.io/docs/usage/application-declaration/
+ **/
+
 module.exports = {
   name: require('../package').name,
   get max_memory_restart() { return `${process.env.WEB_MEMORY || 512}M`; },
