@@ -1,91 +1,79 @@
-# Découvrir le starter  
+# Discover the starter
   
-Par défaut, 3 pages sont disponibles :  
-- home : page blanche facilement réutilisable (copy/past) 
-- readme: Permet d'accéder au readme du starter (page de démo, à supprimer)
-- documentation : contient la doc du starter
-- sandbox : contient un certain nombre d'infos pratiques, notamment pour pré-visualiser le thème actuel
+By default, 3 pages are available:  
+- home : white page easily reusable (copy/past) 
+- readme: Allows to access the starter readme (demo page, to be deleted)
+- documentation: contains the starter doc
+- sandbox: contains a number of practical information, especially to preview the current theme
 
-**nb:** Les pages documentation et sandbox ont été conçues pour être uniquement accessibles lorsque l'application tourne sur un environnement de développement. Cela signifie que vous pouvez les conserver, même après avoir mis votre projet en production !
+**nb:** The documentation and sandbox pages have been designed to be accessible only when the application is running on a development environment. This means that you can keep them, even after you have put your project into production!
   
   
-## 1) Lancer l'application  
+## 1) Launch the app
   
-Si vous avez installé les dépendances (`npm i`), il ne reste normalement plus qu'à lancer le serveur de **développement**  
-en faisant un `npm run dev`  
+If you have installed the dependencies (`npm i`), all you have to do is launch the **development** server by doing a `npm run dev`.  
   
-Si tout s'est bien passé vous devriez voir un message comme celui-ci:  
+If everything went well you should see a message like this:  
   
  DONE Compiled successfully in 1773ms  04:07:14 AM  
  > Ready on http://localhost:3000  
  > Building page: /  
  
  
-Il est possible de **configurer le port** utilisé à partir des variables d'environnement (nous reviendrons là dessus plus tard)
+It is possible to **configure the port** used from the environment variables (we will come back to this later)
   
-## 2) Un monstre se réveille...  
+## 2) A monster wakes up...  
   
-Maintenant que le serveur ronronne, rendez-vous sur votre navigateur à l'adresse `http://localhost:3000` avec **l'onglet network du devTool ouvert**.  
+Now that the server is purring, go to your browser at `http://localhost:3000` with **the devTool network tab open**.  
   
-**On est sur l'env "development", donc :**  
+**We are on a development environment, so:**  
   
-- Ne faites pas attention à la taille des fichiers Js téléchargés, webpack a tendance à injecter beaucoup de données en   
-développement. Ne vous affolez donc pas si votre bundle fait plusieurs Mo... Ce ne sera plus le cas en prod :).  
+- Don't pay attention to the size of the downloaded Js files, webpack tends to inject a lot of data under development. So don't panic if your bundle is several MB.... This will no longer be the case in prod :).  
   
-- Ne faites également pas gaffe aux requêtes 'on-demand-entries-ping', c'est simplement le serveur qui fait des pings pour   
-permettre au HMR (Hot Module Reload) de Webpack de fonctionner.  
+- Also don't pay attention to the "on-demand-entries-ping" requests, it's just the server that makes pings to allow the Webpack HMR (Hot Module Reload) to work.  
   
-- Pour comprendre d'un peu plus près à quoi correspondent les différents fichiers Js, je vous invite à jeter un  
-oeil à la [doc de NextJs](https://nextjs.org/docs/).  
+- To understand a little more closely what the different Js files correspond to, I invite you to throw away a look at the [NextJs doc](https://nextjs.org/docs/).  
   
-## 3) Rendez-vous sur la page /documentation
+## 3)Go to the /documentation page
   
-Si vous jetez un oeil aux nouvelles requêtes effectuées, vous remarquerez que la page n'a **pas entièrement été rechargée**.   
-Rien de neuf si vous êtes habitué à React, VueJs ou autre.  
+If you take a look at the new requests made, you will notice that the page has **not been fully reloaded**.   
+Nothing new if you are familiar with React, VueJs or other.  
   
-**Certains nouveaux fichiers ont été téléchargés :**  
+**Some new files have been downloaded:**  
   
-- **intro.js** : Le script de la page  
-- **_doc** : Cette requête est faite à l'API pour récupérer le contenu de la page. Ici le contenu n'est donc téléchargé qu'à condition que la page soit affichée. Rendez-vous dans la section "pageData" de ce readme pour plus d'infos. 
+- **intro.js** : The script of the page  
+- **_doc** : This request is made to the API to retrieve the content of the page. Here the content is therefore only downloaded if the page is displayed. Go to the "pageData" section of this readme for more information. 
   
-## 5) Rechargez entièrement la page, puis rendez-vous sur la homepage (cliquez sur le logo)  
+## 5) Reload the page completely, then go to the homepage (click on the logo)  
   
-Normalement, vous devriez remarquer la requête suivante: `http://localhost:3000/fake-api/pages/home`  
+Normally, you should notice the following request: `http://localhost:3000/fake-api/pages/home`  
   
-C'est à nouveau une requête faite à l'API pour récupérer les informations de la page. C'est cette requête qui permet d'afficher la variable "welcomeMessage".  
+This is again a request made to the API to retrieve the page information. It is this query that displays the "welcomeMessage" variable.  
   
-## 6) Rechargez la page  
+## 6) Reload the page  
   
-Boom! Le message est toujours bien affiché sur la page, mais la requête n'a pas été faite. C'est simplement parce que cette fois-ci la requête a été faite côté serveur, avant que la page ne soit rendue :).  Si vous êtes habitués  au SSR, cela ne devrait pas vous étonner.
+Bam! The message is still displayed on the page, but the request has not been made. This is simply because this time the request was made on the server side, before the page was rendered :).  If you are used to SSR, this should not surprise you.
   
-## 7) Changez de langue à l'aide du sélecteur en haut à droite  
+## 7) Change the language using the selector at the top right  
   
-- La page est entièrement rechargée pour être certain que tout le contenu soit correctement mis à jour dans la langue désirée.   
-- La page est la même! C'est parce que le composant `LangSwitch` est capable de résoudre la page courante dans n'importe  
-quelle langue définie dans la config. Attention, cela ne marche pour l'instant qu'avec les urls statics.
+- The page is fully reloaded to ensure that all content is correctly updated in the desired language.   
+- The page is the same! This is because the `LangSwitch` component is able to resolve the current page in any language defined in the configuration. Be careful, it only works with static urls for the moment.
   
-## 8) Rendez-vous à cette adresse : http://localhost:3000/readme  
+## 8) Go to this address: http://localhost:3000/readme  
   
-Le router va automatiquement reconnaître la langue attachée à la page "readme", même si elle n'est pas définie dans l'url  
+The router will automatically recognize the language attached to the "readme" page, even if it is not defined in the url  
   
   
-## 9) Rendez-vous à cette adresse : http://localhost:3000/lisez-moi  
+## 9) Go to this address: http://localhost:3000/lisez-moi  
   
-Le router va automatiquement reconnaître la langue attachée à la page "lisez-moi", même si elle n'est pas définie dans l'url  
+The router will automatically recognize the language attached to the "read me" page, even if it is not defined in the url  
   
-## 10) Désactivez JavaScript et rechargez la page  
+## 10) Disable JavaScript and reload the page  
   
-TADAAAA 🎉 le site est entièrement naviguable et le contenu charge correctement. Y compris l'image de la page d'accueil,  
-initialement lazy-loadée.  
-  
-Cela n'est cependant pas magique. Si c'est une priorité pour vous que votre projet puisse être entièrement fonctionnel  
-sans JavaScript, **il va probablement falloir anticiper un temps supplémentaire de développement non négligeable**.   
-  
-Dans cet exemple, l'image est affichée grace à une balise `<noscript>` qui, lorsque le Js est désactivé, va simplement ajouter l'image dans le DOM sans passer par le process de lazy-load.  
-  
-Les liens sont quant à eux transformés en simples liens HTML pointants vers les différentes pages du site.  
-  
-Vous remarquerez cependant que le composant qui permettait de changer de langue a disparu. C'est simplement parce qu'à  
-l'heure actuelle je n'ai pas trouvé de moyen "simple" de mettre cette fonctionnalité en place en générant le composant  
-côté serveur. Il n'est donc généré que côté client. Cela ne veut pas dire pour autant qu'il n'est plus possible de changer  
-de langue ;). 
+TTADAAAAAA 🎉 the site is fully navigable and the content loads correctly. Including the image of the home page, initially lazy-loaded.  
+   
+However, this is not magic. If it is a priority for you that your project can be fully functional without JavaScript, **it will probably be necessary to anticipate a significant additional development time**.   
+
+In this example, the image is displayed using a `<noscript>` tag which, when the Js is disabled, will simply add the image to the DOM without going through the lazy-load process.  
+
+Links are transformed into simple HTML links pointing to the different pages of the site.  

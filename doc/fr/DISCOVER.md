@@ -84,8 +84,3 @@ sans JavaScript, **il va probablement falloir anticiper un temps supplémentaire
 Dans cet exemple, l'image est affichée grace à une balise `<noscript>` qui, lorsque le Js est désactivé, va simplement ajouter l'image dans le DOM sans passer par le process de lazy-load.  
   
 Les liens sont quant à eux transformés en simples liens HTML pointants vers les différentes pages du site.  
-  
-Vous remarquerez cependant que le composant qui permettait de changer de langue a disparu. C'est simplement parce qu'à  
-l'heure actuelle je n'ai pas trouvé de moyen "simple" de mettre cette fonctionnalité en place en générant le composant  
-côté serveur. Il n'est donc généré que côté client. Cela ne veut pas dire pour autant qu'il n'est plus possible de changer  
-de langue ;). 
