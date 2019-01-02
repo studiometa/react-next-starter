@@ -1,24 +1,24 @@
 # Configuration
 
-La configuration de l'application se fait par l'intermédiaire de deux moyens :
-- Les variables d'environnement : concernent tous les paramètres susceptibles de changer d'un contexte à un autre
-- Les fichiers de configuration : concernent tous les paramètres propres à la configuration des éléments de votre application
+The configuration of the application is done through two ways:
+- Environment variables: concern all parameters that may change from one context to another
+- Configuration files: concern all the parameters specific to the configuration of the elements of your application
 
-## Variables d'environnement
+## Environment variables
 
-Il s'agit du premier moyen de configurer votre application. Cette stratégie vous permet de mettre facilement en place une configuration différente selon le contexte d'exécution de votre application. Pour se faire, il vous suffit d'ajouter un fichier `.env`à la racine de votre projet (attention, ce fichier ne doit jamais être versionné!!)
+This is the first way to configure your application. This strategy allows you to easily set up a different configuration depending on the context in which your application is running. To do this, you just need to add a `.env` file to the root of your project (be careful, this file must never be versioned!!!)
 
-- Il est possible de définir un fichier d'environnement différent pour chaque type d'environnement : `.env.test`,  `.env.development`, `.env.production`
-- Vous pouvez vous inspirer des fichiers `.env.example`  et `.env.production` déjà présents sur le starter.
-- Le fichier `/lib/env.js` permet d'injecter ces variables dans le contexte de votre application (vous ne devrez normalement jamais avoir à éditer ce fichier)
-- Il est possible de configurer la configuration de vos variables d'environnement depuis le fichier `/config/env.config.js`
-	- Lors du lancement de l'application, une exception sera 'throw' pour toute variable d'environnement définie comme étant requise mais n'étant pas définie
-	- Si vous souhaitez rendre une variable accessible dans le context côté client, il faut le spécifier dans ce fichier.
-		- **Attention à ne jamais passer de variable contenant des données sensibles!**
+- It is possible to define a different environment file for each type of environment: `.env.test`, `.env.development`, `.env.production`.
+- You can take inspiration from the `.env.example` and `.env.production` files already present on the starter.
+- The `/lib/env.js` file allows you to inject these variables into the context of your application (you should never have to edit this file)
+- It is possible to configure the configuration of your environment variables from the `/config/env.config.js` file
+	- When the application is launched, an exception will be thrown for any environment variable defined as required but not defined
+    	- If you want to make a variable accessible in the client-side context, you must specify it in this file.
+    	- **Be careful never to pass a variable containing sensitive data!**
 
 
-## Fichiers de configuration
+## Configuration files
 
-Ces fichiers sont accessibles dans le dossier `/config` et respectent tous la nomenclature suivante : `<subject>.config.js`. Vous y retrouverez tous les paramètres nécessaires et pourrez en ajouter de nouveaux. Il vous sera ensuite possible d'importer n'importe lequel de ces fichiers dans votre application, ou d'importer tout le dossier pour avoir accès à la configuration complète. 
+These files are accessible in the `/config` folder and all respect the following nomenclature: `<subject>.config.js`. You will find all the necessary parameters and can add new ones. You will then be able to import any of these files into your application, or import the entire folder to access the complete configuration. 
 
-Le dossier `/config/env` vous permet de définir des fichiers de configuration supplémentaires qui seront interprété selon l'environnement node actuel. Cela peut s'avérer utile si vous désirez utiliser une configuration différente pour vos tests ou en développement par exemple.
+The `/config/env` folder allows you to define additional configuration files that will be interpreted according to the current node environment. This can be useful if you want to use a different configuration for your tests or during development for example.
