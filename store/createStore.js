@@ -1,16 +1,15 @@
-import {
-  createStore,
-  applyMiddleware,
-}                       from 'redux';
-import reducers         from './reducers/index';
-import thunk            from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-import Socket           from '../lib/socket';
-import config           from '../config';
-import getRoutes        from '../server/routes';
+import { applyMiddleware, createStore } from 'redux';
+import { load, save }                   from 'redux-localstorage-simple';
+import { createLogger }                 from 'redux-logger';
+import thunk                            from 'redux-thunk';
+import config                           from '../config';
+import Socket                           from '../client/lib/socket';
+import routes                           from '../server/routes';
+import reducers                         from './reducers/index';
+import packageJson from '../package.json'
 
-
-const routes = getRoutes();
+// Items that be stored in the localStorage
+const { localStorageStates } = config.redux;
 
 const isServer = !process.browser;
 const logger   = createLogger({
@@ -22,7 +21,7 @@ const logger   = createLogger({
 // with an external API. You can learn more about how it works in the readme
 // or directly in the Class source file
 
-const socket = new Socket({ isServer, config: config.api });
+const socket = new Socket();
 
 // This is used by the server has a default state structure. This is very helpful while
 // it allow us to be sure that some default attributes while always be defined. It is also a
@@ -31,20 +30,31 @@ const socket = new Socket({ isServer, config: config.api });
 const DEFAULT_STATE = {
   app: {
     lang: config.lang.default,
-    routes: Object.assign({}, routes, { current: {} }),
+    routes,
+    currentUrl: undefined,
   },
-  products: {},
-  pages: {},
 };
 
-export default (initialState = DEFAULT_STATE) => {
 
+export default (initialState = DEFAULT_STATE) => {
   // We do not want middlewares like redux-logger to get
   // fired on the server side
+
   if (isServer) {
     return createStore(reducers, initialState, applyMiddleware(thunk.withExtraArgument(socket)));
   } else {
-    return createStore(reducers, initialState, applyMiddleware(logger, thunk.withExtraArgument(socket)));
+    initialState = Object.assign(
+      {},
+      load({ states: localStorageStates, namespace: packageJson.name }),
+      initialState,
+    );
+    return createStore(
+      reducers,
+      initialState,
+      applyMiddleware(logger,
+        save({ states: localStorageStates, namespace: packageJson.name }),
+        thunk.withExtraArgument(socket)),
+    );
   }
 
 };

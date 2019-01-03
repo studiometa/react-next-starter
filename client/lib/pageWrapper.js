@@ -1,9 +1,10 @@
-import withI18next    from './withI18next';
-import withPageData   from './withPageData';
-import { connect }    from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import withMUITheme   from './withMUITheme';
+import { connect }    from 'react-redux';
 import { compose }    from 'recompose';
+import config         from '../../config';
+import withI18next    from './withI18next';
+import withMUITheme   from './withMUITheme';
+import withPageData   from './withPageData';
 
 
 /**
@@ -14,34 +15,30 @@ import { compose }    from 'recompose';
  * - Add MUI styles
  * @param Component
  * @param {string} name: the slug name of the page (used by the api, etc)
- * @param {array} locales: additional locales that can be injected to the page
+ * @param {array} namespaces: additional locales that can be injected to the page
  * @param {function} mapStateToProps: you know what it is
  * @param {object} styles: custom component styles
+ * @param {boolean} withTheme: define if the prop 'theme' containing the app theme should be injected into the component
+ * @param {boolean} noPageData: true if no pageData is required by the page
  * @returns {*}
  */
+
 export default (Component, {
   name,
-  locales = [],
+  namespaces = [],
   mapStateToProps = null,
   styles = {},
+  withTheme = false,
+  noPageData = false,
 }) => {
-  return withMUITheme(compose(
-    withPageData(name),
-    withI18next([name, ...locales]),
+  const args = [
+    withPageData(name, { required: !noPageData }),
     connect(mapStateToProps),
     withStyles(styles),
-  )(Component));
+  ];
+  if (config.lang.enabled) {
+    args.push(withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces));
+  }
+  return withMUITheme(compose(...args)(Component), withTheme);
 
 };
-
-//return withPageData(name)(
-//   withMUITheme(
-//     withI18next([name, ...locales])(
-//       connect(mapStateToProps)(
-//         withStyles(styles)(
-//           Component,
-//         ),
-//       ),
-//     ),
-//   ),
-// );

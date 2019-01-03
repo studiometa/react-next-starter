@@ -1,33 +1,21 @@
-const withSass                 = require('@zeit/next-sass');
-const webpackConfig            = require('./config/webpack.config');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { ANALYZE }              = process.env;
+const withSass      = require('@zeit/next-sass');
+const webpackConfig = require('./config/webpack.config');
+const withOffline   = require('next-offline');
+const workboxOpts   = require('./config/serviceWorker.config');
 
-module.exports = withSass({
+module.exports      = withOffline(withSass({
   cssModules: true,
-  distDir: '../build',
+  distDir: '../build', // from client folder
+  workboxOpts,
+  dontAutoRegisterSw: true,
+  generateInDevMode: true,
   useFileSystemPublicRoutes: false,
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: '[local]',
   },
 
-  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    if (ANALYZE && process.env.NODE_ENV !== 'test') {
-      config.plugins.push(new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerPort: 8888,
-        openAnalyzer: true
-      }))
-    }
-
-    return webpackConfig(config);
+  webpack: (config, { dev, isServer, defaultLoaders, buildId, config: { distDir } }) => {
+    return webpackConfig(config, { isServer, buildId, distDir, dev });
   },
-
-  // webpackDevMiddleware: config => {
-  //   // Perform customizations to webpack dev middleware config
-  //
-  //   // Important: return the modified config
-  //   return config
-  // }
-});
+}));

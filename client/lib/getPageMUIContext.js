@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 
-import { SheetsRegistry }          from 'jss';
 import { createGenerateClassName } from '@material-ui/core/styles';
-import theme                       from './MUITheme';
+import { SheetsRegistry }          from 'jss';
+import theme                       from '../MUITheme';
 
 
 function createPageContext() {

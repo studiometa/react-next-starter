@@ -1,6 +1,27 @@
 {
-  "home": "Page d'accueil",
-  "products": "Produits",
-  "test": "Ceci est un test",
-  "back_to_home": "Retourner à l'accueil"
+  "menu_links": {
+    "readme": "Lisez-moi",
+    "sandbox": "Sandbox",
+    "home": "Home",
+    "doc": "Documentation"
+  },
+  "_doc": {
+    "routes": {
+      "/_doc/intro": "Introduction",
+      "/_doc/requirements": "Pré-requis",
+      "/_doc/configuration": "Configuration",
+      "/_doc/discover": "Découvrir",
+      "/_doc/i18n": "Internationalisation",
+      "/_doc/performances": "Performances",
+      "/_doc/router": "Routeur",
+      "/_doc/api": "API et pageData",
+      "/_doc/store": "Store",
+      "/_doc/theme": "Thème",
+      "/_doc/under-the-hood": "Fonctionnement",
+      "/_doc/wrappers": "Wrappers",
+      "/_doc/get-started": "Premiers pas",
+      "/_doc/components": "Composants",
+      "/_doc/troubleshooting": "Dépannage"
+    }
+  }
 }

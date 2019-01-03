@@ -1,8 +1,4 @@
-# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
-image: node:9.8.0
+image: node:8.11.3
 
 pipelines:
   default:

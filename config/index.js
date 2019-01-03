@@ -1,20 +1,23 @@
-let env = process.env.NODE_ENV;
+const env     = process.env.NODE_ENV;
+let envConfig = null;
 
-const configs = {
-  test: require('./test.config'),
-  development: require('./development.config'),
-  production: require('./production.config'),
-  master: require('./master.config'),
-  now: require('./now.config')
-};
 
-// Tricky way of casting the now config when running the app
-// on a Now (Zeit) deployment server
-// Note that process.env.NODE_ENV will still be 'production'
-if (process.env.NOW_URL) {
-  env = 'now';
+try {
+  envConfig = require(`./env/${env}.config`);
+} catch (err) {
+  envConfig = {};
 }
 
+// Build the final config object
+const masteredConfig = Object.assign({
+    server: require('./server.config'),
+    api: require('./api.config'),
+    lang: require('./lang.config'),
+    seo: require('./seo.config'),
+    layout: require('./layout.config'),
+    redux: require('./redux.config'),
+  },
+  envConfig,
+);
 
-
-module.exports = Object.assign({}, configs.master, configs[env]);
+module.exports = masteredConfig;

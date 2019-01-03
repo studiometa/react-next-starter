@@ -1,0 +1,79 @@
+{
+  "en": {
+    "settings": {
+      "foo": "bar"
+    },
+
+    "pages": {
+      "home": {
+        "title": "Home",
+        "metaData": [
+          { "name": "description", "content": "This is the home page"}
+        ],
+        "welcomeMessage": "Hello world!"
+      },
+      "_sandbox": {
+        "title": "__SAnNdboOxxX__",
+        "metaData": [
+          { "name": "description", "content": "This is the SAnNdboOxx page" }
+        ]
+      },
+      "_doc": {
+        "title": "Documentation",
+        "metaData": [
+          { "name": "description", "content": "Starter documentation" }
+        ]
+      }
+    }
+  },
+  "fr": {
+    "settings": {
+      "foo": "bar"
+    },
+    "pages": {
+      "home": {
+        "title": "Home",
+        "metaData": [
+          { "name": "description", "content": "Page d'accueil"}
+        ],
+        "welcomeMessage": "Salut le monde!"
+      },
+      "_sandbox": {
+        "title": "__SAnNdboOxxX__",
+        "metaData": [
+          { "name": "description", "content": "Bac à sable" }
+        ]
+      },
+      "_doc": {
+        "title": "Documentation",
+        "metaData": [
+          { "name": "description", "content": "Documentation du starter" }
+        ]
+      }
+    }
+  },
+  "settings": {
+    "foo": "bar"
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "metaData": [
+        { "name": "description", "content": "Page d'accueil"}
+      ],
+      "welcomeMessage": "Salut le monde!"
+    },
+    "_sandbox": {
+      "title": "__SAnNdboOxxX__",
+      "metaData": [
+        { "name": "description", "content": "Bac à sable" }
+      ]
+    },
+    "_doc": {
+      "title": "Documentation",
+      "metaData": [
+        { "name": "description", "content": "Documentation du starter" }
+      ]
+    }
+  }
+}

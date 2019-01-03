@@ -4,23 +4,28 @@ export function pushPage(pageId, page) {
   return {
     type: PUSH_PAGE,
     pageId,
-    page,
+    page
   };
 }
 
-export const fetchPage = (pageId, updateIfExist = true) => async (dispatch, getState, socket) => {
-  const currentItems = getState().pages;
 
-  if (updateIfExist === false && currentItems[pageId] !== undefined) {
-    return currentItems[pageId];
-  } else {
-    try {
-      const result = await socket.getPage(pageId);
-      dispatch(pushPage(pageId, result));
-      return result;
-    } catch (err) {
-      console.log('error in pages.action.js:fetchPage', err);
-    }
+/****************** ASYNC ACTIONS ******************/
+
+/**
+ * Fetch a page config (defined by a slug) from the API
+ * @param pageId
+ * @param updateIfExist
+ * @param cb
+ * @returns {function(*, *, *)}
+ */
+export const fetchPage = (pageId, updateIfExist = false, cb = () => {}) => async (dispatch, getState, socket) => {
+  try {
+    const result = await socket.getPage(pageId);
+    dispatch(pushPage(pageId, result, new Date()));
+    cb(result);
+    return result;
+  } catch (err) {
+    return (cb(null, err));
   }
 };
 
