@@ -11,7 +11,7 @@ module.exports = {
   enabled: true,
 
   // The default language also used as a fallback
-  default: 'fr',
+  default: 'en',
 
   // If defined to 'true', a route will look like '/en/products' instead of just '/products'
   //
@@ -32,14 +32,14 @@ module.exports = {
   // !! Please keep the default language at the end of this array. At least one item is required.
   available: [
     {
-      lang: 'en',
-      locale: 'en_EN',
-      name: 'English',
-    },
-    {
       lang: 'fr',
       locale: 'fr_FR',
       name: 'Français',
+    },
+    {
+      lang: 'en',
+      locale: 'en_EN',
+      name: 'English',
     },
   ],
 

@@ -14,7 +14,7 @@ const getPublicUrl = appPackageJson =>
 module.exports = {
   app: resolveApp('.'),
   appBuild: resolveApp('build'),
-  appDoc: resolveApp('build'),
+  appDoc: resolveApp('doc'),
   appPublic: resolveApp('client/public'),
   appStatic: resolveApp('client/static'),
   appPackageJson: resolveApp('package.json'),

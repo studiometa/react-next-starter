@@ -79,7 +79,7 @@ class DocPageLayout extends React.Component {
 
     try {
       const camelToSnake = require('../../../helpers/camelToSnake');
-      this.state.readme  = require(`../../../doc/${camelToSnake(props.name).toUpperCase()}.md`);
+      this.state.readme  = require(`../../../doc/${props.lang}/${camelToSnake(props.name).toUpperCase()}.md`);
     } catch (err) {
       throw new Error(err);
     }
@@ -120,6 +120,7 @@ class DocPageLayout extends React.Component {
 
 const mapStateToProps = state => ({
   routes: state.app.routes,
+  lang: state.app.lang
 });
 
 export default wrapper(DocPageLayout, { styles, mapStateToProps, withRouter: true });
