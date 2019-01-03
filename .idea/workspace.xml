@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - PERFORMANCES">
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - REQUIREMENTS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/REQUIREMENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/REQUIREMENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/fr/REQUIREMENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/fr/REQUIREMENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/ROUTER.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/ROUTER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fr/ROUTER.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/fr/ROUTER.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
           <entry key="htaccess" value="1" />
           <entry key="js" value="487" />
           <entry key="json" value="56" />
-          <entry key="md" value="67" />
+          <entry key="md" value="70" />
           <entry key="production" value="7" />
           <entry key="scss" value="4" />
           <entry key="test" value="2" />
@@ -69,7 +69,7 @@
           <entry key="Git file" value="3" />
           <entry key="JSON" value="57" />
           <entry key="JavaScript" value="487" />
-          <entry key="Markdown" value="67" />
+          <entry key="Markdown" value="70" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="2" />
@@ -85,11 +85,11 @@
           <entry key="htaccess" value="10" />
           <entry key="js" value="31181" />
           <entry key="json" value="1471" />
-          <entry key="md" value="19715" />
+          <entry key="md" value="20117" />
           <entry key="production" value="61" />
           <entry key="scss" value="34" />
           <entry key="test" value="44" />
-          <entry key="txt" value="2832" />
+          <entry key="txt" value="2844" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -99,8 +99,8 @@
           <entry key="JSON" value="1471" />
           <entry key="JSX Harmony" value="8" />
           <entry key="JavaScript" value="31181" />
-          <entry key="Markdown" value="19707" />
-          <entry key="PLAIN_TEXT" value="2834" />
+          <entry key="Markdown" value="20109" />
+          <entry key="PLAIN_TEXT" value="2846" />
           <entry key="SCSS" value="34" />
           <entry key="htaccess" value="10" />
         </counts>
@@ -119,7 +119,20 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/ROUTER.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="363">
+                <caret line="238" column="45" selection-start-line="238" selection-start-column="45" selection-end-line="238" selection-end-column="45" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -177,8 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/public/manifest.json" />
-        <option value="$PROJECT_DIR$/client/pages/_document.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/client/components/common/Head.js" />
         <option value="$PROJECT_DIR$/helpers/envBoolean.js" />
@@ -228,6 +239,8 @@
         <option value="$PROJECT_DIR$/doc/fr/PERFORMANCES.md" />
         <option value="$PROJECT_DIR$/doc/REQUIREMENTS.md" />
         <option value="$PROJECT_DIR$/doc/fr/REQUIREMENTS.md" />
+        <option value="$PROJECT_DIR$/doc/ROUTER.md" />
+        <option value="$PROJECT_DIR$/doc/fr/ROUTER.md" />
       </list>
     </option>
   </component>
@@ -478,13 +491,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00157" summary="Improve the way the server is handling the routes translations">
-      <created>1545063773969</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1545063773969</updated>
     </task>
     <task id="LOCAL-00158" summary="Update readme">
       <created>1545064504625</created>
@@ -822,7 +828,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546531135610</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="Translate and update the doc - REQUIREMENTS">
+      <created>1546531261826</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1546531261826</updated>
+    </task>
+    <option name="localTasksCounter" value="207" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -858,7 +871,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="515142000" />
+    <option name="totallyTimeSpent" value="516772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -871,6 +884,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17521368" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -968,7 +982,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Remove useless helper function" />
     <MESSAGE value="Translation _sandbox + add a .env.development file" />
     <MESSAGE value="Update some material-ui overrides to fit the new patterns" />
     <MESSAGE value="Fix a router bug that was blocking some route redirection" />
@@ -993,21 +1006,10 @@
     <MESSAGE value="Translate and update the doc - I18N" />
     <MESSAGE value="Translate and update the doc - INTRODUCTION" />
     <MESSAGE value="Translate and update the doc - PERFORMANCES" />
-    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - PERFORMANCES" />
+    <MESSAGE value="Translate and update the doc - REQUIREMENTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - REQUIREMENTS" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/pages/_error.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/_sandbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938">
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/_doc/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1368,6 +1370,26 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="455">
             <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/fr/ROUTER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="363">
+            <caret line="263" column="103" selection-start-line="263" selection-start-column="103" selection-end-line="263" selection-end-column="103" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/ROUTER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="363">
+            <caret line="238" column="45" selection-start-line="238" selection-start-column="45" selection-end-line="238" selection-end-column="45" />
           </first_editor>
           <second_editor />
         </state>

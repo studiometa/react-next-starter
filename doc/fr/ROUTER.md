@@ -5,7 +5,7 @@
 Avec NextJs, la gestion des routes se base normalement sur le contenu du dossier `/pages`.  
 Cela signifie que par défaut, la route `https://site.com/exemple` pointe vers le fichier `/pages/exemple.js`  
   
-Afin de répondre aux besoins de ce starter (multi-langue etc), il a été préférable de mettre en place une solution maison pour la gestion des routes. Celles-ci sont définies dans le fichier `/server/routes/routes.js`.  
+Afin de répondre aux besoins de ce starter (multi-langue etc), il a été préférable de mettre en place une solution maison pour la gestion des routes. Celles-ci sont définies dans le fichier `/server/routes.js`.  
 
 **Dans ce fichier, chaque route est définie selon le modèle suivant :**
 
@@ -261,7 +261,7 @@ Cette étape est optionnelle. Si vous désirez ajouter un namespace correspondan
 il suffit de créer un nouveau fichier dans tous les dossiers contenant vos locales (`/locales/*` par défaut).   
 En l'occurence, il devra s'appeler **myPage.json.**  
   
-Pensez également à ajouter le nom du namespace dans la partie **lang.namespaces** de la configuration.  
+Pensez également à ajouter le nom du namespace dans la partie **namespaces** de la configuration 'lang'.  
 
 Plus d'infos sont disponibles dans la section de cette documentation qui traite de l'internationalisation. 
   

@@ -2,160 +2,147 @@
   
 ## Routes
 
-Avec NextJs, la gestion des routes se base normalement sur le contenu du dossier `/pages`.  
-Cela signifie que par défaut, la route `https://site.com/exemple` pointe vers le fichier `/pages/exemple.js`  
+With NextJs, route management is normally based on the content of the `/pages` folder. This means that by default, the route `https://site.com/exemple` points to the file `/pages/example.js`  
   
-Afin de répondre aux besoins de ce starter (multi-langue etc), il a été préférable de mettre en place une solution maison pour la gestion des routes. Celles-ci sont définies dans le fichier `/server/routes/routes.js`.  
+In order to meet the needs of this starter (multi-lingual etc.), it was preferable to implement an in-house solution for routes management. These are defined in the file `/server/routes.js`.  
 
-**Dans ce fichier, chaque route est définie selon le modèle suivant :**
+**In this file, each route is defined according to the following model: **
 
 `<routeName>: { page: <pagePath>, langRoutes: <langRoutes>, prefetch: <prefetch>, neverCache: <neverCache> },`
 
-|  | type | description | exemple |
-|--|--|--|--|
-| routeName | String | L'identifiant de la route. Si vous avez désactivé la traduction d'url, c'est cet identifiant qui figurera dans l'URL (voir section i18n) | /user/profile/:id |
-| pagePath | String | Le chemin d'accès vers le fichier Js de la page correspondante dans le dossier pages | /user/profile (pour le fichier /pages/user/profile.js)  |
-| langRoutes | Object | Dans le cas où la traduction d'url serait activée, ce paramètre permet de modifier l'aspect des URLs pour une langue donnée | {"en": "/user/profile/:id", "fr": "/utilisateur/profil/:id"} |
-| prefetch | Boolean | Permet d'activer la feature "prefetch" de NextJs pour cette page | true |
-| neverCache | Boolean | Si le cache serveur est activé, ce paramètre permet de s'assurer que cette page ne sera jamais mise en cache | true |
+|  | type | description | example |
+|--|------|-------------|---------|
+| routeName | String | The route ID. If you have disabled url translation, this identifier may also be used in the URL (see section i18n) | /user/profile/:id |
+| pagePath | String | The path to the Js file of the corresponding page in the pages folder | /user/profile (for the file /pages/user/profile.js)  |
+| langRoutes | Object | In case url translation is enabled, this parameter allows to modify the appearance of URLs for a given language | {"en": "/user/profile/:id", "fr": "/utilisateur/profil/:id"} |
+| prefetch | Boolean | Enables the NextJs "prefetch" feature for this page | true |
+| neverCache | Boolean | If the server cache is enabled, this setting ensures that this page will never be cached | true |
 
-Il vous est bien sûr possible d'ajouter n'importe quel autre paramètre qui vous semblerait nécessaire
+It is of course possible for you to add any other parameter that you think is necessary
+
+## Route naming
+
+In order to maintain a certain consistency across the application, be sure to observe the following rules for naming your routes. These rules apply to both the `routeName` parameter and the values of the `langRoutes` parameter:
+- Routes are always written in lower case, without accents
+- Only dashes and underscores are allowed within a road segment
+- A road always starts with a slash
+- A route never ends with a slash (except the home page, since the route is only one character)
+- A route therefore follows this model: `/<segment>/<segment>/<segment>/<segment>`
+- A segment can be dynamic, in which case it must start with two dots: `/:<dynamicSegment>`
+	- The values will then be accessible via the `query` parameter in the `getInitialProps` method on the corresponding page.
+
+**nb** : Two roads cannot point to the same page!
 
 
-## Nommage d'une route
+## multi-lingual routes
 
-Afin de conserver une certaine consistance à travers l'application, veillez à respecter les règles suivantes pour le nommage de vos routes. Ces règles s'appliquent aussi bien pour le paramètre `routeName` que pour les valeurs du paramètre `langRoutes` :
-- Les routes sont toujours écrites en minuscules, sans accents
-- Seuls les tirets et les underscores sont autorisés à l'intérieur d'un segment de route
-- Une route commence toujours par un slash
-- Une route ne termine jamais par un slash (sauf la home page, puisque la route ne fait qu'un caractère)
-- Une route suit donc ce modèle : `/<segment>/<segment>/<segment>`
-- Un segment peut être dynamique, dans ce cas il doit commence par deux points : `/:<dynamicSegment>`
-	- Les valeurs seront alors accessible via le paramètre `query`dans la méthode `getInitialProps` de la page correspondante
+If you are planning to develop a multi-lingual site, you will need to have access to different urls depending on the current language. This option can be modified via the `enableRouteTranslation` parameter accessible in the `/config/lang.config.js` file.
 
-**nb** : Deux routes ne peuvent pas pointer vers la même page !
+**Attention**, disabling this setting does not mean that your site will be "mono-language". It is always possible for you to set up a multi-lingual site, the only difference is to add this segment in the url.
 
+### When this parameter is enabled
 
-## Routes multi-langue
+- A language segment is added to all your Urls (/en, /fr, etc)
+- You can translate the url entirely from the `langRoutes` parameter of your routes, otherwise the name of the route will be used.
 
-Si vous envisagez de développer un site multi-langue, il vous sera nécessaire d'avoir accès à des urls différentes selon la langue courante. Cette option est modifiable via le paramètre `enableRouteTranslation` accessible dans le fichier `/config/lang.config.js`.
+I strongly recommend that you set all your languages in the attribute `langRoutes`, even if some routes are identical to `routeName`, especially if you enable automatic URL resolution with the parameter `enableFallbackRedirection` since they are necessary for this feature to work properly. 
 
-**Attention**, désactiver ce paramètre ne veut pas pour autant dire que votre site sera "mono-langue". Il vous est toujours possible de mettre en place un site multi-langue, la seule différence réside dans l'ajout de ce segment dans l'url.
-
-### Lorsque ce paramètre est activé
-
-- Un segment de langue est ajouté à toutes vos Urls (/en, /fr, etc)
-- Vous pouvez traduire entièrement l'url à partir du paramètre `langRoutes`de vos routes, sinon ce sera le nom de la route qui sera utilisé.
-
-Je vous conseille fortement de définir toutes vos langues dans l'attribut `langRoutes`, même si certaines routes sont identiques à `routeName`, surtout si vous
-activez la résolution automatique d'URL avec le paramètre `enableFallbackRedirection` puisqu'elles sont nécessaires au bon fonctionnement de cette fonctionnalité. 
-
-**Exemple :**
+**Example :**
 `"/user/profile/:id": { page: "/user/pofile", langRoutes: {"fr": "/utilisateur/profil/:id", "en": "/user/profile/:id"} }`
 
 **en :** `/en/user/profile/32`
 **fr :** `/fr/utilisateur/profil/32`
 **de :** `/de/user/profile/32`
 
-### Lorsque ce paramètre est désactivé
+### When this parameter is disabled
 
-- La langue est toujours stockée dans un cookie, rien ne vous empêche de gérer le multi-langue différemment, même si je vous le déconseille vivement
-- Vous pouvez toujours utiliser le paramètre `langRoute` pour gérer l'aspect d'une route, mais seule la langue par défaut sera prise en compte (la langue définie via le paramètre `default`dans le fichier `/config/lang.config.js` 
+- The language is always stored in a cookie, nothing prevents you from managing the multi-language differently, even if I advise against it
+- You can still use the `langRoute` parameter to manage the appearance of a route, but only the default language will be taken into account (the language defined via the `default` parameter in the `/config/lang.config.js` file 
 
-### Le paramètre enableFallbackRedirection
+### The enableFallbackRedirection parameter
 
-Toujours dans le fichier de configuration lié aux langues, vous trouverez un paramètre nommé `enableFallbackRedirection` activé par défaut. Ce paramètre permet d'activer la résolution intelligente d'URLs. 
+Still in the language-related configuration file, you will find a parameter called `enableFallbackRedirection` enabled by default. This setting enables intelligent URL resolution. 
 
-Prenons l'URL suivante : `monsite.com/aide`. Si la traduction d'URL est activée, ce type d'URL ne devrait pas fonctionner puisqu'elle ne précise pas la langue de la page. On s'attendrait donc à recevoir à la place une URL semblable à ceci : `monsite.com/fr/aide`. 
-Si le paramètre `enableFallbackRedirection` est activé, le routeur va cependant parcourir toutes les routes à la recherche d'un paramètre `langRoute` dont  la valeur serait équivalente à celle de l'URL demandée. 
+Let's take the following URL: `monsite.com/help`. If URL translation is enabled, this type of URL should not work since it does not specify the language of the page. One would therefore expect to receive instead a URL similar to the following: `monsite.com/en/help`. 
+If the `enableFallbackRedirection` parameter is enabled, however, the router will travel all routes looking for a `langRoute` parameter whose value would be equivalent to the one of the requested URL. 
 
-Prenons la route suivante pour exemple : 
+Let's take the following route as an example: 
 
 `"/help": { page: "/user/pofile", langRoutes: {"fr": "/aide"} }`
 
-Nous voyons ici que la traduction de la route en français est égale à au segment de l'URL définie plus haut. Grace à cela, le routeur va automatiquement pouvoir rediriger l'utilisateur depuis l'URL `monsite.com/aide` vers `monsite.com/fr/aide`.
+We see here that the translation of the route into French is equal to the segment of the URL defined above. As a result, the router will automatically be able to redirect the user from the URL `monsite.com/help` to `monsite.com/en/help`.
 
-**Attention cependant :** 
-- Cela ne fonctionnera pas avec les URLs dynamiques.
--  Notez également que le routeur va effectuer la redirection vers la première "langRoute" trouvée, ce qui peut potentiellement poser problème si vos routes n'ont pas correctement été définies. 
-- Il se peut également qu'une route ait le même aspect dans plusieurs langues, dans ce cas la page se résolue sur la première langue trouvée (généralement, la langue par défaut)
+**However :** 
+- This will not work with dynamic URLs.
+- Also note that the router will redirect to the first "langRoute" found, which can potentially be a problem if your routes have not been properly defined. 
+- It is also possible that a route may look the same in several languages, in which case the page will be resolved to the first language found (usually the default language)
 
 
 
-## Créer un lien dans l'app  
+## Create a link in the app  
   
-Pour créer un lien, il est nécessaire d'utiliser **le composant Link** accessible dans le dossier `/client/components/common`.  
- Lorsque vous créez un lien, tout ce que vous avez à faire est de lui indiquer la **route** correspondante.  Le composant se chargera du reste, c'est à dire générer un lien valide, vers la bonne page et dans la bonne langue. 
+To create a link, it is necessary to use **the Link component** accessible in the `/client/components/common` folder.  
+ When you create a link, all you have to do is to indicate the corresponding **route**.  The component will do the rest, which means generating a valid link, to the right page and in the right language. 
   
   
-### Le composant Link
+### The Link Component
   
-Il sert principalement de **wrapper au composant Link de NextJs** (next/link)   
-pour le rendre plus simple à utiliser et permettre à l'avenir une meilleure  
-maintenabilité des liens de l'application.  
+It is mainly used as a **wrapper for the Link component of NextJs** (next/link) to make it easier to use and allow better maintainability of the application's links in the future.  
   
-**Prenons la route suivante :**
+**Let's take the following route:**
 
     "/product/:id" : { page: "/product", langRoutes: { fr: "/produit/:id" } }   
     
 
-Cette route est supposée retourner vers une page produit définie par le paramètre `id`.  
+This route is supposed to return to a product page defined by the `id` parameter.  
 
-Voici comment créer un lien vers cette page :
+Here's how to create a link to this page:
   
 
      <Link to="/product/:id" query={ { id: 23 } }>  
-	     Découvrir le produit
+	     Discover the product
      </Link>  
 
 
-Ce lien redirigera l'utilisateur vers la page `monsite.com/product/23`.
-Si la traduction d'url est activée, en français cela donnerait : `monsite.com/fr/produit/23`
+This link will redirect the user to the `mysite.com/product/23` page.
+If url translation is enabled, in French it would look like this: `mysite.com/en/product/23`
   
- Ici il s'agit d'une URL dynamique. Les URLs statiques fonctionnent de la même manière mais n'ont simplement pas besoin du paramètre `query`.
+ This is a dynamic URL. Static URLs work the same way but simply do not need the `query` parameter.
 
 
 
-**Paramètres du composant :**
+**Component parameters :**
   
 
-|  | type | requis | description | défaut |
-|--|------|--------|-------------|--------|
-| children | * | yes | contenu du lien | - |
-| to | String | yes | nom de la route | - |
-| query | Object | no | paramètres d'une route dynamique | - |
-| className | String | no | classe passée au composant Typography du lien | - |
-| activeClassName | String | no | classe passée au composant Typography du lien si celui-ci est actif | - |
-| activeStyle | Object | no | styles passés au composant Typography du lien si celui-ci est actif | - |
-| noTypo | Boolean | no | par défaut les liens utilisent le composant Typography de material-ui. Il est possible de désactiver ce fonctionnement via ce paramètre | false |
-| name | String | no | nom du lien pour la balise `<a>` | - |
-| target | String | no | target du lien pour la balise `<a>` | _self |
-| prefetch | Boolean | no | permet d'activer la feature prefetch de NextJs pour ce lien | false |
-| urlQuery | String | no | permet d'ajouter un élément à la fin de l'url. ex : "?foo=bar" | - |
-| linkStyle | Object | no | un objet contenant des styles applicables à la balise `<a>` du lien | - |
-| linkClassName | String | no | une classe applicable à la balise `<a>` du lien | - |
-| disabled | Boolean | no | permet de désactiver le lien | false |
-| linkAttributes | Object | no | contient des attributs custom applicables à la balise `<a>` du lien | - |
-| color | String | no | permet de définir une couleur custom pour l'objet Typography | default |
-| checkSubActive | Boolean | no | si activé, le lien sera considéré comme actif dès lors que son premier segment correspond au premier segment de l'URL courante | false
+|  | type | required | description | default |
+|--|------|----------|-------------|---------|
+| children | * | yes | link content | - |
+| to | String | yes | route name | - |
+| query | Object | no | dynamic route queries | - |
+| noTypo | Boolean | no | by default links use the Typography component of material-ui. It is possible to disable this operation via this parameter | false |
+| className | String | no | class passed to the Typography component of the link | - |
+| activeClassName | String | no | class passed to the Typography component of the link if it is active | - |
+| activeStyle | Object | no | styles passed to the Typography component of the link if it is active | - |
+| name | String | no | link name of the `<a>` tag | - |
+| target | String | no | target of the `<a>` tag | _self |
+| prefetch | Boolean | no | allows you to enable NextJs' feature preview for this link | false |
+| urlQuery | String | no | allows you to add an element at the end of the url. ex : "?foo=bar" | - |
+| linkStyle | Object | no | an object containing styles applicable to the `<a>` tag of the link | - |
+| linkClassName | String | no | a class applicable to the `<a>` tag of the link | - |
+| disabled | Boolean | no | allows you to disable the link | false |
+| linkAttributes | Object | no | contains custom attributes applicable to the `<a>` tag of the link | - |
+| color | String | no | allows you to define a custom color for the Typography object | default |
+| checkSubActive | Boolean | no | if enabled, the link will be considered active as soon as its first segment corresponds to the first segment of the current URL | false
  
   
   
-## Ajouter une nouvelle page  
-  
-Plusieurs étapes sont nécessaires pour la création d'une nouvelle page mais le processus a   
-grandement été simplifié (si vous scrollez un peu, vous vous rendrez compte que cette section   
-est pourtant relativement longue et vous vous direz que je me fou un peu de votre gueule.   
-À cela je répondrai qu'en réalité c'est dû au fait que je prend le temps de présenter chaque   
-étapes pour m'assurer que vous compreniez bien tout le processus. Je répondrai également que d'une   
-certaine manière, oui, je me fou un peu de votre gueule puisqu'en définitive, le paragraphe le plus   
-long de la section, vous êtes entrain de le lire, et qu'il ne vous aura pas appris grand chose :)).   
+## Add a new page  
 
-**Attention :** Lisez attentivement toutes les étapes avant de vous lancer! 
+**Attention**: Read all the steps carefully before you start! Here I describe each step precisely but the procedure is actually much simpler than the one presented below.
   
-### 1) Créer la page  
+### 1) Create the page
   
-La première chose à faire sera de créer le fichier correspondant à la nouvelle page (dans `/client/pages` par défaut).  
+The first thing to do is to create the file corresponding to the new page (in `/client/pages` by default).  
   
      export default () => (  
 	     <div>  
@@ -163,35 +150,28 @@ La première chose à faire sera de créer le fichier correspondant à la nouvel
 	     </div>  
      )  
 
-L'exemple ci-dessous ne suffira pas à faire en sorte que votre page fonctionne.  
- Pour cela, chaque page a besoin de trois choses :  
+The example below will not be enough to make your page work.  
+To do this, each page needs three things:  
   
 **Redux**  
   
-Chaque page doit avoir accès au **state** et à la méthode **dispatch** du **store**.  
-La vraie logique d'injection et de création du store se trouvant dans le fichier `_app.js`,   
-il n'y a pas grand chose de particulier à faire si ce n'est utiliser le HOC **connect** de **react-redux**.  
+Each page must have access to the **state** and the **dispatch** method of the **store**. The real logic of injection and creation of the store is located in the `_app.js` file, so there is not much particular to do except to use the HOC **connect** of **react-redux**.  
   
 **i18next**  
   
-Dans la prévision d'un site multi-langue, il est également nécessaire de prévoir l'injection de nouvelles  
-props par l'intermédiaire d'un autre HOC: `withI18next.js` 
+In the forecast of a multi-language site, it is also necessary to plan the injection of new props through another HOC: `withI18next.js` 
   
   
 **styles**  
   
-Chaque page doit également avoir accès aux classes qui la concerne (JSS/Material-ui).  
+Each page must also have access to the classes that concern it (JSS/Material-ui).  
   
 **pageData**  
   
-Pour finir, certaines pages peuvent avoir besoin d'informations les concernant. Il peut s'agir de leur contenu, leur titre,  
-leurs meta-datas, etc... Ces données sont par défaut récupérées depuis une API distante (`germaine.js` dans notre cas)   
-puis injectées dans la page par l'intermédiaire d'un autre HOC.  Voir la section dédiée pour plus d'infos.
+Finally, some pages may require information about themselves. It can be their content, title, meta-datas, etc.... By default, this data is retrieved from a remote API (`germaine.js` in our case) and then injected into the page via another HOC.  See the dedicated section for more information.
   
-On se retrouve donc avec 4 HOCs à imbriquer les uns dans les autres et cela pour chaque page,   
-c'est un peu fastidieux. Pour rendre ça moins galère et plus maintenable,   
-je vous suggère d'utiliser le wrapper pageWrapper disponible ici : `client/lib/pageWrapper.js`.  
-Ce composant utilise la librairie `recompose.js` pour fusionner les HOCs ensembles.  
+So we find ourselves with 4 HOCs to nest into each other and that for each page, it's a little tedious. To make it less difficult and more maintainable,   
+I suggest you use the wrapper pageWrapper available here: `client/lib/pageWrapper.js`. This component uses the `recompose.js` library to merge the HOCs together.  
   
 
      const App = ({ pageData }) => ( 
@@ -201,12 +181,11 @@ Ce composant utilise la librairie `recompose.js` pour fusionner les HOCs ensembl
 	 );     
      export default pageWrapper(App, { name: 'app' });  
 
-Dans cet exemple, on retourne simplement **un appel à la fonction pageWrapper** dont le premier paramètre correspond  
-à notre page et le second à des options. Son utilisation est documentée un peu plus bas dans ce readme.  
+In this example, we simply return **a call to the pageWrapper function** whose first parameter corresponds to our page and the second to options. Its use is documented below in this readme.  
   
-Désormais, la page est fonctionnelle. Il manque encore cependant un dernier élément: le wrapper **Layout.**  
+From now on, the page is functional. However, one last element is still missing: the wrapper **Layout.**  
   
-Ce wrapper est un composant qu'il est préférable d'utiliser sur toutes les pages. Son utilisation est très simple :  
+This wrapper is a component that is best used on all pages. Its use is very simple: 
   
 
      const App = ({ pageData }) => ( 
@@ -218,20 +197,19 @@ Ce wrapper est un composant qu'il est préférable d'utiliser sur toutes les pag
      );
      export default pageWrapper(App, { name: 'app' });  
 
-Il suffit en effet d'utiliser ce composant comme container pour votre page et de lui passer la prop **pageData** (si définie).   
-Celle-ci sera notamment utilisée pour générer la balise **<head>** de la page et ses meta-data.   
+All you have to do is use this component as a container for your page and pass it the prop **pageData**.   
+This will be used to generate the **<head>** tag of the page and its meta-data.   
 
-De cette manière, il vous est également plus simple de définir certains composants communs à toutes les pages, comme un header ou un footer par exemple.
+This also makes it easier for you to define certain components common to all pages, such as a header or a footer for example.
   
-**nb:** Toute autre _prop_ passée au composant _Layout_ sera injectée dans l'objet _pageData_.   
-Cela permet par exemple de réécrire certains attributs (comme _title_ par exemple).  
+**nb:** Any other _prop_ passed to the component _Layout_ will be injected into the object _pageData_.   
+This allows, for example, to rewrite certain attributes (such as _title_ for example).  
   
   
   
-### 2) Ajouter les données à la "database" (/fake-api)  
+### 2) Adding data to the database (/fake-api)  
   
-Cette étape est optionnelle mais permet d'illustrer comment ajouter de nouvelles données   
-(pageData) à la page. Pour cela,  il suffit de rajouter un attribut à l'élément **pages** du fichier database.json :  
+This step is optional but illustrates how to add new data (pageData) to the page. To do this, simply add an attribute to the **pages** element of the database.json file:  
   
 
 	{
@@ -249,20 +227,17 @@ Cette étape est optionnelle mais permet d'illustrer comment ajouter de nouvelle
      }  
      
   
-### 3) Créer une nouvelle route  
+### 3) Create a new route  
   
-Évidemment, sans route votre page ne sera pas accessible.   
-Il faut donc l'ajouter. Pour cela, référez-vous à la section **Router** de ce readme.  
+Obviously, without a route your page will not be accessible. It must therefore be added. To do this, refer to the **Router** section of this readme.  
   
   
-### 4) Ajouter un namespace pour les locales  
+### 4) Add a namespace for locales  
   
-Cette étape est optionnelle. Si vous désirez ajouter un namespace correspondant à cette page pour vos traductions,   
-il suffit de créer un nouveau fichier dans tous les dossiers contenant vos locales (`/locales/*` par défaut).   
-En l'occurence, il devra s'appeler **myPage.json.**  
+This step is optional. If you want to add a namespace corresponding to this page for your translations, simply create a new file in all folders containing your locales (`/locales/*` by default). In this case, it should be called **myPage.json.**  
   
-Pensez également à ajouter le nom du namespace dans la partie **lang.namespaces** de la configuration.  
+Also remember to add the namespace name in the **namespaces** part of the lang configuration.  
 
-Plus d'infos sont disponibles dans la section de cette documentation qui traite de l'internationalisation. 
+More information is available in the internationalization section of this documentation. 
   
   
