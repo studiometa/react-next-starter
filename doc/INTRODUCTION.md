@@ -10,7 +10,7 @@ As each project is unique, this starter has been designed to be as customizable 
 
 Be careful, however, the more you change the core of the project, the more complicated it will be to make any subsequent updates. If this starter does not meet some of your specific needs, do not hesitate to suggest a pull-request or ask us directly! :)  
    
- **The following features are available and ready to use: **   
+ **The following features are available and ready to use:**   
    
 - native SSR routing  
 - Configuration according to the environment thanks to the '.env' files  

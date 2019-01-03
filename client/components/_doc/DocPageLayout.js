@@ -36,8 +36,9 @@ const styles = theme => ({
     '&> h3': {
       marginTop: theme.spacing.unit * 4,
     },
-    '& * code': {
-      overflow: 'scroll'
+    '& pre': {
+      overflow: 'scroll',
+      maxWidth: '90vw'
     },
     '& * code, & pre': {
       background: '#000',

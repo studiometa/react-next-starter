@@ -5,7 +5,7 @@ import React            from 'react';
 import packageJson      from '../../../package';
 import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
-import Link             from './Link/index';
+import Link             from './Link';
 import envBoolean from '../../../helpers/envBoolean'
 
 const styles = theme => ({
