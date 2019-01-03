@@ -1,33 +1,28 @@
 # Introduction  
   
-## Présentation  
+## Presentation  
   
-Ce starter a été développé dans le but de simplifier la mise en place d'un site React en SSR avec NextJs et Material-ui.
+This starter was developed to simplify the implementation of a SSR React site with NextJs and Material-ui.
 
-L'idée initiale était de permettre la mise en place rapide d'une application web en utilisant un socle technique moderne
-mais en partant sur une base suffisamment complète pour rentrer directement dans le vif du sujet. 
+The initial idea was to allow the rapid implementation of a web application using a modern technical foundation but starting from a sufficiently complete base to get to the heart of the matter. 
 
-Comme chaque projet est unique, ce starter a été pensé pour être le plus customizable possible. Cette documentation a été
-écrite pour vous aider à vous familiariser avec certains principes de base mais comme à chaque fois, c'est en bidouillant que
-vous apprendrez réellement à tirer profit des fonctionnalités offertes par ce starter.
+As each project is unique, this starter has been designed to be as customizable as possible. This documentation has been written to help you familiarize yourself with some basic principles, but as always, it is by tinkering that you will really learn to take advantage of the features offered by this starter.
 
-Attention cependant, plus vous modifierez le "core" du projet et plus il vous sera compliqué d'effectuer d'éventuelles mises à
-jour par la suite. Si ce starter ne répond pas à certains de vos besoins spécifiques, n'hésitez pas à suggérer une pull-request
-ou à nous en faire la demande directement! :)  
+Be careful, however, the more you change the core of the project, the more complicated it will be to make any subsequent updates. If this starter does not meet some of your specific needs, do not hesitate to suggest a pull-request or ask us directly! :)  
    
- **Les fonctionnalités suivante sont disponibles et prêtes à l'emploi :**   
+ **The following features are available and ready to use: **   
    
-- routing SSR natif  
-- Configuration selon l'environnement grace aux fichiers '.env'  
-- server node (expressJs) prêt à l'emploi  
-- redux utilisable en SSR nativement et gestion du localstorage  
+- native SSR routing  
+- Configuration according to the environment thanks to the '.env' files  
+- ready-to-use node server (expressJs)
+- redux for native SSR and local storage management  
 - custom loading (prefetch, webpack chunks, code splitting, etc)  
-- support sass natif (même si je recommande d'utiliser JSS autant que possible  
-- fake API pour le développement (basé sur germaine.js)  
-- Support natif de l'i18n avec routeur multi-langue et système de traduction natif des chaines de caractères  
+- native sass support (although I recommend using JSS as much as possible  
+- fake API for development (based on germaine.js)  
+- Native i18n support with multi-language router and native character string translation system  
 - tests & CI/CD  
-- Support JSS (Css-In-Js)  
-- Intégration de Material-ui  
-- Gestion du cache-serveur native  
-- Gestion du cache client à l'aide d'un service-worker
+- JSS support
+- Material-ui and theme-based development  
+- Native server cache management  
+- Client cache management using a service-worker
  
