@@ -2,36 +2,35 @@
 
 ## Server caching
 
-Bien que NextJs gère nativement une partie de la mise en cache pour la génération des pages, il est possible d'ajouter une sur-couche à ExpressJs pour cacher la totalité des pages générées. Cela vous permet d'obtenir des performances de chargement de page beaucoup plus élevées.
+Even though NextJs natively manages part of the caching for page generation, it is possible to add an overlay to ExpressJs to cache all generated pages. This allows you to achieve much higher page loading performance.
 
-Le cache serveur est géré avec la librairie [LRUCache](https://www.npmjs.com/package/lru-cache) et est configurable via des variables d'environnement :
+The server cache is managed with the [LRUCache library](https://www.npmjs.com/package/lru-cache) and is configurable via environment variables:
 
-- **ENABLE_SSR_CACHING** : [TRUE|FALSE] permet d'activer ou non cette feature
-- **SRR_CACHE_MAX_SIZE** : [1...∞] permet de définir la taille max du cache en Mo
-- **SSR_CACHE_MAX_AGE** : [1...∞] age max du cache en secondes
+- **ENABLE_SSR_CACHING** : [TRUE|FALSE] enable the server caching
+- **SRR_CACHE_MAX_SIZE** : [1...∞] Size of the cache in Mb
+- **SSR_CACHE_MAX_AGE** : [1...∞] Max age of the cache in seconds
 
-**Voici quelques consignes pour utiliser cette fonctionnalité correctement :**
+**Here are some instructions to use this feature correctly: **
 
-- Ne l'activez pas en développement
-- Ne définissez pas un temps de cache trop long, quelques minutes suffisent en général
-- Comprenez bien que TOUTE la logique de génération de page qui a lieu côté serveur sera mise en cache, y compris d'éventuels appels à une API. Cela signifie que vous pouvez potentiellement perdre le dynamisme de certaines pages, soyez vigilants !
-- L'id du cache est généré en fonction de L'URL de la page, **avec ses éventuels paramètres et queries**.
-- Il est possible de désactiver la mise en cache de certaines pages dans le fichier `routes.js` (voir section router de la doc)
+- Do not activate it in development
+- Do not define a too long cache time, a few minutes are usually enough
+- Please understand that ALL page generation logic that takes place on the server side will be cached, including possible calls to an API. This means that you can potentially lose the dynamism of some pages, so be careful!
+- The cache id is generated according to the URL of the page, **with its possible parameters and queries**.
+- It is possible to disable caching of some pages in the `routes.js` file (see router section of the doc)
 
 
 ## Service Worker
 
-Cette fonctionnalité permet de gérer le cache côté client. La configuration actuelle ne permet pas de mettre en place une utilisation totalement offline mais cette feature est prévue pour une future release :).
+This feature allows you to manage the client-side cache.
 
-Tout ce que vous avez à faire, c'est activer cette fonctionnalité avec la variable d'env `ENABLE_SERVICE_WORKER`.
+All you have to do is to activate this feature with the env variable `ENABLE_SERVICE_WORKER`.
 
-**Voici quelques consignes pour utiliser cette fonctionnalité correctement :**
-- Ne l'activez pas en développement
-- On utiliser workbox under the hood pour la génération de la config du service-worker
-- La configuration se trouve dans le fichier `/config/serviceWorker.config.js`
-- 
+**Here are some instructions to use this feature correctly: **
+- Do not activate it in development
+- We use workbox under the hood to generate the configuration of the service-worker
+- The configuration is located in the file `/config/serviceWorker.config.js`
 
-**@see** https://github.com/drenther/next-pwa/blob/d3198b92bbb64bf2c4ada26d49bbccf85e98b32b/next.config.js  
-**@see** https://github.com/ragingwind/next-workbox-webpack-plugin  
+**@see** https://github.com/hanford/next-offline
 **@see** https://developers.google.com/web/tools/workbox/
+**@see** https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#generatesw_plugin
    

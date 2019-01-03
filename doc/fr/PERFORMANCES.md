@@ -21,7 +21,7 @@ Le cache serveur est géré avec la librairie [LRUCache](https://www.npmjs.com/p
 
 ## Service Worker
 
-Cette fonctionnalité permet de gérer le cache côté client. La configuration actuelle ne permet pas de mettre en place une utilisation totalement offline mais cette feature est prévue pour une future release :).
+Cette fonctionnalité permet de gérer le cache côté client.
 
 Tout ce que vous avez à faire, c'est activer cette fonctionnalité avec la variable d'env `ENABLE_SERVICE_WORKER`.
 
@@ -29,9 +29,8 @@ Tout ce que vous avez à faire, c'est activer cette fonctionnalité avec la vari
 - Ne l'activez pas en développement
 - On utiliser workbox under the hood pour la génération de la config du service-worker
 - La configuration se trouve dans le fichier `/config/serviceWorker.config.js`
-- 
 
-**@see** https://github.com/drenther/next-pwa/blob/d3198b92bbb64bf2c4ada26d49bbccf85e98b32b/next.config.js  
-**@see** https://github.com/ragingwind/next-workbox-webpack-plugin  
+**@see** https://github.com/hanford/next-offline
 **@see** https://developers.google.com/web/tools/workbox/
+**@see** https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#generatesw_plugin
    
