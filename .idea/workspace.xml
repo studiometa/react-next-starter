@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Remove service-worker.js file">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
@@ -66,6 +65,7 @@
           <entry key="test" value="2" />
           <entry key="ts" value="2" />
           <entry key="txt" value="1" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -78,6 +78,7 @@
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="2" />
+          <entry key="XML" value="1" />
           <entry key="htaccess" value="1" />
         </counts>
       </usages-collector>
@@ -95,6 +96,7 @@
           <entry key="scss" value="34" />
           <entry key="test" value="44" />
           <entry key="txt" value="3033" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -107,6 +109,7 @@
           <entry key="Markdown" value="20234" />
           <entry key="PLAIN_TEXT" value="3035" />
           <entry key="SCSS" value="34" />
+          <entry key="XML" value="6" />
           <entry key="htaccess" value="10" />
         </counts>
       </usages-collector>
@@ -130,7 +133,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="169">
-                <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+                <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -141,7 +144,7 @@
         <entry file="file://$PROJECT_DIR$/config/lang.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -172,7 +175,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="276">
-                <caret line="12" column="62" lean-forward="true" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+                <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
@@ -196,18 +199,27 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="46">
-                <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+                <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+            <state relative-caret-position="306">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -270,7 +282,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/lib/componentWrapper.js" />
         <option value="$PROJECT_DIR$/client/lib/pageWrapper.js" />
         <option value="$PROJECT_DIR$/client/lib/socket.js" />
         <option value="$PROJECT_DIR$/client/lib/withPageData.js" />
@@ -321,6 +332,7 @@
         <option value="$PROJECT_DIR$/client/components/_doc/DocPageLayout.js" />
         <option value="$PROJECT_DIR$/TODO.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
       </list>
     </option>
   </component>
@@ -555,13 +567,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00167" summary="Allow to keep dev tooling pages on production">
-      <created>1545149718448</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1545149718448</updated>
     </task>
     <task id="LOCAL-00168" summary="Update package-lock.json file">
       <created>1545149766366</created>
@@ -899,7 +904,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546536914270</updated>
     </task>
-    <option name="localTasksCounter" value="216" />
+    <task id="LOCAL-00216" summary="Fix that horrible typo...">
+      <created>1546537836690</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1546537836690</updated>
+    </task>
+    <option name="localTasksCounter" value="217" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -935,7 +947,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="519893000" />
+    <option name="totallyTimeSpent" value="520027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -948,7 +960,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17521368" />
       <window_info id="Structure" order="1" weight="0.24969475" />
@@ -962,9 +973,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49444002" weight="0.263589" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51231134" side_tool="true" weight="0.27922562" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.48290598" visible="true" weight="0.49422875" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48290598" visible="true" weight="0.49422875" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.517094" side_tool="true" visible="true" weight="0.49422875" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.517094" side_tool="true" visible="true" weight="0.49422875" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Thumbnails" order="13" sideWeight="0.49841145" weight="0.32963786" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
@@ -1046,7 +1057,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="[WIP] Update the service worker - fix pm2 config path" />
     <MESSAGE value="Update service worker (use next-offline)" />
     <MESSAGE value="Add a manifest.json file" />
     <MESSAGE value="Remove service-worker.js file from git" />
@@ -1071,15 +1081,10 @@
     <MESSAGE value="Fix some code tags of the config pages" />
     <MESSAGE value="Add multi-lingual doc pages" />
     <MESSAGE value="Remove service-worker.js file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove service-worker.js file" />
+    <MESSAGE value="Fix that horrible typo..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix that horrible typo..." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/helpers/capitalize.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/debounce.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/envBoolean.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1395,7 +1400,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="169">
-            <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>
@@ -1435,7 +1440,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="276">
-            <caret line="12" column="62" lean-forward="true" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+            <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
           </first_editor>
           <second_editor />
         </state>
@@ -1444,7 +1449,7 @@
     <entry file="file://$PROJECT_DIR$/config/lang.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1469,7 +1474,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="46">
-            <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+            <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>
@@ -1477,8 +1482,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state relative-caret-position="306">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
