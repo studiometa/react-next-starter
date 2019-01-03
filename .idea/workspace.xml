@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - STORE">
+    <list default="true" id="279a51bd-a20a-4c53-a827-bb072d5f5b73" name="Default" comment="Translate and update the doc - THEME">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/THEME.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/THEME.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/fr/THEME.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/fr/THEME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
           <entry key="htaccess" value="1" />
           <entry key="js" value="487" />
           <entry key="json" value="56" />
-          <entry key="md" value="74" />
+          <entry key="md" value="76" />
           <entry key="production" value="7" />
           <entry key="scss" value="4" />
           <entry key="test" value="2" />
@@ -69,7 +68,7 @@
           <entry key="Git file" value="3" />
           <entry key="JSON" value="57" />
           <entry key="JavaScript" value="487" />
-          <entry key="Markdown" value="74" />
+          <entry key="Markdown" value="76" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="2" />
@@ -85,11 +84,11 @@
           <entry key="htaccess" value="10" />
           <entry key="js" value="31181" />
           <entry key="json" value="1471" />
-          <entry key="md" value="20170" />
+          <entry key="md" value="20220" />
           <entry key="production" value="61" />
           <entry key="scss" value="34" />
           <entry key="test" value="44" />
-          <entry key="txt" value="2856" />
+          <entry key="txt" value="2861" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -99,8 +98,8 @@
           <entry key="JSON" value="1471" />
           <entry key="JSX Harmony" value="8" />
           <entry key="JavaScript" value="31181" />
-          <entry key="Markdown" value="20162" />
-          <entry key="PLAIN_TEXT" value="2858" />
+          <entry key="Markdown" value="20212" />
+          <entry key="PLAIN_TEXT" value="2863" />
           <entry key="SCSS" value="34" />
           <entry key="htaccess" value="10" />
         </counts>
@@ -121,11 +120,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/THEME.md">
+        <entry file="file://$PROJECT_DIR$/doc/TROUBLESHOOTING.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="225">
-                <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="317">
+                <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -190,8 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/components/common/PageLayout.js" />
-        <option value="$PROJECT_DIR$/client/components/common/Link.js" />
         <option value="$PROJECT_DIR$/client/components/utils/Skeleton.js" />
         <option value="$PROJECT_DIR$/client/components/utils/LazyImage.js" />
         <option value="$PROJECT_DIR$/client/components/utils/LangSwitch.js" />
@@ -241,6 +238,8 @@
         <option value="$PROJECT_DIR$/doc/fr/STORE.md" />
         <option value="$PROJECT_DIR$/doc/fr/THEME.md" />
         <option value="$PROJECT_DIR$/doc/THEME.md" />
+        <option value="$PROJECT_DIR$/doc/fr/TROUBLESHOOTING.md" />
+        <option value="$PROJECT_DIR$/doc/TROUBLESHOOTING.md" />
       </list>
     </option>
   </component>
@@ -291,12 +290,6 @@
               <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
               <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-next-starter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-next-starter" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -491,13 +484,6 @@
       <workItem from="1545125654589" duration="1782000" />
       <workItem from="1545127637262" duration="26064000" />
       <workItem from="1545214982481" duration="21652000" />
-    </task>
-    <task id="LOCAL-00160" summary="Update, improve and fix tests + improve the router dispatcher">
-      <created>1545140292487</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1545140292488</updated>
     </task>
     <task id="LOCAL-00161" summary="Fix env config">
       <created>1545140478346</created>
@@ -835,7 +821,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546534222613</updated>
     </task>
-    <option name="localTasksCounter" value="209" />
+    <task id="LOCAL-00209" summary="Translate and update the doc - THEME">
+      <created>1546534407658</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1546534407658</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,7 +864,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517767000" />
+    <option name="totallyTimeSpent" value="518125000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -982,7 +975,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix a router bug that was blocking some route redirection" />
     <MESSAGE value="[WIP] Update the global project structure" />
     <MESSAGE value="Remove .idea folder " />
     <MESSAGE value="Add a public folder to serve things like robots.txt" />
@@ -1007,23 +999,10 @@
     <MESSAGE value="Translate and update the doc - REQUIREMENTS" />
     <MESSAGE value="Translate and update the doc - ROUTER" />
     <MESSAGE value="Translate and update the doc - STORE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - STORE" />
+    <MESSAGE value="Translate and update the doc - THEME" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate and update the doc - THEME" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/api.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/layout.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1398,8 +1377,28 @@
     <entry file="file://$PROJECT_DIR$/doc/THEME.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="225">
-            <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <first_editor relative-caret-position="294">
+            <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/fr/TROUBLESHOOTING.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="11" selection-start-column="2" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/TROUBLESHOOTING.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="317">
+            <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>

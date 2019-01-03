@@ -1,44 +1,32 @@
-# Dépannage
+# Troubleshooting
 
-## Le serveur de développement est lent
+## The development server is slow
 
-Il n'y a malheureusement pas de solution à ce problème. En mode développement, les fichiers ne sont pas minifié, ni 
-optimisé, ni gzipés. NextJs doit compiler une grande partie de vos modifications à la volée, ce qui peut parfois
-générer certaines lenteurs.
+Unfortunately, there is no solution to this problem. In development mode, files are not minified, optimized or gziped. NextJs has to compile a large part of your changes on the fly, which can sometimes generate some delays.
 
-Si toutefois votre application vous semble lente au point de mouliner sans jamais rien afficher, il s'agit peut être
-d'une promesse non résolue ou d'une requête non traitée. Node dispose de [quelques outils](https://stackoverflow.com/questions/20990955/how-do-i-debug-promise-based-code-in-node)
- permettant de résoudre ce type de problèmes.
+However, if your application seems so slow that it never displays anything, it may be an unresolved promise or an unprocessed request. Node has[some tools](https://stackoverflow.com/questions/20990955/how-do-i-debug-promise-based-code-in-node) to solve this type of problem.
  
- Dans tous les cas, je vous conseille de n'estimer la vitesse de votre application qu'en mode production.
+In any case, I advise you to estimate the speed of your application only in production mode.
  
- ## Le Hot Module Reload de webpack me rend fou
+ ## The Hot Module Reload of webpack makes me crazy
  
- À priori, NextJs de propose toujours pas de solution efficace pour désactiver cette fonctionnalité, vous pouvez cependant
- bloquer les requêtes à l'aide des outils de développement de votre navigateur. 
+ In principle, NextJs still does not offer an effective solution to disable this feature, however, you can block requests using your browser's development tools. 
  
- Jetez un oeil à [cette issue](https://github.com/zeit/next.js/issues/1109) pour plus d'infos.
+ Take a look at [this issue](https://github.com/zeit/next.js/issues/1109) for more information.
  
- ## J'ai une erreur "did not match" dans ma console
+ ## I have a "did not match" error in my console
  
  ```bash
  Warning: Prop 'className' did not match. Server: "MuiTypography-root-246 MuiTypography-title-252 MuiTypography-colorInherit-265 PageComponent-flex-207" Client: "MuiTypography-root-44 MuiTypography-title-50 MuiTypography-colorInherit-63 PageComponent-flex-5"
  ```
  
- C'est que vous découvrez les joies du SSR :D! Soyez attentifs à ce type de warnings, car ils sont souvent le signe d'un
- défaut de conception qui peut potentiellement avoir un gros impact sur les performances de votre application !
+ It's that you discover the joys of SSR :D! Be aware of this type of warnings, as they are often a sign of a design defect that can potentially have a big impact on the performance of your application!
  
- Ce qu'il se passe ici est en réalité assez simple. Votre page est rendue une première fois côté serveur, puis une seconde
- fois ([hydrate](https://reactjs.org/docs/react-dom.html#hydrate)) côté client. Si les deux versions ne sont pas identiques
- au moment du premier rendu, React ne saura pas laquelle conserver et par conséquent mettra l'entièreté du DOM à jour pour
- ne conserver que le rendu effectué côté client. Je vous laisse deviner les conséquences potentielles sur le chargement de votre
- page...
+ What is happening here is actually quite simple. Your page is rendered a first time on the server side, then a second time ([hydrate](https://reactjs.org/docs/react-dom.html#hydrate)) on the client side. If the two versions are not identical at the time of the first rendering, React will not know which one to keep and will therefore update the entire DOM to keep only the rendering done on the client side. I let you guess the potential consequences on the loading of your page....
  
- Il n'y pas de solution miracle pour résoudre ce problème. Il faut d'avoir identifier quelle partie de votre code est responsable. 
- Pour cela, le plus simple est de supprimer des segments petit à petit jusqu'à ce que l'erreur disparaisse. Une fois code erroné identifié,
- il vous restera à déterminer ce qui cause cette erreur.
+ There is no miracle solution to solve this problem. You must have identified which part of your code is responsible.  To do this, the easiest way is to gradually delete segments until the error disappears. Once the wrong code is identified, you will have to determine what causes this error.
  
- Voici un exemple :
+ Here is an example :
  
  ```jsx harmony
  render(
@@ -50,35 +38,29 @@ d'une promesse non résolue ou d'une requête non traitée. Node dispose de [que
  )
  ```
  
- Dans cet exemple, il est évident que la page générée côté serveur ne sera pas identique à celle générée côté client, puisqu'on
- fait usage d'une condition qui ne retournera pas le même résultat dans ces deux paradigmes. 
+ In this example, it is obvious that the page generated on the server side will not be identical to the one generated on the client side, since we are using a condition that will not return the same result in these two paradigms. 
  
  
- ## Une erreur me dit que document, body, window (etc) n'est pas défini
+ ## An error tells me that document, body, window (etc) is not defined
  
- Encore une contrainte liée au SSR. Rien ne vous empêche d'utiliser ces entités, mais vous ne pouvez pas le faire n'importe où.
+ Another SSR constraint. There is nothing to stop you from using these entities, but you can't do it anywhere.
+  
+  For example, if you use `window` in the constructor of a React Class, this constructor will be interpreted on the server side, where `window` simply does not exist. The same is true for the `render` method for example. 
+  
+  If, on the other hand, you do the same thing in a method like `componentDidMount`, you will no longer have any errors, since it is not never interpreted on the server side!
  
- Par exemple, si vous faites appel à `window` dans le constructor d'une Class React, ce constructor sera interprété côté serveur,
- où `window` n'existe tout simplement pas. Il en va de même pour la méthode `render` par exemple. 
+ ## Node just crashed
  
- Si par contre vous faites la même chose dans une méthode comme `componentDidMount`, vous n'aurez plus d'erreur, puisqu'elle n'est
- jamais interprété côté serveur !
- 
- ## Node vient de crasher
- 
- Oui, malheureusement ça arrive, tout comme ça peut arriver aux avions... Généralement, cela se produit pour une raison
- aléatoire et difficilement identifiable. Il s'agit généralement de [segmentation fault](https://en.wikipedia.org/wiki/Segmentation_fault), cela
- signifie que Node a tenté d'accéder à un segment de mémoire qui ne lui était pas alloué.
- 
- Heureusement, en production, il existe une floppée d'outils qui permettent de relancer le serveur automatiquement dans le cas où ce problème
- viendrait à se produire. 
- 
- Personnellement avec ce starter, ça ne m'est encore jamais arrivé :).
+ Yes, unfortunately it happens, just as it can happen to planes.... Usually, this happens for a random and difficult to identify reason. This is generally [segmentation fault] (https://en.wikipedia.org/wiki/Segmentation_fault), that
+  means that Node tried to access a memory segment that was not allocated to him.
+  
+  Fortunately, in production, there are a lot of tools available to automatically restart the server in case of this problem would happen. 
+  
+  Personally with this starter, it has never happened to me before :).
  
  
- ## Mon bundle / certains de mes chunks sont trop lourds
+ ## My bundle / some of my chunks are too heavy
  
- Alert spoiler : les node_modules sont probablement responsables !
- 
- Pour vous en assurer, rendez-vous dans le dossier `build` et ouvrez le fichier `stats.html` dans votre navigateur. Vous ne devriez
- plus avoir de mal à identifier le package responsable !
+ Alert spoiler: the node_modules are probably responsible!
+  
+  To make sure, go to the `build` folder and open the `stats.html` file in your browser. You should no longer have any trouble identifying the responsible package!
