@@ -1,61 +1,58 @@
 # Store
 
-Ce starter utilise les librairies react-redux et redux-thunk pour la gestion du store et la mise ne place d'un contexte à travers les pages.
+This starter uses react-redux and redux-thunk libraries to manage the store and provide a context across the pages.
 
 
-## Isomorphisme
+## Isomorphism
 
-Le store est `isomorphic`. Cela signifie qu'il fonctionne aussi bien côté serveur que côté client. Pour cela, le store est initialisé une première fois côté serveur. Il est alors possible de le mettre à jour ou de le consumer à l'aide des actions et des providers. 
+The store is `isomorphic`. This means that it works on both the server and client sides. To do this, it is initialized a first time on the server side. It is then possible to update or consume it using actions and providers. 
 
-Une fois la page servie côté client, le contenu du store est stocké à une variable globale rattachée à l'objet `window`. Cela permet d'initialiser un nouveau store côté client tout en conservant les données du store serveur.
+Once the page is served on the client side, the content of the store is stored in a global variable attached to the `window` object. This allows a new store to be initialized on the client side while keeping the data from the server store.
 
 
-## Le dossier /store passé au crible 
+## The folder /blind
   
-Les reducers et les actions sont séparés dans des dossiers différents. Les actions/reducers de chaque state sont également définis dans  un fichier séparé.  
+Reducers and actions are separated in different folders. The actions/reducers of each state are also defined in a separate file.  
   
 ### /store/createStore.js  
   
-Retourne une fonction permettant de **créer un nouveau store**.  
+Returns a function to **create a new store**.  
   
 ### /store/actions  
   
-Contient toutes les **actions de l'application**. Les actions de chaque sous-store sont définies dans un   
-fichier distinct en respectant la nomenclature suivante: `<store>.actions.js`.  
+Contains all the **actions of the application**. The actions of each substore are defined in a separate file using the following nomenclature: `<store>.actions.js`.  
   
-Si vous ouvrez un des fichiers, vous remarquerez que chaque action est une **fonction exportée**.   
-Vous remarquerez également que la **constante** du nom de chaque action est **également exporté**.  
+If you open one of these files, you will notice that each action is an **exported function**. You will also notice that the **constant** of the name of each action is **also exported**.  
   
-Ceux-ci sont utilisés par les reducers pour s'assurer que le nom de l'action correspondante est   
-toujours bon (puisqu'il n'est défini qu'à un seul endroit).  
+These are used by reducers to ensure that the name of the corresponding action is always good (since it is defined in only one place).  
   
 ### /store/reducers  
   
-De la même manière, ce dossier contient les **reducers de l'app**.  
-Attention, contrairement aux actions, si vous désirez ajouter un nouveau reducer, il faudra également penser à exporter celui-ci dans le fichier `/store/reducers/index.js`
+In the same way, this folder contains the **reducers of the app**.  
+Be careful, contrary to the actions, if you want to add a new reducer, you will also have to export it in the file `/store/reducers/index.js`
 
 
-## Actions asynchrones
+## Asynchronous actions
 
-La librairie redux-thunk est utilisée afin de permettre d'effectuer certaines actions de manière asynchrone. Cela s'avère très utile lorsqu'il s'agit de réaliser certaines taches telles q'une requête à API et que les données récupérées doivent être stockées dans le store. 
+The redux-thunk library is used to allow certain actions to be performed asynchronously. This is very useful when it comes to performing certain tasks such as requesting an API and when the recovered data must be stored in the store. 
 
 
-### Démonstration avec l'action fetchAppSettings
+### Demonstration with the fetchAppSettings action
 
-**Rendez-vous dans le fichier `/store/actions.app.actions.js` et jetez un oeil à l'action `fetchAppSettings` :**
+**Go to the file `/store/actions.app.actions.js` and take a look at the action `fetchAppSettings`: **
 
-- Chaque action asynchrone retourne une nouvelle fonction dite 'async'
-	- Cette fonction prend trois paramètres :
-		- **dispatch** :  fonction native à redux permettant d'appeler une autre action
-		- **getState** : fonction native à redux permettant de retourner le store actuel
-		- **socket** : instance de la classe socket qui permet de simplifier la communication avec une éventuelle API distance
-- Petite astuce : il est possible de passer une callback en paramètre à l'action. Cela permet d'effectuer une action en fonction de la réussite ou de l'échec de l'action à effectuer sans avoir besoin d'attendre que le store soit mis à jour.
+- Each asynchronous action returns a new function called "async".
+	- This function takes three parameters:
+		- **dispatch** : native function to redux allowing to call another action
+		- **getState** : native to redux function to return the current store.
+		- socket** : instance of the socket class that simplifies communication with a possible remote API
+- A little tip: it is possible to pass a callback as a parameter to the action. This allows you to perform an action based on the success or failure of the action to be performed without having to wait for the store to be updated.
 
 
 ## Local storage
 
-Parfois il peut s'avérer utile de synchroniser certains éléments du store avec le local storage. 
+Sometimes it may be useful to synchronize some elements of the store with the local storage. 
 
-Vous pouvez définir ces éléments dans le fichier de configuration `/config/redux.config.js` à l'aide du paramètre `localStorageStates`. Il s'agit d'un tableau supposé contenir l'identifiant des éléments à conserver dans le local storage. Par exemple : 'app', 'user.preferences', etc.
+You can define these elements in the configuration file `/config/redux.config.js` using the parameter `localStorageStates`. This is a table that is supposed to contain the identification of the elements to be stored in the local storage. For example: 'app', 'user.preferences', etc.
 
-À noter que le store 'client' est constamment hydraté à partir du store 'serveur' à chaque nouveau chargement de la page. Attention à ne stocker que des éléments qui ne seront pas constamment rafraîchis (vous ne risu
+Note that the "client" store is constantly hydrated from the "server" store each time the page is loaded again. Be careful to store only elements that will not be constantly refreshed

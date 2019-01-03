@@ -58,4 +58,4 @@ Parfois il peut s'avérer utile de synchroniser certains éléments du store ave
 
 Vous pouvez définir ces éléments dans le fichier de configuration `/config/redux.config.js` à l'aide du paramètre `localStorageStates`. Il s'agit d'un tableau supposé contenir l'identifiant des éléments à conserver dans le local storage. Par exemple : 'app', 'user.preferences', etc.
 
-À noter que le store 'client' est constamment hydraté à partir du store 'serveur' à chaque nouveau chargement de la page. Attention à ne stocker que des éléments qui ne seront pas constamment rafraîchis (vous ne risu
+À noter que le store 'client' est constamment hydraté à partir du store 'serveur' à chaque nouveau chargement de la page. Attention à ne stocker que des éléments qui ne seront pas constamment rafraîchis
