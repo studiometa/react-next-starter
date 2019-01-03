@@ -14,7 +14,7 @@ Je vous conseille vivement de jeter un oeil à la liste des composants disponibl
 
 Vous pouvez modifier le thème dans le fichier suivant : `/client/MUITheme.js`
 
-Jetez un oeil à la page `/sandbox` pour avoir un aperçu de votre thème actuel. Cette page est automatiquement désactivée en production donc ne la supprimez pas! :)
+Jetez un oeil à la page `/_sandbox` pour avoir un aperçu de votre thème actuel. Cette page est automatiquement désactivée en production donc ne la supprimez pas! :)
 
 ## JSS
 
