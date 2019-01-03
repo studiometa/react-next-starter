@@ -1,39 +1,39 @@
 # Wrappers
   
-Ils sont deux et permettent de wrapper facilement vos pages et vos composants afin d'y intégrer facilement certaines fonctionnalités par l'intermédiaire de différents HOCs.  
+They are two and allow you to easily wrap your pages and components in order to easily integrate some functionalities through different HOCs.  
   
-Ils sont disponibles dans le dossier `/client/lib`. Ce sont des fonctions dont le premier paramètre correspond au composant à "wrapper" et le second un objet contenant des paramètres.  
+They are available in the `/client/lib` folder. These are functions whose first parameter corresponds to the component to be wrapped and the second one to an object containing parameters.  
   
 ## pageWrapper  
   
-Permet de wrapper chacune de vos pages. Vous devez obligatoirement utiliser ce wrapper lorsque vous créez une nouvelle page.  
+Allows you to wrap each of your pages. You must use this wrapper when you create a new page.  
   
-     const MyPage = () => (<div>coucou</div>);   
+     const MyPage = () => (<div>hello</div>);   
      export default pageWrapper(MyPage, { name: 'my-page' })  
 
    
-Ce composant gère les paramètres suivants :   
- - **name** : Nom de la page. Également utilisé pour les requêtes à l'API et pour l'utilisation d'une locale propre à la page.
- - **namespaces** : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu  
- - **mapStateToProps** : Même fonction utilisée par Redux pour injecter des props au composant  
- - **styles** : Objet utilisé par JSS et Material-ui pour générer les styles de la page  
- - **withTheme** : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui  
- - **noPageData** : Indispensable si la page n'est pas supposée récupérer de contenu à travers l'API pour éviter qu'une erreur 404 soit retournée.   
+This component manages the following parameters:   
+ - **name** : Name of the page. Also used for API requests and for using a page specific locale.
+ - **namespaces** : Allows you to use additional namespaces for content translation  
+ - **mapStateToProps** : Same function used by Redux to inject props to the component  
+ - **Styles** : Object used by JSS and Material-ui to generate page styles  
+ - **withTheme** : If true, the prop "theme" will be accessible by the component, containing the Theme object of material-ui  
+ - **NoPageData**: Essential if the page is not supposed to retrieve content through the API to avoid a 404 error being returned.   
   
 ## componentWrapper  
   
-Ce composant est sensiblement le même que le précédent et peut être utilisé pour tous vos composants.  
+This component is essentially the same as the previous one and can be used for all your components.  
       
-     const MyComponent = () => (<div>coucou</div>);
+     const MyComponent = () => (<div>hello</div>);
      export default componentWrapper(MyComponent, { name: 'my-component' })  
     
-Ce composant gère les paramètres suivants :  
- - **isTranslatable** : true par défaut, permet de désactiver la traduction pour ce composant  
- - **isConnected** : Défini si le composant doit être connecté à redux. Si oui, la prop 'dispatch' sera accessible.  
-  Si `mapStateToProps` est défini, le composant sera toujours considéré comme étant connecté  
- - **namespaces** : Permet d'utiliser des namespaces supplémentaires pour la traduction du contenu. Le composant hérite par défaut des namespaces de la page ou du composant parent.  
- - **mapStateToProps** : Même fonction utilisée par Redux pour injecter des props au composant  
- - **styles** : Objet utilisé par JSS et Material-ui pour générer les styles de la page  
- - **withTheme** : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui  
- - **withRouter**: Donne accès à la prop "router" correspondant à l'object router de NextJs
- - **withWidth**: Même fonctionnement que le HOC homonyme de Material-ui
+This component supports the following parameters:  
+ - **isTranslatable** : true by default, allows you to disable translation for this component  
+ - **IsConnected**: Defines whether the component should be connected to redux. If so, the dispatch prop will be accessible.  
+  If `mapStateToProps` is defined, the component will always be considered connected  
+ - **Namespaces**: Allows you to use additional namespaces for content translation. By default, the component inherits the namespaces of the parent page or component.  
+ - **mapStateToProps** : Same function used by Redux to inject props to the component  
+ - **Styles** : Object used by JSS and Material-ui to generate page styles  
+ - **withTheme** : If true, the prop "theme" will be accessible by the component, containing the Theme object of material-ui  
+ - **WithRouter**: Gives access to the "router" prop corresponding to the NextJs object router
+ - **WithWidth**: Same operation as the HOC with the same name as Material-ui
