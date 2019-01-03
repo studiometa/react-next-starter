@@ -1,6 +1,6 @@
-# Pré-requis
+# Requirements
 
-**Avant de vous lancer, soyez certain d'être à l'aise avec les éléments listés ci-dessous :**  
+**Before you start, make sure you are comfortable with the elements listed below: **  
   
 - JavaScript es6 (🔥🔥🔥)  
 - ReactJs & Redux (🔥🔥🔥)  
@@ -13,11 +13,9 @@
 - Babel (🔥)  
 - REST / axios (🔥)  
   
-J'insiste sur le fait de bien comprendre les principes du SSR. C'est une manière particulière de développer et vous   
-risquez vite de vous arracher les cheveux sans une bonne maîtrise de ses principaux concepts. Dans ce readme,   
-je pars du principe que vous êtes déjà à l'aise avec les éléments listés ci-dessus.
+I insist on a clear understanding of the principles of SSR. It is a particular way of developing and you quickly risk pulling your hair out without a good mastery of its main concepts. In this readme, I assume that you are already comfortable with the elements listed above.
 
-Voici quelques liens utiles pour bien démarrer en SSR : 
+Here are some useful links to get started in SSR: 
 
 - [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html)
 - [NextJs - Get started](https://nextjs.org/learn/)
@@ -25,8 +23,8 @@ Voici quelques liens utiles pour bien démarrer en SSR :
 - [Server-side rendering your React app in three simple steps](https://medium.freecodecamp.org/server-side-rendering-your-react-app-in-three-simple-steps-7a82b95db82e)
   
 
-## Pré-requis techniques 
+## Technical requirements
 
 - Mac OS X, Windows, or Linux
 - node ^8.11.3 or newer
-- Yarn/NPM package
+- Yarn/NPM package manager

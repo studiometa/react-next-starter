@@ -29,4 +29,4 @@ Voici quelques liens utiles pour bien démarrer en SSR :
 
 - Mac OS X, Windows, or Linux
 - node ^8.11.3 or newer
-- Yarn/NPM package
+- Yarn/NPM
