@@ -1,6 +1,6 @@
 # Under the hood  
   
-## Architecture du projet  
+## Project architecture  
 ```
     .  
     ├── build                   # The app build after running `npm run build`  
@@ -26,35 +26,30 @@
 ```
  
  
- Cette arborescence s'inspire de celle proposait dans les guidelines de NextJs mais a été légèrement modifiée pour
- une meilleure répartition des éléments principaux :
- - Dans le dossier **client**, vous trouverez tout ce qui touche à la **vue** 
- - Dans le dossier **store**, vous trouverez les éléments qui attraient à la partie **modèle**
- - Le dossier **server** contient une majeure partie de la logique **serveur** avec notamment la définition des routes
- - Les dossiers **lib** et **helpers** mettent à disposition certains composants utiles pouvant être exploité n'importe
- où dans le projet
+ This tree structure is inspired by the one proposed in the NextJs guidelines but has been slightly modified for a better distribution of the main elements:
+  - In the **client** folder, you will find everything related to the **view** 
+  - In the folder **store**, you will find the elements that are relevant to the **model** part
+  - The folder **server** contains most of the  **server** logic with the definition of routes an so on
+  - The **lib** and **helpers** folders provide some useful components that can be used anywhere in the project
  
  
  ## server.js
  
  
- Ce fichier expose l'instance d'une classe comprenant toute la logique serveur. Son utilisation a été grandement simplifiée
- depuis la version 2.0.0. Cette classe dispose d'une méthode `start` et d'une méthode `stop`. Il n'y a basiquement rien de plus
- à comprendre pour pouvoir l'utiliser. D'autres méthodes sont également disponibles mais il s'agit principalement de helpers.
+ This file exposes the instance of a class containing all the server logic. Its use has been greatly simplified since version 2.0.0. This class has a `start` and a `stop` method. There is basically nothing more to understand in order to be able to use it. Other methods are also available but they are mainly helpers.
  
- Voici une liste non-exhaustive des fonctionnalités gérées par la classe au moment de lancer le serveur. Certaines de ces fonctionnalités
- ne sont activées qu'en production :
- - Attribution d'un port disponible
- - Vérification de la structure globale du projet (présence des fichiers indispensables au bon fonctionnement de celui-ci)
- - Activation de certains middlewares, cors, compression etc
- - Initialisation de germaine.js pour la mise en place de la "fake-api"
- - Mise en service de i18next pour la gestion du multi-langue
- - Création des listeners qui vont permettrent de servir les pages du site, résoudre dans la bonne langue, etc
- - Ajout d'une éventuelle restriction d'accès avec une authentification basic
- - Vérification de la validité des routes
- - Mise en route du cache serveur
+ Here is a non-exhaustive list of the features managed by the class when launching the server. Some of these features are only activated in production:
+  - Assigning an available port
+  - Verification of the global structure of the project (presence of the files essential for its proper functioning)
+  - Activation of certain middleware, cors, compression etc.
+  - Initialization of germaine.js for the implementation of the "fake-api".
+  - Implementation of i18next for multi-language management
+  - Creation of listeners that will allow you to serve the pages of the site, solve in the right language, etc
+  - Adding a possible access restriction with basic authentication
+  - Checking the validity of routes
+  - Starting the server cache
  
  
- ## Le dossier /client/static
+ ## The /client/static file
  
- Stockez tous vos assets dans ce dossier et accédez-y ensuite depuis le pathname `/static` 
+ Store all your assets in this folder and then access them from the `/static` pathname 
