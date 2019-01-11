@@ -8,6 +8,7 @@ import Error          from '../../pages/_error';
 import Head           from './Head';
 import Header         from './Header';
 
+
 const styles = theme => ({
 
   root: {
@@ -114,6 +115,10 @@ const PageLayout = withStyles(styles)(function Layout(props) {
     </div>
   );
 });
+
+PageLayout.defaultProps = {
+  pageData: config.api.fetchPagesData ? undefined : {},
+};
 
 PageLayout.propTypes = {
   pageData: PropTypes.object,

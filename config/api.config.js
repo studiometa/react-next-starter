@@ -34,7 +34,6 @@ module.exports = {
   // all the pages. The result will be accessible under the pages 'pageData' prop and stored in the redux
   // store under state.pages.<page_name>. Note that you can disable this feature for a single page by setting
   // 'withPageData' to false on the pageWrapper composer.
-  // TODO This parameter is actually not in use
   fetchPagesData: true,
 
   // This method is used to generate an API URL for a given pathname
