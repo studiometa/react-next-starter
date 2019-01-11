@@ -31,8 +31,9 @@ export default (Component, {
   withTheme = false,
   noPageData = false,
 }) => {
+  console.log('-----',  config.api.fetchPagesData);
   const args = [
-    withPageData(name, { required: !noPageData }),
+    withPageData(name, { required: config.api.fetchPagesData ? !noPageData : false }),
     connect(mapStateToProps),
     withStyles(styles),
   ];
