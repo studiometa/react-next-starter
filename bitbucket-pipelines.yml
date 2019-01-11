@@ -16,13 +16,3 @@ pipelines:
             script: # Modify the commands below to build your repository.
               - npm install
               - npm run test
-        - step:
-            deployment: staging
-            caches:
-              - node
-            script:
-              - npm install
-              - npm install -g now --unsafe-perm
-              - npm run now:rm
-              - npm run now
-              - npm run now:alias
