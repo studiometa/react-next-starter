@@ -1,5 +1,10 @@
 # react-next-start
 
+## [Try it out](https://react-next-starter--staging.herokuapp.com)
+
+## [Read the documentation](https://react-next-starter--staging.herokuapp.com/en/_doc/intro)
+
+
 ## What’s Included?
 
 This starter contains all you'll need to start building a complex SSR React app with no efforts.

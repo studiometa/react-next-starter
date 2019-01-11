@@ -32,7 +32,7 @@ export default (Component, {
   noPageData = false,
 }) => {
   const args = [
-    withPageData(name, { required: !noPageData }),
+    withPageData(name, { required: config.api.fetchPagesData ? !noPageData : false }),
     connect(mapStateToProps),
     withStyles(styles),
   ];
