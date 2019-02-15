@@ -1,4 +1,4 @@
-# react-next-start
+# react-next-starter
 
 ## [Try it out](https://react-next-starter--staging.herokuapp.com)
 
