@@ -12,34 +12,34 @@ module.exports = {
   skipWaiting: true,
   swDest: paths.appStatic + '/service-worker.js',
   globPatterns: ['build/static/*', 'build/static/commons/*'],
-  modifyUrlPrefix: {
+  modifyURLPrefix: {
     'build': '/_next',
   },
   runtimeCaching: [
     {
       urlPattern: /(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/,
-      handler: 'cacheFirst',
+      handler: 'CacheFirst',
       options: {
         cacheName: 'images',
       },
     },
     {
       urlPattern: /\.(?:woff|woff2|otf|ttf)$/,
-      handler: 'cacheFirst',
+      handler: 'CacheFirst',
       options: {
         cacheName: 'fonts',
       },
     },
     {
       urlPattern: /\.(?:js|jsx)$/,
-      handler: 'networkFirst',
+      handler: 'NetworkFirst',
       options: {
         cacheName: 'scripts',
       },
     },
     {
       urlPattern: /http[s]?:\/\/.*/,
-      handler: 'networkFirst',
+      handler: 'NetworkFirst',
       options: {
         cacheName: 'html-cache',
       },
