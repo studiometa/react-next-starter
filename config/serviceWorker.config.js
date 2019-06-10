@@ -11,10 +11,6 @@ module.exports = {
   clientsClaim: true,
   skipWaiting: true,
   swDest: paths.appStatic + '/service-worker.js',
-  globPatterns: ['build/static/*', 'build/static/commons/*'],
-  modifyURLPrefix: {
-    'build': '/_next',
-  },
   runtimeCaching: [
     {
       urlPattern: /(http[s]?:\/\/.*\.(?:png|jpg|jpeg|svg))/,
