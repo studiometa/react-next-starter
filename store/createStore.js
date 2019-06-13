@@ -7,6 +7,7 @@ import Socket                           from '../client/lib/socket';
 import routes                           from '../server/routes';
 import reducers                         from './reducers/index';
 import packageJson from '../package.json'
+import deepmerge from 'deepmerge';
 
 // Items that be stored in the localStorage
 const { localStorageStates } = config.redux;
@@ -43,8 +44,7 @@ export default (initialState = DEFAULT_STATE) => {
   if (isServer) {
     return createStore(reducers, initialState, applyMiddleware(thunk.withExtraArgument(socket)));
   } else {
-    initialState = Object.assign(
-      {},
+    initialState = deepmerge(
       load({ states: localStorageStates, namespace: packageJson.name }),
       initialState,
     );
