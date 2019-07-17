@@ -8,7 +8,7 @@ import customI18nextLangDetector            from '../../server/lib/customI18next
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
-    const lang            = customI18nextLangDetector.path.lookup() || 'fr';
+    const lang            = customI18nextLangDetector.path.lookup() || 'en';
     return (
       <html lang={lang}>
       <Head>
