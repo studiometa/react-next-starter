@@ -90,7 +90,7 @@
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
     "react-i18n": "^1.0.1",
-    "react-i18next": "^7.13.0",
+    "react-i18next": "^10.11.4",
     "react-inspector": "^3.0.2",
     "react-jss": "^8.6.1",
     "react-no-ssr": "^1.1.0",
