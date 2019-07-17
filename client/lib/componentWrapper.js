@@ -1,7 +1,6 @@
 import { withStyles }                   from '@material-ui/core/styles';
 import withUIWidth                      from '@material-ui/core/withWidth';
 import { withRouter as withNextRouter } from 'next/router';
-import { translate }                    from 'react-i18next';
 import { connect }                      from 'react-redux';
 import { compose }                      from 'recompose';
 import config                           from '../../config';
@@ -41,9 +40,8 @@ export default (Component, {
   if (isConnected || typeof mapStateToProps === 'function') args.push(connect(mapStateToProps));
   if (hasStyles || typeof styles === 'object') args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
   if (withWidth) args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
-  if (config.lang.enabled && isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
 
-  if (config.lang.enabled2) {
+  if (config.lang.enabled) {
     args.push(withTranslation([config.lang.defaultNamespace, ...namespaces]));
   }
 

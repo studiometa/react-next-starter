@@ -1,14 +1,16 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React                                from 'react';
 import flush                                from 'styled-jsx/server';
-import customI18nextLangDetector            from '../../server/lib/customI18nextLangDetector';
+import config                               from '../../config';
+import { i18n }                             from '../../server/lib/i18n';
 
 
 
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
-    const lang            = customI18nextLangDetector.path.lookup() || 'en';
+    const lang            = this.props.lang || config.lang.default;
+
     return (
       <html lang={lang}>
       <Head>
@@ -31,7 +33,7 @@ class MyDocument extends Document {
       </Head>
       <body>
       <Main/>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
       <NextScript/>
       </body>
       </html>
@@ -75,9 +77,11 @@ MyDocument.getInitialProps = ctx => {
     return WrappedComponent;
   });
 
+
   return {
     ...page,
     pageContext,
+    lang: !ctx.req ? i18n.language : ctx.req.language,
     // Styles fragment is rendered after the app and page rendering finish.
     styles: (
       <React.Fragment>

@@ -1,17 +1,12 @@
-import Avatar                       from '@material-ui/core/Avatar';
-import MenuItem                     from '@material-ui/core/MenuItem';
-import Select                       from '@material-ui/core/Select';
-import classNames                   from 'classnames';
-import { withRouter }               from 'next/router';
-import qs                           from 'qs';
-import React                        from 'react';
-import { connect }                  from 'react-redux';
-import urlJoin                      from 'url-join';
-import config                       from '../../../config/index';
-import resolvePathnameFromRouteName from '../../../helpers/resolvePathnameFromRouteName';
-import NoScript                     from './NoScript';
-import {i18n}                       from '../../../server/lib/i18n'
-import {updateAppLanguage}          from '../../../store/actions/app.actions';
+import Avatar                from '@material-ui/core/Avatar';
+import MenuItem              from '@material-ui/core/MenuItem';
+import Select                from '@material-ui/core/Select';
+import classNames            from 'classnames';
+import React                 from 'react';
+import { connect }           from 'react-redux';
+import config                from '../../../config/index';
+import { i18n }              from '../../../server/lib/i18n';
+import { updateAppLanguage } from '../../../store/actions/app.actions';
 
 
 /**
@@ -20,15 +15,15 @@ import {updateAppLanguage}          from '../../../store/actions/app.actions';
  * this url is not dynamic.
  */
 const LangSwitch = (({ lang, routes, classes = {}, dispatch }) => {
-  if (config.lang.enabled2 !== true) return null;
+  if (config.lang.enabled !== true) return null;
 
   const onChange = ({ target }) => {
     i18n.changeLanguage(target.value, () => {
-dispatch(updateAppLanguage(target.value))
-    })
+      dispatch(updateAppLanguage(target.value));
+    });
   };
 
-  return  (
+  return (
     <React.Fragment>
       <Select value={lang} onChange={onChange} className={classNames(classes.select, 'hidden-no-script')}>
         {
@@ -54,4 +49,4 @@ dispatch(updateAppLanguage(target.value))
 export default connect(state => ({
   lang: state.app ? state.app.lang : undefined,
   routes: state.app ? state.app.routes : undefined,
-}))(LangSwitch)
+}))(LangSwitch);

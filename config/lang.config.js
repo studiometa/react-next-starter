@@ -14,19 +14,6 @@ module.exports = {
   // The default language also used as a fallback
   default: 'en',
 
-  // If defined to 'true', a route will look like '/en/products' instead of just '/products'
-  //
-  // IMPORTANT: Do not update this parameter in production, this will update all the
-  // app routes and may have a lot of undesired effects on your SEO
-  enableRouteTranslation: true,
-
-
-  // This feature can only be used if routes translation has been enabled. This grants the server
-  // to perform a 301 redirection when no language has been specified in the url. Note that this redirection
-  // will only append if a resolving route is found, otherwise it will end with a 404 error.
-  // ex: /produit can be resolved to /fr/produit
-  enableFallbackRedirection: true,
-
 
   // All the languages that are available must be defined here
   // You can add some custom fields, like a path to a flag icon
@@ -56,6 +43,7 @@ module.exports = {
   // Defines if the language subpaths should be showed in the url
   // all: yes for all the locales, including the default one
   // foreign: yes for all the locales, except the default one
+  // @see https://github.com/isaachinman/next-i18next#5-locale-subpaths
   localeSubpaths: 'all',
 
   // Enabling debug for i18next

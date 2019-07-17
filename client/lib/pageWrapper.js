@@ -5,7 +5,6 @@ import { connect }                                from 'react-redux';
 import { compose }                                from 'recompose';
 import config                                     from '../../config';
 import { getInitialProps, I18n, withTranslation } from '../../server/lib/i18n';
-import withI18next                                from './withI18next';
 import withMUITheme                               from './withMUITheme';
 import withPageData                               from './withPageData';
 
@@ -41,13 +40,13 @@ export default (Component, {
     connect(mapStateToProps),
     withStyles(styles),
   ];
+
   if (config.lang.enabled) {
-    args.push(withI18next(_namespaces));
-  }
-  if (config.lang.enabled2) {
     args.push(withTranslation(_namespaces));
+
+    // This way we do not have to define namespacesRequired two times in every page components
     args.push(ComposedComponent => {
-        const Extended = (props) => React.createElement(ComposedComponent, props);
+        const Extended           = (props) => React.createElement(ComposedComponent, props);
         Extended.getInitialProps = async (props = {}) => {
           const initialProps = ComposedComponent.getInitialProps
             ? await ComposedComponent.getInitialProps(Object.assign({}, props, { pageData }))

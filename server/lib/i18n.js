@@ -10,4 +10,8 @@ module.exports = new NextI18Next({
   defaultNS: config.lang.defaultNamespace,
   localeStructure: config.lang.localesFormat,
   localeSubpaths: config.lang.localeSubpaths,
+  detection: {
+    lookupCookie: config.lang.lookupCookie,
+    cookieMinutes: config.lang.cookieMinutes,
+  },
 });
