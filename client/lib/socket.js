@@ -99,7 +99,6 @@ export default class Socket {
       _result.message = error.message;
     }
 
-    //_result.error = error;
     return _result;
   }
 

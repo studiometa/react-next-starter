@@ -27,6 +27,14 @@ The pageData object is accessible from any page of the application. It contains 
 
 You can define that a page does not need the pageData object by setting the attribute `noPageData` to `true` in the page wrapper settings. If you do not want to use this feature at all, it is possible to disable it from the `/config/api.config.js` file using the `fetchPagesData` parameter.
 
+When this setting is enabled, the application will request your API for you to retrieve the information from the page you want to display.
+The result is then stored locally thanks to Redux to avoid having to retrieve this information again in the eventuality that the user
+would return to a page he has already visited.
+
+It is possible to modify the endpoint used to make this request in the `api.config.js` file by editing the parameter `endpoints.pages`.
+
+*Attention* For this to work, it is essential that your API returns a code 200 and an object in JSON format. 
+
 ## Socket.js
 
 The `Socket` class was designed to simplify requests made to the API. It is available at this location: `/client/lib/socket.js`.

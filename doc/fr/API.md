@@ -1,10 +1,12 @@
 # API and Page data
 
-Comme ce starter a été conçu pour une utilisation headless, il vous sera probablement nécessaire de mettre en place un moyen de communiquer avec une API distance pour récupérer les données à afficher. Dans le cas d'un site entièrement static, vous pouvez sauter cette section.
+Comme ce starter a été conçu pour une utilisation headless, il vous sera probablement nécessaire de mettre en place un moyen de communiquer avec une API distante pour récupérer les données à afficher.
+
+Dans le cas d'un site *entièrement statique*, vous pouvez sauter cette section.
 
 ## Configuration de l'API
 
-Certaines options de l'API sont configurations via les variables d'environnement. Rendez-vous dans la section "configuration" de la documentation pour plus d'infos. 
+Certaines options de l'API sont configurables via les variables d'environnement. Rendez-vous dans la section "configuration" de la documentation pour plus d'infos. 
 
 
 ## pageData
@@ -26,6 +28,14 @@ L'objet pageData est accessible à partir de n'importe quelle page de l'applicat
 - **settings**: Des paramètres supplémentaires propres à cette page, encore une fois vous pouvez y mettre tout ce qui vous semble utile. 
 
 Il vous est possible de définir qu'une page n'a pas besoin de l'objet pageData en définissant l'attribut `noPageData` à `true` dans les paramètres du wrapper de la page. Si vous ne désirez pas du tout utiliser cette feature, il est possible de la désactiver depuis le fichier `/config/api.config.js` à l'aide du paramètre `fetchPagesData`.
+
+Lorsque ce paramètre est activé, l'application se chargera à votre place d'effectuer une requête vers votre API afin de récupérer les informations de la page à afficher.
+Le résultat est ensuite stocké localement grace à Redux pour éviter d'avoir à récupérer ces informations une nouvelle fois dans le cas où l'utilisateur
+reviendrait sur une page qu'il a déjà visité.
+
+Il est possible de modifier le endpoint utilisé pour effectuer cette requête dans le fichier `api.config.js` en éditant le paramètre`endpoints.pages`.
+
+*Attention* pour que cela puisse fonctionner il faut absolument que votre API retourne un code 200 ainsi qu'un objet au format JSON. 
 
 ## Socket.js
 

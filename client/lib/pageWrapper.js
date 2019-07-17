@@ -2,6 +2,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect }    from 'react-redux';
 import { compose }    from 'recompose';
 import config         from '../../config';
+import withI18next    from './withI18next';
 import withMUITheme   from './withMUITheme';
 import withPageData   from './withPageData';
 
@@ -36,9 +37,6 @@ export default (Component, {
     withStyles(styles),
   ];
   if (config.lang.enabled) {
-    // We should only load this file is config.lang is enabled. Instead it will always make
-    // extra requests to fetch locales files
-    const withI18next    = require('./withI18next');
     args.push(withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces));
   }
   return withMUITheme(compose(...args)(Component), withTheme);
