@@ -54,7 +54,6 @@
     "es7-object-polyfill": "1.0.0",
     "eslint": "^6.0.1",
     "eslint-loader": "^2.2.1",
-    "express": "^4.17.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^4.0.0",
     "fileloader": "^2.0.0",
@@ -90,8 +89,8 @@
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
     "react-i18n": "^1.0.1",
-    "react-i18next": "^10.11.4",
-    "react-inspector": "^3.0.2",
+    "react-i18next": "^7.13.0",
+    "react-inspector": "^2.3.1",
     "react-jss": "^8.6.1",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^7.1.0",
@@ -104,5 +103,8 @@
     "url-join": "^4.0.1",
     "url-loader": "^2.0.1",
     "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
   }
 }
