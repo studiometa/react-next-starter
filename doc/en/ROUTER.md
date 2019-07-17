@@ -36,48 +36,15 @@ In order to maintain a certain consistency across the application, be sure to ob
 
 ## multi-lingual routes
 
-If you are planning to develop a multi-lingual site, you will need to have access to different urls depending on the current language. This option can be modified via the `enableRouteTranslation` parameter accessible in the `/config/lang.config.js` file.
+If you are planning to develop a multi-lingual site, it may be necessary to have access to different urls depending on the current language.
+This option can be modified via the `localeSubpaths` parameter accessible in the `/config/lang.config.js` file.
 
 **Attention**, disabling this setting does not mean that your site will be "mono-language". It is always possible for you to set up a multi-lingual site, the only difference is to add this segment in the url.
-
-### When this parameter is enabled
-
-- A language segment is added to all your Urls (/en, /fr, etc)
-- You can translate the url entirely from the `langRoutes` parameter of your routes, otherwise the name of the route will be used.
-
-I strongly recommend that you set all your languages in the attribute `langRoutes`, even if some routes are identical to `routeName`, especially if you enable automatic URL resolution with the parameter `enableFallbackRedirection` since they are necessary for this feature to work properly. 
-
-**Example :**
-`"/user/profile/:id": { page: "/user/pofile", langRoutes: {"fr": "/utilisateur/profil/:id", "en": "/user/profile/:id"} }`
-
-**en :** `/en/user/profile/32`
-**fr :** `/fr/utilisateur/profil/32`
-**de :** `/de/user/profile/32`
 
 ### When this parameter is disabled
 
 - The language is always stored in a cookie, nothing prevents you from managing the multi-language differently, even if I advise against it
 - You can still use the `langRoute` parameter to manage the appearance of a route, but only the default language will be taken into account (the language defined via the `default` parameter in the `/config/lang.config.js` file 
-
-### The enableFallbackRedirection parameter
-
-Still in the language-related configuration file, you will find a parameter called `enableFallbackRedirection` enabled by default. This setting enables intelligent URL resolution. 
-
-Let's take the following URL: `monsite.com/help`. If URL translation is enabled, this type of URL should not work since it does not specify the language of the page. One would therefore expect to receive instead a URL similar to the following: `monsite.com/en/help`. 
-If the `enableFallbackRedirection` parameter is enabled, however, the router will travel all routes looking for a `langRoute` parameter whose value would be equivalent to the one of the requested URL. 
-
-Let's take the following route as an example: 
-
-`"/help": { page: "/user/pofile", langRoutes: {"fr": "/aide"} }`
-
-We see here that the translation of the route into French is equal to the segment of the URL defined above. As a result, the router will automatically be able to redirect the user from the URL `monsite.com/help` to `monsite.com/en/help`.
-
-**However :** 
-- This will not work with dynamic URLs.
-- Also note that the router will redirect to the first "langRoute" found, which can potentially be a problem if your routes have not been properly defined. 
-- It is also possible that a route may look the same in several languages, in which case the page will be resolved to the first language found (usually the default language)
-
-
 
 ## Create a link in the app  
   
@@ -159,7 +126,7 @@ Each page must have access to the **state** and the **dispatch** method of the *
   
 **i18next**  
   
-In the forecast of a multi-language site, it is also necessary to plan the injection of new props through another HOC: `withI18next.js` 
+In the forecast of a multi-language site, it is also necessary to plan the injection of new props 
   
   
 **styles**  
