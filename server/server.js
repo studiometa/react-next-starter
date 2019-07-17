@@ -145,6 +145,10 @@ class App {
       this.server.use(compression());
     }
 
+    if (envBoolean(process.env.FORCE_SSL)) {
+      this.server.use(this._forceSSLMiddleware);
+    }
+
     // Enable cors on production
     this._enableCORS();
 
@@ -493,6 +497,23 @@ class App {
       }
       this._routesCheckUnique.push(routeName);
     }
+  }
+
+
+  /**
+   * This express middleware can be used to ensure the use of HTTPS for any request
+   * @param req
+   * @param res
+   * @param next
+   * @returns {void|*|Response}
+   * @private
+   */
+  _forceSSLMiddleware(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
+      return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
   }
 }
 
