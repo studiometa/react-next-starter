@@ -7,8 +7,7 @@ const { parse }                    = require('url');
 const checkRequiredFiles           = require('react-dev-utils/checkRequiredFiles');
 const paths                        = require('./lib/paths');
 const customLangDetector           = require('./lib/customI18nextLangDetector');
-const { choosePort, prepareUrls }  = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser                  = require('react-dev-utils/openBrowser');
+const { choosePort }               = require('react-dev-utils/WebpackDevServerUtils');
 const auth                         = require('basic-auth');
 const i18nextMiddleware            = require('i18next-express-middleware');
 const Backend                      = require('i18next-node-fs-backend');
@@ -146,12 +145,6 @@ class App {
       this.server.use(compression());
     }
 
-    // This will be used to open up the browser on development mode when the
-    // server is run
-    const localUrlForBrowser = process.env.NODE_ENV === 'development'
-      ? prepareUrls(this.protocol, this.host, port).localUrlForBrowser
-      : null;
-
     // Enable cors on production
     this._enableCORS();
 
@@ -183,9 +176,6 @@ class App {
 
       if (process.env.NODE_ENV !== 'test') {
         console.log('> Ready on ' + `${this.protocol}://${this.host}:${port}`);
-      }
-      if (process.env.NODE_ENV === 'development') {
-        openBrowser(localUrlForBrowser);
       }
     } catch (err) {
       throw err;
