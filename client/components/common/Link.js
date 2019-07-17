@@ -134,7 +134,7 @@ class Link extends React.Component {
 
     // Find a matching route in the route.js config file
     let pathname = resolvePathnameFromRouteName(to, lang);
-    let { page } = routes[to];
+    let { page } = routes[to] || {};
 
     // Check if a matching route has been found
     // if not, only show an error log on dev env
