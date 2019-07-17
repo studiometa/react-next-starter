@@ -9,7 +9,7 @@ import JssProvider                             from 'react-jss/lib/JssProvider';
 import { Provider }                            from 'react-redux';
 import config                                  from '../../config';
 import envBoolean                              from '../../helpers/envBoolean';
-import { appWithTranslation, i18n }            from '../../server/lib/i18n';
+import { appWithTranslation }                  from '../../server/lib/i18n';
 import { fetchAppSettings, updateAppLanguage } from '../../store/actions/app.actions';
 import createStore                             from '../../store/createStore';
 import getPageContext                          from '../lib/getPageMUIContext';
@@ -28,7 +28,7 @@ class _App extends App {
   static async getInitialProps({ Component, ctx }) {
     const props = {};
 
-    props.lang = !ctx.req ? i18n.language : ctx.req.language;
+    // props.lang = !ctx.req ? i18n.language : ctx.req.language;
     ctx.store.dispatch(updateAppLanguage(props.lang));
     props.pageProps = {
       ...(Component.getInitialProps ? await Component.getInitialProps({ ...ctx, lang: props.lang }) : {}),
@@ -174,4 +174,8 @@ class _App extends App {
   }
 };
 
-export default withRedux(createStore)(appWithTranslation(_App));
+export default withRedux(createStore)(
+  config.lang.enabled
+    ? appWithTranslation(_App)
+    : _App,
+);

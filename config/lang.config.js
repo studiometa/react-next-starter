@@ -6,10 +6,9 @@ const path = require('path');
  */
 module.exports = {
 
-  // Enable all the translation services. If you disable it, it means no routes translation, no locales files,
-  // and so on...
-  enabled: false,
-  enabled2: true,
+  // Enable all the translation services.
+  // If you disable it, it means no routes translation, no locales files, and so on...
+  enabled: true,
 
   // The default language also used as a fallback
   default: 'en',
