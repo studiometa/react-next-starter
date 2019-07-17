@@ -91,6 +91,7 @@ function getClientEnvironment() {
     missingEnvs.forEach(e => {
       errorMsg += ` '${e}'\n`;
     });
+    errorMsg += `\n You can edit this configuration in the env.config.js file`;
     throw new Error(errorMsg);
   }
 
