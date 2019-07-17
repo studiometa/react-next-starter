@@ -38,7 +38,7 @@ const styles = theme => ({
     },
     '& pre': {
       overflow: 'scroll',
-      maxWidth: '90vw'
+      maxWidth: '90vw',
     },
     '& * code, & pre': {
       background: '#000',
@@ -75,11 +75,25 @@ class DocPageLayout extends React.Component {
       }
     });
 
-    this.state = {};
+    this.state = {
+      readme: this.getDocFile(),
+    };
+  }
 
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.lang !== this.props.lang) {
+      this.setState({
+        readme: this.getDocFile(),
+      });
+    }
+  }
+
+
+  getDocFile() {
     try {
       const camelToSnake = require('../../../helpers/camelToSnake');
-      this.state.readme  = require(`../../../doc/${props.lang}/${camelToSnake(props.name).toUpperCase()}.md`);
+      return require(`../../../doc/${this.props.lang}/${camelToSnake(this.props.name).toUpperCase()}.md`);
     } catch (err) {
       throw new Error(err);
     }
@@ -120,7 +134,7 @@ class DocPageLayout extends React.Component {
 
 const mapStateToProps = state => ({
   routes: state.app.routes,
-  lang: state.app.lang
+  lang: state.app.lang,
 });
 
 export default wrapper(DocPageLayout, { styles, mapStateToProps, withRouter: true });

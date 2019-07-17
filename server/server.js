@@ -163,6 +163,7 @@ class App {
 
     if (config.lang.enabled2) {
       this.server.use(nextI18NextMiddleware(nextI18next));
+      this.server.use('/locales', express.static(path.join(__dirname, '../', this.config.lang.localesPath)));
     }
 
     if (this.config.lang.enabled) {

@@ -50,7 +50,7 @@ module.exports = {
    **/
 
   // Defines where and how the locales files are stored
-  localesPath: '/locales',
+  localesPath: 'locales',
   localesFormat: '{{lng}}/{{ns}}',
 
   // Defines if the language subpaths should be showed in the url
