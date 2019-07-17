@@ -34,7 +34,6 @@ const DEFAULT_STATE = {
   app: {
     lang: config.lang.default,
     routes,
-    currentUrl: undefined,
   },
 };
 

@@ -6,13 +6,6 @@ export function _updateAppLanguage(lang) {
       lang,
   }
 }
-export const UPDATE_APP_CURRENT_URL = 'UPDATE_APP_CURRENT_URL';
-export function updateAppCurrentUrl(url) {
-  return {
-    type: UPDATE_APP_CURRENT_URL,
-    url,
-  };
-}
 
 export const SET_APP_SETTINGS = 'SET_APP_SETTINGS';
 export function setAppSettings(settings) {

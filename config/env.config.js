@@ -17,7 +17,7 @@ module.exports = {
     'HOST': { client: true, required: true },
     'ENABLE_SOURCE_MAP': { client: true, required: false },
     'KEEP_DEV_TOOLS_ON_PRODUCTION': { client: true, required: false },
-    'FORCE_SSL': {client: false, required: true},
+    'FORCE_SSL': { client: false, required: false },
 
     // HTPASSWD
 

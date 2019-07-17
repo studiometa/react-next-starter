@@ -1,18 +1,18 @@
-import CssBaseline                                                  from '@material-ui/core/CssBaseline';
-import Hidden                                                       from '@material-ui/core/Hidden';
-import { MuiThemeProvider }                                         from '@material-ui/core/styles';
-import withRedux                                                    from 'next-redux-wrapper';
-import App, { Container }                                           from 'next/app';
-import NProgress                                                    from 'nprogress';
-import React                                                        from 'react';
-import JssProvider                                                  from 'react-jss/lib/JssProvider';
-import { Provider }                                                 from 'react-redux';
-import config                                                       from '../../config';
-import envBoolean                                                   from '../../helpers/envBoolean';
-import langDetector                                                 from '../../server/lib/customI18nextLangDetector';
-import { fetchAppSettings, updateAppCurrentUrl, updateAppLanguage } from '../../store/actions/app.actions';
-import createStore                                                  from '../../store/createStore';
-import getPageContext                                               from '../lib/getPageMUIContext';
+import CssBaseline                             from '@material-ui/core/CssBaseline';
+import Hidden                                  from '@material-ui/core/Hidden';
+import { MuiThemeProvider }                    from '@material-ui/core/styles';
+import withRedux                               from 'next-redux-wrapper';
+import App, { Container }                      from 'next/app';
+import NProgress                               from 'nprogress';
+import React                                   from 'react';
+import JssProvider                             from 'react-jss/lib/JssProvider';
+import { Provider }                            from 'react-redux';
+import config                                  from '../../config';
+import envBoolean                              from '../../helpers/envBoolean';
+import langDetector                            from '../../server/lib/customI18nextLangDetector';
+import { fetchAppSettings, updateAppLanguage } from '../../store/actions/app.actions';
+import createStore                             from '../../store/createStore';
+import getPageContext                          from '../lib/getPageMUIContext';
 
 import '../styles/styles.scss';
 
@@ -59,9 +59,6 @@ export default withRedux(createStore)(class _App extends App {
     // Init the service-worker
     this._initServiceWorker();
 
-    // Store the current url
-    this.props.store.dispatch(updateAppCurrentUrl(this.props.router.asPath));
-
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles && jssStyles.parentNode) {
@@ -87,9 +84,6 @@ export default withRedux(createStore)(class _App extends App {
         console.trace();
         console.groupEnd();
       }
-
-      // Store the current url
-      this.props.store.dispatch(updateAppCurrentUrl(url));
 
       NProgress.done();
     });
