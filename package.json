@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production node server/",
     "test": "NODE_ENV=test jest --silent --detectOpenHandles --config ./__tests__/jest.config.js",
     "pm2:start": "node ./server/pm2.js",
-    "pm2:stop": "pm2 kill",
+    "pm2:stop": "pm2 stop all",
     "heroku-postbuild": "npm run build"
   },
   "engines": {
