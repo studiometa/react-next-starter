@@ -10,6 +10,7 @@ import { Provider }                            from 'react-redux';
 import config                                  from '../../config';
 import envBoolean                              from '../../helpers/envBoolean';
 import langDetector                            from '../../server/lib/customI18nextLangDetector';
+import { appWithTranslation }                  from '../../server/lib/i18n';
 import { fetchAppSettings, updateAppLanguage } from '../../store/actions/app.actions';
 import createStore                             from '../../store/createStore';
 import getPageContext                          from '../lib/getPageMUIContext';
@@ -17,7 +18,7 @@ import getPageContext                          from '../lib/getPageMUIContext';
 import '../styles/styles.scss';
 
 
-export default withRedux(createStore)(class _App extends App {
+class _App extends App {
   constructor(props) {
     super(props);
     this.pageContext = getPageContext();
@@ -27,25 +28,22 @@ export default withRedux(createStore)(class _App extends App {
   static async getInitialProps({ Component, ctx }) {
     const props = {};
 
-    if (ctx.isServer === true) {
-      props.lang = ctx.req.language;
-    } else {
-      props.lang = langDetector.find();
-    }
+    // if (ctx.isServer === true) {
+       props.lang = ctx.req.language;
+    // } else {
+    //   props.lang = langDetector.find();
+    // }
 
-    ctx.store.dispatch(updateAppLanguage(props.lang));
-
+   // ctx.store.dispatch(updateAppLanguage(props.lang));
     props.pageProps = {
       ...(Component.getInitialProps ? await Component.getInitialProps({ ...ctx, lang: props.lang }) : {}),
     };
-
     // Store the app settings
     if (config.api.fetchAppSettings === true && ctx.store.getState().app.syncSettings !== true) {
       await ctx.store.dispatch(fetchAppSettings());
     }
 
     props.query = ctx.query || ctx.req.params;
-
 
     return props;
   }
@@ -179,4 +177,6 @@ export default withRedux(createStore)(class _App extends App {
       </Container>
     );
   }
-});
+};
+
+export default withRedux(createStore)(appWithTranslation(_App));

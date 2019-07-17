@@ -5,6 +5,7 @@ import { translate }                    from 'react-i18next';
 import { connect }                      from 'react-redux';
 import { compose }                      from 'recompose';
 import config                           from '../../config';
+import { withTranslation }              from '../../server/lib/i18n';
 
 
 /**
@@ -41,6 +42,10 @@ export default (Component, {
   if (hasStyles || typeof styles === 'object') args.push(withStyles(styles, { withTheme: withTheme && !withWidth }));
   if (withWidth) args.push(withUIWidth({ initialWidth: 'lg', withTheme }));
   if (config.lang.enabled && isTranslatable || namespaces.length > 0) args.push(translate([config.lang.defaultNamespace, ...namespaces]));
+
+  if (config.lang.enabled2) {
+    args.push(withTranslation([config.lang.defaultNamespace, ...namespaces]));
+  }
 
   if (withRouter) Component = withNextRouter(Component);
 

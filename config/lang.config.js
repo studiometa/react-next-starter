@@ -8,7 +8,8 @@ module.exports = {
 
   // Enable all the translation services. If you disable it, it means no routes translation, no locales files,
   // and so on...
-  enabled: true,
+  enabled: false,
+  enabled2: true,
 
   // The default language also used as a fallback
   default: 'en',
@@ -44,13 +45,13 @@ module.exports = {
   ],
 
   /**
-   * All the following config is used by i18next
+   * All the following config is used by next-i18next
    * @see https://www.i18next.com/overview/configuration-options
    **/
 
   // Defines where and how the locales files are stored
-  localesPath: path.join(__dirname, '../locales'),
-  localesFormat: '/{{lng}}/{{ns}}.json',
+  localesPath: '/locales',
+  localesFormat: '{{lng}}/{{ns}}',
 
   // Enabling debug for i18next
   debug: false,

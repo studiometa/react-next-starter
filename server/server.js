@@ -17,6 +17,9 @@ const removeUrlLastSlash           = require('../helpers/removeUrlLastSlash');
 const chalk                        = require('chalk');
 const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName');
 const envBoolean                   = require('../helpers/envBoolean');
+const nextI18NextMiddleware        = require('next-i18next/middleware').default;
+const nextI18next                  = require('./lib/i18n');
+
 
 const config           = require('../config');
 const routes           = require('./routes');
@@ -157,6 +160,10 @@ class App {
 
     // Listen to the public folder
     this.server.use('/', express.static(paths.appPublic));
+
+    if (config.lang.enabled2) {
+      this.server.use(nextI18NextMiddleware(nextI18next));
+    }
 
     if (this.config.lang.enabled) {
 
