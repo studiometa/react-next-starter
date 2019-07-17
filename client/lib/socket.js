@@ -7,7 +7,7 @@ import langDetector from '../../server/lib/customI18nextLangDetector';
 export default class Socket {
   constructor() {
     this.getPage = this.getPage.bind(this);
-    this.lang    = config.lang.enabled ? langDetector.find() : '';
+    this.lang    = config.lang.enabled2 ? langDetector.find() : '';
   }
 
 

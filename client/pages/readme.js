@@ -37,6 +37,10 @@ const styles = theme => ({
 });
 
 const Readme = class extends React.Component {
+  constructor() {
+    super();
+    console.log('render');
+  }
   render() {
     const { classes, t = e => e } = this.props;
     return (

@@ -7,4 +7,5 @@ module.exports = new NextI18Next({
   localePath: config.lang.localesPath,
   defaultNS: config.lang.defaultNamespace,
   localeStructure: config.lang.localesFormat,
+  localeSubpaths: config.lang.localeSubpaths
 });

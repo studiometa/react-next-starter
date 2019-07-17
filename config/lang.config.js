@@ -53,6 +53,11 @@ module.exports = {
   localesPath: '/locales',
   localesFormat: '{{lng}}/{{ns}}',
 
+  // Defines if the language subpaths should be showed in the url
+  // all: yes for all the locales, including the default one
+  // foreign: yes for all the locales, except the default one
+  localeSubpaths: 'all',
+
   // Enabling debug for i18next
   debug: false,
 
