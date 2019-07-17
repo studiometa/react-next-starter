@@ -13,10 +13,12 @@ import deepmerge from 'deepmerge';
 const { localStorageStates } = config.redux;
 
 const isServer = !process.browser;
-const logger   = createLogger({
+const logger   = process.env.NODE_ENV === 'production'
+? _store => _next => _action => _next(_action)
+  : createLogger({
   collapsed: true,
   duration: true,
-});
+})
 
 // The socket will be used in thunk actions to simplify the connection
 // with an external API. You can learn more about how it works in the readme
@@ -51,9 +53,11 @@ export default (initialState = DEFAULT_STATE) => {
     return createStore(
       reducers,
       initialState,
-      applyMiddleware(logger,
+      applyMiddleware(
         save({ states: localStorageStates, namespace: packageJson.name }),
-        thunk.withExtraArgument(socket)),
+        thunk.withExtraArgument(socket),
+        logger
+      ),
     );
   }
 
