@@ -25,4 +25,5 @@ Be careful, however, the more you change the core of the project, the more compl
 - Material-ui and theme-based development  
 - Native server cache management  
 - Client cache management using a service-worker
+- Offline mode
  

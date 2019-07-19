@@ -62,18 +62,10 @@ Boom! Le message est toujours bien affiché sur la page, mais la requête n'a pa
   
 - La page est entièrement rechargée pour être certain que tout le contenu soit correctement mis à jour dans la langue désirée.   
 - La page est la même! C'est parce que le composant `LangSwitch` est capable de résoudre la page courante dans n'importe  
-quelle langue définie dans la config. Attention, cela ne marche pour l'instant qu'avec les urls statics.
-  
-## 8) Rendez-vous à cette adresse : http://localhost:3000/readme  
-  
-Le router va automatiquement reconnaître la langue attachée à la page "readme", même si elle n'est pas définie dans l'url  
+quelle langue définie dans la config. Attention, cela ne marche pour l'instant qu'avec les urls statiques.
   
   
-## 9) Rendez-vous à cette adresse : http://localhost:3000/lisez-moi  
-  
-Le router va automatiquement reconnaître la langue attachée à la page "lisez-moi", même si elle n'est pas définie dans l'url  
-  
-## 10) Désactivez JavaScript et rechargez la page  
+## 8) Désactivez JavaScript et rechargez la page  
   
 TADAAAA 🎉 le site est entièrement naviguable et le contenu charge correctement. Y compris l'image de la page d'accueil,  
 initialement lazy-loadée.  

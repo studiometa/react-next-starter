@@ -27,7 +27,7 @@
  
  
  Cette arborescence s'inspire de celle proposait dans les guidelines de NextJs mais a été légèrement modifiée pour
- une meilleure répartition des éléments principaux :
+ une meilleure répartition des principaux éléments :
  - Dans le dossier **client**, vous trouverez tout ce qui touche à la **vue** 
  - Dans le dossier **store**, vous trouverez les éléments qui attraient à la partie **modèle**
  - Le dossier **server** contient une majeure partie de la logique **serveur** avec notamment la définition des routes
@@ -50,7 +50,7 @@
  - Initialisation de germaine.js pour la mise en place de la "fake-api"
  - Mise en service de i18next pour la gestion du multi-langue
  - Création des listeners qui vont permettrent de servir les pages du site, résoudre dans la bonne langue, etc
- - Ajout d'une éventuelle restriction d'accès avec une authentification basic
+ - Ajout d'une éventuelle restriction d'accès avec une authentification basique
  - Vérification de la validité des routes
  - Mise en route du cache serveur
  
