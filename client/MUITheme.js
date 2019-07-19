@@ -158,38 +158,6 @@ const theme = createMuiTheme({
 
 
 theme.styles = {
-  responsivePadding: {
-    paddingLeft: `${theme.spacing(7)}px`,
-    paddingRight: `${theme.spacing(7)}px`,
-    [theme.breakpoints.down('md')]: {
-      paddingRight: `${theme.spacing(6)}px`,
-      paddingLeft: `${theme.spacing(6)}px`,
-    },
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: `${theme.spacing(4)}px`,
-      paddingRight: `${theme.spacing(4)}px`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      paddingRight: `${theme.spacing(2)}px`,
-      paddingLeft: `${theme.spacing(2)}px`,
-    },
-  },
-  responsiveMargin: {
-    marginLeft: `${theme.spacing(7)}px`,
-    marginRight: `${theme.spacing(7)}px`,
-    [theme.breakpoints.down('md')]: {
-      marginRight: `${theme.spacing(6)}px`,
-      marginLeft: `${theme.spacing(6)}px`,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginLeft: `${theme.spacing(4)}px`,
-      marginRight: `${theme.spacing(4)}px`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginRight: `${theme.spacing(2)}px`,
-      marginLeft: `${theme.spacing(2)}px`,
-    },
-  },
 
   hover: {
     offLinkUnderline: {

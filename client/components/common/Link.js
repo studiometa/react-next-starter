@@ -7,7 +7,7 @@ import removeUrlLastSlash           from '../../../helpers/removeUrlLastSlash';
 import routes                       from '../../../server/routes';
 import wrapper                      from '../../lib/componentWrapper';
 import {Link as NextLink} from '../../../server/lib/i18n';
-
+import MUILink from '@material-ui/core/Link'
 
 /**
  * This component can be used to build links that works properly with NextJs
@@ -74,7 +74,7 @@ class Link extends React.Component {
     linkAttributes: propTypes.object,
 
     // Colors for the Typography component
-    color: propTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
+    color: propTypes.oneOf(['initial', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
 
     // if true, the component will consider the link active whenever its first segment matches the current route
     checkSubActive: propTypes.bool,
@@ -83,7 +83,7 @@ class Link extends React.Component {
   static defaultProps = {
     variant: 'button',
     component: 'span',
-    color: 'default',
+    color: 'initial',
     noTypo: false,
     target: '_self',
     prefetch: false,

@@ -1,4 +1,3 @@
-import Grid           from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes      from 'prop-types';
 import React          from 'react';
@@ -7,44 +6,29 @@ import config         from '../../../config';
 import Error          from '../../pages/_error';
 import Head           from './Head';
 import Header         from './Header';
-
+import Container from '@material-ui/core/Container'
 
 const styles = theme => ({
 
   root: {
-    '&.full-page .page-layout-content': {
-      [theme.breakpoints.down('sm')]: {
-        paddingTop: `${theme.spacing(2)}px`,
-      },
-    },
-  },
-
-  layout: {
-    margin: '0 auto',
-    background: theme.palette.grey[50],
+    background: theme.palette.background.primary,
   },
 
   container: {
-    maxWidth: config.layout.pageContentMaxWidth,
     minHeight: '100vh',
     margin: 'auto',
   },
 
   content: {
     paddingTop: `${theme.spacing(8)}px`,
-    paddingLeft: theme.styles.responsivePadding.paddingLeft,
-    paddingRight: theme.styles.responsivePadding.paddingRight,
     [theme.breakpoints.down('md')]: {
       paddingTop: `${theme.spacing(8)}px`,
-      ...theme.styles.responsivePadding[theme.breakpoints.down('md')],
     },
     [theme.breakpoints.down('sm')]: {
       paddingTop: `${theme.spacing(6)}px`,
-      ...theme.styles.responsivePadding[theme.breakpoints.down('sm')],
     },
     [theme.breakpoints.down('xs')]: {
       paddingTop: `${theme.spacing(6)}px`,
-      ...theme.styles.responsivePadding[theme.breakpoints.down('xs')],
     },
   },
 });
@@ -82,18 +66,14 @@ const PageLayout = withStyles(styles)(function Layout(props) {
   Object.assign(pageData || {}, rest);
 
   return (
-    <div className={`${ classes.root } page-${pageData.title}`}>
+    <div className={`${ classes.root } page-${pageData.title}`} style={backgroundColor ? { backgroundColor } : {}}>
       <Head {...pageData}/>
       <Header/>
-      <Grid container className={classes.layout} style={backgroundColor ? { backgroundColor } : {}}>
-        <Grid item xs={12}>
-          <div className={classes.container}>
-            <div className={classes.content}>
-              {children}
-            </div>
-          </div>
-        </Grid>
-      </Grid>
+      <Container className={classes.container} fixed>
+        <div className={classes.content}>
+          {children}
+        </div>
+      </Container>
 
       {
         // Optional inspector tool displayed at the bottom of the page
