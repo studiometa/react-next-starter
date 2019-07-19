@@ -26,7 +26,7 @@ const styles = theme => ({
   },
 
   githubLink: {
-    marginLeft: theme.spacing.unit * 2,
+    marginLeft: theme.spacing(2),
     '& svg': {
       width: 30,
     },
@@ -55,7 +55,7 @@ const Header = function Header(props) {
       <Toolbar>
         <Grid container alignItems="center" justify="space-between">
           <Grid item>
-            <Grid container alignItems="center" justify="flex-start" spacing={32}>
+            <Grid container alignItems="center" justify="flex-start" spacing={4}>
               <Grid item>
                 <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
                   {packageJson.name}

@@ -1,8 +1,8 @@
-import CssBaseline          from '@material-ui/core/CssBaseline';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import PropTypes            from 'prop-types';
-import React                from 'react';
-import getPageContext       from './getPageMUIContext';
+import CssBaseline       from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/styles';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import getPageContext    from './getPageMUIContext';
 
 
 function withRoot(Component, withTheme = false) {
@@ -29,14 +29,13 @@ function withRoot(Component, withTheme = false) {
     render() {
       // MuiThemeProvider makes the theme available down the React tree thanks to React context.
       return (
-        <MuiThemeProvider
+        <ThemeProvider
           theme={this.pageContext.theme}
-          sheetsManager={this.pageContext.sheetsManager}
         >
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline/>
           <Component {...this.props} theme={withTheme ? this.pageContext.theme : undefined}/>
-        </MuiThemeProvider>
+        </ThemeProvider>
       );
     }
   }

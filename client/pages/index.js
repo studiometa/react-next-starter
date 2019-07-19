@@ -7,7 +7,7 @@ import pageWrapper from '../lib/pageWrapper';
 
 const styles = theme => ({
   title: {
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing(4),
   },
 });
 

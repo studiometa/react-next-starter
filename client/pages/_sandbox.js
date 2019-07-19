@@ -17,7 +17,7 @@ class _sandbox extends React.Component {
     const { theme, pageData } = this.props;
     return (
       <Layout pageData={pageData}>
-        <Grid container direction="column" spacing={40}>
+        <Grid container direction="column" spacing={5}>
 
           {/** THEME **/}
 
@@ -45,7 +45,7 @@ class _sandbox extends React.Component {
             </Typography>
             <br/><br/>
 
-            <Grid container spacing={32}>
+            <Grid container spacing={4}>
               {
                 Object.entries(theme.typography).map(([typoName, typoSettings]) => {
                   if (typeof typoSettings !== 'object' || !typoSettings.newSet) return null;
@@ -80,7 +80,7 @@ class _sandbox extends React.Component {
           <Grid>
             <Typography variant="h2" color="primary">Colors</Typography>
             <br/><br/>
-            <Grid container spacing={24}>
+            <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Typography variant="h4" color="primary">Main</Typography>
               </Grid>

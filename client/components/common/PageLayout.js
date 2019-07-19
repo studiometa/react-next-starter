@@ -14,7 +14,7 @@ const styles = theme => ({
   root: {
     '&.full-page .page-layout-content': {
       [theme.breakpoints.down('sm')]: {
-        paddingTop: `${theme.spacing.unit * 2}px`,
+        paddingTop: `${theme.spacing(2)}px`,
       },
     },
   },
@@ -31,19 +31,19 @@ const styles = theme => ({
   },
 
   content: {
-    paddingTop: `${theme.spacing.unit * 8}px`,
+    paddingTop: `${theme.spacing(8)}px`,
     paddingLeft: theme.styles.responsivePadding.paddingLeft,
     paddingRight: theme.styles.responsivePadding.paddingRight,
     [theme.breakpoints.down('md')]: {
-      paddingTop: `${theme.spacing.unit * 8}px`,
+      paddingTop: `${theme.spacing(8)}px`,
       ...theme.styles.responsivePadding[theme.breakpoints.down('md')],
     },
     [theme.breakpoints.down('sm')]: {
-      paddingTop: `${theme.spacing.unit * 6}px`,
+      paddingTop: `${theme.spacing(6)}px`,
       ...theme.styles.responsivePadding[theme.breakpoints.down('sm')],
     },
     [theme.breakpoints.down('xs')]: {
-      paddingTop: `${theme.spacing.unit * 6}px`,
+      paddingTop: `${theme.spacing(6)}px`,
       ...theme.styles.responsivePadding[theme.breakpoints.down('xs')],
     },
   },

@@ -5,9 +5,9 @@ import { connect }                                from 'react-redux';
 import { compose }                                from 'recompose';
 import config                                     from '../../config';
 import { getInitialProps, I18n, withTranslation } from '../../server/lib/i18n';
-import withMUITheme                               from './withMUITheme';
+//import withMUITheme                               from './withMUITheme';
 import withPageData                               from './withPageData';
-
+import withMUITheme from '@material-ui/styles/withTheme'
 
 /**
  * This is a page wrapper that does the following things:

@@ -1,18 +1,17 @@
 import CssBaseline                             from '@material-ui/core/CssBaseline';
 import Hidden                                  from '@material-ui/core/Hidden';
-import { MuiThemeProvider }                    from '@material-ui/core/styles';
+import { ThemeProvider }                       from '@material-ui/styles';
 import withRedux                               from 'next-redux-wrapper';
 import App, { Container }                      from 'next/app';
 import NProgress                               from 'nprogress';
 import React                                   from 'react';
-import JssProvider                             from 'react-jss/lib/JssProvider';
 import { Provider }                            from 'react-redux';
 import config                                  from '../../config';
 import envBoolean                              from '../../helpers/envBoolean';
 import { appWithTranslation, i18n }            from '../../server/lib/i18n';
 import { fetchAppSettings, updateAppLanguage } from '../../store/actions/app.actions';
 import createStore                             from '../../store/createStore';
-import getPageContext                          from '../lib/getPageMUIContext';
+import MUITheme                                from '../MUITheme';
 import '../styles/styles.scss';
 
 
@@ -20,7 +19,6 @@ import '../styles/styles.scss';
 class _App extends App {
   constructor(props) {
     super(props);
-    this.pageContext = getPageContext();
   }
 
 
@@ -126,47 +124,35 @@ class _App extends App {
     return (
       <Container>
         <Provider store={store}>
-          {/* Wrap every page in Jss and Theme providers */}
-          <JssProvider
-            registry={this.pageContext ? this.pageContext.sheetsRegistry : {}}
-            generateClassName={this.pageContext.generateClassName}
-          >
-            {/* MuiThemeProvider makes the theme available down the React
-             tree thanks to React context. */}
-            <MuiThemeProvider
-              theme={this.pageContext.theme}
-              sheetsManager={this.pageContext.sheetsManager}
-            >
-              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-              <CssBaseline/>
-              <div className="app">
-                <Component {...pageProps} pageContext={this.pageContext}/>
+          <ThemeProvider theme={MUITheme}>
+            <CssBaseline/>
+            <div className="app">
+              <Component {...pageProps}/>
 
 
-                { // This is a dev component that displays the current screen size label at the bottom right corner
-                  // of the screen
-                  process.env.NODE_ENV === 'development' &&
-                  <div style={{
-                    position: 'fixed',
-                    bottom: 0,
-                    right: 0,
-                    background: 'green',
-                    color: 'white',
-                    padding: 5,
-                    fontSize: 16,
-                    zIndex: 4000,
-                  }}>
-                    <Hidden smUp>xs</Hidden>
-                    <Hidden xsDown mdUp>sm</Hidden>
-                    <Hidden lgUp smDown>md</Hidden>
-                    <Hidden xlUp mdDown>lg</Hidden>
-                    <Hidden lgDown>xl</Hidden>
-                  </div>
-                }
+              { // This is a dev component that displays the current screen size label at the bottom right corner
+                // of the screen
+                process.env.NODE_ENV === 'development' &&
+                <div style={{
+                  position: 'fixed',
+                  bottom: 0,
+                  right: 0,
+                  background: 'green',
+                  color: 'white',
+                  padding: 5,
+                  fontSize: 16,
+                  zIndex: 4000,
+                }}>
+                  <Hidden smUp>xs</Hidden>
+                  <Hidden xsDown mdUp>sm</Hidden>
+                  <Hidden lgUp smDown>md</Hidden>
+                  <Hidden xlUp mdDown>lg</Hidden>
+                  <Hidden lgDown>xl</Hidden>
+                </div>
+              }
 
-              </div>
-            </MuiThemeProvider>
-          </JssProvider>
+            </div>
+          </ThemeProvider>
         </Provider>
       </Container>
     );
