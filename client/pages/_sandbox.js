@@ -17,18 +17,19 @@ class _sandbox extends React.Component {
     const { theme, pageData } = this.props;
     return (
       <Layout pageData={pageData}>
-        <Grid container direction="column" spacing={5}>
+        <Grid container direction="column" spacing={10}>
 
           {/** THEME **/}
 
-          <Grid item>
-            <Typography variant="h2" color="primary">Theme</Typography>
-            <br/><br/>
-            <Inspector
-              theme="chromeDark"
-              data={theme}
-              expandLevel={1}
-            />
+          <Grid item xs={12}>
+            <Typography variant="h2" color="primary" gutterBottom>Theme</Typography>
+            <NoSSR>
+              <Inspector
+                theme="chromeDark"
+                data={theme}
+                expandLevel={1}
+              />
+            </NoSSR>
           </Grid>
 
           {/** TYPOGRAPHY **/}
@@ -40,10 +41,9 @@ class _sandbox extends React.Component {
             <Typography>
               <b>font family:</b> {theme.typography.fontFamily.split(',')[0]}
             </Typography>
-            <Typography>
+            <Typography gutterBottom>
               <b>font size:</b> {theme.typography.fontSize}
             </Typography>
-            <br/><br/>
 
             <Grid container spacing={4}>
               {
@@ -52,22 +52,22 @@ class _sandbox extends React.Component {
                   const fontSize = Number(typoSettings.fontSize.replace('rem', ''));
                   return (
                     <Grid item xs={12} key={typoName}>
-                      <Typography variant={typoName} component="h1">
+                      <Typography variant={typoName} component="h1" gutterBottom>
                         {typoName} ({fontSize}rem - {fontSize * theme.typography.fontSize}px)
                       </Typography>
-                      <br/>
                       <Typography variant={typoName} component="h1">
                         the quick brown fox jumps over the lazy dogs
                       </Typography>
                       <Typography variant={typoName} component="h1" style={{ textTransform: 'uppercase' }} gutterBottom>
                         the quick brown fox jumps over the lazy dogs
                       </Typography>
-                      <Inspector
-                        theme="chromeDark"
-                        data={typoSettings}
-                        expandLevel={0}
-                      />
-                      <br/><br/>
+                      <NoSSR>
+                        <Inspector
+                          theme="chromeDark"
+                          data={typoSettings}
+                          expandLevel={0}
+                        />
+                      </NoSSR>
                     </Grid>
                   );
                 })
@@ -77,9 +77,8 @@ class _sandbox extends React.Component {
 
           {/** COLORS **/}
 
-          <Grid>
-            <Typography variant="h2" color="primary">Colors</Typography>
-            <br/><br/>
+          <Grid item xs={12}>
+            <Typography variant="h2" color="primary" gutterBottom>Colors</Typography>
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Typography variant="h4" color="primary">Main</Typography>
@@ -159,30 +158,30 @@ class _sandbox extends React.Component {
           </Grid>
 
           {/** OTHER **/}
-          <br/><br/>
           <Grid item xs={12}>
-            <Typography variant="h2" color="primary">Current Redux store</Typography>
-            <br/><br/>
-            <Inspector
-              theme="chromeDark"
-              data={this.props.reduxStore}
-              expandLevel={0}
-            />
+            <Typography variant="h2" color="primary" gutterBottom>Current Redux store</Typography>
+            <NoSSR>
+              <Inspector
+                theme="chromeDark"
+                data={this.props.reduxStore}
+                expandLevel={0}
+              />
+            </NoSSR>
+          </Grid>
+
+          <Grid  item xs={12}>
+            <Typography variant="h2" color="primary" gutterBottom>Current config</Typography>
+            <NoSSR>
+              <Inspector
+                theme="chromeDark"
+                data={config}
+                expandLevel={0}
+              />
+            </NoSSR>
           </Grid>
 
           <Grid item xs={12}>
-            <Typography variant="h2" color="primary">Current config</Typography>
-            <br/><br/>
-            <Inspector
-              theme="chromeDark"
-              data={config}
-              expandLevel={0}
-            />
-          </Grid>
-
-          <Grid item xs={12}>
-            <Typography variant="h2" color="primary">Current routes</Typography>
-            <br/><br/>
+            <Typography variant="h2" color="primary" gutterBottom>Current routes</Typography>
             <NoSSR>
               <Inspector
                 theme="chromeDark"

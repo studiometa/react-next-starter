@@ -1,3 +1,4 @@
+import Grid        from '@material-ui/core/Grid';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Layout      from '../components/common/PageLayout';
@@ -17,9 +18,12 @@ const Home = class extends React.Component {
 
     return (
       <Layout pageData={pageData}>
-        <Typography variant="h1" className={classes.title}>{pageData.title}</Typography>
-        <Typography variant="h4" paragraph><b>Welcome message : </b>{pageData.welcomeMessage}</Typography>
-        <LazyImage src="/static/imgs/fallback_image.png" useBackgroundImage height={300}/>
+        <Typography variant="h1" className={classes.title} align="center">react-next-starter</Typography>
+        <Grid container justify="center">
+          <Grid item md={6}>
+            <LazyImage src="https://miro.medium.com/max/1200/1*8g-FaXXbEUFP11oZD1kfaA.jpeg"/>
+          </Grid>
+        </Grid>
       </Layout>
     );
   }

@@ -30,6 +30,12 @@ module.exports = {
   // will be requested on each server-side page load
   fetchAppSettings: true,
 
+  // Like for the fetchAppSettings parameter, it is also possible to make a request to the API to fetch data for
+  // all the pages. The result will be accessible under the pages 'pageData' prop and stored in the redux
+  // store under state.pages.<page_name>. Note that you can disable this feature for a single page by setting
+  // 'withPageData' to false on the pageWrapper composer.
+  fetchPagesData: true,
+
   // This method is used to generate an API URL for a given pathname
   get getUrl() {
     return (pathname = '') => {
