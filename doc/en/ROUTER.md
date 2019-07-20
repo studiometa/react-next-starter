@@ -12,7 +12,7 @@ In order to meet the needs of this starter (multi-lingual etc.), it was preferab
 
 |  | type | description | example |
 |--|------|-------------|---------|
-| routeName | String | The route ID. If you have disabled url translation, this identifier may also be used in the URL (see section i18n) | /user/profile/:id |
+| routeName | String | The route pathname | /user/profile/:id |
 | pagePath | String | The path to the Js file of the corresponding page in the pages folder | /user/profile (for the file /pages/user/profile.js)  |
 | langRoutes | Object | In case url translation is enabled, this parameter allows to modify the appearance of URLs for a given language | {"en": "/user/profile/:id", "fr": "/utilisateur/profil/:id"} |
 | prefetch | Boolean | Enables the NextJs "prefetch" feature for this page | true |
@@ -37,14 +37,15 @@ In order to maintain a certain consistency across the application, be sure to ob
 ## multi-lingual routes
 
 If you are planning to develop a multi-lingual site, it may be necessary to have access to different urls depending on the current language.
-This option can be modified via the `localeSubpaths` parameter accessible in the `/config/lang.config.js` file.
+Until version 2.0 of this starter, it was possible to create totally different routes depending on the language. Since version 3.0, a lot of
+changes have been made and URL translation is now managed by the `localSubpaths` parameter accessible in the `/config/lang.config.js` file. This parameter allows you to add
+automatically a language segment to all your URLs. next-i18next will also redirect the user if this setting is enabled
+but no language segment has been specified in the URL.
+
+[see the next-i18next doc](https://github.com/isaachinman/next-i18next#5-locale-subpaths)
 
 **Attention**, disabling this setting does not mean that your site will be "mono-language". It is always possible for you to set up a multi-lingual site, the only difference is to add this segment in the url.
-
-### When this parameter is disabled
-
-- The language is always stored in a cookie, nothing prevents you from managing the multi-language differently, even if I advise against it
-- You can still use the `langRoute` parameter to manage the appearance of a route, but only the default language will be taken into account (the language defined via the `default` parameter in the `/config/lang.config.js` file 
+The current language will still be accessible from a cookie.
 
 ## Create a link in the app  
   
@@ -196,7 +197,8 @@ This step is optional but illustrates how to add new data (pageData) to the page
   
 ### 3) Create a new route  
   
-Obviously, without a route your page will not be accessible. It must therefore be added. To do this, refer to the **Router** section of this readme.  
+Obviously, without a route your page will not be accessible. It must therefore be added.
+ To do this, refer to the top of this page.  
   
   
 ### 4) Add a namespace for locales  

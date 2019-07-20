@@ -46,8 +46,6 @@ The redux-thunk library is used to allow certain actions to be performed asynchr
 		- **dispatch** : native function to redux allowing to call another action
 		- **getState** : native to redux function to return the current store.
 		- socket** : instance of the socket class that simplifies communication with a possible remote API
-- A little tip: it is possible to pass a callback as a parameter to the action. This allows you to perform an action based on the success or failure of the action to be performed without having to wait for the store to be updated.
-
 
 ## Local storage
 
@@ -56,3 +54,5 @@ Sometimes it may be useful to synchronize some elements of the store with the lo
 You can define these elements in the configuration file `/config/redux.config.js` using the parameter `localStorageStates`. This is a table that is supposed to contain the identification of the elements to be stored in the local storage. For example: 'app', 'user.preferences', etc.
 
 Note that the "client" store is constantly hydrated from the "server" store each time the page is loaded again. Be careful to store only elements that will not be constantly refreshed
+
+This feature can be very helpful if you wish to build an offline-first application.

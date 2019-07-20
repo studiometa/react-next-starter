@@ -2,9 +2,11 @@
 
 ## [Material-ui](https://material-ui.com/)
 
-C'est le choix qui a été fait pour la gestion du thème du starter. Si vous ne souhaitez pas utiliser material-ui, ce starter n'est peut-être pas fait pour vous.
+C'est le choix qui a été fait pour la gestion du thème du starter. Si vous ne souhaitez pas utiliser material-ui, ce starter n'est probablement pas fait pour vous.
 
-**Contrairement aux idées reçues, material-ui ne veut pas dire material**. Cette librairie permet de simplifier la mise en place d'un thème et met également à disposition de nombreux composants, totalement modifiables. Parmi ces composants, on retrouve notamment :
+### Material is not material
+
+*Contrairement aux idées reçues, material-ui ne veut pas dire material*. Cette librairie permet de simplifier la mise en place d'un thème et met également à disposition de nombreux composants, totalement modifiables. Parmi ces composants, on retrouve notamment :
 - Typography : pour gérer vos textes
 - Modal: Pour créer des modals
 - Grid: Pour la mise en place d'une grille responsive

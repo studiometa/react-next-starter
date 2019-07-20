@@ -1,4 +1,4 @@
-# API and Page data
+# API et pageData
 
 Comme ce starter a été conçu pour une utilisation headless, il vous sera probablement nécessaire de mettre en place un moyen de communiquer avec une API distante pour récupérer les données à afficher.
 
@@ -48,15 +48,15 @@ La classe `Socket` a été conçue dans le but de simplifier les requêtes faite
 
 ## Fake-api
 
-Comme son nom l'indique, il s'agit d'une "fausse API" ne prenant en charge que les paramètre de type GET. Cette API a été conçue à l'aide de la librairie [germaine.js](https://github.com/chuck-durst/germaine). Je vous invite à lire la doc de cette librairie pour comprendre ses principes de fonctionnement.
+Comme son nom l'indique, il s'agit d'une "fausse API" ne prenant en charge que les requêtes de type GET ou FIND. Cette API a été conçue à l'aide de la librairie [germaine.js](https://github.com/chuck-durst/germaine). Je vous invite à lire la doc de cette librairie pour comprendre ses principes de fonctionnement.
 
-- Les requêtes sont faites sur le endpoint `/fake-api`de votre application (non modifiable)
+- Les requêtes sont faites sur le endpoint `/fake-api` de votre application (non modifiable)
 - Les données sont accessibles dans le dossier `/server/database.json`. 
 - Vous pouvez également désactiver cette fonctionnalité à l'aide de la variable d'environnement `ENABLE_FAKE_API`. 
 
 **Vous pouvez vous servir de ce service pour trois raisons :**
 - En développement, si un endpoint de l'API n'a pas encore été développé, vous pouvez utiliser fake-api pour simuler les requêtes
-- En production, fake-api peut très bien être utilisé comme base de donnée statique 
+- En production, fake-api peut très bien être utilisé comme "base de donnée statique" 
 - En production, il vous serait également possible de mettre en place un système de fallback. Si une requête à votre API échoue (404, 500, etc) vous pourriez alors résoudre un contenu statique grace à fake-api.
 
 

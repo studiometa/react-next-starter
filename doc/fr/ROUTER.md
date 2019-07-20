@@ -13,7 +13,7 @@ Afin de répondre aux besoins de ce starter (multi-langue etc), il a été préf
 
 |  | type | description | exemple |
 |--|--|--|--|
-| routeName | String | L'identifiant de la route. Si vous avez désactivé la traduction d'url, c'est cet identifiant qui figurera dans l'URL (voir section i18n) | /user/profile/:id |
+| routeName | String | Le pathname de la route  | /user/profile/:id |
 | pagePath | String | Le chemin d'accès vers le fichier Js de la page correspondante dans le dossier pages | /user/profile (pour le fichier /pages/user/profile.js)  |
 | prefetch | Boolean | Permet d'activer la feature "prefetch" de NextJs pour cette page | true |
 | neverCache | Boolean | Si le cache serveur est activé, ce paramètre permet de s'assurer que cette page ne sera jamais mise en cache | true |
@@ -35,15 +35,16 @@ Afin de conserver une certaine consistance à travers l'application, veillez à 
 ## Routes multi-langue
 
 Si vous envisagez de développer un site multi-langue, il peut s'avérer nécessaire d'avoir accès à des urls différentes selon la langue courante.
-Cette option est modifiable via le paramètre `localeSubpaths` accessible dans le fichier `/config/lang.config.js`.
+Jusqu'à la version 2.0 de ce starter, il était possible de créer des routes totalement différentes selon la langue. Depuis la version 3.0, tout le
+système de traduction a été réécrit et la traduction des URLs se gère désormais grace au paramètre `localeSubpaths` accessible dans le fichier `/config/lang.config.js`. Ce paramètre permet d'ajouter
+automatiquement un segment de langue à toutes vos URLs. next-i18next se chargera également de rediriger l'utilisateur si ce paramètre est activé
+mais qu'aucun segment de langue n'a été précisé dans l'URL.
+
+[voir la doc de next-i18next](https://github.com/isaachinman/next-i18next#5-locale-subpaths)
 
 **Attention**, désactiver ce paramètre ne veut pas pour autant dire que votre site sera "mono-langue".
  Il vous est toujours possible de mettre en place un site multi-langue, la seule différence réside dans l'ajout de ce segment dans l'url.
-
-### Lorsque ce paramètre est désactivé
-
-- La langue est toujours stockée dans un cookie, rien ne vous empêche de gérer le multi-langue différemment, même si je vous le déconseille vivement
-- Vous pouvez toujours utiliser le paramètre `langRoute` pour gérer l'aspect d'une route, mais seule la langue par défaut sera prise en compte (la langue définie via le paramètre `default`dans le fichier `/config/lang.config.js` 
+ La langue sera toujours stockée dans un cookie
 
 ## Créer un lien dans l'app  
   
@@ -108,10 +109,10 @@ Si la traduction d'url est activée, en français cela donnerait : `monsite.com/
   
 Plusieurs étapes sont nécessaires pour la création d'une nouvelle page mais le processus a   
 grandement été simplifié (si vous scrollez un peu, vous vous rendrez compte que cette section   
-est pourtant relativement longue et vous vous direz que je me fou un peu de votre gueule.   
+est pourtant relativement longue et vous vous direz que je me fou un peu de votre tronche.   
 À cela je répondrai qu'en réalité c'est dû au fait que je prend le temps de présenter chaque   
 étapes pour m'assurer que vous compreniez bien tout le processus. Je répondrai également que d'une   
-certaine manière, oui, je me fou un peu de votre gueule puisqu'en définitive, le paragraphe le plus   
+certaine manière, oui, je me fou un peu de votre tronche puisqu'en définitive, le paragraphe le plus   
 long de la section, vous êtes entrain de le lire, et qu'il ne vous aura pas appris grand chose :)).   
 
 **Attention :** Lisez attentivement toutes les étapes avant de vous lancer! 
@@ -193,7 +194,9 @@ Cela permet par exemple de réécrire certains attributs (comme _title_ par exem
 ### 2) Ajouter les données à la "database" (/fake-api)  
   
 Cette étape est optionnelle mais permet d'illustrer comment ajouter de nouvelles données   
-(pageData) à la page. Pour cela,  il suffit de rajouter un attribut à l'élément **pages** du fichier database.json :  
+(pageData) à la page. Cet exemple se base sur l'API intégrée au starter, mais rien ne vous empêche
+d'utiliser la votre ! 
+Pour cela, il suffit de rajouter un attribut à l'élément **pages** du fichier database.json :  
   
 
 	{
@@ -214,7 +217,7 @@ Cette étape est optionnelle mais permet d'illustrer comment ajouter de nouvelle
 ### 3) Créer une nouvelle route  
   
 Évidemment, sans route votre page ne sera pas accessible.   
-Il faut donc l'ajouter. Pour cela, référez-vous à la section **Router** de ce readme.  
+Il faut donc l'ajouter. Pour cela, référez-vous aux informations indiquées au début de cette page.  
   
   
 ### 4) Ajouter un namespace pour les locales  

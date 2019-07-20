@@ -68,7 +68,7 @@ Here is the list of props of this component:
 Allows to create a 100% functional and isomorphic `<noscript>` tag.
 
 **nb**: If you want to perform the reverse mechanics, i. e. hide an element when JavaScript is enabled
-        on the client side, you can assign it the class `hidden-no-script`. This will have the effect of applying a
+        on the client side, you can assign the class `hidden-no-script` to this element. This will have the effect of applying a
         `display: none;` to your element. It's not ideal, but it can be practical. Take a look at the LazyImage.js component
         for an example of use.
 

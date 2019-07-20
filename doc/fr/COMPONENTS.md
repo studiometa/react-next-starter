@@ -77,7 +77,7 @@ Voici la liste des props de ce composant :
 Permet de créer une balise `<noscript>` 100% fonctionnelle et isomorphique.
 
 **nb**: Si vous désirez effectuer la mécanique inverse, c'est à dire masquer un élément lorsque le JavaScript est activé
-sur la partie client, vous pouvez lui attribuer la classe `hidden-no-script`. Celle-ci aura pour effet d'appliquer un
+sur la partie client, vous pouvez  attribuer la classe `hidden-no-script` à cette élément. Celle-ci aura pour effet d'appliquer un
 `display: none;` à votre élément. Ce n'est pas idéal, mais ça peut s'avérer pratique. Jetez un oeil au composant LazyImage.js
 pour un exemple d'utilisation.
 

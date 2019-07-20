@@ -14,8 +14,31 @@ vous apprendrez réellement à tirer profit des fonctionnalités offertes par ce
 Attention cependant, plus vous modifierez le "core" du projet et plus il vous sera compliqué d'effectuer d'éventuelles mises à
 jour par la suite. Si ce starter ne répond pas à certains de vos besoins spécifiques, n'hésitez pas à suggérer une pull-request
 ou à nous en faire la demande directement! :)  
+
+## Motivations
+
+Je sais ce que vous vous dites. Encore un développeur qui partage son starter maison ! 
+Et bien oui, vous avez raison. Les articles qui remettent en question l'utilité des starter pullulent sur internet, 
+encourageant plutôt l'usage d'outils comme CRA. Mais je pense que le problème vient davantage du peu de documentation
+qui accompagne ces starters que de leur réelle utilité. 
+
+À l'origine ce starter n'avait pas pour vocation d'en être un. Le premier développement avait d'abord été pensé pour être utilisé
+sur un projet spécifique. Mais il paraît qu'un bon développeur ne refait jamais la même chose deux fois. Aujourd'hui je m'en sers
+pour tous mes nouveaux projets et il me permet de développer plus rapidement que jamais des applications complexes avec toutes
+les fonctionnalités nécessaires. 
+
+Le gros point négatif avec ce type d'outils, c'est la maintenance. Un simple `npm update` ne vous suffira pas à mettre votre projet
+à jour avec les dernière fonctionnalités offertes par ce starter. 
+
+C'est à partir de ce constat que j'ai décidé de faire évoluer ce projet en développant un générateur comme CRA. Celui-ci remplira le
+même rôle que ce starter avec les avantages suivants :
+- Le core est porté dans un module node, il peut donc être maintenu avec npm
+- Les sources de vos projets ne contiendront que votre propre code (ou presque)
+- Il sera toujours possible "d'éjecter" le projet pour avoir accès à tout le code
+
+Laissez moi un message si vous voulez être tenu informé de sa sortie ! :) 
    
- **Les fonctionnalités suivante sont disponibles et prêtes à l'emploi :**   
+## Fonctionnalités   
    
 - routing SSR natif  
 - Configuration selon l'environnement grace aux fichiers '.env'  

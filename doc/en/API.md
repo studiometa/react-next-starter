@@ -1,4 +1,4 @@
-# API and Page data
+# API and pageData
 
 As this starter was designed for headless use, you will probably need to set up a way to communicate with a remote API to retrieve the data to be displayed. In the case of a completely static site, you can skip this section.
 
@@ -46,7 +46,7 @@ The `Socket` class was designed to simplify requests made to the API. It is avai
 
 ## Fake-api
 
-As the name suggests, this is a "fake API" that only supports GET parameters. This API has been designed using the[germaine.js](https://github.com/chuck-durst/germaine) library. I invite you to read the doc of this library to understand how it works.
+As the name suggests, this is a "fake API" that only supports GET and FIND requests. This API has been designed using the[germaine.js](https://github.com/chuck-durst/germaine) library. I invite you to read the doc of this library to understand how it works.
 
 - Requests are made on the `/fake-api` endpoint of your application (not editable)
 - The data is accessible in the `/server/database.json` folder. 
