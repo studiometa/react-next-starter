@@ -7,7 +7,7 @@ import { connect }           from 'react-redux';
 import config                from '../../../config/index';
 import { i18n }              from '../../../server/lib/i18n';
 import { updateAppLanguage } from '../../../store/actions/app.actions';
-
+import Hidden from '@material-ui/core/Hidden'
 
 /**
  * This component displays a button to switch the current language
@@ -36,7 +36,9 @@ const LangSwitch = (({ lang, routes, classes = {}, dispatch }) => {
                   className={classes.icon}
                   style={{ width: '16px', height: '16px', marginRight: '8px' }}
                 />
+                <Hidden xsDown>
                 <span className={classes.text}>{_lang.name}</span>
+                </Hidden>
               </div>
             </MenuItem>,
           )

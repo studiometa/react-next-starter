@@ -85,7 +85,7 @@ class _sandbox extends React.Component {
               </Grid>
               {
                 ['primary', 'secondary', 'error'].map(color => (
-                  <Grid item md={4} key={color}>
+                  <Grid item md={4} key={color} xs={12}>
                     <Paper style={{ background: theme.palette[color].main, padding: 10 }}>
                       <Typography variant="h5" style={{ color: theme.palette[color].contrastText }}>
                         {color.toUpperCase()}

@@ -17,18 +17,20 @@ const styles = theme => ({
   container: {
     minHeight: '100vh',
     margin: 'auto',
-  },
-
-  content: {
+    overflow: 'hidden',
     paddingTop: `${theme.spacing(8)}px`,
+    paddingBottom: `${theme.spacing(8)}px`,
     [theme.breakpoints.down('md')]: {
       paddingTop: `${theme.spacing(8)}px`,
+      paddingBottom: `${theme.spacing(8)}px`,
     },
     [theme.breakpoints.down('sm')]: {
       paddingTop: `${theme.spacing(6)}px`,
+      paddingBottom: `${theme.spacing(6)}px`,
     },
     [theme.breakpoints.down('xs')]: {
       paddingTop: `${theme.spacing(6)}px`,
+      paddingBottom: `${theme.spacing(6)}px`,
     },
   },
 });
