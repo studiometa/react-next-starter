@@ -1,7 +1,6 @@
-import axios    from 'axios';
-import urlJoin  from 'url-join';
-import config   from '../../config/index';
-import { i18n } from '../../server/lib/i18n';
+import axios   from 'axios';
+import urlJoin from 'url-join';
+import config  from '../../config/index';
 
 
 export default class Socket {

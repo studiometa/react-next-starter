@@ -10,7 +10,7 @@ function getErrorStatus(error = {}) {
       break;
     }
   }
-  return statusCode
+  return statusCode;
 }
 
 const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) => {
@@ -28,7 +28,6 @@ const lazyGetPageData = (pageName, dispatch) => new Promise((resolve, reject) =>
 
 
 export default (pageName = '', opts = {}) => ComposedComponent => {
-
 
   const required = Boolean(opts.required);
 

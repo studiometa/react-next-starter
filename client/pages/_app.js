@@ -17,11 +17,6 @@ import '../styles/styles.scss';
 
 
 class _App extends App {
-  constructor(props) {
-    super(props);
-  }
-
-
   static async getInitialProps({ Component, ctx }) {
     const props = {};
 
@@ -44,7 +39,7 @@ class _App extends App {
   /**
    * componentDidMount
    */
-  async componentDidMount() {
+  componentDidMount() {
 
     // Init the service-worker
     this._initServiceWorker();

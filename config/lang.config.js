@@ -1,5 +1,3 @@
-const path = require('path');
-
 /**
  * All the languages and i18n settings belong here. Most of the following parameters
  * are used by i18next

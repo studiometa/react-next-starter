@@ -36,24 +36,15 @@ const styles = theme => ({
   },
 });
 
-const Readme = class extends React.Component {
-  constructor() {
-    super();
-  }
-  render() {
-    const { classes, t = e => e } = this.props;
-    return (
-      <Layout title={t('menu_links.readme')} pageData={this.props.pageData}>
-        <div dangerouslySetInnerHTML={{ __html: readme }} className={classes.mdContent}/>
-      </Layout>
-    );
-  }
-};
-
-const mapStateToProps = state => ({});
+const Readme = React.memo(function ({ classes, t = e => e, pageData }) {
+  return (
+    <Layout title={t('menu_links.readme')} pageData={pageData}>
+      <div dangerouslySetInnerHTML={{ __html: readme }} className={classes.mdContent}/>
+    </Layout>
+  );
+});
 
 export default pageWrapper(Readme, {
-  mapStateToProps,
   styles,
   name: 'readme',
   noPageData: true,

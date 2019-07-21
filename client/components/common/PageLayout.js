@@ -1,3 +1,4 @@
+import Container      from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes      from 'prop-types';
 import React          from 'react';
@@ -6,7 +7,7 @@ import config         from '../../../config';
 import Error          from '../../pages/_error';
 import Head           from './Head';
 import Header         from './Header';
-import Container from '@material-ui/core/Container'
+
 
 const styles = theme => ({
 

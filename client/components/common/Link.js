@@ -1,13 +1,14 @@
-import Typography                   from '@material-ui/core/Typography';
-import classNames                   from 'classnames';
-import propTypes                    from 'prop-types';
-import React                        from 'react';
-import config                       from '../../../config/index';
-import removeUrlLastSlash           from '../../../helpers/removeUrlLastSlash';
-import routes                       from '../../../server/routes';
-import wrapper                      from '../../lib/componentWrapper';
-import {Link as NextLink} from '../../../server/lib/i18n';
-import MUILink from '@material-ui/core/Link'
+import Typography           from '@material-ui/core/Typography';
+import classNames           from 'classnames';
+import propTypes            from 'prop-types';
+import React                from 'react';
+import config               from '../../../config/index';
+import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
+import { Link as NextLink } from '../../../server/lib/i18n';
+import routes               from '../../../server/routes';
+import wrapper              from '../../lib/componentWrapper';
+
+
 
 /**
  * This component can be used to build links that works properly with NextJs
@@ -106,7 +107,7 @@ class Link extends React.Component {
     };
 
     let { to, query, target } = this.props;
-    let isHidden                    = false;
+    let isHidden              = false;
 
     if (!to) {
       this.state.isHidden = true;
@@ -165,7 +166,7 @@ class Link extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return nextState !== this.state
-      || nextProps.children !== this.props.children
+      || nextProps.children !== this.props.children;
   }
 
 
@@ -253,6 +254,7 @@ class Link extends React.Component {
     }
   };
 }
+
 
 
 export default wrapper(Link, {

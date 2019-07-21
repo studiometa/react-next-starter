@@ -5,7 +5,6 @@ import { connect }                                from 'react-redux';
 import { compose }                                from 'recompose';
 import config                                     from '../../config';
 import { getInitialProps, I18n, withTranslation } from '../../server/lib/i18n';
-//import withMUITheme                               from './withMUITheme';
 import withPageData                               from './withPageData';
 
 

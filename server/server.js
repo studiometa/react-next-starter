@@ -314,9 +314,6 @@ class App {
 
     this.server.get('*', (req, res) => {
 
-      const parsedUrl = parse(req.url, true);
-      const pathname  = removeUrlLastSlash(parsedUrl.pathname);
-
       this._htpasswdMiddleware(req, res);
 
       // Serve the service-worker

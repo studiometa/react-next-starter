@@ -12,22 +12,18 @@ const styles = theme => ({
   },
 });
 
-const Home = class extends React.Component {
-  render() {
-    const { pageData, classes } = this.props;
-
-    return (
-      <Layout pageData={pageData}>
-        <Typography variant="h1" className={classes.title} align="center">react-next-starter</Typography>
-        <Grid container justify="center">
-          <Grid item md={6}>
-            <LazyImage src="https://miro.medium.com/max/1200/1*8g-FaXXbEUFP11oZD1kfaA.jpeg"/>
-          </Grid>
+const Home = React.memo(function ({ pageData, classes }) {
+  return (
+    <Layout pageData={pageData}>
+      <Typography variant="h1" className={classes.title} align="center">react-next-starter</Typography>
+      <Grid container justify="center">
+        <Grid item md={6}>
+          <LazyImage src="https://miro.medium.com/max/1200/1*8g-FaXXbEUFP11oZD1kfaA.jpeg"/>
         </Grid>
-      </Layout>
-    );
-  }
-};
+      </Grid>
+    </Layout>
+  );
+});
 
 
 export default pageWrapper(Home, {
