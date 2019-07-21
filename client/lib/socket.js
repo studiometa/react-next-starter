@@ -1,13 +1,12 @@
-import axios        from 'axios';
-import urlJoin      from 'url-join';
-import config       from '../../config/index';
-import langDetector from '../../server/lib/customI18nextLangDetector';
+import axios   from 'axios';
+import urlJoin from 'url-join';
+import config  from '../../config/index';
 
 
 export default class Socket {
   constructor() {
     this.getPage = this.getPage.bind(this);
-    this.lang    = config.lang.enabled ? langDetector.find() : '';
+    this.lang    = '';
   }
 
 
@@ -99,7 +98,6 @@ export default class Socket {
       _result.message = error.message;
     }
 
-    //_result.error = error;
     return _result;
   }
 

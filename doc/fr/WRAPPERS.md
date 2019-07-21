@@ -6,7 +6,7 @@ Ils sont disponibles dans le dossier `/client/lib`. Ce sont des fonctions dont l
   
 ## pageWrapper  
   
-Permet de wrapper chacune de vos pages. Vous devez obligatoirement utiliser ce wrapper lorsque vous créez une nouvelle page.  
+Permet de wrapper chacune de vos pages. Vous devez utiliser ce wrapper lorsque vous créez une nouvelle page.  
   
      const MyPage = () => (<div>coucou</div>);   
      export default pageWrapper(MyPage, { name: 'my-page' })  
@@ -35,5 +35,5 @@ Ce composant gère les paramètres suivants :
  - **mapStateToProps** : Même fonction utilisée par Redux pour injecter des props au composant  
  - **styles** : Objet utilisé par JSS et Material-ui pour générer les styles de la page  
  - **withTheme** : Si true, la prop "theme" sera accessible par le composant, contenant l'objet Theme de material-ui  
- - **withRouter**: Donne accès à la prop "router" correspondant à l'object router de NextJs
+ - **withRouter**: Donne accès à la prop "router" correspondant à l'objet router de NextJs
  - **withWidth**: Même fonctionnement que le HOC homonyme de Material-ui

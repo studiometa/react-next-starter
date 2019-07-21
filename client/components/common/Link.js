@@ -1,13 +1,12 @@
-import Typography                   from '@material-ui/core/Typography';
-import classNames                   from 'classnames';
-import NextLink                     from 'next/link';
-import propTypes                    from 'prop-types';
-import React                        from 'react';
-import config                       from '../../../config/index';
-import removeUrlLastSlash           from '../../../helpers/removeUrlLastSlash';
-import resolvePathnameFromRouteName from '../../../helpers/resolvePathnameFromRouteName';
-import routes                       from '../../../server/routes';
-import wrapper                      from '../../lib/componentWrapper';
+import Typography           from '@material-ui/core/Typography';
+import classNames           from 'classnames';
+import propTypes            from 'prop-types';
+import React                from 'react';
+import config               from '../../../config/index';
+import removeUrlLastSlash   from '../../../helpers/removeUrlLastSlash';
+import { Link as NextLink } from '../../../server/lib/i18n';
+import routes               from '../../../server/routes';
+import wrapper              from '../../lib/componentWrapper';
 
 
 
@@ -76,7 +75,7 @@ class Link extends React.Component {
     linkAttributes: propTypes.object,
 
     // Colors for the Typography component
-    color: propTypes.oneOf(['default', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
+    color: propTypes.oneOf(['initial', 'error', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary']),
 
     // if true, the component will consider the link active whenever its first segment matches the current route
     checkSubActive: propTypes.bool,
@@ -85,7 +84,7 @@ class Link extends React.Component {
   static defaultProps = {
     variant: 'button',
     component: 'span',
-    color: 'default',
+    color: 'initial',
     noTypo: false,
     target: '_self',
     prefetch: false,
@@ -107,8 +106,8 @@ class Link extends React.Component {
       isExternal: false, // Define if the provided route is an external link
     };
 
-    let { to, query, lang, target } = this.props;
-    let isHidden                    = false;
+    let { to, query, target } = this.props;
+    let isHidden              = false;
 
     if (!to) {
       this.state.isHidden = true;
@@ -125,20 +124,12 @@ class Link extends React.Component {
       return;
     }
 
-    // If 'lang' is not defined (it should always be, but who knows?), we should fallback to the default language.
-    // This is important because we must NEVER have urls without a language prefix if the
-    // url translation is enabled. This may cause duplicated content pages and have bad effects
-    // on your SEO...
-
-    lang = typeof lang === 'string' ? lang : config.lang.default;
-
     // Find a matching route in the route.js config file
-    let pathname = resolvePathnameFromRouteName(to, lang);
-    let { page } = routes[to];
+    let { page } = routes[to] || {};
 
     // Check if a matching route has been found
     // if not, only show an error log on dev env
-    if (typeof pathname !== 'string') {
+    if (typeof to !== 'string') {
       if (process.env.NODE_ENV !== 'production') {
         console.error(`Link.js: No matching route has been found for '${ to }'`);
       }
@@ -146,7 +137,7 @@ class Link extends React.Component {
 
     if (typeof query === 'object') {
       Object.entries(query).forEach(([queryName, queryValue]) => (
-        queryValue && queryName ? pathname = pathname.replace(`:${queryName}`, queryValue) : null
+        queryValue && queryName ? to = to.replace(`:${queryName}`, queryValue) : null
       ));
     }
 
@@ -160,7 +151,7 @@ class Link extends React.Component {
       this.state.isHidden   = isHidden;
     } else {
       this.state.page     = removeUrlLastSlash(page);
-      this.state.pathname = removeUrlLastSlash(pathname);
+      this.state.pathname = removeUrlLastSlash(to);
       this.state.isHidden = isHidden;
     }
   }
@@ -175,7 +166,7 @@ class Link extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return nextState !== this.state
-      || nextProps.children !== this.props.children
+      || nextProps.children !== this.props.children;
   }
 
 
@@ -266,14 +257,7 @@ class Link extends React.Component {
 
 
 
-const mapStateToProps = (state) => {
-  return {
-    lang: state.app.lang,
-  };
-};
-
 export default wrapper(Link, {
-  mapStateToProps,
   isTranslatable: false,
   hasStyles: false,
   withRouter: true,

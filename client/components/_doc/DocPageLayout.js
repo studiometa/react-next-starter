@@ -21,24 +21,24 @@ const styles = theme => ({
 
   stickyMenu: {
     position: 'sticky',
-    top: theme.spacing.unit * 3,
+    top: theme.spacing(3),
   },
 
   mdContent: {
     fontFamily: theme.typography.fontFamily,
     '&> h1': {
-      marginBottom: theme.spacing.unit * 8,
+      marginBottom: theme.spacing(8),
     },
     '&> h2': {
-      marginBottom: theme.spacing.unit * 4,
-      marginTop: theme.spacing.unit * 6,
+      marginBottom: theme.spacing(4),
+      marginTop: theme.spacing(6),
     },
     '&> h3': {
-      marginTop: theme.spacing.unit * 4,
+      marginTop: theme.spacing(4),
     },
     '& pre': {
       overflow: 'scroll',
-      maxWidth: '90vw'
+      maxWidth: '90vw',
     },
     '& * code, & pre': {
       background: '#000',
@@ -56,7 +56,7 @@ const styles = theme => ({
       border: `1px solid ${theme.palette.grey[200]}`,
       '& td, & tr, & th': {
         border: `1px solid ${theme.palette.grey[200]}`,
-        padding: theme.spacing.unit / 2,
+        padding: theme.spacing(0.5),
       },
     },
   },
@@ -75,11 +75,25 @@ class DocPageLayout extends React.Component {
       }
     });
 
-    this.state = {};
+    this.state = {
+      readme: this.getDocFile(),
+    };
+  }
 
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.lang !== this.props.lang) {
+      this.setState({
+        readme: this.getDocFile(),
+      });
+    }
+  }
+
+
+  getDocFile() {
     try {
       const camelToSnake = require('../../../helpers/camelToSnake');
-      this.state.readme  = require(`../../../doc/${props.lang}/${camelToSnake(props.name).toUpperCase()}.md`);
+      return require(`../../../doc/${this.props.lang}/${camelToSnake(this.props.name).toUpperCase()}.md`);
     } catch (err) {
       throw new Error(err);
     }
@@ -90,7 +104,7 @@ class DocPageLayout extends React.Component {
     const { classes, t = e => e } = this.props;
 
     return (
-      <Grid container spacing={40} className={classes.root}>
+      <Grid container spacing={5} className={classes.root}>
         <Grid item md={3}>
           <Paper className={classes.stickyMenu}>
             <List component="nav">
@@ -120,7 +134,7 @@ class DocPageLayout extends React.Component {
 
 const mapStateToProps = state => ({
   routes: state.app.routes,
-  lang: state.app.lang
+  lang: state.app.lang,
 });
 
 export default wrapper(DocPageLayout, { styles, mapStateToProps, withRouter: true });

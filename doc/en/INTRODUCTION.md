@@ -10,7 +10,30 @@ As each project is unique, this starter has been designed to be as customizable 
 
 Be careful, however, the more you change the core of the project, the more complicated it will be to make any subsequent updates. If this starter does not meet some of your specific needs, do not hesitate to suggest a pull-request or ask us directly! :)  
    
- **The following features are available and ready to use:**   
+## Motivations
+
+I know what you're thinking. Another developer who shares his homemade starter!
+Well, yes, you're right. Articles that question the usefulness of starters are abounding on the Internet, 
+encouraging the use of tools such as CRA instead. But I think the problem is more the lack of documentation
+that comes with these starters than their real usefulness. 
+
+Originally this starter was not intended to be one. The first development was initially designed to be used
+on a specific project. But it seems that a good developer never does the same thing twice. Today I use it
+for all my new projects and it allows me to develop more quickly than ever complex applications with all the
+the necessary features. 
+
+The big negative point with this type of tool is maintenance. A simple `npm update` will not be enough for you to put your project
+with the latest features offered by this starter. 
+
+It is from this observation that I decided to develop this project by developing a generator like CRA. The latter will complete the
+same role as this starter with the following advantages:
+- The core is ported to a node module, so it can be maintained with npm
+- The sources of your projects will only contain your own code (or almost)
+- It will always be possible to "eject" the project to access all the code
+
+Leave me a message if you want to be kept informed of its release! :) 
+   
+ ## Features   
    
 - native SSR routing  
 - Configuration according to the environment thanks to the '.env' files  
@@ -25,4 +48,5 @@ Be careful, however, the more you change the core of the project, the more compl
 - Material-ui and theme-based development  
 - Native server cache management  
 - Client cache management using a service-worker
+- Offline mode
  

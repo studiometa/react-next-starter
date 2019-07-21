@@ -15,13 +15,6 @@ function setAppSettings(state, action) {
   });
 }
 
-function updateAppCurrentUrl(state, action) {
-  return Object.assign({}, state, {
-    currentUrl: action.url,
-  });
-}
-
-
 export default (state = {}, action) => {
   switch (action.type) {
 
@@ -30,9 +23,6 @@ export default (state = {}, action) => {
 
     case actionTypes.SET_APP_SETTINGS:
       return setAppSettings(state, action);
-
-    case actionTypes.UPDATE_APP_CURRENT_URL:
-      return updateAppCurrentUrl(state, action);
 
     default:
       return state;

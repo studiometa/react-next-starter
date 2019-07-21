@@ -9,14 +9,14 @@ const styles = theme => ({
   mdContent: {
     fontFamily: theme.typography.fontFamily,
     '&> h1': {
-      marginBottom: theme.spacing.unit * 8,
+      marginBottom: theme.spacing(8),
     },
     '&> h2': {
-      marginBottom: theme.spacing.unit * 4,
-      marginTop: theme.spacing.unit * 6,
+      marginBottom: theme.spacing(4),
+      marginTop: theme.spacing(6),
     },
     '&> h3': {
-      marginTop: theme.spacing.unit * 4,
+      marginTop: theme.spacing(4),
     },
     '& * code, & pre': {
       background: '#fff',
@@ -30,28 +30,21 @@ const styles = theme => ({
       border: `1px solid ${theme.palette.grey[200]}`,
       '& td, & tr, & th': {
         border: `1px solid ${theme.palette.grey[200]}`,
-        padding: theme.spacing.unit / 2,
+        padding: theme.spacing(0.5),
       },
     },
   },
 });
 
-const Readme = class extends React.Component {
-
-  render() {
-    const { classes, t = e => e } = this.props;
-    return (
-      <Layout title={t('menu_links.readme')} pageData={this.props.pageData}>
-        <div dangerouslySetInnerHTML={{ __html: readme }} className={classes.mdContent}/>
-      </Layout>
-    );
-  }
-};
-
-const mapStateToProps = state => ({});
+const Readme = React.memo(function ({ classes, t = e => e, pageData }) {
+  return (
+    <Layout title={t('menu_links.readme')} pageData={pageData}>
+      <div dangerouslySetInnerHTML={{ __html: readme }} className={classes.mdContent}/>
+    </Layout>
+  );
+});
 
 export default pageWrapper(Readme, {
-  mapStateToProps,
   styles,
   name: 'readme',
   noPageData: true,

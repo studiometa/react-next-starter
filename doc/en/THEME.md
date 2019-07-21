@@ -4,7 +4,9 @@
 
 This is the choice that has been made for the management of the starter theme. If you don't want to use material-ui, this starter may not be for you.
 
-**Contrary to popular belief, material-ui does not mean material design. This library makes it possible to simplify the implementation of a theme and also makes available many components, totally modifiable. Among these components, we find in particular:
+### Material is not material
+
+*Contrary to popular belief, material-ui does not mean material design.* This library makes it possible to simplify the implementation of a theme and also makes available many components, totally modifiable. Among these components, we find in particular:
 - Typography: to manage your texts
 - Modal: To create modals
 - Grid: For the implementation of a responsive grid

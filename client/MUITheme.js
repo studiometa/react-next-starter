@@ -1,7 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-// A theme with custom primary and secondary color.
-// It's optional.
 const theme = createMuiTheme({
 
   /***********************************************
@@ -38,7 +36,6 @@ const theme = createMuiTheme({
 
   typography: {
     fontSize: 16,
-    useNextVariants: true, // @see https://material-ui.com/style/typography/#migration-to-typography-v2
     fontFamily: 'Roboto, Arial, sans-serif',
     fontWeightBold: 700,
     h1: {
@@ -127,8 +124,7 @@ const theme = createMuiTheme({
    *  STYLES OVERRIDES
    ***********************************************/
 
-  overrides: {
-  },
+  overrides: {},
 
   /***********************************************
    *  GRADIENTS
@@ -159,38 +155,6 @@ const theme = createMuiTheme({
 
 
 theme.styles = {
-  responsivePadding: {
-    paddingLeft: `${theme.spacing.unit * 7}px`,
-    paddingRight: `${theme.spacing.unit * 7}px`,
-    [theme.breakpoints.down('md')]: {
-      paddingRight: `${theme.spacing.unit * 6}px`,
-      paddingLeft: `${theme.spacing.unit * 6}px`,
-    },
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: `${theme.spacing.unit * 4}px`,
-      paddingRight: `${theme.spacing.unit * 4}px`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      paddingRight: `${theme.spacing.unit * 2}px`,
-      paddingLeft: `${theme.spacing.unit * 2}px`,
-    },
-  },
-  responsiveMargin: {
-    marginLeft: `${theme.spacing.unit * 7}px`,
-    marginRight: `${theme.spacing.unit * 7}px`,
-    [theme.breakpoints.down('md')]: {
-      marginRight: `${theme.spacing.unit * 6}px`,
-      marginLeft: `${theme.spacing.unit * 6}px`,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginLeft: `${theme.spacing.unit * 4}px`,
-      marginRight: `${theme.spacing.unit * 4}px`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginRight: `${theme.spacing.unit * 2}px`,
-      marginLeft: `${theme.spacing.unit * 2}px`,
-    },
-  },
 
   hover: {
     offLinkUnderline: {

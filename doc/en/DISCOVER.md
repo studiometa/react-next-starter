@@ -59,16 +59,7 @@ Bam! The message is still displayed on the page, but the request has not been ma
 - The page is fully reloaded to ensure that all content is correctly updated in the desired language.   
 - The page is the same! This is because the `LangSwitch` component is able to resolve the current page in any language defined in the configuration. Be careful, it only works with static urls for the moment.
   
-## 8) Go to this address: http://localhost:3000/readme  
-  
-The router will automatically recognize the language attached to the "readme" page, even if it is not defined in the url  
-  
-  
-## 9) Go to this address: http://localhost:3000/lisez-moi  
-  
-The router will automatically recognize the language attached to the "read me" page, even if it is not defined in the url  
-  
-## 10) Disable JavaScript and reload the page  
+## 8) Disable JavaScript and reload the page  
   
 TTADAAAAAA 🎉 the site is fully navigable and the content loads correctly. Including the image of the home page, initially lazy-loaded.  
    

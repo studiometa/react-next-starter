@@ -6,7 +6,7 @@ They are available in the `/client/lib` folder. These are functions whose first 
   
 ## pageWrapper  
   
-Allows you to wrap each of your pages. You must use this wrapper when you create a new page.  
+Allows you to wrap each of your pages. You should use this wrapper when you create a new page.  
   
      const MyPage = () => (<div>hello</div>);   
      export default pageWrapper(MyPage, { name: 'my-page' })  

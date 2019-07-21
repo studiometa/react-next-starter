@@ -1,28 +1,24 @@
-const express                      = require('express');
-const next                         = require('next');
-const compression                  = require('compression');
-const cors                         = require('cors');
-const urlJoin                      = require('url-join');
-const { parse }                    = require('url');
-const checkRequiredFiles           = require('react-dev-utils/checkRequiredFiles');
-const paths                        = require('./lib/paths');
-const customLangDetector           = require('./lib/customI18nextLangDetector');
-const { choosePort, prepareUrls }  = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser                  = require('react-dev-utils/openBrowser');
-const auth                         = require('basic-auth');
-const i18nextMiddleware            = require('i18next-express-middleware');
-const Backend                      = require('i18next-node-fs-backend');
-const path                         = require('path');
-const LRUCache                     = require('lru-cache');
-const removeUrlLastSlash           = require('../helpers/removeUrlLastSlash');
-const chalk                        = require('chalk');
-const resolvePathnameFromRouteName = require('../helpers/resolvePathnameFromRouteName');
-const envBoolean                   = require('../helpers/envBoolean');
+const express               = require('express');
+const next                  = require('next');
+const compression           = require('compression');
+const cors                  = require('cors');
+const { parse }             = require('url');
+const checkRequiredFiles    = require('react-dev-utils/checkRequiredFiles');
+const paths                 = require('./lib/paths');
+const { choosePort }        = require('react-dev-utils/WebpackDevServerUtils');
+const auth                  = require('basic-auth');
+const path                  = require('path');
+const LRUCache              = require('lru-cache');
+const removeUrlLastSlash    = require('../helpers/removeUrlLastSlash');
+const chalk                 = require('chalk');
+const envBoolean            = require('../helpers/envBoolean');
+const nextI18NextMiddleware = require('next-i18next/middleware').default;
+const nextI18next           = require('./lib/i18n');
 
-const config           = require('../config');
-const routes           = require('./routes');
-const { i18nInstance } = require('./lib/i18n');
-const germaine         = require('germaine');
+
+const config   = require('../config');
+const routes   = require('./routes');
+const germaine = require('germaine');
 
 
 
@@ -45,13 +41,6 @@ class App {
       maxAge: process.env.SSR_CACHE_MAX_AGE ? parseInt(process.env.SSR_CACHE_MAX_AGE) : 1000 * 60 * 60, // 1hour
     });
     this._routesCheckUnique = [];
-
-    // Build the custom language detector
-
-    this.lngDetector = new i18nextMiddleware.LanguageDetector();
-    this.lngDetector.addDetector(customLangDetector.path);
-    this.lngDetector.addDetector(customLangDetector.fallback);
-
   }
 
 
@@ -129,9 +118,6 @@ class App {
     this.checkRequiredFiles();
 
     try {
-      if (this.config.lang.enabled) {
-        await this._initI18nextInstance();
-      }
       await this.nextApp.prepare();
     } catch (err) {
       throw err;
@@ -146,11 +132,9 @@ class App {
       this.server.use(compression());
     }
 
-    // This will be used to open up the browser on development mode when the
-    // server is run
-    const localUrlForBrowser = process.env.NODE_ENV === 'development'
-      ? prepareUrls(this.protocol, this.host, port).localUrlForBrowser
-      : null;
+    if (envBoolean(process.env.FORCE_SSL)) {
+      this.server.use(this._forceSSLMiddleware);
+    }
 
     // Enable cors on production
     this._enableCORS();
@@ -161,13 +145,9 @@ class App {
     // Listen to the public folder
     this.server.use('/', express.static(paths.appPublic));
 
-    if (this.config.lang.enabled) {
-
-      // enable middleware for i18next
-      this.server.use(i18nextMiddleware.handle(i18nInstance));
-
-      // serve locales for client
-      this.server.use('/locales', express.static(this.config.lang.localesPath));
+    if (config.lang.enabled) {
+      this.server.use(nextI18NextMiddleware(nextI18next));
+      this.server.use('/locales', express.static(path.join(__dirname, '../', this.config.lang.localesPath)));
     }
 
 
@@ -183,9 +163,6 @@ class App {
 
       if (process.env.NODE_ENV !== 'test') {
         console.log('> Ready on ' + `${this.protocol}://${this.host}:${port}`);
-      }
-      if (process.env.NODE_ENV === 'development') {
-        openBrowser(localUrlForBrowser);
       }
     } catch (err) {
       throw err;
@@ -212,39 +189,6 @@ class App {
       process.exit(1);
     }
     return true;
-  }
-
-
-  /**
-   * Init i18next first
-   * @returns {Promise<void>}
-   * @private
-   */
-  async _initI18nextInstance() {
-    if (!this.config.lang.enabled) return;
-
-    await i18nInstance
-      .use(Backend)
-      .use(this.lngDetector)
-      .init({
-        fallbackLng: this.config.lang.default,
-        preload: this.config.lang.available.map(e => e.lang),
-        ns: this.config.lang.namespaces,
-        defaultNS: this.config.lang.defaultNamespace,
-        pluralSeparator: '__',
-        contextSeparator: '__',
-        backend: {
-          loadPath: urlJoin(this.config.lang.localesPath, this.config.lang.localesFormat),
-        },
-        detection: {
-          order: ['customPathDetector', 'cookie', 'customFallback'],
-          lookupCookie: this.config.lang.lookupCookie,
-          lookupFromPathIndex: 1,
-          // optional expire and domain for set cookie
-          cookieMinutes: this.config.lang.cookieMinutes,
-          cookieDomain: this.host,
-        },
-      });
   }
 
 
@@ -352,23 +296,9 @@ class App {
       console.log(chalk.cyan.bold('\nExpress is now listening to the following routes :'));
     }
 
-    if (this.config.lang.enabled) {
-      this.config.lang.available.forEach(({ lang }) => {
-        if (this.config.lang.enableRouteTranslation !== true && lang !== this.config.lang.default) {
-          return;
-        }
-        Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-          const pathname = resolvePathnameFromRouteName(routeName, lang);
-          if (pathname && pathname.length > 0) {
-            this._pushRouteListener(removeUrlLastSlash(pathname), routeConfig, routeName);
-          }
-        });
-      });
-    } else {
-      Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
-        this._pushRouteListener(removeUrlLastSlash(routeName), routeConfig, routeName);
-      });
-    }
+    Object.entries(this.routes).forEach(([routeName, routeConfig]) => {
+      this._pushRouteListener(removeUrlLastSlash(routeName), routeConfig, routeName);
+    });
 
     if (process.env.NODE_ENV !== 'production') {
       console.log('\n');
@@ -384,9 +314,6 @@ class App {
 
     this.server.get('*', (req, res) => {
 
-      const parsedUrl = parse(req.url, true);
-      const pathname  = removeUrlLastSlash(parsedUrl.pathname);
-
       this._htpasswdMiddleware(req, res);
 
       // Serve the service-worker
@@ -398,44 +325,6 @@ class App {
         // If a route has been founded, we must trigger a redirection to add the language segment to the url.
         // For example, /products should probably be resolved to /en/products.
 
-      } else if (
-        this.config.lang.enabled
-        && !pathname.includes('/_next/')
-        && !pathname.includes('/static')
-        && this.config.lang.enableRouteTranslation === true
-        && this.config.lang.enableFallbackRedirection === true) {
-        let language     = this.config.lang.available.find(e => e.lang === req.language);
-        let matchingLang = undefined;
-
-        // If a lang is defined from another provider like cookies, it should be easy to resolve the right route
-        if (language) {
-          Object.values(this.routes).forEach(e => {
-            if (e.langRoutes && e.langRoutes[language.lang] === pathname) {
-              return matchingLang = language.lang;
-            }
-          });
-        }
-
-        // Else, we must loop over every langRoute of every route and look for a match
-        if (!matchingLang) {
-          Object.values(this.routes).forEach(e => {
-            if (e.langRoutes) {
-              return Object.entries(e.langRoutes).forEach(([_lang, _lroute]) => {
-                if (_lroute === pathname) {
-                  matchingLang = _lang;
-                }
-              });
-            }
-          });
-        }
-
-        // Finally if a lang has been found, we can resolve the url, else we should let the next App trigger a
-        // 404 error
-        if (matchingLang) {
-          res.redirect(301, urlJoin('/', matchingLang, pathname));
-        } else {
-          return this.nextApp.getRequestHandler()(req, res);
-        }
       } else {
         return this.nextApp.getRequestHandler()(req, res);
       }
@@ -488,21 +377,27 @@ class App {
     if (typeof routeConfig.page !== 'string' || routeConfig.page.length < 1) {
       throw new Error(`Route error : the route "${routeName}" should have a valid 'page' attribute but none was given.`);
     }
-    if (this.config.lang.enabled && typeof routeConfig.langRoutes === 'object') {
-      let routesToPush = [];
-      Object.values(routeConfig.langRoutes).forEach(lr => {
-        if (this._routesCheckUnique.includes(lr)) {
-          throw new Error(`Route error : the route "${routeName}" have a langRoute '${lr}' that is already used on an other route.`);
-        }
-        routesToPush.push(lr);
-      });
-      this._routesCheckUnique = [...this._routesCheckUnique, ...routesToPush];
-    } else {
-      if (this._routesCheckUnique.includes(routeName)) {
-        throw new Error(`Route error : the route "${routeName}" is already defined.`);
-      }
-      this._routesCheckUnique.push(routeName);
+    if (this._routesCheckUnique.includes(routeName)) {
+      throw new Error(`Route error : the route "${routeName}" is already defined.`);
     }
+    this._routesCheckUnique.push(routeName);
+  }
+
+
+  /**
+   * This express middleware can be used to ensure the use of HTTPS for any request
+   * @param req
+   * @param res
+   * @param next
+   * @returns {void|*|Response}
+   * @private
+   */
+  _forceSSLMiddleware(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
+      return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
   }
 }
 

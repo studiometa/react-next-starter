@@ -1,16 +1,32 @@
 import AppBar           from '@material-ui/core/AppBar';
 import Grid             from '@material-ui/core/Grid';
 import Toolbar          from '@material-ui/core/Toolbar';
+import clx              from 'classnames';
 import React            from 'react';
+import envBoolean       from '../../../helpers/envBoolean';
 import packageJson      from '../../../package';
 import componentWrapper from '../../lib/componentWrapper';
 import LangSwitch       from '../utils/LangSwitch';
 import Link             from './Link';
-import envBoolean from '../../../helpers/envBoolean'
+
 
 const styles = theme => ({
+
+  container: {
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2),
+    },
+  },
+
+  title: {},
+
   link: {
     color: theme.palette.error.main,
+    paddingRight: theme.spacing(4),
+
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(2),
+    },
   },
 
   link__active: {
@@ -26,9 +42,19 @@ const styles = theme => ({
   },
 
   githubLink: {
-    marginLeft: theme.spacing.unit * 2,
+    marginLeft: theme.spacing(2),
     '& svg': {
       width: 30,
+
+      [theme.breakpoints.down('xs')]: {
+        width: 20,
+      },
+    },
+  },
+
+  miscContainer: {
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(1),
     },
   },
 });
@@ -41,7 +67,7 @@ const styles = theme => ({
  * @returns {*}
  * @constructor
  */
-const Header = function Header(props) {
+const Header = React.memo(function Header(props) {
 
   let {
         classes,
@@ -52,24 +78,25 @@ const Header = function Header(props) {
 
   return (
     <AppBar position="static" color="primary">
-      <Toolbar>
+      <Toolbar className={classes.container}>
         <Grid container alignItems="center" justify="space-between">
           <Grid item>
-            <Grid container alignItems="center" justify="flex-start" spacing={32}>
-              <Grid item>
-                <Link to={'/'} className={classes.link} activeClassName={classes.link__active} variant="h6">
+            <Grid container alignItems="center" justify="flex-start">
+              <Grid item xs={12} md="auto">
+                <Link to={'/'} className={clx(classes.title,
+                  classes.link)} activeClassName={classes.link__active} variant="h5">
                   {packageJson.name}
                   <small> v{packageJson.version}</small>
                 </Link>
               </Grid>
-              <Grid item>
+              <Grid item xs="auto">
                 <Link to={'/readme'} className={classes.link} activeClassName={classes.link__active}>
                   {t('menu_links.readme')}
                 </Link>
               </Grid>
               {
                 showDevToolsLinks === true &&
-                <Grid item>
+                <Grid item xs="auto">
                   <Link to={'/_sandbox'} className={classes.link} activeClassName={classes.link__active} color="error">
                     {t('menu_links.sandbox')}
                   </Link>
@@ -85,7 +112,7 @@ const Header = function Header(props) {
               }
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item className={classes.miscContainer}>
             <Grid container alignItems="center">
               <LangSwitch classes={{ select: classes.langSwitchSelect, text: classes.langSwitchText }}/>
               <a className={classes.githubLink} href="https://github.com/studiometa/react-next-starter" target="_blank" name="Go to the github page">
@@ -100,7 +127,7 @@ const Header = function Header(props) {
       </Toolbar>
     </AppBar>
   );
-};
+});
 
 export default componentWrapper(Header, {
   styles,

@@ -1,10 +1,11 @@
-import { withStyles } from '@material-ui/core/styles';
-import { connect }    from 'react-redux';
-import { compose }    from 'recompose';
-import config         from '../../config';
-import withI18next    from './withI18next';
-import withMUITheme   from './withMUITheme';
-import withPageData   from './withPageData';
+import { withStyles }                             from '@material-ui/core/styles';
+import withMUITheme                               from '@material-ui/styles/withTheme';
+import React                                      from 'react';
+import { connect }                                from 'react-redux';
+import { compose }                                from 'recompose';
+import config                                     from '../../config';
+import { getInitialProps, I18n, withTranslation } from '../../server/lib/i18n';
+import withPageData                               from './withPageData';
 
 
 /**
@@ -31,14 +32,33 @@ export default (Component, {
   withTheme = false,
   noPageData = false,
 }) => {
+  const _namespaces = config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces;
+
   const args = [
     withPageData(name, { required: config.api.fetchPagesData ? !noPageData : false }),
     connect(mapStateToProps),
     withStyles(styles),
   ];
+
   if (config.lang.enabled) {
-    args.push(withI18next(config.lang.namespaces.includes(name) ? [name, ...namespaces] : namespaces));
+    args.push(withTranslation(_namespaces));
+
+    // This way we do not have to define namespacesRequired two times in every page components
+    args.push(ComposedComponent => {
+        const Extended           = (props) => React.createElement(ComposedComponent, props);
+        Extended.getInitialProps = async (props = {}) => {
+          const initialProps = ComposedComponent.getInitialProps
+            ? await ComposedComponent.getInitialProps(Object.assign({}, props, { pageData }))
+            : {};
+
+          return Object.assign({}, initialProps, { namespacesRequired: _namespaces });
+        };
+
+        return Extended;
+      },
+    );
   }
+
   return withMUITheme(compose(...args)(Component), withTheme);
 
 };
