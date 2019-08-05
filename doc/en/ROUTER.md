@@ -8,13 +8,12 @@ In order to meet the needs of this starter (multi-lingual etc.), it was preferab
 
 **In this file, each route is defined according to the following model: **
 
-`<routeName>: { page: <pagePath>, langRoutes: <langRoutes>, prefetch: <prefetch>, neverCache: <neverCache> },`
+`<routeName>: { page: <pagePath>, prefetch: <prefetch>, neverCache: <neverCache> },`
 
 |  | type | description | example |
 |--|------|-------------|---------|
 | routeName | String | The route pathname | /user/profile/:id |
 | pagePath | String | The path to the Js file of the corresponding page in the pages folder | /user/profile (for the file /pages/user/profile.js)  |
-| langRoutes | Object | In case url translation is enabled, this parameter allows to modify the appearance of URLs for a given language | {"en": "/user/profile/:id", "fr": "/utilisateur/profil/:id"} |
 | prefetch | Boolean | Enables the NextJs "prefetch" feature for this page | true |
 | neverCache | Boolean | If the server cache is enabled, this setting ensures that this page will never be cached | true |
 
@@ -22,7 +21,7 @@ It is of course possible for you to add any other parameter that you think is ne
 
 ## Route naming
 
-In order to maintain a certain consistency across the application, be sure to observe the following rules for naming your routes. These rules apply to both the `routeName` parameter and the values of the `langRoutes` parameter:
+In order to maintain a certain consistency across the application, be sure to observe the following rules for naming your routes :
 - Routes are always written in lower case, without accents
 - Only dashes and underscores are allowed within a road segment
 - A road always starts with a slash
@@ -37,8 +36,8 @@ In order to maintain a certain consistency across the application, be sure to ob
 ## multi-lingual routes
 
 If you are planning to develop a multi-lingual site, it may be necessary to have access to different urls depending on the current language.
-Until version 2.0 of this starter, it was possible to create totally different routes depending on the language. Since version 3.0, a lot of
-changes have been made and URL translation is now managed by the `localSubpaths` parameter accessible in the `/config/lang.config.js` file. This parameter allows you to add
+Until version 2.0 of this starter, it was possible to create totally different routes depending on the language. Since version 3.0, the entire
+translation system has been rewritten and URL translation is now managed using the `localeSubpaths` parameter accessible in the `/config/lang.config.js` file. This parameter allows you to add
 automatically a language segment to all your URLs. next-i18next will also redirect the user if this setting is enabled
 but no language segment has been specified in the URL.
 
@@ -59,7 +58,7 @@ It is mainly used as a **wrapper for the Link component of NextJs** (next/link) 
   
 **Let's take the following route:**
 
-    "/product/:id" : { page: "/product", langRoutes: { fr: "/produit/:id" } }   
+    "/product/:id" : { page: "/product" }   
     
 
 This route is supposed to return to a product page defined by the `id` parameter.  
