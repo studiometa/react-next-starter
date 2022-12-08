@@ -97,6 +97,6 @@
     "url-join": "^4.0.1",
     "url-loader": "^2.0.1",
     "webpack-visualizer-plugin": "^0.1.11",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
